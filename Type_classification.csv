@@ -1,0 +1,836 @@
+"Offence_class","Offence_subclass","offence","N","Type"
+NA,NA,"DOMESTIC VIOLENCE INCIDENT - NON CRIME",184173,"Within family incidents"
+"Violence Against The Person","Violence with injury","ASSAULT OCCASION ABH",115644,"Violent - injury"
+"Violence Against The Person","Violence without injury","COMMON ASSAULT",57631,"Violent - no injury"
+NA,NA,"CHILD ABUSE INCIDENT - NON CRIME",52621,"Within family incidents"
+"Robbery",NA,"ROBBERY-PERSONAL PROPERTY",33901,NA
+"Theft","Shoplifting","THEFT FROM SHOP OR STALL",29673,"Dicking about"
+"Drug Offences","Possession of drugs","POSSESS CONTROL DRUG-CLASS B-CANNABIS",29149,NA
+"Violence Against The Person","Violence with injury","MALICIOUS WOUNDING",27108,"Violent - injury"
+"Burglary","Burglary Residential","BURGLARY DWELLING",22889,NA
+NA,NA,"VULNERABLE ADULT ABUSE/INCIDENT-NON CRIME",22660,"Within family incidents"
+"Arson and Criminal Damage","Criminal damage","CRIMINAL DAMAGE TO DWELLING",18482,NA
+"Arson and Criminal Damage","Criminal damage","CRIMINAL DAMAGE TO VEHICLE",17518,NA
+"Violence Against The Person","Stalking and Harassment","HARASSMENT",15662,"Violent - no injury"
+"Public Order Offences",NA,"FEAR/PROVOCATION OF VIOLENCE",14980,"Dicking about"
+"Theft","Other theft","THEFT OTHER",14809,"Dicking about"
+"Violence Against The Person","Violence without injury","WILFULLY ASSAULT YOUNG PERSON UNDER 16",13488,"Violent - no injury"
+"Violence Against The Person","Violence with injury","CAUSE GBH WITH INTENT",11680,"Violent - injury"
+"Public Order Offences",NA,"CAUSE INT HARASSMENT/ALARM/DISTRESS",11268,"Dicking about"
+"Burglary","Burglary Business and Community","BURGLARY OTHER BUILDING",11022,NA
+"Violence Against The Person","Violence with injury","INFLICTING GBH WITHOUT INTENT",10871,"Violent - injury"
+"Public Order Offences",NA,"RACIALLY/RELIGIOUSLY AGGRAVATED INTENTIONAL HARASSMENT,ALARM OR DISTRESS",10623,"Racial/Hate crimes"
+NA,NA,"FRAUD - NON CRIME - NORMALLY RECORDED BY ACTION FRAUD",9653,NA
+"Vehicle offences",NA,"THEFT FROM MOTOR VEHICLE",8895,"Dicking about"
+"Sexual Offences","Other Sexual Offences","SEXUAL ASSAULT ON A FEMALE 13 OR OVER",8115,NA
+"Arson and Criminal Damage","Criminal damage","OTHER CRIMINAL DAMAGE",7694,NA
+"Theft","Other theft","THEFT DWELLING NOT MACHINE/METER",7105,"Dicking about"
+"Drug Offences","Trafficking of drugs","PRODUCE CONTROLLED DRUG-CLASS B-CANNABIS",6539,NA
+"Sexual Offences","Rape","RAPE OF FEMALE 16 OR OVER",6470,NA
+NA,NA,"ASB INCIDENT FOR INVESTIGATION - NON CRIME",6106,NA
+"Violence Against The Person","Stalking and Harassment","SEND COMMUNICATION/ARTICLE CONVEYING A THREATENING MESSAGE",5928,"Violent - no injury"
+"Theft","Theft from the person","THEFT FROM PERSON",5378,"Dicking about"
+"Arson and Criminal Damage","Criminal damage","CRIMINAL DAMAGE TO OTHER BUILDING",5259,NA
+"Violence Against The Person","Stalking and Harassment","BREACH OF RESTRAINING ORDER",4857,"Violent - no injury"
+"Robbery",NA,"ROBBERY-BUSINESS PROPERTY",4774,NA
+NA,NA,"HATE INCIDENT - NON CRIME",4432,"Racial/Hate crimes"
+"Robbery",NA,"ATTEMPTED ROBBERY-PERSONAL PROPERTY",4255,NA
+"Public Order Offences",NA,"BREACH OF NON-MOLESTATION ORDER",4202,"Dicking about"
+"Robbery",NA,"ASSAULT W/INT TO ROB-PERSONAL PROPERTY",3815,NA
+"Violence Against The Person","Violence without injury","ASSAULT ON A CONSTABLE",3513,"Violent - no injury"
+"Violence Against The Person","Violence without injury","WILFULLY NEGLECT YOUNG PERSON UNDER 16",3505,"Violent - no injury"
+"Violence Against The Person","Violence without injury","THREATS TO KILL",3456,"Violent - no injury"
+"Vehicle offences",NA,"THEFT OF MOTOR VEHICLE",3427,"Dicking about"
+"Burglary","Burglary Residential","ATTEMPT BURGLARY DWELLING",3381,NA
+"Burglary","Burglary Residential","BURGLARY RESIDENTIAL",3366,NA
+"Drug Offences","Possession of drugs","POSSESS CONTROL DRUG-CLASS A-COCAINE",3303,NA
+"Possession of weapons",NA,"HAVE ARTICLE BLADE/SHARP POINT PUBLIC PLACE",3179,NA
+"Possession of weapons",NA,"HAVE OFFENSIVE WEAPON IN PUBLIC",3156,NA
+"Theft","Other theft","MAKE OFF W/O PAYMENT",2906,NA
+"Public Order Offences",NA,"RACIALLY/RELIGIOUSLY AGGRAVATED FEAR/PROVOCATION OF VIOLENCE (S4)",2787,"Racial/Hate crimes"
+NA,NA,"YOUNG PERSON (U18) REFERRAL/INCIDENT-NON CRIME",2736,NA
+"Violence Against The Person","Stalking and Harassment","PUTTING PEOPLE IN FEAR OF VIOLENCE",2691,"Violent - no injury"
+"Violence Against The Person","Violence with injury","RACIALLY/RELIGIOUSLY AGGRAVATED S47 ASSAULT AND MALICIOUS WOUNDING",2584,"Racial/Hate crimes"
+"Miscellaneous Crimes Against Society",NA,"THREATEN TO DAMAGE PROPERTY",2577,NA
+"NFIB Fraud",NA,"FRAUD BY FALSE REPRESENTATION - OTHER FRAUD",2557,NA
+"Vehicle offences",NA,"TAKE MOTOR/VEH W/O OWNER CONSENT",2539,NA
+"Public Order Offences",NA,"AFFRAY",2450,"Dicking about"
+"Violence Against The Person","Violence without injury","RACIALLY/RELIGIOUSLY AGGRAVATED COMMON ASSAULT",2382,"Racial/Hate crimes"
+"Public Order Offences",NA,"HARASSMENT/ALARM OR DISTRESS",2284,"Dicking about"
+"Violence Against The Person","Violence with injury","ATTEMPT TO CAUSE GBH W/I TO DO GBH",2190,"Violent - injury"
+"Sexual Offences","Other Sexual Offences","SEXUAL ASSAULT ON FEMALE CHILD UNDER 13",2171,NA
+"NFIB Fraud",NA,"FRAUD BY FALSE REPRESENTATION - CHEQUE, PLASTIC CARD AND ONLINE BANK ACCOUNTS",2167,NA
+"Burglary","Burglary Residential","DISTRACTION BURGLARY DWELLING",2133,NA
+"Theft","Other theft","BLACKMAIL",2095,NA
+"Drug Offences","Possession of drugs","POSSESS CONTROL DRUG-CLASS A-HEROIN",1658,NA
+"Sexual Offences","Rape","RAPE OF FEMALE CHILD UNDER 13 BY A MALE",1623,NA
+NA,NA,"ADULT PROSTITUTE-NON CRIME",1607,NA
+"Violence Against The Person","Stalking and Harassment","SEND COMMUNICATION/ARTICLE CONVEYING INDECENT/GROSSLY OFFENSIVE MESSAGE",1603,"Violent - no injury"
+"Sexual Offences","Rape","RAPE OF FEMALE CHILD AGED 13-15",1559,NA
+"Miscellaneous Crimes Against Society",NA,"INTIMIDATE WITNESS / JUROR",1536,NA
+"Theft","Bicycle theft","THEFT OF P/CYCLE",1418,"Dicking about"
+"Burglary","Burglary Business and Community","ATTEMPT BURGLARY OTHER BUILDING",1380,NA
+"Drug Offences","Trafficking of drugs","POSSESS DRUG W/I SUPPLY-CLASS B-CANNABIS",1369,NA
+"Arson and Criminal Damage","Arson","ARSON",1282,NA
+"Vehicle offences",NA,"INTERFERE WITH VEHICLE",1236,NA
+"Vehicle offences",NA,"AGG VEH TAKE DRIVE - NOT CAUSE DEATH",1223,NA
+"Sexual Offences","Other Sexual Offences","EXPOSURE",1173,NA
+"Burglary","Burglary Business and Community","BURGLARY BUSINESS AND COMMUNITY",1153,NA
+"Violence Against The Person","Stalking and Harassment","RACIALLY/RELIGIOUSLY AGGRAVATED HARASSMENT WITHOUT VIOLENCE S2",1102,"Racial/Hate crimes"
+"Miscellaneous Crimes Against Society",NA,"HANDLE STOLEN GOODS (RECEIVE)",1073,NA
+"Sexual Offences","Other Sexual Offences","SEXUAL ACTIVITY WITH FEMALE U16 - OFFENDER U18",1071,NA
+"Theft","Other theft","THEFT BY EMPLOYEE",1057,"Dicking about"
+"Miscellaneous Crimes Against Society",NA,"DISTRIBUTE INDEC PHOTO OF CHILD",1009,NA
+"Violence Against The Person","Violence with injury","OWNER/ PERSON IN CHARGE OF DOG DANGEROUSLY OUT OF CONTROL CAUSING INJURY PERSON",999,"Violent - injury"
+"Possession of weapons",NA,"THREATEN PERSON WITH A BLADE/SHARPLY POINTED ARTICLE IN A PUBLIC PLACE",958,NA
+"Public Order Offences",NA,"BREACH OF ANTI-SOCIAL BEHAVIOUR ORDER",955,"Dicking about"
+"Theft","Other theft","THEFT FROM AUTO MACH/METER",939,"Dicking about"
+"Robbery",NA,"ATTEMPT ROBBERY-BUSINESS PROPERTY",893,NA
+"Miscellaneous Crimes Against Society",NA,"DANGEROUS DRIVING",882,NA
+"Sexual Offences","Other Sexual Offences","ASSAULT ON A FEMALE 13+ BY PENETRATION",875,NA
+"Public Order Offences",NA,"RACIALLY/RELIGIOUSLY AGGRAVATED HARASSMENT,ALARM OR DISTRESS S5",852,"Racial/Hate crimes"
+"Vehicle offences",NA,"ATTEMPT THEFT FROM MOTOR VEHICLE",840,"Dicking about"
+NA,NA,"STANDARD LICENCE RECALL - NON CRIME",771,NA
+"Sexual Offences","Other Sexual Offences","SEXUAL ASSAULT ON A MALE CHILD U13",768,NA
+"Sexual Offences","Other Sexual Offences","SEXUAL ASSAULT ON A MALE 13+",753,NA
+"Drug Offences","Possession of drugs","POSSESS CONTROL DRUG-CLASS A-CRACK",747,NA
+"Miscellaneous Crimes Against Society",NA,"POSSESS INDECENT PHOTO/PSEUDO PHOTO OF CHILD",741,NA
+"Violence Against The Person","Violence without injury","KIDNAPPING",740,"Violent - no injury"
+"Drug Offences","Trafficking of drugs","POSSESS DRUG W/I SUPPLY-CLASS A-COCAINE",714,NA
+NA,NA,"DRUGS SEIZURE - NON CRIME",693,NA
+"Arson and Criminal Damage","Arson","ARSON W/I TO ENDANGER LIFE",671,NA
+"Violence Against The Person","Violence without injury","WILFUL ABANDON YOUNG PERSON UNDER 16",665,"Violent - no injury"
+"Violence Against The Person","Violence without injury","ENGAGE IN CONTROLLING/COERCIVE BEHAVIOUR IN AN INTIMATE/FAMILY RELATIONSHIP",657,"Violent - no injury"
+"Possession of weapons",NA,"POSSESS F/ARM W/I CAUSE FEAR VIOLENCE",654,NA
+"Theft","Other theft","ATTEMPT THEFT OTHER",632,"Dicking about"
+"Sexual Offences","Rape","RAPE OF MALE CHILD UNDER 13 BY A MALE",619,NA
+"Sexual Offences","Other Sexual Offences","SEXUAL ACTIVITY WITH FEMALE U16 - OFFENDER 18+ PENETRATION",598,NA
+"Drug Offences","Trafficking of drugs","POSS DRUG W/I TO SUPPLY-CLASS A-HEROIN",590,NA
+"Possession of weapons",NA,"POSSESS PROHIB WEAPON NOXIOUS LIQUID/GAS ETC)",584,NA
+"Violence Against The Person","Violence without injury","FALSE IMPRISONMENT",583,"Violent - no injury"
+"Violence Against The Person","Stalking and Harassment","PURSUE COURSE OF CONDUCT IN BREACH OF S1(1) WHICH AMOUNTS TO STALKING",582,"Violent - no injury"
+"Miscellaneous Crimes Against Society",NA,"GO EQUIPPED FOR BURGLARY",551,NA
+"Public Order Offences",NA,"COMMIT ACT OUTRAGE PUBLIC DECENCY",540,"Dicking about"
+"Sexual Offences","Other Sexual Offences","ASSAULT ON FEMALE CHILD UNDER 13 BY PENETRATION",509,NA
+"Violence Against The Person","Violence with injury","ATTEMPT MURDER-VICTIM 1 YR OLD OR OVER",489,"Violent - injury"
+NA,NA,"RAPE NON CRIME - VICTIM (OR THIRD PARTY) NOT CONFIRMED OR CANNOT BE TRACED",489,NA
+"Miscellaneous Crimes Against Society",NA,"MAKE INDECENT PHOTOGRAPH OF CHILD",485,NA
+"Arson and Criminal Damage","Criminal damage","RACIALLY AGGRAVATED CRIMINAL DAMAGE TO VEHICLE",476,"Racial/Hate crimes"
+"Drug Offences","Trafficking of drugs","POSSESS DRUG W/I SUPPLY-CLASS A-CRACK",441,NA
+"Violence Against The Person","Violence without injury","ABDUCTION OF CHILD BY OTHER PERSON",435,"Violent - no injury"
+"Drug Offences","Possession of drugs","POSSESS CONTROL DRUG-CLASS B-AMPHETAMINE",432,NA
+"Sexual Offences","Other Sexual Offences","CAUSE FEMALE U16 TO ENGAGE IN SEXUAL ACTIVITY - NO PENETRATION - OFFENDER 18+",423,NA
+"Violence Against The Person","Stalking and Harassment","RACIALLY/RELIGIOUSLY AGGRAVATED HARASSMENT WITH FEAR OF VIOLENCE",420,"Racial/Hate crimes"
+"Violence Against The Person","Violence with injury","POLICE - S.47 ASSAULT OCCASIONING ACTUAL BODILY HARM",391,"Violent - injury"
+"Theft","Other theft","ABSTRACT ELECTRICITY",390,NA
+"Possession of weapons",NA,"THREATEN PERSON WITH OFFENSIVE WEAPON IN  A PUBLIC PLACE",380,NA
+"Arson and Criminal Damage","Arson","ARSON - RECKLESSLY ENDANGER LIFE",370,NA
+"Violence Against The Person","Stalking and Harassment","SEND COMMUNICATION/ARTICLE WHOLE/PART OF AN  INDECENT/GROSSLY OFFENSIVE NATURE",345,"Violent - no injury"
+"Sexual Offences","Rape","RAPE OF MALE 16 OR OVER",344,NA
+"Violence Against The Person","Stalking and Harassment","STALKING INVOLVING SERIOUS ALARM/DISTRESS",342,"Violent - no injury"
+"Sexual Offences","Rape","ATTEMPT RAPE OF FEMALE 16 OR OVER",324,NA
+"Public Order Offences",NA,"BREACH OF A CRIMINAL BEHAVIOUR ORDER",321,"Dicking about"
+"Sexual Offences","Other Sexual Offences","CAUSE FEMALE U13 ENGAGE IN SEXUAL ACTIVITY - NO PENETRATION",316,NA
+"Miscellaneous Crimes Against Society",NA,"THREATEN WITNESS / JUROR",314,NA
+"Drug Offences","Possession of drugs","POSSESS CONTROLLED DRUG - CLASS C",309,NA
+"Violence Against The Person","Stalking and Harassment","DISCLOSE PRIVATE SEXUAL PHOTOGRAPHS AND FILMS WITH INTENT TO CAUSE DISTRESS",299,"Violent - no injury"
+NA,NA,"DOMESTIC VIOLENCE DISCLOSURE REQUEST (CLARE'S LAW) - NON CRIME",297,NA
+"Miscellaneous Crimes Against Society",NA,"MAKING/SUPPLYING ARTICLES FOR USE IN FRAUD",292,NA
+"Violence Against The Person","Stalking and Harassment","SEND COMMUNICATION/ARTICLE CONVEYING FALSE INFORMATION",290,"Violent - no injury"
+"Violence Against The Person","Homicide","MURDER-VICTIM 1 YR OLD OR OVER",289,NA
+"Burglary","Burglary Residential","AGGRAVATED BURGLARY DWELLING",289,NA
+"Burglary","Burglary Residential","DISTRACTION BURGLARY RESIDENTIAL",288,NA
+"Theft","Shoplifting","ATTEMPT THEFT FROM SHOP/STALL",288,"Dicking about"
+"Arson and Criminal Damage","Criminal damage","RACIALLY AGGRAVATED CRIMINAL DAMAGE TO A DWELLING",272,"Racial/Hate crimes"
+"Burglary","Burglary Residential","ATTEMPT BURGLARY RESIDENTIAL",269,NA
+"Robbery",NA,"ASSAULT W/I TO ROB-BUSINESS PROPERTY",264,NA
+"Miscellaneous Crimes Against Society",NA,"SOLICITING ANOTHER PURPOSE OF OBTAIN SEX AS A PROSTITUTE IN PUBLIC PLACE",264,NA
+"Public Order Offences",NA,"FAIL TO COMPLY WITH NOTIFICATION OF CHANGES REQUIREMENT",243,"Dicking about"
+"Sexual Offences","Other Sexual Offences","CAUSE SEXUAL ACTIVITY FEMALE U16 - OFFENDER 18+",240,NA
+"Violence Against The Person","Violence with injury","OWN DOG OUT CONTROL IN PUBLIC - INJURY",239,"Violent - injury"
+"Violence Against The Person","Violence with injury","ALLOW DOG BE DANGEROUSLY OUT CONTROL PUBLIC PLACE SUBSEQUENTLY CAUSE INJURY",232,"Violent - injury"
+"Public Order Offences",NA,"SEX OFFENDER - FAIL TO COMPLY WITH NOTIFICATION REQUIREMENT",231,"Dicking about"
+"Violence Against The Person","Stalking and Harassment","BREACH OF INJUNCTION AGAINST HARASSMENT 1997",226,"Violent - no injury"
+"Sexual Offences","Other Sexual Offences","CAUSE FEMALE CHILD U13 TO ENGAGE IN SEXUAL ACTIVITY",224,NA
+NA,NA,"WASTING POLICE TIME - NON CRIME",222,NA
+"Violence Against The Person","Violence with injury","IN CHARGE DOG OUT CONTROL-PUBLIC INJURY",219,"Violent - injury"
+"Violence Against The Person","Stalking and Harassment","STALKING INVOLVING FEAR OF VIOLENCE",219,"Violent - no injury"
+"Violence Against The Person","Violence without injury","ARRANGE OR FACILITATE TRAVEL OF ANOTHER PERSON WITH A VIEW TO EXPLOITATION",212,"Violent - no injury"
+"Sexual Offences","Other Sexual Offences","CAUSE FEMALE U16 TO ENGAGE IN SEXUAL ACTIVITY - NO PENETRATION - OFFENDER U18",208,NA
+"Violence Against The Person","Violence with injury","POSSESS FIREARM WITH INTENT TO ENDANGER LIFE",204,"Violent - injury"
+"Miscellaneous Crimes Against Society",NA,"POSSESS/CONTROL ARTICLES FOR USE IN FRAUDS",200,NA
+"Possession of weapons",NA,"POSSESS PROHIBITED WEAPON",200,NA
+NA,NA,"EMERGENCY LICENCE RECALL - NON CRIME",197,NA
+"Possession of weapons",NA,"POSS IMIT F/ARM W/I CAUSE FEAR/VIOLENCE",193,NA
+"Drug Offences","Trafficking of drugs","SUPPLY CONTROLLED DRUG-CLASS A-HEROIN",193,NA
+"Miscellaneous Crimes Against Society",NA,"PERVERT COURSE OF PUBLIC JUSTICE",186,NA
+"Arson and Criminal Damage","Criminal damage","RACIALLY AGGRAVATED DAMAGE OTHER BUILDING",182,"Racial/Hate crimes"
+"Drug Offences","Possession of drugs","POSSESS CONTROL DRUG-CLASS A-OTHER",179,NA
+"Drug Offences","Trafficking of drugs","SUPPLY CONTROLLED DRUG-CLASS A-CRACK",178,NA
+"Violence Against The Person","Violence without injury","WILFULLY ILL-TREAT YOUNG PERSON UNDER 16",177,"Violent - no injury"
+"Drug Offences","Possession of drugs","POSSESS CONTROL DRUG-CLASS A-ECSTASY",177,NA
+"Sexual Offences","Other Sexual Offences","CAUSE SEXUAL ACTIVITY FEMALE U16 - OFFENDER U18",171,NA
+"Public Order Offences",NA,"VIOLENT DISORDER",170,"Dicking about"
+"Possession of weapons",NA,"CARRY LOADED/UNLOADED/IMITATION FIREARM/AIR WEAPON IN PUBLIC PLACE",170,NA
+"Violence Against The Person","Violence without injury","ATTEMPT KIDNAPPING",169,"Violent - no injury"
+"Arson and Criminal Damage","Criminal damage","RACIALLY AGGRAVATED OTHER CRIMINAL DAMAGE",169,"Racial/Hate crimes"
+NA,NA,"RAPE NON CRIME - COMMITTED AND TRANSFERRED TO ANOTHER POLICE FORCE AREA",162,NA
+"Violence Against The Person","Violence without injury","WILFULLY EXPOSE YOUNG PERSON UNDER 16",161,"Violent - no injury"
+"Vehicle offences",NA,"ATTEMPT THEFT OF MOTOR VEHICLE",161,"Dicking about"
+"Sexual Offences","Rape","RAPE OF MALE CHILD AGED 13-15",153,NA
+"Theft","Theft from the person","ATTEMPT THEFT FROM PERSON",153,"Dicking about"
+"Drug Offences","Trafficking of drugs","POSSESSION CLASS B - MEPHEDRONE / CATHINONE DERIVATIVE",153,NA
+"Sexual Offences","Other Sexual Offences","SEXUAL ACTIVITY WITH FEMALE CHILD U13 - NO PENETRATION - OFFENDER U18",148,NA
+"Drug Offences","Possession of drugs","POSSESS CONTROL DRUG-CLASS A-METHADONE",139,NA
+"Drug Offences","Possession of drugs","POSSESSION CLASS B - SYNTHETIC CANNABINOID AGONISTS",130,NA
+"Violence Against The Person","Violence with injury","RACIALLY/RELIGIOUSLY AGGRAVATED INFLICTING GBH WITHOUT INTENT",129,"Racial/Hate crimes"
+"Sexual Offences","Other Sexual Offences","SEXUAL ACTIVITY WITH FEMALE CHILD U16 - NO PENETRATION - OFFENDER 18 OR OVER",128,NA
+"Burglary","Burglary Business and Community","ATTEMPT BURGLARY BUSINESS AND COMMUNITY",125,NA
+NA,NA,"CHILD SEXUAL OFFENDER DISCLOSURE SCHEME - NON CRIME",124,NA
+"Drug Offences","Trafficking of drugs","CONCERNED PRODUCE DRUG-CLASS B-CANNABIS",121,NA
+"Sexual Offences","Other Sexual Offences","SEXUAL ACTIVITY WITH MALE U16 - OFFENDER U18",119,NA
+"Sexual Offences","Other Sexual Offences","ENGAGE IN SEXUAL ACTIVITY IN PRESENCE OF CHILD U13 - OFFENDER 18+",117,NA
+"Sexual Offences","Other Sexual Offences","MEETING A FEMALE U16  FOLLOWING SEXUAL GROOMING, OFFENDER 18+",117,NA
+"Miscellaneous Crimes Against Society",NA,"BRING/THROW/CONVEY LIST A PROHIBITED ARTICLE INTO/OUT PRISON",115,NA
+"Sexual Offences","Other Sexual Offences","VOYEURISM",115,NA
+"Violence Against The Person","Violence without injury","HOLD PERSON IN SLAVERY OR SERVITUDE",114,"Violent - no injury"
+"Possession of weapons",NA,"POSSESS ARTICLE WITH BLADE/POINT ON SCHOOL PREMISES",112,NA
+"Burglary","Burglary Residential","ATTEMPT DISTRACTION BURGLARY DWELLING",111,NA
+"Sexual Offences","Other Sexual Offences","SEXUAL ACTIVITY WITH FEMALE U13 - OFFENDER UNDER18",105,NA
+"NFIB Fraud",NA,"FRAUD BY ABUSE OF POSITION",104,NA
+"Sexual Offences","Other Sexual Offences","CAUSE MALE U13 TO ENGAGE IN  SEXUAL ACTIVITY - NO PENETRATION",99,NA
+"Drug Offences","Possession of drugs","POSSESS CONTROLLED DRUG - CLASS A",98,NA
+"Violence Against The Person","Violence with injury","POLICE - MALICIOUS WOUNDING",95,"Violent - injury"
+"Vehicle offences",NA,"TAKE CONVEYANCE W/O CONSENT",90,NA
+"Possession of weapons",NA,"POSS A/WEAPON W/I CAUSE FEAR OF VIOLENCE",89,NA
+"Sexual Offences","Other Sexual Offences","CAUSE MALE U13 ENGAGE IN SEXUAL ACTIVITY",89,NA
+"Miscellaneous Crimes Against Society",NA,"ILL TREAT/ WILFUL NEGLECT A PERSON LACKING CAPACITY BY CARER",88,NA
+"Possession of weapons",NA,"POSSESS PROHIBITED WEAPON FOR DISCHARGE OF NOXIOUS SUBSTANCE",87,NA
+"Violence Against The Person","Violence without injury","ABDUCTION OF A CHILD BY PARENT",86,"Violent - no injury"
+"Sexual Offences","Rape","ATTEMPT RAPE OF FEMALE CHILD UNDER 13 BY A MALE",86,NA
+"Violence Against The Person","Violence without injury","ASSAULTING A COMMUNITY SUPPORT OFFICER (PCSO)",83,"Violent - no injury"
+"Public Order Offences",NA,"BREACH OF SEX OFFENDER ORDER",82,"Dicking about"
+"Miscellaneous Crimes Against Society",NA,"ESCAPE FROM LAWFUL CUSTODY",82,NA
+"Drug Offences","Possession of drugs","POSSESS CONTROL DRUG-CLASS B-OTHER",82,NA
+"Sexual Offences","Rape","ATTEMPT RAPE OF FEMALE CHILD AGED 13-15",81,NA
+"Arson and Criminal Damage","Arson","ATTEMPT ARSON W/I TO ENDANGER LIFE",81,NA
+"Sexual Offences","Other Sexual Offences","CAUSE CHILD U13 TO WATCH SEXUAL ACT - OFFENDER 18+",77,NA
+"Drug Offences","Trafficking of drugs","SUPPLY CONTROLLED DRUG-CLASS B-CANNABIS",77,NA
+"Sexual Offences","Other Sexual Offences","CAUSE MALE U16 TO ENGAGE IN SEXUAL ACTIVITY - NO PENETRATION - OFFENDER 18+",75,NA
+"Sexual Offences","Other Sexual Offences","SEXUAL ACTIVITY WITH MALE U13 - OFFENDER U18",74,NA
+"Sexual Offences","Other Sexual Offences","SEXUAL ACTIVITY WITH MALE U16 - OFFENDER 18+",74,NA
+"Sexual Offences","Other Sexual Offences","SEXUAL ACTIVITY WITH MALE CHILD U13 - NO PENETRATION - OFFENDER U18",73,NA
+"Sexual Offences","Other Sexual Offences","ENGAGE IN SEXUAL ACTIVITY IN PRESENCE OF CHILD 13-15 - OFFENDER 18+",73,NA
+"Miscellaneous Crimes Against Society",NA,"USE FALSE INSTRUMENT-PRESCRIPTION",72,NA
+"Public Order Offences",NA,"BOMB HOAX-COMMUNICATE FALSE INFORMATION",72,"Dicking about"
+"Sexual Offences","Other Sexual Offences","ASSAULT ON A MALE CHILD U13 BY PENETRATION",69,NA
+"Sexual Offences","Other Sexual Offences","CAUSE FEMALE CHILD U13 TO ENGAGE IN SEXUAL ACTIVITY-OFFENDER U18- NO PENETRATION",69,NA
+"Sexual Offences","Other Sexual Offences","SEXUAL ACTIVITY WITH FEMALE CHILD U16 - NO PENETRATION - OFFENDER U18",69,NA
+NA,NA,"RESTORATIVE CONFERENCING - NON CRIME",68,NA
+"Miscellaneous Crimes Against Society",NA,"POSSESS EXTREME PORNOGRAPHIC IMAGES - BESTIALITY",67,NA
+"Miscellaneous Crimes Against Society",NA,"ATTEMPT PERVERT COURSE OF PUBLIC JUSTICE",65,NA
+"Drug Offences","Trafficking of drugs","POSSESSING CONTROLLED DRUG WITH INTENT TO SUPPLY - CLASS B",63,NA
+"Sexual Offences","Other Sexual Offences","CAUSE SEXUAL ACTIVITY MALE U16 - OFFENDER 18+",62,NA
+"Miscellaneous Crimes Against Society",NA,"GO EQUIPPED NOT THEFT M/VEH",61,"Dicking about"
+"Possession of weapons",NA,"POSSESS F/ARM W/O CERTIFICATE",60,NA
+"Violence Against The Person","Death or serious injury caused by illegal driving","CAUSE DEATH BY DANGEROUS DRIVING",59,NA
+"Possession of weapons",NA,"POSSESS FIREARM COMMIT SCH.1 OFFENCE",59,NA
+"Possession of weapons",NA,"POSSESS  OFFENSIVE WEAPON ON SCHOOL PREMISES",59,NA
+"Arson and Criminal Damage","Criminal damage","ATT CRIMINAL DAMAGE-DWELLING",59,NA
+"Miscellaneous Crimes Against Society",NA,"BRING/THROW/CONVEY A LIST B ARTICLE INTO/OUT OF A PRISON",59,NA
+"Violence Against The Person","Violence with injury","ADMINISTER NOXIOUS THING W/I",58,"Violent - injury"
+"Burglary","Burglary Residential","AGGRAVATED BURGLARY RESIDENTIAL",58,NA
+"Theft",NA,"THEFT FROM OTHER VEHICLE",58,"Dicking about"
+"Miscellaneous Crimes Against Society",NA,"THREATEN DAMAGE OWN PROP ENDANGER LIFE",58,NA
+"Miscellaneous Crimes Against Society",NA,"PERSIST SOLICIT PERSON-PROSTITUTION - M/V",58,NA
+"Sexual Offences","Other Sexual Offences","CAUSE/INCITE CHILD PROSITUTION OR PORNOGRAPHY 13-17",57,NA
+"Miscellaneous Crimes Against Society",NA,"POSSESS IND PHOTO CHILD DISTRIBUTION",57,NA
+"Theft","Bicycle theft","ATTEMPT THEFT OF P/CYCLE",56,"Dicking about"
+"Miscellaneous Crimes Against Society",NA,"FORGERY PRESCRIPTION FOR SCHEDULED DRUG",56,NA
+"Theft","Other theft","ATTEMPT THEFT FROM AUTO MACH/METER",55,"Dicking about"
+"Arson and Criminal Damage","Criminal damage","CRIMINAL DAMAGE END.LIFE TO VEHICLE",52,NA
+"Drug Offences","Possession of drugs","POSSESS CONTROLLED DRUG - CLASS B",52,NA
+"Drug Offences","Trafficking of drugs","POSSESS DRUG W/I SUPPLY-CLASS A-OTHER",52,NA
+"Violence Against The Person","Violence with injury","ASSAULT W/I TO RESIST APPREHENSION",51,"Violent - injury"
+"Arson and Criminal Damage","Arson","ATTEMPT ARSON",51,NA
+"Public Order Offences",NA,"DO ACT PROHIBITED BY SEXUAL OFFENCES PREVENTION ORDER",51,"Dicking about"
+"Sexual Offences","Other Sexual Offences","ASSAULT ON A MALE 13+ BY PENETRATION",50,NA
+"Sexual Offences","Other Sexual Offences","CAUSE CHILD U16 TO WATCH SEXUAL ACT - OFFENDER 18+",49,NA
+"Theft","Other theft","THEFT MAIL BAG/POST PACKET",49,"Dicking about"
+"Sexual Offences","Other Sexual Offences","CAUSE FEMALE 16+ TO ENGAGE IN SEXUAL ACTIVITY W/O CONSENT",48,NA
+"Miscellaneous Crimes Against Society",NA,"POSSESS CRIMINAL PROPERTY - MONEY LAUNDERING",46,NA
+"Theft","Other theft","THEFT CONVEYANCE NOT M/VEH OR P/CYCLE",45,"Dicking about"
+"Arson and Criminal Damage","Criminal damage","ATTEMPT CRIMINAL DAMAGE TO VEHICLE",45,NA
+NA,NA,"BREACH OF DV PROTECTION NOTICE/ORDER - NON CRIME",45,NA
+"Violence Against The Person","Violence with injury","CARE WORKER ILL-TREAT/WILFULLY NEGLECT AN INDIVIDUAL",43,"Violent - injury"
+"Sexual Offences","Other Sexual Offences","ARRANGING OR FACILITATING THE COMMISSION OF A CHILD SEX OFFENCE",43,NA
+"Sexual Offences","Other Sexual Offences","CAUSE MALE CHILD U16 SEX. ACTIVITY-NO PENETRATION-OFFENDER U18",42,NA
+"Drug Offences","Trafficking of drugs","POSSESSING CONTROLLED DRUG WITH INTENT TO SUPPLY - CLASS A",42,NA
+"Possession of weapons",NA,"POSSESS PROHIBITED AMMO",41,NA
+"Miscellaneous Crimes Against Society",NA,"TAKE INDECENT PHOTO OF CHILD",41,NA
+"Drug Offences","Trafficking of drugs","CONCERNED SUPPLY DRUG-CLASS B-CANNABIS",41,NA
+"Drug Offences","Possession of drugs","PERMIT PREM-PRODUCE DRUG-CLASS B-CANNABIS",41,NA
+"Drug Offences","Possession of drugs","OBSTRUCT POLICE/PC SEARCH WARRANT DRUG",41,NA
+NA,NA,"RAPE NON CRIME - CREDIBLE EVIDENCE TO THE CONTRARY EXISTS (WITHIN 24 HRS)",41,NA
+"Miscellaneous Crimes Against Society",NA,"KEEPING A BROTHEL USED FOR PROSTITUTION",40,NA
+"Miscellaneous Crimes Against Society",NA,"GO EQUIPPED THEFT M/VEHICLE",40,"Dicking about"
+"Sexual Offences","Other Sexual Offences","ENGAGE IN SEXUAL COMMUNICATION WITH A CHILD",40,NA
+NA,NA,"GANG AND CIVIL INJUNCTION BREACH - NON CRIME",40,NA
+"Possession of weapons",NA,"POSSESS AMMO W/O CERTIFICATE",38,NA
+"Sexual Offences","Rape","ATTEMPT RAPE OF MALE CHILD UNDER 13 BY A MALE",37,NA
+"Miscellaneous Crimes Against Society",NA,"PASS COUNTERFEIT CURRENCY NOTE-GENUINE",37,NA
+"Drug Offences","Trafficking of drugs","POSSESS DRUG W/I SUPPLY-CLASS B-AMPHETAMINE",37,NA
+"Possession of weapons",NA,"POSSESS S/GUN W/I CAUSE FEAR OF VIOLENCE",34,NA
+"Miscellaneous Crimes Against Society",NA,"POSSESSING PROHIBITED IMAGES OF CHILDREN",34,NA
+"Sexual Offences","Other Sexual Offences","CAUSE MALE CHILD U13 TO ENGAGE IN SEXUAL ACTIVITY- OFFENDER U18 - NO PENETRATION",32,NA
+"Sexual Offences","Other Sexual Offences","SEXUAL ACTIVITY WITH MALE CHILD U16 - NO PENETRATION - OFFENDER 18 OR OVER",32,NA
+"Burglary","Burglary Business and Community","AGGRAVATED BURGLARY OTHER BUILDING",32,NA
+"Miscellaneous Crimes Against Society",NA,"TENDER COUNTERFEIT COIN / NOTE",32,NA
+"Public Order Offences",NA,"FAIL TO COMPLY WITH REQ TO NOTIFY TRAVEL OUTSIDE UK",32,"Dicking about"
+"Drug Offences","Trafficking of drugs","POSSESS DRUG W/I SUPPLY-CLASS A-ECSTASY",32,NA
+"Violence Against The Person","Death or serious injury caused by illegal driving","CAUSE SERIOUS INJURY BY DANGROUS DRIVING",31,NA
+"Violence Against The Person","Violence with injury","POSSESS IMITATION F/ARM W/I ENDANGE LIFE",31,"Violent - injury"
+"Violence Against The Person","Violence without injury","USE VIOLENCE/THREATS/A FORM OF COERCION TO CAUSE PERSON TO ENTER INTO MARRIAGE",30,"Violent - no injury"
+"NFIB Fraud",NA,"OBTAINING SERVICES DISHONESTLY",30,NA
+"Public Order Offences",NA,"BREACH A SEXUAL RISK ORDER/RISK OF SEXUAL HARM ORDER ETC",30,"Dicking about"
+"Possession of weapons",NA,"POSSESS PROHIBITED WEAPON - DISGUISED FIREARM",30,NA
+"Violence Against The Person","Violence without injury","TRAFFICKING PEOPLE INTO THE UK FOR THE PURPOSE OF EXPLOITATION",29,"Violent - no injury"
+"NFIB Fraud",NA,"FRAUD BY FAILING TO DISCLOSE INFORMATION",29,NA
+"Violence Against The Person","Violence with injury","ATTEMPT MURDER VICTIM UNDER 1 YR OLD",28,"Violent - injury"
+"Sexual Offences","Other Sexual Offences","SEXUAL ACTIVITY WITH MALE CHILD U16 - NO PENETRATION - OFFENDER U18",27,NA
+"Theft",NA,"ATT THEFT FROM OTHER VEH",27,"Dicking about"
+"Drug Offences","Trafficking of drugs","SUPPLY CONTROLLED DRUG-CLASS A-COCAINE",27,NA
+"Public Order Offences",NA,"PUBLIC NUISANCE",26,"Dicking about"
+"Public Order Offences",NA,"BREACH SHPO/SOPO/INTERIM SHPO/SOPO/FOREIGN TRAVEL ORDER",25,"Dicking about"
+"Drug Offences","Trafficking of drugs","CONCERNED SUPPLY DRUG-CLASS A-COCAINE",25,NA
+"Drug Offences","Possession of drugs","ATT POSSESS CONTROL DRUG-CLASS A-COCAINE",25,NA
+"Public Order Offences",NA,"FAIL TO COMPLY WITH THE PERIODIC NOTIFICATION REQUIREMENT",24,"Dicking about"
+"Sexual Offences","Other Sexual Offences","ABUSE OF TRUST: SEXUAL ACTIVITY WITH FEMALE 13-17 OFFENDER 18+",24,NA
+"Violence Against The Person","Homicide","MANSLAUGHTER",23,NA
+"Sexual Offences","Other Sexual Offences","ENGAGE IN SEXUAL ACTIVITY IN THE PRESENCE OF CHILD U13 - OFFENDER U18",23,NA
+"Sexual Offences","Other Sexual Offences","CAUSE SEXUAL ACTIVITY MALE U16 - OFFENDER U18",23,NA
+"Sexual Offences","Other Sexual Offences","ENGAGE IN SEXUAL ACTIVITY IN PRESENCE OF CHILD U16 - OFFENDER U18",23,NA
+"Miscellaneous Crimes Against Society",NA,"ACQUIRE CRIMINAL PROPERTY - MONEY LAUNDER",23,NA
+"NFIB Fraud",NA,"CONSPIRACY TO DEFRAUD",23,NA
+"Miscellaneous Crimes Against Society",NA,"INTIMIDATE OR INTEND INTIMIDATE WITNESS IN CIVIL ( NON CRIMINAL) PROCEEDINGS",23,NA
+"Possession of weapons",NA,"POSSESS SHORTENED S/GUN W/O CERT",23,NA
+"Drug Offences","Trafficking of drugs","POSSESS W/I SUPPLY CLASS B - SYNTHETIC CANNABINOID AGONISTS",23,NA
+"Violence Against The Person","Violence with injury","ATTEMPT TO INFLICT GBH WITHOUT INTENT",22,"Violent - injury"
+"Sexual Offences","Other Sexual Offences","SEXUAL ACTIVITY WITH FEMALE U13 - OFFENDER 18+",22,NA
+"Sexual Offences","Other Sexual Offences","CAUSE MALE U13 TO ENGAGE IN SEXUAL ACTIVITY - OFFENDER U18 - PENETRATION",22,NA
+"Sexual Offences","Other Sexual Offences","CAUSE FEMALE 16+ TO ENGAGE IN SEXUAL ACTIVITY - NO PENETRATION",22,NA
+"Violence Against The Person","Violence without injury","REQUIRE PERSON TO PERFORM FORCED OR COMPULSORY LABOUR",22,"Violent - no injury"
+"Miscellaneous Crimes Against Society",NA,"HANDLE GOODS-RETAIN/REMOVE/DISPOSE",22,NA
+"Arson and Criminal Damage","Criminal damage","CRIMINAL DAMAGE END,LIFE TO DWELLING",22,NA
+"Miscellaneous Crimes Against Society",NA,"OTHER OFFENCES RELATING TO PRISON SECURITY",22,NA
+"Sexual Offences","Other Sexual Offences","MEETING A MALE U16  FOLLOWING SEXUAL GROOMING, OFFENDER 18+",22,NA
+"Possession of weapons",NA,"POSSESS IMITATION FIREARM - SCH.1 OFFENCE",21,NA
+"Burglary","Burglary Residential","ATTEMPT DISTRACTION BURGLARY RESIDENTIAL",21,NA
+"Violence Against The Person","Violence without injury","TRAFFICKING INTO THE UK FOR SEXUAL EXPLOITATION",21,"Violent - no injury"
+"Drug Offences","Possession of drugs","POSSESS CONTROLLED DRUG CLASS C - KETAMINE",21,NA
+"Possession of weapons",NA,"HAVE ARTICLE BALDE/POINT SCHOOL PREMISES",20,NA
+"Sexual Offences","Other Sexual Offences","CAUSE MALE 16+ TO ENGAGE IN SEXUAL ACTIVITY W/O CONSENT",20,NA
+"Sexual Offences","Other Sexual Offences","SEXUAL ACTIVITY WITH FEMALE FAMILY MEMBER U13, OFF 18+ NO PENETRATION",20,NA
+"Burglary","Burglary Residential","ATTEMPT AGGRAVATED BURGLARY DWELLING",20,NA
+"Miscellaneous Crimes Against Society",NA,"USE CRIMINAL PROPERTY - MONEY LAUNDERING",20,NA
+"NFIB Fraud",NA,"UNAUTHORISED ACCESS TO COMPUTER MATERIAL",19,NA
+"Miscellaneous Crimes Against Society",NA,"PERSIST SOLICIT PERSON FOR PROSTITUTION",19,NA
+"Violence Against The Person","Violence with injury","ATTEMPT MALICIOUS WOUNDING",18,"Violent - injury"
+"Violence Against The Person","Violence with injury","POLICE - INFLICTING GBH WITHOUT INTENT",18,"Violent - injury"
+"Possession of weapons",NA,"THREATEN PERSON WITH A BLADE/SHARPLY POINTED ARTICLE ON SCHOOL PREMISES",18,NA
+"Vehicle offences",NA,"AGG VEH TAKE CARRIED - NOT CAUSE DEATH",18,NA
+"Arson and Criminal Damage","Criminal damage","ATTEMPT CRIMINAL DAMAGE OTHER",18,NA
+"Arson and Criminal Damage","Criminal damage","RELIGIOUSLY AGGRAVATED DAMAGE OTHER BUILDING",18,NA
+"Miscellaneous Crimes Against Society",NA,"TENDER COUNTERFEIT COIN",18,NA
+"Drug Offences","Trafficking of drugs","CONCERNED SUPPLY DRUG-CLASS A-HEROIN",18,NA
+"Drug Offences","Trafficking of drugs","POSSESS W/I TO SUPPLY CLASS B- MEPHEDRONE / CATHINONE DERIVATIVE",18,NA
+"Drug Offences","Possession of drugs","PERMIT PREMISES TO BE USED -  CANNABIS",18,NA
+"Violence Against The Person","Violence without injury","ASSAULT PRISON OFFICER-CONTRACTED PRISON",18,"Violent - no injury"
+"Violence Against The Person","Death or serious injury caused by illegal driving","CAUSE DEATH CARELESS OR INCONSIDERATE DRIVING",17,NA
+"Sexual Offences","Rape","ATTEMPT RAPE MALE 16 OR OVER",17,NA
+"Sexual Offences","Other Sexual Offences","CAUSE FEMALE CHILD U13 TO ENGAGE IN SEXUAL ACTIVITY - OFFENDER U18 - PENETRATION",17,NA
+"Sexual Offences","Other Sexual Offences","CAUSE CHILD U16 TO WATCH SEXUAL ACT - OFFENDER U18",17,NA
+"Miscellaneous Crimes Against Society",NA,"POSSESS/CONTROL IDENTITY DOCUMENTS WITH INTENT",17,NA
+"Miscellaneous Crimes Against Society",NA,"POSSESS/CONTROL A FALSE/IMPROPERLY OBTAINED/ANOTHER PERSONS IDENTITY DOCUMENT",17,NA
+"Possession of weapons",NA,"POSSESS S/GUN W/O CERTIFICATE",17,NA
+"Drug Offences","Trafficking of drugs","POSSESS DRUG W/I SUPPLY-CLASS B-OTHER",17,NA
+"Miscellaneous Crimes Against Society",NA,"SOLICIT PERSON PROSTITUTION-M/V-NUISANCE",17,NA
+"Miscellaneous Crimes Against Society",NA,"MAKE FALSE STATEMENT TO OBTAIN INSURANCE",17,NA
+"Sexual Offences","Other Sexual Offences","SEXUAL ACTIVITY WITH FEMALE FAMILY MEMBER 13-17,OFFENDER 18+",16,NA
+"Sexual Offences","Other Sexual Offences","SEXUAL ACTIVITY WITH FEMALE FAMILY MEMBER U13, OFFENDER U18",16,NA
+"Theft","Other theft","ATTEMPT BLACKMAIL",16,NA
+"Drug Offences","Possession of drugs","POSSESS CLASS A - METHYLAMPHETAMINE (CRYSTAL METHS)",16,NA
+"Miscellaneous Crimes Against Society",NA,"SOLICIT PERSON FOR PROSTITUTION-M/V-ANNOY",16,NA
+"Theft","Other theft","ATTEMPT THEFT DWELLING NOT MACH/METER",15,"Dicking about"
+"Miscellaneous Crimes Against Society",NA,"USE COPY FALSE INSTRUMENT-PRESCRIPTION",15,NA
+"Miscellaneous Crimes Against Society",NA,"CUSTODY/CONTROL COUNTERFEIT NOTE",15,NA
+"Drug Offences","Trafficking of drugs","PRODUCING CONTROLLED DRUG - CLASS B",15,NA
+"Theft","Bicycle theft","TAKE P/CYCLE W/O CONSENT TWOC",15,NA
+NA,NA,"FIREARM/AMMUNITION FOUND OTHERWISE IN POSS./CONTROL PERSON LICENSED - NON CRIME",15,NA
+"Violence Against The Person","Violence with injury","ADMINISTER POISON W/I",14,"Violent - injury"
+"Sexual Offences","Other Sexual Offences","CAUSE MALE 16+ TO ENGAGE IN SEXUAL ACTIVITY - NO PENETRATION",14,NA
+"Violence Against The Person","Violence without injury","TRAFFICKING WITHIN UK FOR SEXUAL EXPLOITATION",14,"Violent - no injury"
+"Violence Against The Person","Death or serious injury caused by illegal driving","AGG-TAKE M/VEH W/O CONSENT CAUSE DEATH",14,NA
+"Miscellaneous Crimes Against Society",NA,"USE FALSE INSTRUMENT-NOT PRESCRIPTION",14,NA
+"Drug Offences","Trafficking of drugs","POSSESS CONTROL DRUG W/I SUPPLY-CLASS C",14,NA
+"Drug Offences","Possession of drugs","POSSESS CONTROL DRUG - CLASS C - KHAT",14,NA
+"Miscellaneous Crimes Against Society",NA,"CONVERT CRIMINAL PROPERTY - MONEY LAUNDERING",13,NA
+"Miscellaneous Crimes Against Society","Criminal damage","HAVE ARTICLES TO DAMAGE PROPERTY",13,NA
+"Miscellaneous Crimes Against Society",NA,"IMPORT/DISTRIBUTE/POSSES ARTICLES WHICH INFRINGE COPYRIGHT",13,NA
+"Miscellaneous Crimes Against Society",NA,"BEING DRUNK ON AN AIRCRAFT",13,NA
+"Miscellaneous Crimes Against Society",NA,"ENDANGERING SAFETY OF AIRCRAFT",13,NA
+"Violence Against The Person","Violence without injury","POLICE - ATTEMPT TO CAUSE S.18 GBH WITH INTENT TO DO GBH",13,"Violent - no injury"
+"Violence Against The Person","Violence with injury","CAUSE/ALLOW CHILD/VULNERABLE PERSON TO SUFFER SERIOUS PHYSICAL HARM",12,"Violent - injury"
+"Violence Against The Person","Violence with injury","POSSESS S/GUN W/I ENDANGER LIFE",12,"Violent - injury"
+"Possession of weapons",NA,"HAVE LOADED F/ARM IN PUBLIC PLACE",12,NA
+"Sexual Offences","Other Sexual Offences","TRESPASS WITH INTENT TO COMMIT A SEXUAL OFFENCE",12,NA
+"Drug Offences","Possession of drugs","ATT POSSESS CONTROL DRUG-CLASS A-HEROIN",12,NA
+"Miscellaneous Crimes Against Society",NA,"SOUGHT TO ENGAGE/OFFERED TO ENGAGE IN REGULATED ACTIVITY FROM WHICH BARRED",12,NA
+"Miscellaneous Crimes Against Society",NA,"INTENTIONALLY ENCOURAGING OR ASSISTING COMMISSION OF AN EITHER WAY OFFENCE",12,NA
+"Violence Against The Person","Violence with injury","ADMINISTER NOXIOUS THING TO INFLICT GBH",11,"Violent - injury"
+"Violence Against The Person","Violence with injury","CAUSE DANGER-ITEM TO BE ON ROAD",11,"Violent - injury"
+"Violence Against The Person","Violence with injury","CAUSE BODILY HARM BY MISCONDUCT DRIVING",11,"Violent - injury"
+"Violence Against The Person","Violence with injury","OWN/ IN CHARGE OF DOG DANGEROUSLY OUT OF CONTROL CAUSING INJURY ASSISTANCE DOG",11,"Violent - injury"
+"Sexual Offences","Other Sexual Offences","SEXUAL ACTIVITY WITH MALE U13 - OFFENDER 18+",11,NA
+"Sexual Offences","Other Sexual Offences","CAUSE CHILD U13 TO WATCH A SEXUAL ACT - OFFENDER U18",11,NA
+"Sexual Offences","Other Sexual Offences","SEXUAL ACTIVITY WITH FEMALE FAMILY MEMBER 13-17, OFF 18+, NO PENETRATION",11,NA
+"Miscellaneous Crimes Against Society",NA,"CAUSING OR INCITING  PROSTITUTION FOR GAIN",11,NA
+"Violence Against The Person","Violence without injury","ENDANGER AIRCRAFT",11,"Violent - no injury"
+"Arson and Criminal Damage","Criminal damage","RELIGIOUSLY AGGRAVATED DAMAGE TO VEHICLE",11,NA
+"Sexual Offences","Other Sexual Offences","ATTEMPT TO ARRANGE / FACILITATE THE COMMISSION OF A CHILD SEX OFFENCE",11,NA
+"Sexual Offences","Other Sexual Offences","CONTROL CHILD 13-17 PROSTITUTE OR INVOLVED IN PORNOGRAPHY",11,NA
+"Sexual Offences","Other Sexual Offences","ABUSE OF TRUST: CAUSE FEMALE 13-17 TO ENGAGE IN SEXUAL ACTIVITY OFFENDER 18+",11,NA
+"Drug Offences","Trafficking of drugs","ATT POSS DRUG W/I SUPPLY-CLASS A-HEROIN",11,NA
+"Violence Against The Person","Violence without injury","ASSAULT PRISONER CUSTODY OFFICER",11,"Violent - no injury"
+"Violence Against The Person","Homicide","MURDER VICTIM UNDER 1 YR OLD",10,NA
+"Violence Against The Person","Violence with injury","ALLOWING DOG TO ENTER NON-PUBLIC PLACE, AND SUBSEQUENTLY CAUSE INJURY",10,"Violent - injury"
+"Possession of weapons",NA,"POSS OTHER OFFENSIVE WEAPON SCHOOL PREMS",10,NA
+"Sexual Offences","Other Sexual Offences","SEXUAL ACTIVITY WITH FEMALE FAMILY MEMBER U13 - OFFENDER 18+",10,NA
+"Sexual Offences","Other Sexual Offences","INCITE FEMALE FAMILY U13 SEXUAL ACTIVITY, OFFENDER 18+, NO PENETRATION",10,NA
+"Violence Against The Person","Violence without injury","PRACTISE DECEPTION INTENDING PERSON LEAVE UK AND BE SUBJECT TO FORCED MARRIAGE",10,"Violent - no injury"
+"Miscellaneous Crimes Against Society",NA,"DO ACT INTEND PERVERT COURSE OF JUSTICE",10,NA
+"Sexual Offences","Other Sexual Offences","ADMINISTERING A SUBSTANCE WITH INTENT",10,NA
+"Drug Offences","Possession of drugs","POSSESSION CLASS C - PIPERAZINES (INCLUDING BZP)",10,NA
+"Violence Against The Person","Violence with injury","WOUND W/I TO RESIST/PREVENT ARREST",9,"Violent - injury"
+"Violence Against The Person","Violence with injury","ADMINISTER NOXIOUS THING-ENDANGER LIFE",9,"Violent - injury"
+"Sexual Offences","Rape","ATTEMPT RAPE OF MALE AGED 13-15",9,NA
+"Sexual Offences","Other Sexual Offences","SEXUAL ACTIVITY WITH MALE FAMILY MEMBER U13, OFFENDER 18+",9,NA
+"Miscellaneous Crimes Against Society",NA,"BIGAMY",9,NA
+"Arson and Criminal Damage","Criminal damage","ATTEMPT CRIMINAL DAMAGE OTHER BUILDING",9,NA
+"Arson and Criminal Damage","Criminal damage","RELIGIOUSLY AGGRAVATED DAMAGE-OTHER",9,NA
+"Sexual Offences","Other Sexual Offences","ARRANGE/FACILITATE CHILD 13-17 PROSTITUTION OR PORNOGRAPHY",9,NA
+"Sexual Offences","Other Sexual Offences","CAUSING OR INCITING CHILD PROSTITUTION OR PORNOGRAPHY U13",9,NA
+"Sexual Offences","Other Sexual Offences","COMMIT OFFENCE WITH INTENT TO COMMIT A SEXUAL OFFENCE",9,NA
+"Drug Offences","Trafficking of drugs","BEING CONCERNED IN PRODUCING CONTROLLED DRUG - CLASS B",9,NA
+"Drug Offences","Trafficking of drugs","CONCERNED SUPPLY DRUG-CLASS A-CRACK",9,NA
+"Drug Offences","Possession of drugs","POSSESSION OF ANABOLIC STEROIDS",9,NA
+"Drug Offences","Possession of drugs","PERMIT PREMISES TO BE USED -OTHER CLASS B",9,NA
+NA,NA,"REPORTABLE OFFENCE - NON CRIME",9,NA
+"Miscellaneous Crimes Against Society",NA,"USE INSURANCE DOCUMENT W/I TO DECEIVE",9,NA
+"Possession of weapons",NA,"POSSESS AIR WEAPON COMMIT SCH.1 OFFENCE",8,NA
+"Sexual Offences","Other Sexual Offences","SEXUAL ACTIVITY WITH MALE FAMILY MEMBER U13, OFFENDER U18",8,NA
+"Burglary","Burglary Business and Community","AGGRAVATED BURGLARY BUSINESS AND COMMUNITY",8,NA
+"Violence Against The Person","Violence without injury","COMMIT OFFENCE OTHER THAN KIDNAP/FALSE IMPRISON. W/I TO COMMIT HUMAN TRAFFICKING",8,"Violent - no injury"
+"Miscellaneous Crimes Against Society",NA,"COPY FALSE INSTRUMENT-PRESCRIPTION",8,NA
+"Miscellaneous Crimes Against Society",NA,"POSSESS/CUSTODY/CONTROL COUNTERFEIT COIN",8,NA
+"Possession of weapons",NA,"POSSESS PROHIB WEAPON-PROJECTING APPARATUS",8,NA
+"Drug Offences","Trafficking of drugs","OFFER SUPPLY DRUG-CLASS A-HEROIN",8,NA
+"Drug Offences","Trafficking of drugs","ATT POSSESS DRUG W/I SUPPLY-CLASS A-COCAINE",8,NA
+"Drug Offences","Trafficking of drugs","ATT POSS DRUG W/I SUPPLY-CLASS B-CANNABIS",8,NA
+"Violence Against The Person","Violence without injury","OBSTRUCT PERSON ASSIST PC",8,"Violent - no injury"
+NA,NA,"MANAGING DEMAND (REPEAT) - NON CRIME",8,NA
+"Possession of weapons",NA,"IMITATION FIREARM W/I COMMIT INDICT OFFENCE",7,NA
+"Violence Against The Person","Violence with injury","OWN ALLOW DOG NON PUBLIC CAUSE INJURY",7,"Violent - injury"
+"Sexual Offences","Other Sexual Offences","INCITE FEMALE FAMILY 13-17 SEXUAL ACTIVITY, OFFENDER 18+, NO PENETRATION",7,NA
+"Burglary","Burglary Residential","ATTEMPT AGGRAVATED BURGLARY RESIDENTIAL",7,NA
+"Miscellaneous Crimes Against Society",NA,"TRANSFER CRIMINAL PROPERTY - MONEY LAUNDERING",7,NA
+"Miscellaneous Crimes Against Society",NA,"ARRANGEMENTS - MONEY LAUNDERING",7,NA
+"Arson and Criminal Damage","Criminal damage","CRIMINAL DAMAGE END.LIFE OTHER BUILDING",7,NA
+"Public Order Offences",NA,"BOMB HOAX PLACE ARTICLE",7,"Dicking about"
+"Sexual Offences","Other Sexual Offences","ABUSE OF TRUST: SEXUAL ACTIVITY WITH MALE 13-17 OFFENDER 18+",7,NA
+"Sexual Offences","Other Sexual Offences","ABUSE OF TRUST: CAUSE MALE 13-17 TO ENGAGE IN SEXUAL ACTIVITY - OFFENDER 18+",7,NA
+"Miscellaneous Crimes Against Society",NA,"ATTEMPT ESCAPE FROM LAWFUL CUSTODY",7,NA
+"Possession of weapons",NA,"IMPORT PROHIBITED WEAPON/AMMO WITH INTENT TO EVADE A PROHIBITION/RESTRICTION",7,NA
+"Miscellaneous Crimes Against Society",NA,"HARASS OCCUP W/I CAUSE LEAVE PREMISES",7,NA
+"Drug Offences","Trafficking of drugs","OFFER SUPPLY DRUG-CLASS A-COCAINE",7,NA
+"Drug Offences","Possession of drugs","ATT POSSESS CONTROL DRUG-CLASS A-OTHER",7,NA
+"Theft","Other theft","DRIVE CONVEYANCE TAKE W/O CONSENT TWOC",7,NA
+"Miscellaneous Crimes Against Society",NA,"FORGE DRIVING LICENCE W/I TO DECEIVE",7,NA
+"Miscellaneous Crimes Against Society",NA,"FRAUDULENT USE REGISTRATION MARK",7,NA
+"Violence Against The Person","Violence with injury","CAUSE NOXIOUS THING TO BE TAKEN W/I",6,"Violent - injury"
+"Violence Against The Person","Violence with injury","POLICE - ATTEMPT S.47 ASSAULT OCCASIONING ACTUAL BODILY HARM",6,"Violent - injury"
+"Possession of weapons",NA,"POSSESS SHOTGUN COMMIT SCH.1 OFFENCE",6,NA
+"Violence Against The Person","Violence with injury","IN CHARGE DOG NON PUBLIC CAUSE INJURY",6,"Violent - injury"
+"Sexual Offences","Other Sexual Offences","SEXUAL ACTIVITY WITH FEMALE U13 - NO PENETRATION - OFFENDER 18 OR OVER",6,NA
+"Sexual Offences","Other Sexual Offences","SEXUAL ACTIVITY WITH MALE FAMILY U13, OFFENDER 18+, NO PENETRATION",6,NA
+"Sexual Offences","Other Sexual Offences","INCITE MALE FAMILY U13 SEXUAL ACTIVITY, OFFENDER 18+, NO PENETRATION",6,NA
+"Miscellaneous Crimes Against Society",NA,"CONTROLLING PROSTITUTION FOR GAIN",6,NA
+"Robbery",NA,"CONSPIRE TO ROB-PERSONAL PROPERTY",6,NA
+"Miscellaneous Crimes Against Society",NA,"DISGUISE CRIMINAL PROPERTY - MONEY LAUNDERING",6,NA
+"Theft","Other theft","ATTEMPT THEFT BY EMPLOYEE",6,"Dicking about"
+"NFIB Fraud",NA,"DISHONESTLY RETAINING A WRONGFUL CREDIT",6,NA
+"Miscellaneous Crimes Against Society",NA,"POSSESS A FALSE IDENTITY CARD OR APPARATUS FOR MAKING IDENTITY CARDS",6,NA
+"Sexual Offences","Other Sexual Offences","CARE WORKER - SEXUAL ACTIVITY WITH FEMALE MENTAL PATIENT - PENETRATION",6,NA
+"Possession of weapons",NA,"SELL/TRANSFER PROHIBITED WEAPON",6,NA
+"Miscellaneous Crimes Against Society",NA,"REMAIN UNLAWFULLY AT LARGE AFTER RECALL TO PRISON (NOT LIFE PRISONERS)",6,NA
+"Miscellaneous Crimes Against Society",NA,"UNAUTHORISED USE OF TRADE MARKS IN RELATION TO GOODS",6,NA
+"Miscellaneous Crimes Against Society",NA,"INCITEMENT TO DISTRIBUTE CHILD PORNOGRAPHY",6,NA
+"Miscellaneous Crimes Against Society",NA,"POSSESS EXTREME PORNOGRAPHIC IMAGES - SERIOUS INJURY",6,NA
+"Miscellaneous Crimes Against Society",NA,"DEPOSIT NON-SPECIAL WASTE W/O LICENCE",6,NA
+"Drug Offences","Trafficking of drugs","CONSPIRACY TO SUPPLY DRUG CLASS A HEROIN",6,NA
+"Drug Offences","Trafficking of drugs","CONCERN OFFER SUPPLY DRUG-CLASS A-HEROIN",6,NA
+"Drug Offences","Possession of drugs","ATT POSSESS CONTROL DRUG-CLASS B-AMPHETAMINE",6,NA
+"Drug Offences","Possession of drugs","FAIL COMPLY REGS UNDER DRUGS ACT",6,NA
+"Miscellaneous Crimes Against Society",NA,"RECKLESSLY ENDANGER THE SAFETY OF AN AIRCRAFT",6,NA
+"Violence Against The Person","Violence without injury","POLICE - S.18 CAUSE GREVIOUS BODILY HARM WITH INTENT TO DO GBH",6,"Violent - no injury"
+"Violence Against The Person","Violence without injury","IMPEDE APPREHENSION OF OFFENDER MURDER",5,"Violent - no injury"
+"Violence Against The Person","Violence with injury","CONSPIRACY TO CAUSE GBH W/I TO DO GBH",5,"Violent - injury"
+"Violence Against The Person","Violence with injury","EXCISE/INFIBULATE/OTHERWISE MUTILATE FEMALE GENITALIA",5,"Violent - injury"
+"Sexual Offences","Other Sexual Offences","CAUSE FEMALE CHILD U13 TO ENGAGE IN SEXUAL ACTIVITY - NO PENETRATION - OFF. 18+",5,NA
+"Sexual Offences","Other Sexual Offences","INCITE SEXUAL ACTIVITY WITH FEMALE FAMILY MEMBER U13, OFFENDER U18",5,NA
+"Violence Against The Person","Violence without injury","KNOWINGLY HOLD ANOTHER PERSON IN SLAVERY/SERVITUDE",5,"Violent - no injury"
+"Miscellaneous Crimes Against Society",NA,"CONCEAL CRIMINAL PROPERTY - MONEY LAUNDERING",5,NA
+"Miscellaneous Crimes Against Society",NA,"POSSESS PROCEEDS OF DRUG TRAFFICKING",5,NA
+"Arson and Criminal Damage","Criminal damage","CAUSE EXPLOSION LIKELY TO ENDANGER LIFE",5,NA
+"Miscellaneous Crimes Against Society",NA,"HAVE CUSTODY OF FALSE INSTRUMENT W/I",5,NA
+"Miscellaneous Crimes Against Society",NA,"W/I POSSESS FALSE IDENTITY DOCUMENT",5,NA
+"Public Order Offences",NA,"DISTRIB RECORD VISUAL IMAGE RACIAL HATRED",5,"Racial/Hate crimes"
+"Sexual Offences","Other Sexual Offences","CARE WORKER - SEXUAL ACTIVITY WITH MALE MENTAL PATIENT - NO PENETRATION",5,NA
+"Sexual Offences","Other Sexual Offences","ABUSE OF TRUST: SEXUAL ACTIVITY WITH MALE U13 - OFFENDER 18+",5,NA
+"Miscellaneous Crimes Against Society",NA,"CONSPIRE PERVERT COURSE PUBLIC JUSTICE",5,NA
+"Possession of weapons",NA,"POSSESS F/ARM WHEN PROHIBIT-PRISON 3+YRS",5,NA
+"Miscellaneous Crimes Against Society",NA,"SHOW INDECENT PHOTOGRAPH OF CHILD",5,NA
+"Drug Offences","Trafficking of drugs","UNLAWFUL IMPORTATION CLASS A DRUG",5,NA
+"Drug Offences","Trafficking of drugs","CONCERN OFFER SUPPLY DRUG-CLASS A-COCAINE",5,NA
+"Miscellaneous Crimes Against Society",NA,"IMPEDE APPREHENSION OFFENDER-INDICTMENT",5,NA
+"Miscellaneous Crimes Against Society",NA,"SEND OBSCENE INDECENT ARTICLE BY POST",5,NA
+"Violence Against The Person","Death or serious injury caused by illegal driving","CAUSE DEATH BY DRIVING UNFIT DRINK",4,NA
+"Violence Against The Person","Violence with injury","CAUSE/ALLOW DEATH OF CHILD OR VULNERABLE PERSON",4,"Violent - injury"
+"Violence Against The Person","Violence with injury","CAUSE GBH W/I TO RESIST/PREVENT ARREST",4,"Violent - injury"
+"Violence Against The Person","Violence with injury","ATTEMPT WOUND W/I RESIST/PREVENT ARREST",4,"Violent - injury"
+"Violence Against The Person","Violence with injury","ADMINISTER POISON TO ENDANGER LIFE",4,"Violent - injury"
+"Violence Against The Person","Violence with injury","CAUSE NOXIOUS THING TAKEN-ENDANGER LIFE",4,"Violent - injury"
+"Violence Against The Person","Violence with injury","POSSESS AIR WEAPON W/I ENDANGER LIFE",4,"Violent - injury"
+"Violence Against The Person","Violence with injury","USE FIREARM TO RESIST ARREST",4,"Violent - injury"
+"Possession of weapons",NA,"POSSESS F/ARM ON ARREST SCH.1 OFFENCE",4,NA
+"Possession of weapons",NA,"FIREARM WITH INTENT COMMIT INDICTABLE OFFENCE",4,NA
+"Violence Against The Person","Violence with injury","FAIL TO PROTECT GIRL FROM RISK OF GENITAL MUTILATION",4,"Violent - injury"
+"Miscellaneous Crimes Against Society",NA,"ENDEAVOUR TO CONCEAL BIRTH OF CHILD",4,NA
+"Sexual Offences","Other Sexual Offences","SEX WITH AN ADULT RELATIVE - OFFENDER 16+, RELATIVE 18+ PENETRATION",4,NA
+"Sexual Offences","Other Sexual Offences","SEX WITH AN ADULT RELATIVE: CONSENTING TO PENETRATION - OFF16+, RELATIVE 18+",4,NA
+"Sexual Offences","Other Sexual Offences","INCITE FEMALE FAMILY MEMBER U13 ENGAGE IN SEXUAL ACTIVITY, OFFENDER 18+",4,NA
+"Robbery",NA,"CONSPIRACY TO ROB-BUSINESS PROPERTY",4,NA
+"Violence Against The Person","Violence without injury","COMMIT OFFENCE OF KIDNAP/FALSE IMPRISONMENT W/I TO COMMIT HUMAN TRAFFICKING",4,"Violent - no injury"
+"Miscellaneous Crimes Against Society",NA,"CONCEAL PROCEEDS OF DRUG TRAFFICKING",4,NA
+"Theft","Other theft","ATTEMPT THEFT MAIL BAG/POST PACKET",4,"Dicking about"
+"Arson and Criminal Damage","Criminal damage","OTHER CRIMINAL DAMAGE ENDANGERING LIFE",4,NA
+"Miscellaneous Crimes Against Society",NA,"FORGERY OTHER INSTRUMENT",4,NA
+"Public Order Offences",NA,"BREACH OF A FORCED MARRIAGE PROTECTION ORDER",4,"Dicking about"
+"Miscellaneous Crimes Against Society",NA,"MAKE UNTRUE STATEMENT PROCURE PASSPORT",4,NA
+"Sexual Offences","Other Sexual Offences","SEXUAL ACTIVITY WITH FEMALE MENTAL PATIENT - NO PENETRATION",4,NA
+"Sexual Offences","Other Sexual Offences","ABUSE OF TRUST: CAUSE CHILD 13-17 TO WATCH A SEXUAL ACTIVITY - OFFENDER 18+",4,NA
+"Possession of weapons",NA,"PURCH/ACQ PROHIB WEAPON NOXIOUS LIQ/GAS",4,NA
+"Miscellaneous Crimes Against Society",NA,"PUBLISH OBSCENE MATERIAL",4,NA
+"Sexual Offences","Other Sexual Offences","INTERCOURSE WITH AN ANIMAL BY A MALE",4,NA
+"Drug Offences","Trafficking of drugs","IMPORTATION PROHIB/RESTRICT DRUG CLASS A",4,NA
+"Drug Offences","Trafficking of drugs","BEING CONCERNED IN OFFER TO SUPPLY CONTROLLED DRUG - CLASS A",4,NA
+"Drug Offences","Trafficking of drugs","OFFER SUPPLY DRUG-CLASS B-CANNABIS",4,NA
+"Drug Offences","Possession of drugs","POSSESS A PSYCHOACTIVE SUBSTANCE WITH INTENT TO SUPPLY",4,NA
+"Miscellaneous Crimes Against Society",NA,"MISCONDUCT IN JUDICIAL OR PUBLIC OFFICE",4,NA
+"Miscellaneous Crimes Against Society",NA,"UNLAWFUL USE OF DATA",4,NA
+"Violence Against The Person","Violence without injury","RESIST OBSTRUCT PRISONER CUSTODY OFFICER",4,"Violent - no injury"
+"Miscellaneous Crimes Against Society",NA,"POSSESS DRIVING LICENCE W/I TO DECEIVE",4,NA
+"Miscellaneous Crimes Against Society",NA,"MAKE INSURANCE DOCUMENT W/I TO DECEIVE",4,NA
+"Miscellaneous Crimes Against Society",NA,"FRAUDULENTLY USE EXCISE LICENCE",4,NA
+"Violence Against The Person","Violence with injury","CAUSE BODILY HARM WANTON/FURIOUS DRIVING",3,"Violent - injury"
+"Possession of weapons",NA,"POSSESS IMITATION F/ARM-ARREST SCH.1",3,NA
+"Possession of weapons",NA,"THREATEN A PERSON WITH AN OFFENSIVE WEAPON ON SCHOOL PREMISES",3,NA
+"Sexual Offences","Other Sexual Offences","CAUSE MALE CHILD U13 TO ENGAGE IN SEXUAL ACTIVITY - OFFENDER 18+ NO PENETRATION",3,NA
+"Sexual Offences","Other Sexual Offences","SEXUAL ACTIVITY WITH FEMALE FAMILY MEMBER 13-17, OFFENDER U18",3,NA
+"Sexual Offences","Other Sexual Offences","INCITE SEXUAL ACTIVITY FEMALE FAMILY MEMBER 13-17, OFFENDER U18",3,NA
+"Sexual Offences","Other Sexual Offences","INCITE SEXUAL ACTIVITY WWITH MALE FAMILY MEMBER U13, OFFENDER U18",3,NA
+"Burglary","Burglary Business and Community","ATTEMPT AGGRAVATED BURGLARY OTHER BUILDING",3,NA
+"Violence Against The Person","Violence without injury","CONSPIRACY TO KIDNAP",3,"Violent - no injury"
+"NFIB Fraud",NA,"FALSE ACCOUNTING",3,NA
+"NFIB Fraud",NA,"MODIFY COMPUTER MATERIAL W/O AUTHORITY",3,NA
+"Miscellaneous Crimes Against Society",NA,"ATT HANDLE STOLEN GOODS(RECEIVE)",3,NA
+"Miscellaneous Crimes Against Society",NA,"HANDLE STOLEN GOODS ARRANGE TO RECEIVE",3,NA
+"Miscellaneous Crimes Against Society",NA,"COPY FALSE INSTRUMENT-NOT PRESCRIPTION",3,NA
+"Miscellaneous Crimes Against Society",NA,"USE COPY FALSE INSTRU-NOT PRESCRIPTION",3,NA
+"Miscellaneous Crimes Against Society",NA,"MAKE ARTICLE DESIGN FALSE INSTRUMENT",3,NA
+"Miscellaneous Crimes Against Society",NA,"MAKE COUNTERFEIT CURRENCY NOTE W/I",3,NA
+"Miscellaneous Crimes Against Society",NA,"PASS COUNTERFEIT COIN AS GENUINE",3,NA
+"Public Order Offences",NA,"HOAX INVOLVING NOXIOUS SUBSTANCE",3,"Dicking about"
+"Sexual Offences","Other Sexual Offences","CARE WORKER - CAUSE MENTAL PATIENT TO ENGAGE IN SEXUAL ACTIVITY - PENETRATION",3,NA
+"Sexual Offences","Other Sexual Offences","ABUSE OF TRUST: SEXUAL ACTIVITY WITH FEMALE U13 - OFFENDER 18+",3,NA
+"Miscellaneous Crimes Against Society",NA,"AID/ABET ATTEMPTED SUICIDE",3,NA
+"Possession of weapons",NA,"SELL/TRANSFER F/ARM UNLAWFULLY",3,NA
+"Possession of weapons",NA,"POSSESS A/WEAPON PROHIB PRISON 3MTH-3YRS",3,NA
+"Miscellaneous Crimes Against Society",NA,"UNLAWFULLY EVICT OCCUPIER",3,NA
+"Drug Offences","Trafficking of drugs","IMPORTATION PROHIB/RESTRICT DRUG CLASS B",3,NA
+"Drug Offences","Trafficking of drugs","PRODUCE CLASS B - SYNTHETIC CANNABINOID AGONISTS",3,NA
+"Drug Offences","Trafficking of drugs","ATTEMPT SUPPLY DRUG-CLASS A-HEROIN",3,NA
+"Drug Offences","Trafficking of drugs","ATTEMPT SUPPLY DRUG-CLASS A-ECSTASY",3,NA
+"Drug Offences","Trafficking of drugs","CONCERN OFFER SUPPLY DRUG-CLASS A-CRACK",3,NA
+"Drug Offences","Trafficking of drugs","SUPPLY CONTROLLED DRUG-CLASS A-METHADONE",3,NA
+"Drug Offences","Trafficking of drugs","BEING CONCERNED IN SUPPLYING CONTROLLED DRUG - CLASS A",3,NA
+"Drug Offences","Trafficking of drugs","CONSPIRACY TO SUPPLY CONTROLLED DRUG - CLASS A",3,NA
+"Drug Offences","Trafficking of drugs","ATTEMPT SUPPLY DRUG-CLASS B-AMPHETAMINE",3,NA
+"Drug Offences","Trafficking of drugs","SUPPLY CONTROL DRUG-CLASS B-AMPHETAMINE",3,NA
+"Drug Offences","Trafficking of drugs","SUPPLY CONTROLLED DRUG - CLASS C",3,NA
+"Drug Offences","Trafficking of drugs","CONCERN IN SUPPLY CONTROL DRUG-CLASS C",3,NA
+"Drug Offences","Possession of drugs","POSSESS CONTROL DRUG-CLASS A-LSD",3,NA
+"Drug Offences","Possession of drugs","POSSESS CONTROLLED DRUG - CLASS UNSPECIFIED",3,NA
+"Drug Offences","Trafficking of drugs","POSSESS DRUG W/I SUPPLY-CLASS A-METHADONE",3,NA
+"Drug Offences","Trafficking of drugs","ATT POSSESS DRUG W/I SUPPLY-CLASS A-OTHER",3,NA
+"Drug Offences","Trafficking of drugs","POSS W/INT TO SUPPLY ANABOLIC STEROIDS",3,NA
+"Drug Offences","Possession of drugs","PERMIT PREMISES TO BE USED - HEROIN",3,NA
+"Drug Offences","Trafficking of drugs","PRODUCTION OF CLASS A - METHYLAMPHETAMINE (CRYSTAL METHS)",3,NA
+"Miscellaneous Crimes Against Society",NA,"ENCOURAGE/ASSIST IN THE COMMISSION OF AN INDICTABLE ONLY OFFENCE",3,NA
+"Miscellaneous Crimes Against Society",NA,"PERSONATION",3,NA
+"Miscellaneous Crimes Against Society",NA,"IMPEDE APPREHENSION OFFENDER- EITHER WAY",3,NA
+"Miscellaneous Crimes Against Society",NA,"FALSE STATEMENT/ELECTION DOCUMENT/CANDIDATE",3,NA
+"Miscellaneous Crimes Against Society",NA,"POSSESS/SUPPLY ANYTHING FOR FRAUDULENT PURPOSE/TELECOM SYSTEM",3,NA
+"Miscellaneous Crimes Against Society",NA,"PROCURE DISCLOSURE OF PERSONAL DATA",3,NA
+"Violence Against The Person","Violence without injury","POLICE - WOUNDING WITH INTENT TO RESIST/PREVENT ARREST",3,"Violent - no injury"
+NA,NA,"EUROPEAN INVESTIGATION ORDER - NON CRIME",3,NA
+"Miscellaneous Crimes Against Society",NA,"USE DRIVING LICENCE W/I TO DECEIVE",3,NA
+"Miscellaneous Crimes Against Society",NA,"FRAUDULENT USE VEHICLE LICENCE",3,NA
+"Violence Against The Person","Violence without injury","CONSPIRE MURDER VICTIM 1 YR OLD OR OVER",2,"Violent - no injury"
+"Violence Against The Person","Violence without injury","SOLICITE TO MURDER",2,"Violent - no injury"
+"Violence Against The Person","Violence with injury","ATTEMPT TO CHOKE/SUFFOCATE/STRANGLE W/I",2,"Violent - injury"
+"Violence Against The Person","Violence with injury","PLAC EXPLOS IN/NEAR BUILD W/I BODILY INJURY",2,"Violent - injury"
+"Violence Against The Person","Violence with injury","ADMINISTER POISON SO AS TO INFLICT GBH",2,"Violent - injury"
+"Violence Against The Person","Violence with injury","CAUSE POISON ADMINISTERED-ENDANGER LIFE",2,"Violent - injury"
+"Violence Against The Person","Violence with injury","CAUSE DANGER-INTERFERE M/V/TRAILER/CYCLE",2,"Violent - injury"
+"Violence Against The Person","Violence with injury","CAUSE POISON TO BE ADMINISTERED W/I",2,"Violent - injury"
+"Possession of weapons",NA,"POSSESS A/WEAPON-ARREST SCH.1 OFFENCE",2,NA
+"Violence Against The Person","Violence with injury","CARE PROVIDER BREACH DUTY OF CARE RESULT IN ILL-TREATMENT/NEGLECT OF INDIVIDUAL",2,"Violent - injury"
+"Violence Against The Person","Violence without injury","PROCURE OWN MISCARRIAGE",2,"Violent - no injury"
+"Sexual Offences","Other Sexual Offences","SEXUAL ACTIVITY WITH MALE U13 - NO PENETRATION - OFFENDER 18 OR OVER",2,NA
+"Sexual Offences","Other Sexual Offences","INCITE FEMALE FAMILY MEMBER 13-17 ENGAGE IN SEXUAL ACTIVITY, OFFENDER 18+",2,NA
+"Sexual Offences","Other Sexual Offences","SEXUAL ACTIVITY WITH MALE FAMILY 13-17, OFFENDER 18+, NO PENETRATION",2,NA
+"Sexual Offences","Other Sexual Offences","SEXUAL ACTIVITY WITH A CHILD FAMILY MEMBER AGED 13-17 OFF U18 PENETRATION",2,NA
+"Violence Against The Person","Violence without injury","INTERFERE WITH OPERATION AIR NAVIGATION",2,"Violent - no injury"
+"Violence Against The Person","Violence without injury","TRAFFICKING PERSONS WITHIN THE UK FOR PURPOSES OF EXPLOITATION",2,"Violent - no injury"
+"Miscellaneous Crimes Against Society",NA,"REMOVE CRIMINAL PROPERTY - MONEY LAUNDERING",2,NA
+"NFIB Fraud",NA,"CONSPIRACY TO CHEAT",2,NA
+"NFIB Fraud",NA,"CONSPIRACY TO CHEAT & DEFRAUD",2,NA
+"NFIB Fraud",NA,"CAUSE COMPUTER FUNCTION W/I GAIN ACCESS",2,NA
+"Miscellaneous Crimes Against Society",NA,"ATT HANDLE GOODS-RETAIN/REMOVE/DISPOSE",2,NA
+"NFIB Fraud",NA,"BANKRUPT FRAUDULENTLY DISPOSING OF PROPERTY",2,NA
+"Arson and Criminal Damage","Criminal damage","CAUSE EXPLOSION/DAMAGE DWELLING",2,NA
+"Miscellaneous Crimes Against Society","Criminal damage","HAVE ARTICLES DAMAGE PROP ENDANGER LIFE",2,NA
+"Miscellaneous Crimes Against Society","Criminal damage","MAKE EXPLOSIVE SUBST UNDER SUSP CIRCUMSTANCES",2,NA
+"Miscellaneous Crimes Against Society",NA,"CUSTODY/CONTROL COUNTERFEIT NOTE W/I",2,NA
+"Public Order Offences",NA,"DISTRIBUTING OR CIRCULATING A TERRORIST PUBLICATION",2,"Dicking about"
+"Public Order Offences",NA,"FAIL COMPLY  PROHIBITION/RESTRICTION/COND CONTAINED IN VIOLENT OFFENDER ORDER",2,"Dicking about"
+"Public Order Offences",NA,"COLLECTING RECORDING POSSESSION OF INFORMATION LIKELY TO BE OF USE TO TERRORISTS",2,"Dicking about"
+"Public Order Offences",NA,"RECEIVE FUNDS INTENDED TO BE USED FOR THE PURPOSES OF TERRORISM",2,"Dicking about"
+"Public Order Offences",NA,"BREACH OF RISK OF SEXUAL HARM ORDER",2,"Dicking about"
+"Public Order Offences",NA,"FAIL COMPLY REQUIREMENT UNDER SECTION 122C(4) IN RELATION TO SEXUAL RISK ORDER",2,"Dicking about"
+"Public Order Offences",NA,"FAIL TO COMPLY WITH A REQUIREMENT UNDER SECTION 103D(4) IN RELATION TO A SHPO",2,"Dicking about"
+"Sexual Offences","Other Sexual Offences","SEXUAL ACTIVITY WITH FEMALE MENTAL PATIENT",2,NA
+"Sexual Offences","Other Sexual Offences","CAUSE SEXUAL ACTIVITY WITH FEMALE MENTAL PATIENT",2,NA
+"Sexual Offences","Other Sexual Offences","CAUSE SEXUAL ACTIVITY FEMALE MENTAL PATIENT - NO PENETRATION",2,NA
+"Sexual Offences","Other Sexual Offences","CARE WORKER - SEXUAL ACTIVITY WITH MALE MENTAL PATIENT - PENETRATION",2,NA
+"Miscellaneous Crimes Against Society",NA,"ASSISTING UNLAWFUL IMMIGRATION TO MEMBER STATE",2,NA
+"Possession of weapons",NA,"SELL/TRANSFER PROHIB AMMUNITION",2,NA
+"Miscellaneous Crimes Against Society",NA,"SELL/SUPPLY PRESCRIPTION DRUG NOT IN ACCORDANCE AS PRESCRIBED BY PRACTITIONER",2,NA
+"Miscellaneous Crimes Against Society",NA,"POSSESS EXTREME PORNOGRAPHIC IMAGES - NECROPHILIA",2,NA
+"Drug Offences","Trafficking of drugs","CONCERNED PRODUCE DRUG-CLASS A-COCAINE",2,NA
+"Drug Offences","Trafficking of drugs","CONSP SUPPLY CONTROL DRUG CLAS A COCAINE",2,NA
+"Drug Offences","Trafficking of drugs","ATTEMPT SUPPLY DRUG-CLASS A-COCAINE",2,NA
+"Drug Offences","Trafficking of drugs","CONCERN OFFER SUPPLY DRUG-CLASS A-ECSTASY",2,NA
+"Drug Offences","Trafficking of drugs","OFFER SUPPLY DRUG-CLASS A-ECSTASY",2,NA
+"Drug Offences","Trafficking of drugs","OFFER SUPPLY DRUG-CLASS A-CRACK",2,NA
+"Drug Offences","Trafficking of drugs","CONCERNED SUPPLY DRUG-CLASS A-OTHER",2,NA
+"Drug Offences","Trafficking of drugs","CONCERN OFFER SUPPLY DRUG-CLASS A-OTHER",2,NA
+"Drug Offences","Trafficking of drugs","SUPPLY CONTROLLED DRUG-CLASS A-OTHER",2,NA
+"Drug Offences","Trafficking of drugs","CONCERNED SUPPLY DRUG-CLASS B-AMPHETAMINE",2,NA
+"Drug Offences","Trafficking of drugs","SUPPLY/OFFER TO SUPPLY CLASS B - SYNTHETIC CANNABINOID AGONISTS",2,NA
+"Drug Offences","Trafficking of drugs","SUPPLY CONTROLLED DRUG-CLASS B-OTHER",2,NA
+"Drug Offences","Trafficking of drugs","ATT SUPPLY CONTROLLED DRUG - CLASS C",2,NA
+"Drug Offences","Possession of drugs","PERMIT PREMISES TO BE USED - COCAINE",2,NA
+"Drug Offences","Possession of drugs","PERMIT PREMISES TO BE USED - OTHER CLASS A",2,NA
+"Drug Offences","Possession of drugs","SUPPLY A PSYCHOACTIVE SUBSTANCE",2,NA
+"Drug Offences","Possession of drugs","POSSESSION CLASS C - GAMMA-BUTYROLACTONE (GBL)",2,NA
+"Drug Offences","Trafficking of drugs","POSSESS W/I TO SUPPLY CONTROLLED DRUG CLASS C - KETAMINE",2,NA
+"Miscellaneous Crimes Against Society",NA,"AIRCRAFT PASSENGER INTERFERE WITH THE PERFORMANCE OF CREW MEMBER",2,NA
+"Miscellaneous Crimes Against Society",NA,"SEND BY POST AN OBSCENE WRITTEN COMMUNICATION",2,NA
+"Miscellaneous Crimes Against Society",NA,"FRAUDULENTLY OBTAIN CREDIT",2,NA
+"Miscellaneous Crimes Against Society",NA,"CONCEAL PROCEEDS OF CRIMINAL CONDUCT",2,NA
+"Violence Against The Person","Violence without injury","ASSAULT CRT SECURITY OFFICER",2,"Violent - no injury"
+"Violence Against The Person","Violence without injury","RESIST/WILFULLY OBSTRUCT CRT OFFICER",2,"Violent - no injury"
+"Violence Against The Person","Violence without injury","EXPOSE CHILD UNDER 12 TO RISK OF BURNING",2,"Violent - no injury"
+"Drug Offences","Possession of drugs","SUPPLY INTOXICATE SUBSTANCE TO UNDER 18",2,NA
+NA,NA,"SUSPICIOUS DEATH INVESTIGATION-NON CRIME-REQUIRES FCID SUPERINTENDENT AUTHORITY",2,NA
+"Miscellaneous Crimes Against Society",NA,"WITHHOLD INFORMATION TO OBTAIN INSURANCE",2,NA
+"Miscellaneous Crimes Against Society",NA,"POSSESS INSURANCE DOCUMENT W/I DECEIVE",2,NA
+"Miscellaneous Crimes Against Society",NA,"ALTER INSURANCE DOCUMENT W/I TO DECEIVE",2,NA
+"Vehicle offences",NA,"TAMPER WITH M/VEHICLE",2,NA
+"Violence Against The Person","Violence without injury","INCITING TO MURDER (VICTIM ONE YEAR OLD OR OVER)",1,"Violent - no injury"
+"Violence Against The Person","Violence with injury","CHILD DESTRUCTION",1,"Violent - injury"
+"Violence Against The Person","Death or serious injury caused by illegal driving","CAUSING DEATH BY RECKLESS DRIVING",1,NA
+"Violence Against The Person","Death or serious injury caused by illegal driving","CAUSE DEATH CARELESS DRIVING DRINK/DRUGS",1,NA
+"Violence Against The Person","Death or serious injury caused by illegal driving","DEATH BY CARELESS DRIVE-EXCESS ALCOHOL",1,NA
+"Violence Against The Person","Death or serious injury caused by illegal driving","CAUSE DEATH DRIVING WHEN UNFIT-DRUGS",1,NA
+"Violence Against The Person","Homicide","ORG BY WAY OF MANAGEMENT OF ITS ACTIVITIES CAUSES DEATH BY GROSS BREACH OF DUTY",1,NA
+"Violence Against The Person","Death or serious injury caused by illegal driving","CAUSE SERIOUS INJURY BY DRIVING WHILST DISQUALIFIED",1,NA
+"Violence Against The Person","Violence with injury","SEND EXPLOSIVE SUBSTANCE W/I",1,"Violent - injury"
+"Violence Against The Person","Violence with injury","THROW CORROSIVE FLUID W/I",1,"Violent - injury"
+"Violence Against The Person","Violence with injury","CAUSE NOXIOUS THING TO BE RECEIVED W/I",1,"Violent - injury"
+"Violence Against The Person","Violence with injury","MAKE EXPLOSIVE SUBST W/I ENDANGER LIFE",1,"Violent - injury"
+"Violence Against The Person","Violence with injury","CONSPIRACY TO CAUSE ABH",1,"Violent - injury"
+"Possession of weapons",NA,"SHOTGUN W/I COMMIT INDICTABLE OFFENCE",1,NA
+"Violence Against The Person","Violence with injury","COUNSEL/PROCURE ACT OF FEMALE GENITAL MUTILATION OUTSIDE UK",1,"Violent - injury"
+"Possession of weapons",NA,"USING SOMEONE TO MIND A WEAPON",1,NA
+"Violence Against The Person","Stalking and Harassment","IMPROPER USE OF PUBLIC ELECTRONIC COMMUNICATIONS NETWORK",1,"Violent - no injury"
+"Violence Against The Person","Violence without injury","ABANDON CHILD UNDER 2 LIFE ENDANGERED",1,"Violent - no injury"
+"Violence Against The Person","Violence without injury","PROCURE MISCARRIAGE OF ANOTHER",1,"Violent - no injury"
+"Violence Against The Person","Violence without injury","SUPPLY POISON TO PROCURE MISCARRIAGE",1,"Violent - no injury"
+"Sexual Offences","Rape","INCITEMENT TO COMMIT RAPE-GIRL UNDER 16",1,NA
+"Sexual Offences","Other Sexual Offences","CAUSE FEMALE CHILD U13 TO ENGAGE IN SEXUAL ACTIVITY - OFFENDER 18+ - PENETRATION",1,NA
+"Sexual Offences","Other Sexual Offences","SEXUAL ACTIVITY WITH MALE FAMILY MEMBER 13-17, OFFENDER 18+",1,NA
+"Sexual Offences","Other Sexual Offences","SEXUAL ACTIVITY WITH MALE FAMILY MEMBER 13-17, OFFENDER U18",1,NA
+"Sexual Offences","Other Sexual Offences","INCITE MALE FAMILY MEMBER 13-17 ENGAGE IN SEXUAL ACTIVITY, OFFENDER 18+",1,NA
+"Sexual Offences","Other Sexual Offences","INCITE MALE FAMILY MEMBER U13 ENGAGE IN SEXUAL ACTIVITY, OFFENDER 18+",1,NA
+"Sexual Offences","Other Sexual Offences","INCITE SEXUAL ACTIVITY WITH MALE FAMILY MEMBER U13, OFF U18 - PENETRATION",1,NA
+"Sexual Offences","Other Sexual Offences","INCITE SEXUAL ACTIVITY WITH MALE FAMILY MEMBER 13-17, OFF U18 - PENETRATION",1,NA
+"Burglary","Burglary Residential","BURG WITH VIOLENCE/THREAT DWELL",1,NA
+"Burglary","Burglary Business and Community","ATTEMPT AGGRAVATED BURGLARY BUSINESS AND COMMUNITY",1,NA
+"Theft","Other theft","CONSPIRACY TO COMMIT BLACKMAIL",1,NA
+"Violence Against The Person","Violence without injury","ARRANGE/FACILITATE TRAVEL PERSON WITHIN UK/OTHER COUNTRY FOR SEXUAL EXPLOITATION",1,"Violent - no injury"
+"Violence Against The Person","Violence without injury","ARRANGE/FACILITATE ENTRY PERSON INTO UK/OTHER COUNTRY FOR SEXUAL EXPLOITATION",1,"Violent - no injury"
+"Miscellaneous Crimes Against Society",NA,"CONCEAL ETC ANOTHER PROCEED DRUG TRAFFICKING",1,NA
+"Miscellaneous Crimes Against Society",NA,"FAIL DISCLOSE INFO-DRUG MONEY LAUNDER",1,NA
+"Miscellaneous Crimes Against Society",NA,"TIP OFF DRUG MONEY LAUNDER INVESTIGATION",1,NA
+"Theft","Theft from the person","CONSPIRE STEAL FROM PERSON",1,NA
+"Theft","Other theft","CONSPIRE TO STEAL BY EMPLOYEE",1,NA
+"Theft","Other theft","UNLAWFULLY OPEN POSTAL PACKET",1,NA
+"Vehicle offences",NA,"CONSPIRACY TO STEAL FROM M/VEH",1,NA
+"Vehicle offences",NA,"CONSPIRACY TO STEAL MOTOR VEHICLE",1,NA
+"Theft","Other theft","ATTEMPT THEFT CONVEYANCE NOT M/VEH-P/CYCLE",1,"Dicking about"
+"NFIB Fraud",NA,"TRADE W/I TO DEFRAUD CREDITOR",1,NA
+"NFIB Fraud",NA,"CONSPIRACY TO COMMIT CHEQUE/CREDIT CARD FRAUD",1,NA
+"NFIB Fraud",NA,"W/I PREJUD THE QUEEN/PUBLIC REV-DEFRAUD",1,NA
+"NFIB Fraud",NA,"CAUSE POSSESS STAMP/PART FRAUD PRINT/CUT",1,NA
+"Theft","Other theft","ATT TO MAKE OFF W/O PAYMENT",1,NA
+"NFIB Fraud",NA,"MAKE FALSE STATE/REP OBTAIN BENEFIT/PAY",1,NA
+"NFIB Fraud",NA,"OBTAIN ACCESS TO COMPUTER MATERIAL",1,NA
+"Arson and Criminal Damage","Arson","CONSPIRE TO COMMIT ARSON",1,NA
+"Arson and Criminal Damage","Criminal damage","CAUSE EXPLOSION TO DAMAGE - OTHER",1,NA
+"Arson and Criminal Damage","Criminal damage","RELIGIOUSLY AGGRAVATED DAMAGE TO DWELLING",1,NA
+"Miscellaneous Crimes Against Society","Criminal damage","HAVE EXPLOSIVE SUBST UNDER SUSP CIRCUMSTANCES",1,NA
+"Miscellaneous Crimes Against Society",NA,"MAKE ARTICLE DESIGN FALSE INSTRUMENT W/I",1,NA
+"Miscellaneous Crimes Against Society",NA,"HAVE CUSTODY OF FALSE INSTRUMENT",1,NA
+"Miscellaneous Crimes Against Society",NA,"HAVE ARTICLE DESIGN FALSE INSTRUMENT W/I",1,NA
+"Miscellaneous Crimes Against Society",NA,"MAKE COUNTERFEIT COIN/NOTE",1,NA
+"Miscellaneous Crimes Against Society",NA,"DELIVER COUNTERFEIT CURRENCY NOTE",1,NA
+"Miscellaneous Crimes Against Society",NA,"HAVE ARTICLE FOR COUNTERFEIT NOTE",1,NA
+"Miscellaneous Crimes Against Society",NA,"MAKE ARTICLE FOR COUNTERFEIT NOTE",1,NA
+"Public Order Offences",NA,"RIOT",1,"Dicking about"
+"Public Order Offences",NA,"BOMB HOAX - DISPATCH ARTICLE",1,"Dicking about"
+"Public Order Offences",NA,"FAILURE TO DISCLOSE INFORMATION ABOUT ACTS OF TERRORISM",1,"Dicking about"
+"Public Order Offences",NA,"CONSPIRE TO CAUSE PUBLIC NUISANCE",1,"Dicking about"
+"Public Order Offences",NA,"DISTRIB THREAT/ABUSE MATERIAL RELIGIOUS HATRED",1,"Dicking about"
+"Public Order Offences",NA,"W/I TO COMMIT OR ASSIST ANOTHER TO COMMIT ACT OF TERRORISM ENGAGE IN PREPARATION",1,"Dicking about"
+"Public Order Offences",NA,"BREACH OF FOREIGN TRAVEL ORDER",1,"Dicking about"
+"Public Order Offences",NA,"CONTRAVENE A MEASURE IN A TERRORISM PREVENTION & INVESTIGATION MEASURES ORDER",1,"Dicking about"
+"Public Order Offences",NA,"SHOW RECORDING VISUAL IMAGE - RACIAL HATRED",1,"Racial/Hate crimes"
+"Public Order Offences",NA,"PLAY RECORDING OF SOUNDS - RACIAL HATRED",1,"Racial/Hate crimes"
+"Public Order Offences",NA,"POSS MATERIAL DISTRIBUTE W/I RACIAL HATRED",1,"Racial/Hate crimes"
+"Public Order Offences",NA,"PRODUCE PROGRAMME W/I STIR RACIAL HATRED",1,"Racial/Hate crimes"
+"Miscellaneous Crimes Against Society",NA,"PERJURY BY WITNESS",1,NA
+"Miscellaneous Crimes Against Society",NA,"MAKE FALSE WRIT STATE-REQ BY STATUTE",1,NA
+"Sexual Offences","Other Sexual Offences","SEXUAL ACTIVITY WITH MALE MENTAL PATIENT",1,NA
+"Sexual Offences","Other Sexual Offences","CARE WORKER - SEXUAL ACTIVITY WITH FEMALE MENTAL PATIENT - NO PENETRATION",1,NA
+"Sexual Offences","Other Sexual Offences","CARE WORKER - ENGAGE IN SEXUAL ACTIVITY IN PRESENCE OF MENTAL PATIENT",1,NA
+"Sexual Offences","Other Sexual Offences","PAYING FOR SEXUAL SERVICE OF FEMALE U13",1,NA
+"Sexual Offences","Other Sexual Offences","PAYING FOR SEXUAL SERVICE OF FEMALE U18",1,NA
+"Sexual Offences","Other Sexual Offences","PAYING FOR SEXUAL SERVICE OF MALE U18",1,NA
+"Sexual Offences","Other Sexual Offences","POSSESS A PAEDOPHILE MANUAL",1,NA
+"Sexual Offences","Other Sexual Offences","ABUSE OF TRUST: SEXUAL ACTIVITY IN PRESENCE OF CHILD U13 - OFFENDER 18+",1,NA
+"Miscellaneous Crimes Against Society",NA,"CHEAT AT PLAY",1,NA
+"Miscellaneous Crimes Against Society",NA,"AID/ABET SUICIDE",1,NA
+"Miscellaneous Crimes Against Society",NA,"HARMING THREATENING TO HARM WITNESS IN CIVIL ( NON CRIMINAL) PROCEEDINGS",1,NA
+"Miscellaneous Crimes Against Society",NA,"BREAK PRISON -SENTENCED PRISONER",1,NA
+"Possession of weapons",NA,"SHORTEN SMOOTH BORE GUN BARREL",1,NA
+"Possession of weapons",NA,"POSS IMIT F/ARM PROHIB-PRISON 3MTH-3YRS",1,NA
+"Possession of weapons",NA,"POSSESS S/GUN PROHIBITED CUST 3YRS+",1,NA
+"Possession of weapons",NA,"POSSESS S/GUN AMMO - CUST 3MNTH-3YRS",1,NA
+"Possession of weapons",NA,"POSSESS S/GUN AMMO PROHIBIT CUST 3YRS+",1,NA
+"Possession of weapons",NA,"POSSESS A/WEAPON PROHIB PRISON 3YRS+",1,NA
+"Possession of weapons",NA,"FAIL COMPLY INSTRUCT F/ARM CERTIFICATE",1,NA
+"Possession of weapons",NA,"SELLING OR TRANSFERRING PROHIB WEAPON NOXIOUS LIQUID/GAS ETC.",1,NA
+"Miscellaneous Crimes Against Society",NA,"POSSESS DOCUMENT W/I TO DECEIVE",1,NA
+"Miscellaneous Crimes Against Society",NA,"USE DOCUMENT W/I TO DECEIVE",1,NA
+"Miscellaneous Crimes Against Society",NA,"DISPLAY INDECENT MATTER",1,NA
+"Miscellaneous Crimes Against Society",NA,"POSSESS EXTREME PORNOGRAPHIC IMAGES - THREATENS A PERSON'S LIFE",1,NA
+"Miscellaneous Crimes Against Society",NA,"LANDLORD/LADY WITHHOLD SERVICES",1,NA
+"Miscellaneous Crimes Against Society",NA,"HARASS OCC W/I CAUSE REFRAIN USE REMEDY",1,NA
+"Miscellaneous Crimes Against Society",NA,"CAUSE DISPOSAL SPECIAL WASTE NO LICENCE",1,NA
+"Miscellaneous Crimes Against Society",NA,"FORGING, USING, MAKING OR PROCESSING DOCUMENT PURPORTING TO HAVE BEEN ISSUED UND",1,NA
+"Drug Offences","Trafficking of drugs","IMPORTATION PROHIB/RESTRICT DRUG CLASS C",1,NA
+"Drug Offences","Trafficking of drugs","UNLAWFUL IMPORTATION CLASS B DRUG",1,NA
+"Drug Offences","Trafficking of drugs","UNLAWFUL IMPORTATION CLASS C DRUG",1,NA
+"Drug Offences","Trafficking of drugs","UNLAWFUL EXPORTATION CLASS B DRUG",1,NA
+"Drug Offences","Trafficking of drugs","CONCERNED PRODUCE DRUG-CLASS A-HEROIN",1,NA
+"Drug Offences","Trafficking of drugs","PRODUCE CONTROLLED DRUG-CLASS A-CRACK",1,NA
+"Drug Offences","Trafficking of drugs","PRODUCE CONTROLLED DRUG-CLASS A-OTHER",1,NA
+"Drug Offences","Trafficking of drugs","CONCERNED PRODUCE DRUG-CLASS A-OTHER",1,NA
+"Drug Offences","Trafficking of drugs","PRODUCE CONTROLLED DRUG-CLASS B-AMPHETAMINE",1,NA
+"Drug Offences","Trafficking of drugs","PRODUCE CONTROLLED DRUG-CLASS B-OTHER",1,NA
+"Drug Offences","Trafficking of drugs","PRODUCE CONTROLLED DRUG - CLASS C",1,NA
+"Drug Offences","Trafficking of drugs","SUPPLY CONTROLLED DRUG-CLASS A-ECSTASY",1,NA
+"Drug Offences","Trafficking of drugs","OFFER SUPPLY DRUG-CLASS A-METHADONE",1,NA
+"Drug Offences","Trafficking of drugs","SUPPLYING CONTROLLED DRUG - CLASS A",1,NA
+"Drug Offences","Trafficking of drugs","OFFER SUPPLY DRUG-CLASS A-OTHER",1,NA
+"Drug Offences","Trafficking of drugs","CONSPIRE TO SUPPLY DRUG CLASS B CANNABIS",1,NA
+"Drug Offences","Trafficking of drugs","ATTEMPTING TO SUPPLY CONTROLLED DRUG - CLASS B",1,NA
+"Drug Offences","Possession of drugs","ATT POSSESS CONTROL DRUG-CLASS A-ECSTASY",1,NA
+"Drug Offences","Trafficking of drugs","ATTEMPT TO POSSESS CLASS B - MEPHEDRONE / CATHINONE DERIVATIVE",1,NA
+"Drug Offences","Possession of drugs","ATT POSSESS CONTROLLED DRUG - CLASS B",1,NA
+"Drug Offences","Trafficking of drugs","ATTEMPT TO POSSESS W/I TO SUPPLY CLASS B - SYNTHETIC CANNABINOID AGONISTS",1,NA
+"Drug Offences","Trafficking of drugs","ATTEMPT TO POSSESS WITH INTENT TO SUPPLY CLASS B-MEPHEDRONE/CATHINONE DERIVATIVE",1,NA
+"Drug Offences","Trafficking of drugs","ATT POSSESS DRUG W/I SUPPLY-CLASS B-OTHER",1,NA
+"Drug Offences","Possession of drugs","PERMIT PREMISES TO BE USED CLASS B - SYNTHETIC CANNABINOID AGONISTS",1,NA
+"Drug Offences","Possession of drugs","FAIL COMPLY WITH TERMS OF DRUG LICENCE",1,NA
+"Drug Offences","Trafficking of drugs","PRODUCE CLASS C - PIPERAZINES (INCLUDING BZP)",1,NA
+"Drug Offences","Possession of drugs","POSSESSION CLASS C - 1,4-BUTANEDIOL (1,4-BD)",1,NA
+"Drug Offences","Possession of drugs","ATTEMPT TO POSSESS CLASS C - GAMMA-BUTYROLACTONE",1,NA
+"Drug Offences","Possession of drugs","POSSESS CONTROLLED DRUG CLASS C - GHB",1,NA
+"Drug Offences","Trafficking of drugs","POSSESS W/I TO SUPPLY CLASS A - METHYLAMPHETAMINE (CRYSTAL METHS)",1,NA
+"Drug Offences","Trafficking of drugs","POSSESS W/I TO SUPPLY CLASS C - PIPERAZINES (INCLUDING BZP)",1,NA
+"Miscellaneous Crimes Against Society",NA,"MEMBER OF AIRCRAFT CREW UNDER INFLUENCE OF ALCOHOL",1,NA
+"Miscellaneous Crimes Against Society",NA,"ENTERING AN AIRCRAFT WHEN DRUNK",1,NA
+"Miscellaneous Crimes Against Society",NA,"SHINE/DIRECT LASER BEAM TOWARDS A VEHICLE USED FOR TRAVEL BY LAND, WATER OR AIR",1,NA
+"Miscellaneous Crimes Against Society",NA,"USING DATA FOR UNAUTHORISED PURPOSE",1,NA
+"Miscellaneous Crimes Against Society",NA,"ENCOURAGE/ASSIST IN THE COMMISSION OF AN EITHER WAY OFFENCE",1,NA
+"Miscellaneous Crimes Against Society",NA,"OFFENCES RELATING TO OFFERING, PROMISING OR GIVING BRIBES",1,NA
+"Miscellaneous Crimes Against Society",NA,"IMPORT PROHIB/RESTRICT NOT CONTROL DRUG",1,NA
+"Miscellaneous Crimes Against Society",NA,"DISQUALIFIED PERSON APPLIES TO WORK IN A REGULATED POSITION",1,NA
+"Miscellaneous Crimes Against Society",NA,"INTERCEPT POSTAL/TELECOMMUNICATION SYSTEM",1,NA
+"Miscellaneous Crimes Against Society",NA,"DELAY/OPEN POSTAL PACKET/MAILBAG - OPERATOR",1,NA
+"Miscellaneous Crimes Against Society",NA,"UNLAWFUL ATT LAND ANIMAL IN GB FROM O/S GB",1,NA
+"Miscellaneous Crimes Against Society",NA,"OBTAIN TELECOM SERVICE W/I AVOID PAYMENT",1,NA
+"Miscellaneous Crimes Against Society",NA,"HARBOUR ESCAPED PRISONER",1,NA
+"Miscellaneous Crimes Against Society",NA,"POSS FALSE APPROV CERT/TYPE VEH-DECEIVE",1,NA
+"Miscellaneous Crimes Against Society",NA,"CONTAMINATION/INTERFERENCE GOODS W/I CAUSE ALARM ETC",1,NA
+"Miscellaneous Crimes Against Society",NA,"UNQUALIFIED PERSON ACT AS SOLICITOR",1,NA
+"Violence Against The Person","Violence without injury","OBSTRUCT PC IN EXECUTION OF DUTY",1,"Violent - no injury"
+"Violence Against The Person","Violence without injury","RESIST PC IN EXECUTION OF DUTY",1,"Violent - no injury"
+"Violence Against The Person","Violence without injury","ASSAULT PERSON ASSIST PC",1,"Violent - no injury"
+"Violence Against The Person","Violence without injury","ASSAULT PRISON OFFICER-COURSE OF DUTY",1,"Violent - no injury"
+"Violence Against The Person","Violence without injury","OBSTRUCTING A CONSTABLE",1,"Violent - no injury"
+"Violence Against The Person","Violence without injury","RESISTING OR OBSTRUCTING A COMMUNITY SUPPORT OFFICER (PCSO)",1,"Violent - no injury"
+"Theft","Bicycle theft","RIDE P/CYCLE TAKE W/O CONSENT TWOC",1,NA
+"Miscellaneous Crimes Against Society",NA,"SOLICIT PERSONS PROSTIT LEFT M/V ANNOYANCE",1,NA
+NA,NA,"ELECTORAL MALPRACTICE - NON CRIME",1,NA
+"Miscellaneous Crimes Against Society",NA,"ALLOW LICENCE TO BE USED W/I TO DECEIVE",1,NA
+"Miscellaneous Crimes Against Society",NA,"FORGE INSURANCE DOCUMENT W/I TO DECEIVE",1,NA
+"Miscellaneous Crimes Against Society",NA,"FRAUDULENT USE TRADE PLATES",1,NA
+"Miscellaneous Crimes Against Society",NA,"FORGE REGISTRATION MARK",1,NA
+"Miscellaneous Crimes Against Society",NA,"FORGE REGISTRATION DOCUMENT",1,NA
+"Miscellaneous Crimes Against Society",NA,"FRAUD USE DRIVER LICENCE W/I DECEIVE-PSV",1,NA
+"Miscellaneous Crimes Against Society",NA,"POSS FALSE DRIVE LICENCE W/I DECEIVE-PSV",1,NA
