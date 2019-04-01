@@ -7,6 +7,11 @@ library(lubridate)
 library(ggplot2)
 library(lmtest)
 library(pscl)
+library(xtable)
+library(RColorBrewer)
+library(MASS)
+library(AER)
+library(stargazer)
 setwd("C:/Anna/Crimes/wm_supernew")
 load("Westmids_supernew.RData")
 check <- crimes_cleaned[inc_da == "Yes" | Domestic_abuse != "No", list(no_vict = sum(role == "VICT"),
@@ -33,6 +38,7 @@ domestic_abuse <- domestic_abuse[, list(datetime_first_committed = datetime_firs
 domestic_abuse <- domestic_abuse[!grepl("U|NA", Gender.Type),]
 #domestic_abuse <- domestic_abuse[!is.na(Age_difference),]
 
+
 domestic_abuse[, when.committed := ymd(substring(as.character(datetime_first_committed),1,10))]
 
 allda <- domestic_abuse
@@ -43,6 +49,20 @@ all <- domestic_abuse[,sum(N),.(Alcohol,when.committed)]
 setnames(all, "V1", "N")
 all[, Gender.Type := "All"]
 domestic_abuse <- rbind(domestic_abuse, all)
+
+domestic_abuse[, year := year(when.committed)]
+descriptive <- domestic_abuse[Gender.Type == "All" & year >= 2010,
+                              list(No_days = .N, DA_cases = sum(N)), .(year, Alcohol)]
+
+pop <- data.table(read.csv("LSOA_pop20102017.csv", sep = ",", stringsAsFactors = F))
+pop[, all := as.numeric(gsub(",","",all_ages))]
+descriptive <- merge(descriptive,
+                     pop[grepl("Sandwell|Birmingham|Coventry|Walsall|Wolverhampton|Dudley|Solihull", LAD11NM),sum(all),.(year)],
+                     by = "year", all.x = T)
+setnames(descriptive, "V1", "Population")
+descriptive[, Rate := ((DA_cases/No_days)/Population)*100000]
+
+ggplot(descriptive, aes(year, Rate, colour = Alcohol)) + geom_line()
 
 
 all.days_new <- data.table(expand.grid(when.committed = seq(ymd("2010-01-01"), ymd("2018-11-06"), by = "days"),
@@ -89,6 +109,19 @@ all.days_new[England_draw == TRUE,Type.of.day := "England draw"]
 all.days_new[England_lost == TRUE,Type.of.day := "England lost"]
 all.days_new[After_England == TRUE,Type.of.day := "After England"]
 all.days_new[is.na(Type.of.day),Type.of.day := "Nonmatch day"]
+
+# all.days_new[when.committed %in% worldcupeuro[England_win==TRUE,Date +1], After_Englandw := TRUE]
+# all.days_new[when.committed %in% worldcupeuro[England_draw==TRUE,Date +1], After_Englandd := TRUE]
+# all.days_new[when.committed %in% worldcupeuro[England_lost==TRUE,Date +1], After_Englandl := TRUE]
+# all.days_new[is.na(After_Englandw), After_Englandw := FALSE]
+# all.days_new[is.na(After_Englandd), After_Englandd := FALSE]
+# all.days_new[is.na(After_Englandl), After_Englandl := FALSE]
+# all.days_new[After_Englandw == TRUE,Type.of.day := "After_Englandw"]
+# all.days_new[After_Englandl == TRUE,Type.of.day := "After_Englandl"]
+# all.days_new[After_Englandd == TRUE,Type.of.day := "After_Englandd"]
+
+
+
 all.days_new[(when.committed >= ymd("2010-06-11") & when.committed <= ymd("2010-07-11")) | 
                (when.committed >= ymd("2014-06-12") & when.committed <= ymd("2014-07-13")) |
                (when.committed >= ymd("2012-06-08") & when.committed <= ymd("2012-07-01")) | 
@@ -115,8 +148,44 @@ all.days_new[, NYE := ifelse(month(when.committed) == 11 & mday(when.committed) 
 
 #all.days_new[, All := sum(N), .(when.committed, Alcohol)]
 #all.days_new[, Allall := sum(N), .(when.committed, Alcohol)]
-library(RColorBrewer)
-library(MASS)
+
+
+summary(m1 <- glm.nb(N ~ year + Alcohol +  Day_of_week + month + XMAS + NYE, data = all.days_new[Gender.Type == "All",]))
+summary(m2 <- glm.nb(N ~ year + Alcohol + Type.of.day +  Day_of_week + month + XMAS + NYE, data = all.days_new[Gender.Type == "All",]))
+summary(m3 <- glm.nb(N ~ year + Alcohol*Type.of.day +  Day_of_week + month + XMAS + NYE, data = all.days_new[Gender.Type == "All",]))
+
+summary(m1p <- glm(N ~ year + Alcohol +  Day_of_week + month + XMAS + NYE, data = all.days_new[Gender.Type == "All",], family = "poisson"))
+summary(m2p <- glm(N ~ year + Alcohol + Type.of.day +  Day_of_week + month + XMAS + NYE, data = all.days_new[Gender.Type == "All",], family = "poisson"))
+summary(m3p <- glm(N ~ year + Alcohol*Type.of.day +  Day_of_week + month + XMAS + NYE, data = all.days_new[Gender.Type == "All",], family = "poisson"))
+
+dispersiontest(m1p)
+dispersiontest(m2p)
+dispersiontest(m3p)
+
+CI.vectors1 <- data.table(exp(confint(m1)))
+CI.vectors2 <- data.table(exp(confint(m2)))
+CI.vectors3 <- data.table(exp(confint(m3)))
+
+Coef.vectors1 <- data.table(exp(m1$coefficients))
+Coef.vectors2 <- data.table(exp(m2$coefficients))
+Coef.vectors3 <- data.table(exp(m3$coefficients))  
+
+Pval1 <- data.table(summary(m1)$coefficients[,4])
+Pval2 <- data.table(summary(m2)$coefficients[,4])
+Pval3 <- data.table(summary(m3)$coefficients[,4]) 
+
+stargazer(m1,m2,m3,type = "latex",
+          omit = c("month", "year","Day_of_week", "XMAS","NYE", "Constant"), 
+          title = "Exponentiated coefficients and 95% CIs from a series of negative binomial regresssions predicting daily counts of reported DA incidents (other controls not included here: month, year, xmas/nye)",
+          no.space = TRUE,         column.labels = c("All", "Male to Male", "Male to Female", "Female to Female", "Female to Male"),
+          coef = list(as.numeric(Coef.vectors1$V1)-1,
+                      as.numeric(Coef.vectors2$V1)-1,
+                      as.numeric(Coef.vectors3$V1)-1), 
+          p =list(Pval1$V1,
+                  Pval2$V1,
+                  Pval3$V1))                         
+
+################################### GENDER#########################
 m.mmnb <- glm.nb(N ~ year + Type.of.day*Alcohol + Day_of_week + month + XMAS + NYE, data = all.days_new[Gender.Type == "MM",])
 m.mfnb <- glm.nb(N ~ year + Type.of.day*Alcohol + Day_of_week + month + XMAS + NYE, data = all.days_new[Gender.Type == "MF",])
 m.fmnb <- glm.nb(N ~ year + Type.of.day*Alcohol + Day_of_week + month + XMAS + NYE, data = all.days_new[Gender.Type == "FM",])
@@ -130,20 +199,18 @@ m.fmp <- glm(N ~ year + Type.of.day*Alcohol + Day_of_week + month + XMAS + NYE, 
 m.ffp <- glm(N ~ year + Type.of.day*Alcohol + Day_of_week + month + XMAS + NYE, data = all.days_new[Gender.Type == "FF",], family = "poisson")
 m.allp <- glm(N ~ year + Type.of.day*Alcohol + Day_of_week + month + XMAS + NYE, data = all.days_new[Gender.Type == "All",], family = "poisson")
 
+
 lrtest(m.mmp, m.mmnb)
 lrtest(m.fmp, m.fmnb)
 lrtest(m.ffp, m.ffnb)
 lrtest(m.mfp, m.mfnb)
 lrtest(m.allp, m.allnb)
 
-library(AER)
 dispersiontest(m.mmp)
 dispersiontest(m.fmp)
 dispersiontest(m.ffp)
 dispersiontest(m.mfp)
 dispersiontest(m.allp)
-
-
 
 
 CI.vectors <- data.table(exp(confint(m.allnb)),
@@ -213,7 +280,6 @@ ggplot(toplot, aes(Variable,Coeff, group = factor(Model), colour = factor(Model)
 #                   P.vals$V5[grepl("Type", names(m.allnb$coefficients))]))
 
 
-library(stargazer)
 stargazer(m.allnb,m.mmnb,m.mfnb,m.ffnb,m.fmnb,type = "latex",
           omit = c("month", "year","Day_of_week", "XMAS","NYE", "Constant"), 
           title = "Exponentiated coefficients and 95% CIs from a series of negative binomial regresssions predicting daily counts of reported DA incidents (other controls not included here: month, year, xmas/nye)",
@@ -240,15 +306,11 @@ stargazer(m.allnb,m.mmnb,m.mfnb,m.ffnb,m.fmnb,type = "latex",
 contrast_winlose <- emmeans(m.allnb, ~Type.of.day*Alcohol)
 m1 <- emmeans(contrast_winlose, pairwise ~ Type.of.day|Alcohol)
 m1 <- summary(m1)
-library(xtable)
 xtable(m1$contrasts, type = "latex")
 #pairs(contrast_winlose, ~Type.of.day*Alcohol)
 ##############################################COMPARISON WITH OTHER INCIDENT TYPES
 rm(list = ls())
 #setwd("C:/Users/Anna/Desktop/crimes")
-library(data.table)
-library(lubridate)
-library(ggplot2)
 setwd("C:/Anna/Crimes/wm_supernew")
 load("Westmids_supernew.RData")
 
@@ -398,14 +460,17 @@ DP.p <- glm(DA_incidents ~ year + Type.of.day*Alcohol + Day_of_week + month + XM
 PR.p <- glm(Property_related ~ year + Type.of.day*Alcohol + Day_of_week + month + XMAS + NYE, data = all_days, family = "poisson")
 POO.p <- glm(Public_order_offences ~ year + Type.of.day*Alcohol + Day_of_week + month + XMAS + NYE, data = all_days, family = "poisson")
 VATP.p <- glm(Violence_Against_The_Person ~ year + Type.of.day*Alcohol + Day_of_week + month + XMAS + NYE, data = all_days, family = "poisson")
-library(lmtest)
+
 
 lrtest(DP.p, DP.nb)
 lrtest(PR.p, PR.nb)
 lrtest(POO.p, POO.nb)
 lrtest(VATP.p, VATP.nb)
 
-
+dispersiontest(DP.p)
+dispersiontest(PR.p)
+dispersiontest(POO.p)
+dispersiontest(VATP.p)
 
 CI.vectors <- data.table(exp(confint(DP.nb)),exp(confint(POO.nb)),exp(confint(PR.nb)),
                          exp(confint(VATP.nb)))
@@ -693,6 +758,29 @@ summary(three_alc <- glm.nb(All~ Six_before_win + Three_before_win + Six_before_
                                  Six_draw + Six_win +Six_lost +Twelve_draw + Twelve_win +Twelve_lost +
                                  Twentyfour_draw + Twentyfour_win +
                                  Twentyfour_lost + year + Day_of_week + month + Period + XMAS + NYE, data = all.days[Alcohol == "Yes",]))
+
+
+summary(three_nonalcp <- glm(All~ Six_before_win + Three_before_win + Six_before_lost + Three_before_lost +
+                                 Six_before_draw + Three_before_draw+
+                                 During_draw+ During_win +
+                                 During_lost+Three_draw+ Three_win + Three_lost +
+                                 Six_draw + Six_win +Six_lost +Twelve_draw + Twelve_win +Twelve_lost +
+                                 Twentyfour_draw + Twentyfour_win +
+                                 Twentyfour_lost + year + Day_of_week + month + Period + XMAS + NYE, data = all.days[Alcohol == "No",], family = "poisson"))
+
+summary(three_alcp <- glm(All~ Six_before_win + Three_before_win + Six_before_lost + Three_before_lost +
+                              Six_before_draw + Three_before_draw+
+                              During_draw+ During_win +
+                              During_lost+Three_draw+ Three_win + Three_lost +
+                              Six_draw + Six_win +Six_lost +Twelve_draw + Twelve_win +Twelve_lost +
+                              Twentyfour_draw + Twentyfour_win +
+                              Twentyfour_lost + year + Day_of_week + month + Period + XMAS + NYE, data = all.days[Alcohol == "Yes",], family = "poisson"))
+
+lrtest(three_alcp, three_alc)
+lrtest(three_nonalcp, three_nonalc)
+
+dispersiontest(three_nonalcp)
+dispersiontest(three_alcp)
 
 #ok, save regression results 
 alc_ci <- confint(three_alc)

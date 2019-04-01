@@ -5,6 +5,9 @@ rm(list = ls())
 library(data.table)
 library(lubridate)
 library(ggplot2)
+library(stargazer)
+library(MASS)
+library(lmtest)
 setwd("C:/Anna/Crimes/wm_supernew")
 load("Westmids_supernew.RData")
 check <- crimes_cleaned[inc_da == "Yes" | Domestic_abuse != "No", list(no_vict = sum(role == "VICT"),
@@ -147,6 +150,14 @@ summary(kirby1 <- glm.nb(da_count ~ year + Type.of.day + Day_of_week, data = lan
 summary(kirby2 <- glm.nb(da_count ~ year + Type.of.day2 + Day_of_week, data = lancashire_counts))
 summary(kirby3 <- glm.nb(da_count ~ year + Type.of.day2 + Day_of_week + month, data = lancashire_counts))
 
+summary(kirby1p <- glm(da_count ~ year + Type.of.day + Day_of_week, data = lancashire_counts, family = "poisson"))
+summary(kirby2p <- glm(da_count ~ year + Type.of.day2 + Day_of_week, data = lancashire_counts, family = "poisson"))
+summary(kirby3p <- glm(da_count ~ year + Type.of.day2 + Day_of_week + month, data = lancashire_counts, family = "poisson"))
+
+lrtest(kirby1p, kirby1)
+lrtest(kirby2p, kirby2)
+lrtest(kirby3p, kirby3)
+
 
 names(kirby3$coefficients) <- gsub("day2","day",names(kirby3$coefficients))
 names(kirby2$coefficients) <- gsub("day2","day",names(kirby2$coefficients))
@@ -183,6 +194,25 @@ summary(excl12 <- glm.nb(N ~ year + Type.of.day*Alcohol + Day_of_week +
 summary(excl10 <- glm.nb(N ~ year + Type.of.day*Alcohol + Day_of_week +
                            month + XMAS + NYE, data = all.days_new[year!=2010,]))
 
+summary(allp <- glm(N ~ year + Type.of.day*Alcohol + Day_of_week +
+                        month + XMAS + NYE, data = all.days_new, family = "poisson"))
+summary(excl18p <- glm(N ~ year + Type.of.day*Alcohol + Day_of_week +
+                           month + XMAS + NYE, data = all.days_new[year!=2018,], family = "poisson"))
+summary(excl16p <- glm(N ~ year + Type.of.day*Alcohol + Day_of_week +
+                           month + XMAS + NYE, data = all.days_new[year!=2016,], family = "poisson"))
+summary(excl14p <- glm(N ~ year + Type.of.day*Alcohol + Day_of_week +
+                           month + XMAS + NYE, data = all.days_new[year!=2014,], family = "poisson"))
+summary(excl12p <- glm(N ~ year + Type.of.day*Alcohol + Day_of_week +
+                           month + XMAS + NYE, data = all.days_new[year!=2012,], family = "poisson"))
+summary(excl10p <- glm(N ~ year + Type.of.day*Alcohol + Day_of_week +
+                           month + XMAS + NYE, data = all.days_new[year!=2010,], family = "poisson"))
+
+lrtest(allp, all)
+lrtest(excl18p, excl18)
+lrtest(excl16p, excl16)
+lrtest(excl14p, excl14)
+lrtest(excl12p, excl12)
+lrtest(excl10p, excl10)
 
 CI.vectors <- data.table(exp(confint(all)),exp(confint(excl18)),exp(confint(excl16)),exp(confint(excl14)),
                          exp(confint(excl12)),exp(confint(excl10)))
@@ -361,6 +391,33 @@ stargazer(DP.nbfootballnalc,DP.nbfootballalc,DP.nbrugbynalc,DP.nbrugbyalc,type =
                   P.valsr$V1,
                   P.valsr$V2))
 
+
+
+
+football <- glm.nb(Domestic_Abuse ~ year + Type.of.day*Alcohol + Day_of_week + month + XMAS + NYE, data = all_days)
+rugby <- glm.nb(Domestic_Abuse ~ year + Type.of.day2*Alcohol + Day_of_week + month + XMAS + NYE, data = all_days)
+
+CI.vectorsf <- data.table(exp(confint(football)))
+Coef.vectorsf <- data.table(exp(football$coefficients))
+P.valsf <- data.table(summary(football)$coefficients[,4])
+CI.vectorsr <- data.table(exp(confint(rugby)))
+Coef.vectorsr <- data.table(exp(rugby$coefficients))
+P.valsr <- data.table(summary(rugby)$coefficients[,4])
+
+names(football$coefficients) <- gsub("Type.of.day|Yes","",names(football$coefficients))
+names(rugby$coefficients) <- gsub("Type.of.day2|Yes","",names(rugby$coefficients))
+
+
+stargazer(football,rugby,type = "latex",
+          omit = c("month", "year","Day_of_week", "XMAS","NYE", "Constant"), 
+          title = "Exponentiated coefficients and 95% CIs from a series of negative binomial regresssions predicting daily counts of reported DA incidents (other controls not included here: month, year, xmas/nye)",
+          no.space = TRUE,
+          #column.labels = c("All years", "2018 excluded", "2016 excluded", "2014 excluded"),
+          coef = list(as.numeric(Coef.vectorsf$V1-1),
+                      as.numeric(Coef.vectorsr$V1-1)), 
+          p =list(P.valsf$V1,
+                  P.valsr$V1))
+
 ################################DEPRIVATION###########################
 # wgs84 = "+init=epsg:4326"
 # bng = '+proj=tmerc +lat_0=49 +lon_0=-2 +k=0.9996012717 +x_0=400000 +y_0=-100000
@@ -453,25 +510,64 @@ domestic_abuse[, Alcohol := factor(Alcohol)]
 domestic_abuse <- domestic_abuse[!is.na(when.committed),]
 #I can't run a spatial regression, because there are not enough incidents per day from each LSOA
 #so I am running a series of logistic regressions
+#one last try for the logistic then check for spatial autocorr
+
+depriv <- data.table(expand.grid(when.committed = unique(all_days$when.committed),
+                       Alcohol = c("No", "Yes"), LSOAs_2011 = unique(domestic_abuse$LSOAs_2011)))
+
+depriv <- merge(depriv, domestic_abuse[Inside == T,.N,.(when.committed,Alcohol,LSOAs_2011)],
+                by = c("when.committed","Alcohol","LSOAs_2011"), all.x = T)
+
+depriv <- merge(depriv, all_days[,c("when.committed", "Alcohol", "Type.of.day", "Day_of_week", "month","year", "XMAS", "NYE")],
+                by= c("when.committed", "Alcohol"), all.x = T)
+
+depriv <- merge(depriv, unique(domestic_abuse[,c("LSOAs_2011", "year", "employ_rank","income_rank")]),
+                by = c("LSOAs_2011", "year"), all.x = T)
+
+depriv[is.na(N), N:=0]
+depriv[, da:= factor(ifelse(N==0,"No", "Yes"))]
+
+depriv[, year2 := as.numeric(levels(depriv$year)[as.numeric(depriv$year)])]
+depriv[year2 <= 2014, Employ_group := cut(employ_rank, breaks = c(1, 8121, 16241,24543,32482),
+                                          include.lowest = T,
+                                          labels = c("Lowest", "Lower", "Higher", "Highest"))]
+depriv[year2 > 2014, Employ_group := cut(employ_rank, breaks = c(1, 8211, 16422,24543,32844),
+                                         include.lowest = T,
+                                         labels = c("Lowest", "Lower", "Higher", "Highest"))]
+
+depriv[year2 <= 2014, Income_group := cut(income_rank, breaks = c(1, 8121, 16241,24543,32482),
+                                          include.lowest = T,
+                                          labels = c("Lowest", "Lower", "Higher", "Highest"))]
+depriv[year2 > 2014, Income_group := cut(income_rank, breaks = c(1, 8211, 16422,24543,32844),
+                                         include.lowest = T,
+                                         labels = c("Lowest", "Lower", "Higher", "Highest"))]
+
+# 
+# neighbours.all <- poly2nb(LSOAs_2011)
+# spatial_weights.all <- nb2listw(neighbours.all)
+# moran.test(residuals.glm(check), spatial_weights.all)
+
+
+
+# summary(incomelowest <- glm(da ~ Type.of.day*Alcohol + month + Day_of_week + XMAS + NYE + year, data = depriv[Income_group == "Lowest", ], family = binomial(link = "logit")))
+# summary(incomelower <- glm(da ~ Type.of.day*Alcohol + month + Day_of_week + XMAS + NYE + year, data = depriv[Income_group == "Lower", ], family = binomial(link = "logit")))
+# summary(incomehigher <- glm(da ~ Type.of.day*Alcohol + month + Day_of_week + XMAS + NYE + year, data = depriv[Income_group == "Higher", ], family = binomial(link = "logit")))
+# summary(incomehighest <- glm(da ~ Type.of.day*Alcohol + month + Day_of_week + XMAS + NYE + year, data = depriv[Income_group == "Highest", ], family = binomial(link = "logit")))
+# 
+# summary(employlowest <- glm(da ~ Type.of.day*Alcohol + month + Day_of_week + XMAS + NYE + year, data = depriv[Employ_group == "Lowest", ], family = binomial(link = "logit")))
+# summary(employlower <- glm(da ~ Type.of.day*Alcohol + month + Day_of_week + XMAS + NYE + year, data = depriv[Employ_group == "Lower", ], family = binomial(link = "logit")))
+# summary(employhigher <- glm(da ~ Type.of.day*Alcohol + month + Day_of_week + XMAS + NYE + year, data = depriv[Employ_group == "Higher", ], family = binomial(link = "logit")))
+# summary(employhighest <- glm(da ~ Type.of.day*Alcohol + month + Day_of_week + XMAS + NYE + year, data = depriv[Employ_group == "Highest", ], family = binomial(link = "logit")))
+
+
+
 
 
 #in 2010, there were 32,482 lsoas, and in 2015, there were 32,844
 #divide each LSOA into 4 categories, based on each of the measures
 #employment, income, health, educ, house, environment
 
-domestic_abuse[year2 <= 2014, Employ_group := cut(employ_rank, breaks = c(1, 8121, 16241,24543,32482),
-              include.lowest = T,
-              labels = c("Lowest", "Lower", "Higher", "Highest"))]
-domestic_abuse[year2 > 2014, Employ_group := cut(employ_rank, breaks = c(1, 8211, 16422,24543,32844),
-              include.lowest = T,
-              labels = c("Lowest", "Lower", "Higher", "Highest"))]
 
-domestic_abuse[year2 <= 2014, Income_group := cut(income_rank, breaks = c(1, 8121, 16241,24543,32482),
-                                                  include.lowest = T,
-                                                  labels = c("Lowest", "Lower", "Higher", "Highest"))]
-domestic_abuse[year2 > 2014, Income_group := cut(income_rank, breaks = c(1, 8211, 16422,24543,32844),
-                                                 include.lowest = T,
-                                                 labels = c("Lowest", "Lower", "Higher", "Highest"))]
 
 # domestic_abuse[year2 <= 2014, Health_group := cut(healthdd_rank, breaks = c(1, 8121, 16241,24543,32482),
 #                                                   include.lowest = T,
@@ -502,7 +598,20 @@ domestic_abuse[year2 > 2014, Income_group := cut(income_rank, breaks = c(1, 8211
 #                                                   include.lowest = T,
 #                                                   labels = c("Lowest", "Lower", "Higher", "Highest"))]
 
+domestic_abuse[, year2 := as.numeric(levels(domestic_abuse$year)[as.numeric(domestic_abuse$year)])]
+domestic_abuse[year2 <= 2014, Employ_group := cut(employ_rank, breaks = c(1, 8121, 16241,24543,32482),
+                                          include.lowest = T,
+                                          labels = c("Lowest", "Lower", "Higher", "Highest"))]
+domestic_abuse[year2 > 2014, Employ_group := cut(employ_rank, breaks = c(1, 8211, 16422,24543,32844),
+                                         include.lowest = T,
+                                         labels = c("Lowest", "Lower", "Higher", "Highest"))]
 
+domestic_abuse[year2 <= 2014, Income_group := cut(income_rank, breaks = c(1, 8121, 16241,24543,32482),
+                                          include.lowest = T,
+                                          labels = c("Lowest", "Lower", "Higher", "Highest"))]
+domestic_abuse[year2 > 2014, Income_group := cut(income_rank, breaks = c(1, 8211, 16422,24543,32844),
+                                         include.lowest = T,
+                                         labels = c("Lowest", "Lower", "Higher", "Highest"))]
 
 all.days_new <- data.table(expand.grid(when.committed = unique(all_days$when.committed),
                             Alcohol = c("No", "Yes"),
@@ -526,6 +635,7 @@ setnames(all.days_new, "N", "Income_no")
 all.days_new <- merge(all.days_new, unique(all_days[,c("when.committed", "Type.of.day",
                                                        "year", "Day_of_week", "month",
                                                        "XMAS", "NYE")]))
+
 all.days_new[, Alcohol := as.factor(Alcohol)]
 
 

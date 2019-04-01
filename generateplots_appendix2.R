@@ -53,6 +53,8 @@ worldcupeuro <- worldcupeuro[,c(3,6,8:13)]
 
 all.days_new <- data.table(expand.grid(when.committed = seq(ymd("2010-01-01"), ymd("2018-11-06"), by = "days"),
                                        Alcohol = c("No","Yes")))
+all.days_new <- rbind(all.days_new, all.days_new)
+all.days_new <- all.days_new[order(when.committed, Alcohol)]
 
 all.days_new <- merge(all.days_new,  domestic_abuse[,.N,.(when.committed,Alcohol)], 
                       by = c("when.committed","Alcohol"), all.x = TRUE)
@@ -147,7 +149,7 @@ check[, Serious := ifelse(!(Injury_class %in% c("no injury", "threat")),T,F)]
 
 setnames(all.days_new, "N", "All")
 ##################Location
-all.days_new[, Locationpublic := rep(c(T,F), length(unique(all.days_new$when.committed)))]
+all.days_new[, Locationpublic := rep(c(T,F), length(unique(all.days_new$when.committed))*2)]
 all.days_new <- merge(all.days_new,check[,.N,.(Alcohol, when.committed,Locationpublic)][Alcohol == "No",-c("Alcohol")],
                       by = c("when.committed", "Locationpublic"), all.x = T)
 all.days_new[is.na(N),N:=0]
@@ -267,9 +269,9 @@ summary(psincelast.m <- glm(Dayssincelast_round ~ as.factor(year) + Type*Alcohol
 library(lmtest)
 lrtest(psincelast.m,nbsincelast.m)
 
-# library(lme4)
-# glmer.nb(Daystilnext_round ~ as.factor(year) + Type*Alcohol + Day_of_week +
-#            month + XMAS + NYE + (1|ids), data = check[year >=2010,], verbose = TRUE)
+library(lme4)
+multilev <- glmer.nb(Daystilnext_round ~ as.factor(year) + Type*Alcohol + Day_of_week +
+           month + XMAS + NYE + (1|ids), data = check[year >=2010,], verbose = TRUE)
 
 
 ################################## TIME DELAY REPORTING##################################
