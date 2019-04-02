@@ -8,6 +8,8 @@ library(ggplot2)
 library(stargazer)
 library(MASS)
 library(lmtest)
+library(rgdal)
+library(spdep)
 setwd("C:/Anna/Crimes/wm_supernew")
 load("Westmids_supernew.RData")
 check <- crimes_cleaned[inc_da == "Yes" | Domestic_abuse != "No", list(no_vict = sum(role == "VICT"),
@@ -94,8 +96,8 @@ all.days_new[, year := as.factor(year(when.committed))]
 all.days_new[, month := factor(as.character(month(when.committed, label = TRUE)))]
 
 all.days_new <- all.days_new[!(when.committed == ymd("2018-11-06") | (when.committed >= ymd("2017-06-01") & when.committed <= ymd("2017-12-31"))),]
-all.days_new[, XMAS := ifelse(month(when.committed) == 12 & mday(when.committed) > 23,T,F)]
-all.days_new[, NYE := ifelse(month(when.committed) == 11 & mday(when.committed) == 1,T,F)]
+all.days_new[, XMAS := ifelse(month(when.committed) == 12 & mday(when.committed) %in% c(24,25,26),T,F)]
+all.days_new[, NYE := ifelse(month(when.committed) == 1 & mday(when.committed) == 1,T,F)]
 
 
 
@@ -214,6 +216,13 @@ lrtest(excl14p, excl14)
 lrtest(excl12p, excl12)
 lrtest(excl10p, excl10)
 
+dispersiontest(allp)
+dispersiontest(excl18p)
+dispersiontest(excl16p)
+dispersiontest(excl14p)
+dispersiontest(excl12p)
+dispersiontest(excl10p)
+
 CI.vectors <- data.table(exp(confint(all)),exp(confint(excl18)),exp(confint(excl16)),exp(confint(excl14)),
                          exp(confint(excl12)),exp(confint(excl10)))
 Coef.vectors <- data.table(exp(all$coefficients), exp(excl18$coefficients),exp(excl16$coefficients),
@@ -295,18 +304,28 @@ Coef.vectors <- data.table(exp(da$coefficients), exp(sexual$coefficients),
 P.vals <- data.table(summary(da)$coefficients[,4],summary(sexual)$coefficients[,4],
                      summary(vulnerable)$coefficients[,4])
 
-stargazer(da,sexual,vulnerable,type = "latex",
+stargazer(sexual,vulnerable,type = "latex",
           omit = c("month", "year","Day_of_week", "XMAS","NYE", "Constant"), 
           title = "Exponentiated coefficients and 95% CIs from a series of negative binomial regresssions predicting daily counts of reported DA incidents (other controls not included here: month, year, xmas/nye)",
           no.space = TRUE,
           #column.labels = c("Domestic Abuse", "Child/Vulnerable Adult Abuse", "Sexual abuse"),
-          coef = list(as.numeric(Coef.vectors$V1-1),
+          coef = list(#as.numeric(Coef.vectors$V1-1),
                       as.numeric(Coef.vectors$V2-1),
                       as.numeric(Coef.vectors$V3-1)), 
-          p =list(P.vals$V1,
+          p =list(#P.vals$V1,
                   P.vals$V2,
                   P.vals$V3))
 
+m3 <- rbind(data.table(summary(emmeans(sexual, ~ Type.of.day*Alcohol))),
+            data.table(summary(emmeans(vulnerable, ~ Type.of.day*Alcohol))))
+m3[, Type := rep(c("Sexual", "Vulnerable"), each = 12)]
+
+ggplot(data = m3, aes(Type.of.day, emmean, colour = Alcohol)) +
+  geom_point() + geom_errorbar(aes(ymin = asymp.LCL, ymax = asymp.UCL)) +
+  facet_wrap(~Type, scales = "free", ncol = 2) +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1)) +
+  labs(title = "Number of cases ~ Type.of.day*Alcohol, separate regression for each crime type")
+ggsave("help_emmeans_dominance.pdf")
 
 #################################################  Rugby & football
 
@@ -351,8 +370,8 @@ all_days[,Day_of_week := factor(as.character(wday(when.committed, label = TRUE))
 all_days[, year := as.factor(year(when.committed))]
 all_days[, month := factor(as.character(month(when.committed, label = TRUE)))]
 all_days <- all_days[!(when.committed == ymd("2018-11-06") | (when.committed >= ymd("2017-06-01") & when.committed <= ymd("2017-12-31"))),]
-all_days[, XMAS := ifelse(month(when.committed) == 12 & mday(when.committed) > 23,T,F)]
-all_days[, NYE := ifelse(month(when.committed) == 11 & mday(when.committed) == 1,T,F)]
+all_days[, XMAS := ifelse(month(when.committed) == 12 & mday(when.committed) %in% c(24,25,26),T,F)]
+all_days[, NYE := ifelse(month(when.committed) == 1 & mday(when.committed) == 1,T,F)]
 
 #all_days <- all_days[,c(1:2,4,15,17:21)]
 
@@ -371,7 +390,21 @@ Coef.vectorsr <- data.table(exp(DP.nbrugbyalc$coefficients), exp(DP.nbrugbynalc$
 P.valsf <- data.table(summary(DP.nbfootballalc)$coefficients[,4],summary(DP.nbfootballnalc)$coefficients[,4])
 P.valsr <- data.table(summary(DP.nbrugbyalc)$coefficients[,4],summary(DP.nbrugbynalc)$coefficients[,4])
 
+m3 <- rbind(data.table(summary(emmeans(DP.nbrugbyalc, ~ Type.of.day2))),
+            data.table(summary(emmeans(DP.nbrugbynalc, ~ Type.of.day2))))
+setnames(m3, "Type.of.day2", "Type.of.day")
+m3[, Alcohol := rep(c("Yes", "No"), each = 5)]
+            
+m3 <- rbind(m3, data.table(summary(emmeans(DP.nbfootballalc, ~ Type.of.day)), Alcohol = "Yes"),
+            data.table(summary(emmeans(DP.nbfootballnalc, ~ Type.of.day)), Alcohol = "No"))
+m3[, Type := c(rep("Rugby", 10), rep("Football", 12))]
 
+ggplot(data = m3, aes(Type.of.day, emmean, colour = Alcohol)) +
+  geom_point() + geom_errorbar(aes(ymin = asymp.LCL, ymax = asymp.UCL)) +
+  facet_wrap(~Type, scales = "free", ncol = 2) +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1)) +
+  labs(title = "Number of cases ~ Type.of.day, separate regression for alcohol and non-alc related incients")
+ggsave("help_emmeans_rugbysep.pdf")
 
 names(DP.nbrugbyalc$coefficients) <- gsub("2","",names(DP.nbrugbyalc$coefficients))
 names(DP.nbrugbynalc$coefficients) <- gsub("2","",names(DP.nbrugbynalc$coefficients))
@@ -396,6 +429,15 @@ stargazer(DP.nbfootballnalc,DP.nbfootballalc,DP.nbrugbynalc,DP.nbrugbyalc,type =
 
 football <- glm.nb(Domestic_Abuse ~ year + Type.of.day*Alcohol + Day_of_week + month + XMAS + NYE, data = all_days)
 rugby <- glm.nb(Domestic_Abuse ~ year + Type.of.day2*Alcohol + Day_of_week + month + XMAS + NYE, data = all_days)
+
+m3 <- rbind(data.table(summary(emmeans(rugby, ~ Type.of.day2*Alcohol))))
+
+ggplot(data = m3, aes(Type.of.day2, emmean, colour = Alcohol)) +
+  geom_point() + geom_errorbar(aes(ymin = asymp.LCL, ymax = asymp.UCL)) +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1)) +
+  labs(title = "DA ~ Type.of.day*Alcohol, Rugby")
+ggsave("help_emmeans_rugbyint.pdf")
+
 
 CI.vectorsf <- data.table(exp(confint(football)))
 Coef.vectorsf <- data.table(exp(football$coefficients))
@@ -443,8 +485,6 @@ stargazer(football,rugby,type = "latex",
 
 
 rm(list=ls())
-library(rgdal)
-library(spdep)
 load("C:/Anna/Crimes/wm_supernew/da_location.RData")
 domestic_abuse[, Latitude := unlist(domestic_abuse$LatLong)[seq(1,2*nrow(domestic_abuse),2)]]
 domestic_abuse[, Longitude := unlist(domestic_abuse$LatLong)[seq(2,2*nrow(domestic_abuse),2)]]
@@ -499,8 +539,8 @@ domestic_abuse[,Day_of_week := factor(as.character(wday(when.committed, label = 
 
 domestic_abuse[, year := as.factor(year(when.committed))]
 domestic_abuse[, month := factor(as.character(month(when.committed, label = TRUE)))]
-domestic_abuse[, XMAS := ifelse(month(when.committed) == 12 & mday(when.committed) > 23,T,F)]
-domestic_abuse[, NYE := ifelse(month(when.committed) == 11 & mday(when.committed) == 1,T,F)]
+domestic_abuse[, XMAS := ifelse(month(when.committed) == 12 & mday(when.committed) %in% c(24,25,26),T,F)]
+domestic_abuse[, NYE := ifelse(month(when.committed) == 1 & mday(when.committed) == 1,T,F)]
 
 domestic_abuse[, year2 := as.numeric(levels(domestic_abuse$year)[as.numeric(domestic_abuse$year)])]
 domestic_abuse <- merge(domestic_abuse[year2 >= 2010,], unique(all_days[, c("Type.of.day", "when.committed")]),
@@ -546,22 +586,6 @@ depriv[year2 > 2014, Income_group := cut(income_rank, breaks = c(1, 8211, 16422,
 # neighbours.all <- poly2nb(LSOAs_2011)
 # spatial_weights.all <- nb2listw(neighbours.all)
 # moran.test(residuals.glm(check), spatial_weights.all)
-
-
-
-# summary(incomelowest <- glm(da ~ Type.of.day*Alcohol + month + Day_of_week + XMAS + NYE + year, data = depriv[Income_group == "Lowest", ], family = binomial(link = "logit")))
-# summary(incomelower <- glm(da ~ Type.of.day*Alcohol + month + Day_of_week + XMAS + NYE + year, data = depriv[Income_group == "Lower", ], family = binomial(link = "logit")))
-# summary(incomehigher <- glm(da ~ Type.of.day*Alcohol + month + Day_of_week + XMAS + NYE + year, data = depriv[Income_group == "Higher", ], family = binomial(link = "logit")))
-# summary(incomehighest <- glm(da ~ Type.of.day*Alcohol + month + Day_of_week + XMAS + NYE + year, data = depriv[Income_group == "Highest", ], family = binomial(link = "logit")))
-# 
-# summary(employlowest <- glm(da ~ Type.of.day*Alcohol + month + Day_of_week + XMAS + NYE + year, data = depriv[Employ_group == "Lowest", ], family = binomial(link = "logit")))
-# summary(employlower <- glm(da ~ Type.of.day*Alcohol + month + Day_of_week + XMAS + NYE + year, data = depriv[Employ_group == "Lower", ], family = binomial(link = "logit")))
-# summary(employhigher <- glm(da ~ Type.of.day*Alcohol + month + Day_of_week + XMAS + NYE + year, data = depriv[Employ_group == "Higher", ], family = binomial(link = "logit")))
-# summary(employhighest <- glm(da ~ Type.of.day*Alcohol + month + Day_of_week + XMAS + NYE + year, data = depriv[Employ_group == "Highest", ], family = binomial(link = "logit")))
-
-
-
-
 
 #in 2010, there were 32,482 lsoas, and in 2015, there were 32,844
 #divide each LSOA into 4 categories, based on each of the measures
@@ -638,6 +662,16 @@ all.days_new <- merge(all.days_new, unique(all_days[,c("when.committed", "Type.o
 
 all.days_new[, Alcohol := as.factor(Alcohol)]
 
+summary(inc <- glm.nb(Income_no ~ year + Type.of.day*Alcohol*Group + Day_of_week + month + XMAS + NYE,
+                       data = all.days_new))
+
+m3 <- data.table(summary(emmeans(inc, ~ Type.of.day*Alcohol*Group)))
+ggplot(data = m3, aes(Type.of.day, emmean, colour = Alcohol)) +
+  geom_point() + geom_errorbar(aes(ymin = asymp.LCL, ymax = asymp.UCL)) +
+  facet_wrap(~Group, scales = "free", ncol = 2) +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))  +
+  labs(title = "Number of cases ~ Type.of.day*Alcohol*Neighbourhoodtype")
+ggsave("help_emmeans_incomenegbin.pdf")
 
 
 
@@ -672,19 +706,30 @@ summary(emp3 <- glm.nb(Employment_no ~ year + Type.of.day*Alcohol + Day_of_week 
 summary(emp4 <- glm.nb(Employment_no ~ year + Type.of.day*Alcohol + Day_of_week + month + XMAS + NYE,
                data = all.days_new[Group == "Highest",]))
 
-summary(emp1p <- glm(Income_no ~ year + Type.of.day*Alcohol + Day_of_week + month + XMAS + NYE,
+summary(emp1p <- glm(Employment_no ~ year + Type.of.day*Alcohol + Day_of_week + month + XMAS + NYE,
                      data = all.days_new[Group == "Lowest",], family = "poisson"))
-summary(emp2p <- glm(Income_no ~ year + Type.of.day*Alcohol + Day_of_week + month + XMAS + NYE,
+summary(emp2p <- glm(Employment_no ~ year + Type.of.day*Alcohol + Day_of_week + month + XMAS + NYE,
                      data = all.days_new[Group == "Lower",], family = "poisson"))
-summary(emp3p <- glm(Income_no ~ year + Type.of.day*Alcohol + Day_of_week + month + XMAS + NYE,
+summary(emp3p <- glm(Employment_no ~ year + Type.of.day*Alcohol + Day_of_week + month + XMAS + NYE,
                      data = all.days_new[Group == "Higher",], family = "poisson"))
-summary(emp4p <- glm(Income_no ~ year + Type.of.day*Alcohol + Day_of_week + month + XMAS + NYE,
+summary(emp4p <- glm(Employment_no ~ year + Type.of.day*Alcohol + Day_of_week + month + XMAS + NYE,
                      data = all.days_new[Group == "Highest",], family = "poisson"))
 
 lrtest(emp1p, emp1)
 lrtest(emp2p, emp2)
 lrtest(emp3p, emp3)
 lrtest(emp4p, emp4)
+
+summary(emp <- glm.nb(Employment_no ~ year + Type.of.day*Alcohol*Group + Day_of_week + month + XMAS + NYE,
+                      data = all.days_new))
+
+m3 <- data.table(summary(emmeans(emp, ~ Type.of.day*Alcohol*Group)))
+ggplot(data = m3, aes(Type.of.day, emmean, colour = Alcohol)) +
+  geom_point() + geom_errorbar(aes(ymin = asymp.LCL, ymax = asymp.UCL)) +
+  facet_wrap(~Group, scales = "free", ncol = 2) +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))  +
+  labs(title = "Number of cases ~ Type.of.day*Alcohol*Neighbourhoodtype")
+ggsave("help_emmeans_employnegbin.pdf")
 
 
 CI.vectorsinc <- data.table(exp(confint(inc1)),exp(confint(inc2)),exp(confint(inc3)),exp(confint(inc4)))
@@ -727,20 +772,28 @@ stargazer(emp1,emp2,emp3,emp4,type = "latex",
                   P.valsemp$V3,
                   P.valsemp$V4))
 
+#same results from logit?
+summary(income <- glm(Alcohol ~ Type.of.day*Income_group + month + Day_of_week +
+                        XMAS + NYE + year, data = domestic_abuse, family = binomial(link = "logit")))
+summary(emp <- glm(Alcohol ~ Type.of.day*Employ_group + month + Day_of_week +
+                        XMAS + NYE + year, data = domestic_abuse, family = binomial(link = "logit")))
 
-# summary(glm(Alcohol ~ Type.of.day*Employ_group + as.factor(year) + month +
-#               Day_of_week + XMAS + NYE, family = binomial(link = "logit"), 
-#             data = domestic_abuse[Inside==T,]))
-# summary(glm(Alcohol ~ Type.of.day*Health_group + as.factor(year) + month +
-#               Day_of_week + XMAS + NYE, family = binomial(link = "logit"), 
-#             data = domestic_abuse[Inside==T,]))
-# summary(glm(Alcohol ~ Type.of.day*Educ_group + as.factor(year) + month +
-#               Day_of_week + XMAS + NYE, family = binomial(link = "logit"), 
-#             data = domestic_abuse[Inside==T,]))
-# summary(glm(Alcohol ~ Type.of.day*Housing_group + as.factor(year) + month +
-#               Day_of_week + XMAS + NYE, family = binomial(link = "logit"), 
-#             data = domestic_abuse[Inside==T,]))
-# summary(glm(Alcohol ~ Type.of.day*Environment_group + as.factor(year) + month +
-#               Day_of_week + XMAS + NYE, family = binomial(link = "logit"), 
-#             data = domestic_abuse[Inside==T,]))
+
+m3 <- data.table(summary(emmeans(income, ~ Type.of.day*Income_group)))
+ggplot(data = m3, aes(Type.of.day, emmean, colour = Income_group)) +
+  geom_point() + geom_errorbar(aes(ymin = asymp.LCL, ymax = asymp.UCL)) +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))  +
+  facet_wrap(~Income_group)+
+  labs(title = "Alcohol ~ Type.of.day*Neighbourhoodtype, (income group, logistic regression)")
+ggsave("help_emmeans_incomelogistic.pdf")
+
+
+m3 <- data.table(summary(emmeans(emp, ~ Type.of.day*Employ_group)))
+ggplot(data = m3, aes(Type.of.day, emmean, colour = Employ_group)) +
+  geom_point() + geom_errorbar(aes(ymin = asymp.LCL, ymax = asymp.UCL)) +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))  +
+  facet_wrap(~Employ_group)+
+  labs(title = "Alcohol ~ Type.of.day*Neighbourhoodtype, (emp group, logistic regression)")
+ggsave("help_emmeans_emplogistic.pdf")
+
 

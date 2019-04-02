@@ -5,6 +5,7 @@ rm(list = ls())
 library(data.table)
 library(lubridate)
 library(ggplot2)
+library(emmeans)
 setwd("C:/Anna/Crimes/wm_supernew")
 load("Westmids_supernew.RData")
 check <- crimes_cleaned[inc_da == "Yes" | Domestic_abuse != "No", list(no_vict = sum(role == "VICT"),
@@ -93,8 +94,8 @@ all.days_new[, year := as.factor(year(when.committed))]
 all.days_new[, month := factor(as.character(month(when.committed, label = TRUE)))]
 
 all.days_new <- all.days_new[!(when.committed == ymd("2018-11-06") | (when.committed >= ymd("2017-06-01") & when.committed <= ymd("2017-12-31"))),]
-all.days_new[, XMAS := ifelse(month(when.committed) == 12 & mday(when.committed) > 23,T,F)]
-all.days_new[, NYE := ifelse(month(when.committed) == 11 & mday(when.committed) == 1,T,F)]
+all.days_new[, XMAS := ifelse(month(when.committed) == 12 & mday(when.committed) %in% c(24,25,26),T,F)]
+all.days_new[, NYE := ifelse(month(when.committed) == 1 & mday(when.committed) == 1,T,F)]
 
 
 ###############################CHARACTERISTICS#################################
@@ -118,8 +119,8 @@ check[, month := month(datetime_first_committed, label = T)]
 check[, day := day(datetime_first_committed)]
 check[, when.committed := ymd(paste(year, month, day))]
 check[, Day_of_week := wday(when.committed, label = T)]
-check[, XMAS := ifelse(month(when.committed) == 12 & mday(when.committed) > 23,T,F)]
-check[, NYE := ifelse(month(when.committed) == 11 & mday(when.committed) == 1,T,F)]
+check[, XMAS := ifelse(month(when.committed) == 12 & mday(when.committed) %in% c(24,25,26),T,F)]
+check[, NYE := ifelse(month(when.committed) == 1 & mday(when.committed) == 1,T,F)]
 
 
 
@@ -150,67 +151,79 @@ check[, Serious := ifelse(!(Injury_class %in% c("no injury", "threat")),T,F)]
 setnames(all.days_new, "N", "All")
 ##################Location
 all.days_new[, Locationpublic := rep(c(T,F), length(unique(all.days_new$when.committed))*2)]
-all.days_new <- merge(all.days_new,check[,.N,.(Alcohol, when.committed,Locationpublic)][Alcohol == "No",-c("Alcohol")],
-                      by = c("when.committed", "Locationpublic"), all.x = T)
+all.days_new <- merge(all.days_new,check[,.N,.(Alcohol, when.committed,Locationpublic)],
+                      by = c("when.committed", "Locationpublic", "Alcohol"), all.x = T)
 all.days_new[is.na(N),N:=0]
-summary(locnalc <- glm.nb(N ~ year + Type.of.day*Locationpublic + Day_of_week +
+
+
+summary(m3 <- glm.nb(N ~ year + Type.of.day*Alcohol*Locationpublic + Day_of_week +
                         month + XMAS + NYE, data = all.days_new))
-all.days_new <- all.days_new[, -c("Locationpublic", "N")]
-all.days_new[, Locationpublic := rep(c(T,F), length(unique(all.days_new$when.committed)))]
-all.days_new <- merge(all.days_new,check[,.N,.(Alcohol, when.committed,Locationpublic)][Alcohol == "Yes",-c("Alcohol")],
-                      by = c("when.committed", "Locationpublic"), all.x = T)
-all.days_new[is.na(N),N:=0]
+m3 <- data.table(summary(emmeans(m3, ~Type.of.day*Alcohol*Locationpublic)))
+
+ggplot(data = m3, aes(Type.of.day, emmean, colour = Alcohol)) +
+  geom_point() + geom_errorbar(aes(ymin = asymp.LCL, ymax = asymp.UCL)) +
+  facet_wrap(~Locationpublic, scales = "free")+
+  labs(title = "DA ~ Type.of.day*Alcohol*Locationpublic")+ 
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))
+ggsave("help_emmeans_locationtypeint.pdf")
+
+summary(locnalc <- glm.nb(N ~ year + Type.of.day*Locationpublic + Day_of_week +
+                           month + XMAS + NYE, data = all.days_new[Alcohol == "No",]))
 summary(localc <- glm.nb(N ~ year + Type.of.day*Locationpublic + Day_of_week +
-                            month + XMAS + NYE, data = all.days_new))
+                            month + XMAS + NYE, data = all.days_new[Alcohol == "Yes",]))
 all.days_new <- all.days_new[, -c("Locationpublic", "N")]
-
-
 ##################Newly reported
-all.days_new[, Newlyreported := rep(c(T,F), length(unique(all.days_new$when.committed)))]
-all.days_new <- merge(all.days_new,check[,.N,.(Alcohol, when.committed,Newlyreported)][Alcohol == "Yes",-c("Alcohol")],
-                      by = c("when.committed", "Newlyreported"), all.x = T)
+all.days_new <- all.days_new[order(when.committed, Alcohol)]
+all.days_new[, Newlyreported := rep(c(T,F), length(unique(all.days_new$when.committed))*2)]
+all.days_new <- merge(all.days_new,check[,.N,.(Alcohol, when.committed,Newlyreported)],
+                      by = c("when.committed", "Newlyreported", "Alcohol"), all.x = T)
 all.days_new[is.na(N),N:=0]
+
+summary(m3 <- glm.nb(N ~ year + Type.of.day*Alcohol*Newlyreported + Day_of_week +
+                       month + XMAS + NYE, data = all.days_new[year != 2010,]))
+m3 <- data.table(summary(emmeans(m3, ~Type.of.day*Alcohol*Newlyreported)))
+
+ggplot(data = m3, aes(Type.of.day, emmean, colour = Alcohol)) +
+  geom_point() + geom_errorbar(aes(ymin = asymp.LCL, ymax = asymp.UCL)) +
+  facet_wrap(~Newlyreported, scales = "free")+
+  labs(title = "DA ~ Type.of.day*Alcohol*Newlyreported")+ 
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))
+ggsave("help_emmeans_newlyrepint.pdf")
+
+
 summary(newlyrepalc <- glm.nb(N ~ year + Type.of.day*Newlyreported + Day_of_week +
-                             month + XMAS + NYE, data = all.days_new[year != 2010,]))
-all.days_new <- all.days_new[, -c("Newlyreported", "N")]
-all.days_new[, Newlyreported := rep(c(T,F), length(unique(all.days_new$when.committed)))]
-all.days_new <- merge(all.days_new,check[,.N,.(Alcohol, when.committed,Newlyreported)][Alcohol == "No",-c("Alcohol")],
-                      by = c("when.committed", "Newlyreported"), all.x = T)
-all.days_new[is.na(N),N:=0]
+                             month + XMAS + NYE, data = all.days_new[year != 2010& Alcohol == "Yes",]))
 summary(newlyrepnalc <- glm.nb(N ~ year + Type.of.day*Newlyreported + Day_of_week +
-                             month + XMAS + NYE, data = all.days_new[year != 2010,]))
+                             month + XMAS + NYE, data = all.days_new[year != 2010 &Alcohol == "No",]))
 all.days_new <- all.days_new[, -c("Newlyreported", "N")]
 
 ##################Serious
-all.days_new[, Serious := rep(c(T,F), length(unique(all.days_new$when.committed)))]
-all.days_new <- merge(all.days_new,check[,.N,.(Alcohol, when.committed,Serious)][Alcohol == "Yes",-c("Alcohol")],
-                      by = c("when.committed", "Serious"), all.x = T)
+all.days_new <- all.days_new[order(when.committed, Alcohol)]
+all.days_new[, Serious := rep(c(T,F), length(unique(all.days_new$when.committed))*2)]
+all.days_new <- merge(all.days_new,check[,.N,.(Alcohol, when.committed,Serious)],
+                      by = c("when.committed", "Serious", "Alcohol"), all.x = T)
 all.days_new[is.na(N),N:=0]
+
+
+summary(m3 <- glm.nb(N ~ year + Type.of.day*Alcohol*Serious + Day_of_week +
+                       month + XMAS + NYE, data = all.days_new[year != 2010,]))
+m3 <- data.table(summary(emmeans(m3, ~Type.of.day*Alcohol*Serious)))
+
+ggplot(data = m3, aes(Type.of.day, emmean, colour = Alcohol)) +
+  geom_point() + geom_errorbar(aes(ymin = asymp.LCL, ymax = asymp.UCL)) +
+  facet_wrap(~Serious, scales = "free")+
+  labs(title = "DA ~ Type.of.day*Alcohol*Serious")+ 
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))
+ggsave("help_emmeans_seriousint.pdf")
+
+
 summary(seriousalc <- glm.nb(N ~ year + Type.of.day*Serious + Day_of_week +
-                            month + XMAS + NYE, data = all.days_new))
-all.days_new <- all.days_new[, -c("Serious", "N")]
-all.days_new[, Serious := rep(c(T,F), length(unique(all.days_new$when.committed)))]
-all.days_new <- merge(all.days_new,check[,.N,.(Alcohol, when.committed,Serious)][Alcohol == "No",-c("Alcohol")],
-                      by = c("when.committed", "Serious"), all.x = T)
-all.days_new[is.na(N),N:=0]
+                                month + XMAS + NYE, data = all.days_new[Alcohol == "Yes",]))
 summary(seriousnalc <- glm.nb(N ~ year + Type.of.day*Serious + Day_of_week +
-                            month + XMAS + NYE, data = all.days_new))
+                                 month + XMAS + NYE, data = all.days_new[Alcohol == "No",]))
 all.days_new <- all.days_new[, -c("Serious", "N")]
 
-
-# ##################Violent
-# all.days_new[, Violent := rep(c(T,F), length(unique(all.days_new$when.committed)))]
-# all.days_new <- merge(all.days_new,check[,.N,.(Alcohol, when.committed,Violent)][Alcohol == "Yes",-c("Alcohol")],
-#                       by = c("when.committed", "Violent"), all.x = T)
-# all.days_new[is.na(N),N:=0]
-# summary(violent <- glm.nb(N ~ year + Type.of.day*Violent + Day_of_week +
-#                             month + XMAS + NYE, data = all.days_new))
-# all.days_new <- all.days_new[, -c("Violent", "N")]
-
-
-####################################################################
-
-
+#######################################################################################
 
 CI.vectors <- data.table(exp(confint(localc)),exp(confint(locnalc)),
                          exp(confint(newlyrepalc)),exp(confint(newlyrepnalc)),
@@ -258,34 +271,80 @@ check[, Repeated := ifelse(length(how.many.before) == 1, "No", "Yes"),.(ids)]
 check[, Daystilnext_round := round(Daystilnext)]
 check[, Dayssincelast_round := round(Dayssincelast)]
 
-summary(nbtilnext.m <- glm.nb(Daystilnext_round ~ as.factor(year) + Type*Alcohol + Day_of_week + month + XMAS + NYE, data = check[year >=2010 & first_occurred >=2010,]))
-summary(ptilnext.m <- glm(Daystilnext_round ~ as.factor(year) + Type*Alcohol + Day_of_week + month  + XMAS + NYE, data = check[year >=2010 & first_occurred >=2010,], family = "poisson"))
+
+
+summary(nbtilnext.m <- glm.nb(Daystilnext_round ~ factor(year) + Type*Alcohol + Day_of_week + month + 
+                              XMAS + NYE, data = check[year >=2010 & first_occurred >=2010 &
+                              Daystilnext_round < as.numeric(quantile(check$Daystilnext_round,0.975,na.rm = T)),]))
+summary(ptilnext.m <- glm(Daystilnext_round ~ year + Type*Alcohol + Day_of_week + month  + 
+                          XMAS + NYE, data = check[year >=2010 & first_occurred >=2010 &
+                          Daystilnext_round < as.numeric(quantile(check$Daystilnext_round,0.975,na.rm = T)),],
+                          family = "poisson"))
+
 library(lmtest)
 lrtest(ptilnext.m,nbtilnext.m)
 
+m3 <- data.table(summary(emmeans(nbtilnext.m, ~ Type*Alcohol)))
+ggplot(data = m3, aes(Type, emmean, colour = Alcohol)) +
+  geom_point(position=position_dodge(width=0.6)) + 
+  geom_errorbar(aes(ymin = asymp.LCL, ymax = asymp.UCL), position=position_dodge(width=0.6)) +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))  +
+  labs(title = "Daystilnext ~ Type.of.day*Alcohol")
+ggsave("help_emmeans_daystilnext.pdf")
 
-summary(nbsincelast.m <- glm.nb(Dayssincelast_round ~ as.factor(year) + Type*Alcohol + Day_of_week + month + XMAS + NYE, data = check[year >=2010 & first_occurred >=2010,]))
-summary(psincelast.m <- glm(Dayssincelast_round ~ as.factor(year) + Type*Alcohol + Day_of_week + month + XMAS + NYE, data = check[year >=2010 & first_occurred >=2010,], family = "poisson"))
+
+
+summary(nbsincelast.m <- glm.nb(Dayssincelast_round ~ as.factor(year) + Type*Alcohol + Day_of_week + 
+                                month + XMAS + NYE, data = check[year >=2010 & first_occurred >=2010 &
+                                Dayssincelast_round < as.numeric(quantile(check$Dayssincelast_round,0.975,na.rm = T)),]))
+summary(psincelast.m <- glm(Dayssincelast_round ~ as.factor(year) + Type*Alcohol + Day_of_week + 
+                            month + XMAS + NYE, data = check[year >=2010 & first_occurred >=2010 &
+                            Dayssincelast_round < as.numeric(quantile(check$Dayssincelast_round,0.975,na.rm = T)),], family = "poisson"))
 library(lmtest)
 lrtest(psincelast.m,nbsincelast.m)
 
-library(lme4)
-multilev <- glmer.nb(Daystilnext_round ~ as.factor(year) + Type*Alcohol + Day_of_week +
-           month + XMAS + NYE + (1|ids), data = check[year >=2010,], verbose = TRUE)
+
+m3 <- data.table(summary(emmeans(nbsincelast.m, ~ Type*Alcohol)))
+ggplot(data = m3, aes(Type, emmean, colour = Alcohol)) +
+  geom_point(position=position_dodge(width=0.6)) + 
+  geom_errorbar(aes(ymin = asymp.LCL, ymax = asymp.UCL), position=position_dodge(width=0.6)) +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))  +
+  labs(title = "Dayssincelast ~ Type.of.day*Alcohol")
+ggsave("help_emmeans_dayssincelast.pdf")
+
+# library(lme4)
+# multilev <- glmer.nb(Daystilnext_round ~ as.factor(year) + Type*Alcohol + Day_of_week +
+#            month + XMAS + NYE + (1|ids), data = check[year >=2010,], verbose = TRUE)
 
 
 ################################## TIME DELAY REPORTING##################################
 
 check <- merge(check, unique(crimes_cleaned[, c("crime_number", "datetime_reported")]),
                by = "crime_number", all.x = T)
-check[, Report_delay :=  round(as.numeric(difftime(datetime_reported, datetime_first_committed, units="hours")))]
+check[, Report_delay :=  round(as.numeric(difftime(datetime_reported, datetime_first_committed,
+                                                   units="hours")))]
 summary(reportdelaynb <- glm.nb(Report_delay ~ as.factor(year) + Type*Alcohol +
-  Day_of_week + month + XMAS + NYE, data = check[year >=2010 & Report_delay <8760 & Report_delay >= 0,]))
+   Day_of_week + month + XMAS + NYE, data = check[year >=2010 & 
+   Report_delay < as.numeric(quantile(check$Report_delay,0.975,na.rm = T)) &
+   Report_delay >= 0 & first_occurred >=2010,]))
 summary(reportdelayp <- glm(Report_delay ~ as.factor(year) + Type*Alcohol +
                                   Day_of_week + month + XMAS + NYE,
-                            data = check[year >=2010 & Report_delay <8760 & Report_delay >= 0 & first_occurred >=2010,],family = "poisson"))
+                            data = check[year >=2010 & 
+                            Report_delay < as.numeric(quantile(check$Report_delay,0.975,na.rm = T)) &
+                            Report_delay >= 0 & first_occurred >=2010,],family = "poisson"))
 
 lrtest(reportdelayp,reportdelaynb)
+
+m3 <- data.table(summary(emmeans(reportdelaynb, ~ Type*Alcohol)))
+ggplot(data = m3, aes(Type, emmean, colour = Alcohol)) +
+  geom_point(position=position_dodge(width=0.6)) + 
+  geom_errorbar(aes(ymin = asymp.LCL, ymax = asymp.UCL), position=position_dodge(width=0.6)) +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))  +
+  labs(title = "Hourselapsedtilreport ~ Type.of.day*Alcohol")
+ggsave("help_emmeans_hourstilreport.pdf")
+
+
+
 
 CI.vectors <- data.table(exp(confint(nbtilnext.m)),exp(confint(nbsincelast.m)), exp(confint(reportdelaynb)))
 Coef.vectors <- data.table(exp(nbtilnext.m$coefficients),exp(nbsincelast.m$coefficients),
@@ -316,11 +375,24 @@ stargazer(nbtilnext.m,nbsincelast.m,reportdelaynb,type = "latex",
 
 check <- check[order(ids, datetime_first_committed)]
 check[,Previous_alc := shift(Alcohol, type = "lag", fill = NA), .(ids)]
+check <- check[year > 2009 & first_occurred >=2010,]
 
-summary(transition <- glm(Alcohol ~ Type*Previous_alc + Day_of_week+ month+ XMAS + NYE+as.factor(year), data = check[year > 2009 & first_occurred >=2010,], family = "binomial"))
+
+summary(transition <- glm(Alcohol ~ Type*Previous_alc + Day_of_week+ month+ XMAS + NYE+as.factor(year),
+                      data = check, family = "binomial"))
 CI.vectors <- data.table(exp(confint(transition)))
 Coef.vectors <- data.table(exp(transition$coefficients))
 P.vals <- data.table(c(summary(transition)$coefficients[,4]))
+
+
+m3 <- data.table(summary(emmeans(transition, ~ Type*Previous_alc)))
+ggplot(data = m3, aes(Type, emmean, colour = Previous_alc)) +
+  geom_point(position=position_dodge(width=0.6)) + 
+  geom_errorbar(aes(ymin = asymp.LCL, ymax = asymp.UCL), position=position_dodge(width=0.6)) +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))  +
+  labs(title = "Alcohol ~ Type.of.day*Previous_alc")
+ggsave("help_emmeans_alctrans.pdf")
+
 
 stargazer(transition,type = "latex",
           omit = c("month", "year","Day_of_week", "XMAS","NYE", "Constant"), 
