@@ -134,7 +134,9 @@ all.days_new[is.na(Type.of.day),Type.of.day := "Nonmatch day"]
 all.days_new[(when.committed >= ymd("2010-06-11") & when.committed <= ymd("2010-07-11")) | 
                (when.committed >= ymd("2014-06-12") & when.committed <= ymd("2014-07-13")) |
                (when.committed >= ymd("2012-06-08") & when.committed <= ymd("2012-07-01")) | 
-               (when.committed >= ymd("2016-06-10") & when.committed <= ymd("2016-07-10")), Tournament_on := TRUE]
+               (when.committed >= ymd("2016-06-10") & when.committed <= ymd("2016-07-10")) |
+               (when.committed >= ymd("2018-06-14") & when.committed <= ymd("2018-07-15")),
+             Tournament_on := TRUE]
 all.days_new[is.na(Tournament_on), Tournament_on := FALSE]
 all.days_new[, Type.of.day := ifelse(Type.of.day == "Nonmatch day" & Tournament_on == TRUE,
                                      "Tournament on",Type.of.day)]
@@ -161,63 +163,87 @@ all.days_new[, NYE := ifelse(month(when.committed) == 1 & mday(when.committed)==
 
 summary(m1 <- glm.nb(N ~ year + Alcohol +  Day_of_week + month + XMAS + NYE, data = all.days_new[Gender.Type == "All",]))
 summary(m2 <- glm.nb(N ~ year + Alcohol + Type.of.day +  Day_of_week + month + XMAS + NYE, data = all.days_new[Gender.Type == "All",]))
-summary(m3 <- glm.nb(N ~ year + Alcohol*Type.of.day +  Day_of_week + month + XMAS + NYE, data = all.days_new[Gender.Type == "All",]))
+summary(m3 <- glm.nb(N ~ year + Type.of.day*Alcohol +  Day_of_week + month + XMAS + NYE, data = all.days_new[Gender.Type == "All",]))
+summary(m4 <- glm.nb(N ~ Type.of.day*Alcohol +  Day_of_week*Alcohol + year*Alcohol + month*Alcohol + XMAS*Alcohol + NYE*Alcohol, data = all.days_new[Gender.Type == "All",]))
+
+contrast_winlose <- emmeans(m4, ~Type.of.day*Alcohol)
+see <- emmeans(contrast_winlose, pairwise ~ Type.of.day|Alcohol)
+see <- summary(see)
+xtable(see$contrasts, type = "latex")
 
 summary(m1p <- glm(N ~ year + Alcohol +  Day_of_week + month + XMAS + NYE, data = all.days_new[Gender.Type == "All",], family = "poisson"))
 summary(m2p <- glm(N ~ year + Alcohol + Type.of.day +  Day_of_week + month + XMAS + NYE, data = all.days_new[Gender.Type == "All",], family = "poisson"))
-summary(m3p <- glm(N ~ year + Alcohol*Type.of.day +  Day_of_week + month + XMAS + NYE, data = all.days_new[Gender.Type == "All",], family = "poisson"))
+summary(m3p <- glm(N ~ year + Type.of.day*Alcohol +  Day_of_week + month + XMAS + NYE, data = all.days_new[Gender.Type == "All",], family = "poisson"))
+summary(m4p <- glm(N ~ year*Alcohol + Type.of.day*Alcohol +  Day_of_week*Alcohol + month*Alcohol + XMAS*Alcohol + NYE*Alcohol, data = all.days_new[Gender.Type == "All",], family = "poisson"))
+
 
 dispersiontest(m1p)
 dispersiontest(m2p)
 dispersiontest(m3p)
-
-CI.vectors1 <- data.table(exp(confint(m1)))
-CI.vectors2 <- data.table(exp(confint(m2)))
-CI.vectors3 <- data.table(exp(confint(m3)))
+dispersiontest(m4p)
+# 
+# CI.vectors1 <- data.table(exp(confint(m1)))
+# CI.vectors2 <- data.table(exp(confint(m2)))
+ #CI.vectors3 <- data.table(exp(confint(m4)))
 
 Coef.vectors1 <- data.table(exp(m1$coefficients))
 Coef.vectors2 <- data.table(exp(m2$coefficients))
 Coef.vectors3 <- data.table(exp(m3$coefficients))  
+Coef.vectors4 <- data.table(exp(m4$coefficients))
 
 Pval1 <- data.table(summary(m1)$coefficients[,4])
 Pval2 <- data.table(summary(m2)$coefficients[,4])
 Pval3 <- data.table(summary(m3)$coefficients[,4]) 
+Pval4 <- data.table(summary(m4)$coefficients[,4]) 
 
-stargazer(m1,m2,m3,type = "latex",
-          omit = c("month", "year","Day_of_week", "XMAS","NYE", "Constant"), 
-          title = "Exponentiated coefficients and 95% CIs from a series of negative binomial regresssions predicting daily counts of reported DA incidents (other controls not included here: month, year, xmas/nye)",
-          no.space = TRUE,         column.labels = c("All", "Male to Male", "Male to Female", "Female to Female", "Female to Male"),
-          coef = list(as.numeric(Coef.vectors1$V1)-1,
+names(m3$coefficients) <- gsub("Type.of.day|Yes", "", names(m3$coefficients) )
+names(m4$coefficients) <- gsub("Type.of.day|Yes", "", names(m4$coefficients) )
+names(m1$coefficients) <- gsub("Type.of.day|Yes", "", names(m1$coefficients) )
+names(m2$coefficients) <- gsub("Type.of.day|Yes", "", names(m2$coefficients) )
+
+stargazer(m1,m2,m3,m4,type = "latex",
+          omit = c("month", "year","Day_of_week", "XMAS","NYE", "Constant"),
+          no.space = TRUE, coef = list(as.numeric(Coef.vectors1$V1)-1,
                       as.numeric(Coef.vectors2$V1)-1,
-                      as.numeric(Coef.vectors3$V1)-1), 
+                      as.numeric(Coef.vectors3$V1)-1,
+                      as.numeric(Coef.vectors4$V1)-1), 
           p =list(Pval1$V1,
                   Pval2$V1,
-                  Pval3$V1))    
+                  Pval3$V1,
+                  Pval4$V1),
+          keep.stat = c("n", "aic", "bic"),
+          add.lines=list(c("BIC",round(BIC(m1),3), round(BIC(m2),3), round(BIC(m3),3), round(BIC(m4),3))))    
 
-m3 <- data.table(summary(emmeans(m3, ~ Type.of.day*Alcohol)))
-ggplot(data = m3, aes(Type.of.day, emmean, colour = Alcohol)) +
-  geom_point() + geom_errorbar(aes(ymin = asymp.LCL, ymax = asymp.UCL)) +
-  labs(title = "DA ~ Type.of.day*Alcohol")
-ggsave("help_emmeans_mainres.pdf")
+# m3 <- data.table(summary(emmeans(m3, ~ Type.of.day*Alcohol)))
+# ggplot(data = m3, aes(Type.of.day, emmean, colour = Alcohol)) +
+#   geom_point() + geom_errorbar(aes(ymin = asymp.LCL, ymax = asymp.UCL)) +
+#   labs(title = "DA ~ Type.of.day*Alcohol")
+# ggsave("help_emmeans_mainres.pdf")
 
-contrast_winlose <- emmeans(m3, ~Type.of.day*Alcohol)
-m1 <- emmeans(contrast_winlose, pairwise ~ Type.of.day|Alcohol)
-m1 <- summary(m1)
-xtable(m1$contrasts, type = "latex")
+# all.days_new[, "w2010-06-23" := ifelse(when.committed == "2010-06-23", TRUE, FALSE)]
+# all.days_new[, "w2012-06-15" := ifelse(when.committed == "2012-06-15", TRUE, FALSE)]
+# all.days_new[, "w2012-06-19" := ifelse(when.committed == "2012-06-19", TRUE, FALSE)]
+# all.days_new[, "w2016-06-16" := ifelse(when.committed == "2016-06-16", TRUE, FALSE)]
+# all.days_new[, "w2018-06-18" := ifelse(when.committed == "2018-06-18", TRUE, FALSE)]
+# all.days_new[, "w2018-06-24" := ifelse(when.committed == "2018-06-24", TRUE, FALSE)]
+# all.days_new[, "w2018-07-03" := ifelse(when.committed == "2018-07-03", TRUE, FALSE)]
+# all.days_new[, "w2018-07-07" := ifelse(when.committed == "2018-07-07", TRUE, FALSE)]
+# 
+# 
 
 ################################### GENDER#########################
-m.mmnb <- glm.nb(N ~ year + Type.of.day*Alcohol + Day_of_week + month + XMAS + NYE, data = all.days_new[Gender.Type == "MM",])
-m.mfnb <- glm.nb(N ~ year + Type.of.day*Alcohol + Day_of_week + month + XMAS + NYE, data = all.days_new[Gender.Type == "MF",])
-m.fmnb <- glm.nb(N ~ year + Type.of.day*Alcohol + Day_of_week + month + XMAS + NYE, data = all.days_new[Gender.Type == "FM",])
-m.ffnb <- glm.nb(N ~ year + Type.of.day*Alcohol + Day_of_week + month + XMAS + NYE, data = all.days_new[Gender.Type == "FF",])
-m.allnb <- glm.nb(N ~ year + Type.of.day*Alcohol + Day_of_week + month + XMAS + NYE, data = all.days_new[Gender.Type == "All",])
+m.mmnb <- glm.nb(N ~ year*Alcohol + Type.of.day*Alcohol + Day_of_week*Alcohol + month*Alcohol + XMAS*Alcohol + NYE*Alcohol, data = all.days_new[Gender.Type == "MM",])
+m.mfnb <- glm.nb(N ~ year*Alcohol + Type.of.day*Alcohol + Day_of_week*Alcohol + month*Alcohol + XMAS*Alcohol + NYE*Alcohol, data = all.days_new[Gender.Type == "MF",])
+m.fmnb <- glm.nb(N ~ year*Alcohol + Type.of.day*Alcohol + Day_of_week*Alcohol + month*Alcohol + XMAS*Alcohol + NYE*Alcohol, data = all.days_new[Gender.Type == "FM",])
+m.ffnb <- glm.nb(N ~ year*Alcohol + Type.of.day*Alcohol + Day_of_week*Alcohol + month*Alcohol + XMAS*Alcohol + NYE*Alcohol, data = all.days_new[Gender.Type == "FF",])
+m.allnb <- glm.nb(N ~ year*Alcohol + Type.of.day*Alcohol + Day_of_week*Alcohol + month*Alcohol + XMAS*Alcohol + NYE*Alcohol, data = all.days_new[Gender.Type == "All",])
 
 
-m.mmp <- glm(N ~ year + Type.of.day*Alcohol + Day_of_week + month + XMAS + NYE, data = all.days_new[Gender.Type == "MM",], family = "poisson")
-m.mfp <- glm(N ~ year + Type.of.day*Alcohol + Day_of_week + month + XMAS + NYE, data = all.days_new[Gender.Type == "MF",], family = "poisson")
-m.fmp <- glm(N ~ year + Type.of.day*Alcohol + Day_of_week + month + XMAS + NYE, data = all.days_new[Gender.Type == "FM",], family = "poisson")
-m.ffp <- glm(N ~ year + Type.of.day*Alcohol + Day_of_week + month + XMAS + NYE, data = all.days_new[Gender.Type == "FF",], family = "poisson")
-m.allp <- glm(N ~ year + Type.of.day*Alcohol + Day_of_week + month + XMAS + NYE, data = all.days_new[Gender.Type == "All",], family = "poisson")
+m.mmp <- glm(N ~ year*Alcohol + Type.of.day*Alcohol + Day_of_week*Alcohol + month*Alcohol + XMAS*Alcohol + NYE*Alcohol, data = all.days_new[Gender.Type == "MM",], family = "poisson")
+m.mfp <- glm(N ~ year*Alcohol + Type.of.day*Alcohol + Day_of_week*Alcohol + month*Alcohol + XMAS*Alcohol + NYE*Alcohol, data = all.days_new[Gender.Type == "MF",], family = "poisson")
+m.fmp <- glm(N ~ year*Alcohol + Type.of.day*Alcohol + Day_of_week*Alcohol + month*Alcohol + XMAS*Alcohol + NYE*Alcohol, data = all.days_new[Gender.Type == "FM",], family = "poisson")
+m.ffp <- glm(N ~ year*Alcohol + Type.of.day*Alcohol + Day_of_week*Alcohol + month*Alcohol + XMAS*Alcohol + NYE*Alcohol, data = all.days_new[Gender.Type == "FF",], family = "poisson")
+m.allp <- glm(N ~ year*Alcohol + Type.of.day*Alcohol + Day_of_week*Alcohol + month*Alcohol + XMAS*Alcohol + NYE*Alcohol, data = all.days_new[Gender.Type == "All",], family = "poisson")
 
 
 lrtest(m.mmp, m.mmnb)
@@ -233,8 +259,8 @@ dispersiontest(m.mfp)
 dispersiontest(m.allp)
 
 
-CI.vectors <- data.table(exp(confint(m.mmnb)),exp(confint(m.mfnb)),
-                         exp(confint(m.fmnb)),exp(confint(m.ffnb)))
+#CI.vectors <- data.table(exp(confint(m.mmnb)),exp(confint(m.mfnb)),
+#                         exp(confint(m.fmnb)),exp(confint(m.ffnb)))
 Coef.vectors <- data.table(exp(m.mmnb$coefficients),
                            exp(m.mfnb$coefficients), exp(m.fmnb$coefficients),
                            exp(m.ffnb$coefficients))
@@ -242,45 +268,48 @@ P.vals <- data.table(summary(m.mmnb)$coefficients[,4],
                      summary(m.mfnb)$coefficients[,4],summary(m.fmnb)$coefficients[,4],
                      summary(m.ffnb)$coefficients[,4])
 
-toplot <- data.table("Variable" = rep(names(m.fmnb$coefficients)[grepl("Type", names(m.fmnb$coefficients))],4),
-           "Coeff" = c(as.numeric(Coef.vectors$V1)[grepl("Type", names(m.fmnb$coefficients))],
-                       as.numeric(Coef.vectors$V2)[grepl("Type", names(m.fmnb$coefficients))],
-                       as.numeric(Coef.vectors$V3)[grepl("Type", names(m.fmnb$coefficients))],
-                       as.numeric(Coef.vectors$V4)[grepl("Type", names(m.fmnb$coefficients))]))
-toplot <- cbind(toplot, rbind(CI.vectors[grepl("Type", names(m.fmnb$coefficients)),1:2],
-                              CI.vectors[grepl("Type", names(m.fmnb$coefficients)),3:4],
-                              CI.vectors[grepl("Type", names(m.fmnb$coefficients)),5:6],
-                              CI.vectors[grepl("Type", names(m.fmnb$coefficients)),7:8]))
- toplot[, Model := rep(c("Male to Male", "Male to Female", "Female to Male", "Female to Female"), each = 10)]
- toplot[, Variable := gsub("Type.of.day","",Variable)]
- setnames(toplot, c("2.5 %", "97.5 %"), c("Lower", "Upper"))
- toplot[, Variable := factor(Variable, levels = rev(unique(toplot$Variable)))]
+# toplot <- data.table("Variable" = rep(names(m.fmnb$coefficients)[grepl("Type", names(m.fmnb$coefficients))],4),
+#            "Coeff" = c(as.numeric(Coef.vectors$V1)[grepl("Type", names(m.fmnb$coefficients))],
+#                        as.numeric(Coef.vectors$V2)[grepl("Type", names(m.fmnb$coefficients))],
+#                        as.numeric(Coef.vectors$V3)[grepl("Type", names(m.fmnb$coefficients))],
+#                        as.numeric(Coef.vectors$V4)[grepl("Type", names(m.fmnb$coefficients))]))
+# toplot <- cbind(toplot, rbind(CI.vectors[grepl("Type", names(m.fmnb$coefficients)),1:2],
+#                               CI.vectors[grepl("Type", names(m.fmnb$coefficients)),3:4],
+#                               CI.vectors[grepl("Type", names(m.fmnb$coefficients)),5:6],
+#                               CI.vectors[grepl("Type", names(m.fmnb$coefficients)),7:8]))
+#  toplot[, Model := rep(c("Male to Male", "Male to Female", "Female to Male", "Female to Female"), each = 10)]
+#  toplot[, Variable := gsub("Type.of.day","",Variable)]
+#  setnames(toplot, c("2.5 %", "97.5 %"), c("Lower", "Upper"))
+#  toplot[, Variable := factor(Variable, levels = rev(unique(toplot$Variable)))]
+# 
+# 
+# ggplot(toplot, aes(Variable,Coeff, group = factor(Model), colour = factor(Model))) +
+#   geom_hline(aes(yintercept = 1), linetype = 4) +
+#   geom_errorbar(aes(ymin = Lower, ymax = Upper), position=position_dodge(width=0.7), size = 1.5) +
+#   geom_point(position=position_dodge(width=0.7), size = 1.5, colour = "black") +
+#   coord_flip() + theme_classic()+
+#   theme(legend.title=element_blank(),
+#         legend.text = element_text(size=19))+
+#   theme(strip.background = element_blank(),
+#         strip.text.x = element_blank()) +
+#   theme(text = element_text(size=25),
+#         axis.text.x = element_text(size = 20),
+#         axis.text.y = element_text(size = 20)) +
+#   theme(legend.position = "bottom")+
+#   labs(x = "", y= "Coefficient")+
+#   scale_color_manual(values=brewer.pal(n = 8, name = "Set1"))+
+#   guides(colour=guide_legend(nrow=2,byrow=TRUE))
 
-
-ggplot(toplot, aes(Variable,Coeff, group = factor(Model), colour = factor(Model))) +
-  geom_hline(aes(yintercept = 1), linetype = 4) +
-  geom_errorbar(aes(ymin = Lower, ymax = Upper), position=position_dodge(width=0.7), size = 1.5) +
-  geom_point(position=position_dodge(width=0.7), size = 1.5, colour = "black") +
-  coord_flip() + theme_classic()+
-  theme(legend.title=element_blank(),
-        legend.text = element_text(size=19))+
-  theme(strip.background = element_blank(),
-        strip.text.x = element_blank()) +
-  theme(text = element_text(size=25),
-        axis.text.x = element_text(size = 20),
-        axis.text.y = element_text(size = 20)) +
-  theme(legend.position = "bottom")+
-  labs(x = "", y= "Coefficient")+
-  scale_color_manual(values=brewer.pal(n = 8, name = "Set1"))+
-  guides(colour=guide_legend(nrow=2,byrow=TRUE))
-
-
+names(m.mmnb$coefficients) <- gsub("Type.of.day|Yes", "", names(m.mmnb$coefficients) )
+names(m.mfnb$coefficients) <- gsub("Type.of.day|Yes", "", names(m.mfnb$coefficients) )
+names(m.ffnb$coefficients) <- gsub("Type.of.day|Yes", "", names(m.ffnb$coefficients) )
+names(m.fmnb$coefficients) <- gsub("Type.of.day|Yes", "", names(m.fmnb$coefficients) )
 
 stargazer(m.mmnb,m.mfnb,m.ffnb,m.fmnb,type = "latex",
           omit = c("month", "year","Day_of_week", "XMAS","NYE", "Constant"), 
-          title = "Exponentiated coefficients and 95% CIs from a series of negative binomial regresssions predicting daily counts of reported DA incidents (other controls not included here: month, year, xmas/nye)",
           no.space = TRUE,
-          covariate.labels = gsub("Type.of.day|Yes","",names(m.fmnb$coefficients)[grepl("Type|Alcohol",names(m.fmnb$coefficients) )]),
+          #covariate.labels = gsub("Type.of.day|Yes","",names(m.fmnb$coefficients)[grepl("Type|Alcohol",names(m.fmnb$coefficients) )]),
+          #covariate.labels = gsub("Yes|Type.of.day", "", names(m.fmnb$coefficients)[grepl("Type",names(m.fmnb$coefficients))]),
           column.labels = c("Male to Male", "Male to Female", "Female to Female", "Female to Male"),
           coef = list(as.numeric(Coef.vectors$V1)-1,
                       as.numeric(Coef.vectors$V2)-1,
@@ -399,15 +428,19 @@ all_days <- all_days[!(when.committed == ymd("2018-11-06") | (when.committed >= 
 all_days[, XMAS := ifelse(month(when.committed) == 12 & mday(when.committed) %in% c(24,25,26),T,F)]
 all_days[, NYE := ifelse(month(when.committed) == 1 & mday(when.committed)==1,T,F)]
 
-Hate.nb <- glm.nb(Hate ~ year + Type.of.day*Alcohol + Day_of_week + month + XMAS + NYE, data = all_days)
-PR.nb <- glm.nb(Property ~ year + Type.of.day*Alcohol + Day_of_week + month + XMAS + NYE, data = all_days)
-POO.nb <- glm.nb(Poo ~ year + Type.of.day*Alcohol + Day_of_week + month + XMAS + NYE, data = all_days)
-VATP.nb <- glm.nb(Otherv ~ year + Type.of.day*Alcohol + Day_of_week + month + XMAS + NYE, data = all_days)
+Hate.nb <- glm.nb(Hate ~ year*Alcohol + Type.of.day*Alcohol + Day_of_week*Alcohol + month*Alcohol + XMAS*Alcohol + NYE*Alcohol, data = all_days)
+PR.nb <- glm.nb(Property ~ year*Alcohol + Type.of.day*Alcohol + Day_of_week*Alcohol + month*Alcohol + XMAS*Alcohol + NYE*Alcohol, data = all_days)
+POO.nb <- glm.nb(Poo ~ year*Alcohol + Type.of.day*Alcohol + Day_of_week*Alcohol + month*Alcohol + XMAS*Alcohol + NYE*Alcohol, data = all_days)
+VATP.nb <- glm.nb(Otherv ~ year*Alcohol + Type.of.day*Alcohol + Day_of_week*Alcohol + month*Alcohol + XMAS*Alcohol + NYE*Alcohol, data = all_days)
 
-Hatep <- glm(Hate ~ year + Type.of.day*Alcohol + Day_of_week + month + XMAS + NYE, data = all_days, family = "poisson")
-PRp <- glm(Property ~ year + Type.of.day*Alcohol + Day_of_week + month + XMAS + NYE, data = all_days, family = "poisson")
-POOp <- glm(Poo ~ year + Type.of.day*Alcohol + Day_of_week + month + XMAS + NYE, data = all_days, family = "poisson")
-VATPp <- glm(Otherv ~ year + Type.of.day*Alcohol + Day_of_week + month + XMAS + NYE, data = all_days, family = "poisson")
+Hatep <- glm(Hate ~ year*Alcohol + Type.of.day*Alcohol + Day_of_week*Alcohol + month*Alcohol + XMAS*Alcohol + NYE*Alcohol, data = all_days, family = "poisson")
+PRp <- glm(Property ~ year*Alcohol + Type.of.day*Alcohol + Day_of_week*Alcohol + month*Alcohol + XMAS*Alcohol + NYE*Alcohol, data = all_days, family = "poisson")
+POOp <- glm(Poo ~ year*Alcohol + Type.of.day*Alcohol + Day_of_week*Alcohol + month*Alcohol + XMAS*Alcohol + NYE*Alcohol, data = all_days, family = "poisson")
+VATPp <- glm(Otherv ~ year*Alcohol + Type.of.day*Alcohol + Day_of_week*Alcohol + month*Alcohol + XMAS*Alcohol + NYE*Alcohol, data = all_days, family = "poisson")
+
+
+
+
 
 lrtest(Hatep, Hate.nb)
 lrtest(PRp, PR.nb)
@@ -419,40 +452,44 @@ dispersiontest(PRp)
 dispersiontest(POOp)
 dispersiontest(VATPp)
 
-m3 <- rbind(data.table(summary(emmeans(Hate.nb, ~ Type.of.day*Alcohol))),
-            data.table(summary(emmeans(PR.nb, ~ Type.of.day*Alcohol))),
-            data.table(summary(emmeans(POO.nb, ~ Type.of.day*Alcohol))),
-            data.table(summary(emmeans(VATP.nb, ~ Type.of.day*Alcohol))))
-m3[, Type := rep(c("Hate", "Property", "Public Order Offences", "Other violence"), each = 12)]
+# m3 <- rbind(data.table(summary(emmeans(Hate.nb, ~ Type.of.day*Alcohol))),
+#             data.table(summary(emmeans(PR.nb, ~ Type.of.day*Alcohol))),
+#             data.table(summary(emmeans(POO.nb, ~ Type.of.day*Alcohol))),
+#             data.table(summary(emmeans(VATP.nb, ~ Type.of.day*Alcohol))))
+# m3[, Type := rep(c("Hate", "Property", "Public Order Offences", "Other violence"), each = 12)]
+# 
+# 
+# ggplot(data = m3, aes(Type.of.day, emmean, colour = Alcohol)) +
+#   geom_point() + geom_errorbar(aes(ymin = asymp.LCL, ymax = asymp.UCL)) +
+#   facet_wrap(~Type, scales = "free", ncol = 2) +
+#   theme(axis.text.x = element_text(angle = 45, hjust = 1)) +
+#   labs(title = "Number of cases ~ Type.of.day*Alcohol, separate regression for each crime type")
+# ggsave("help_emmeans_crimetype.pdf")
 
 
-ggplot(data = m3, aes(Type.of.day, emmean, colour = Alcohol)) +
-  geom_point() + geom_errorbar(aes(ymin = asymp.LCL, ymax = asymp.UCL)) +
-  facet_wrap(~Type, scales = "free", ncol = 2) +
-  theme(axis.text.x = element_text(angle = 45, hjust = 1)) +
-  labs(title = "Number of cases ~ Type.of.day*Alcohol, separate regression for each crime type")
-ggsave("help_emmeans_crimetype.pdf")
 
+# contrast_winlose <- emmeans(VATP.nb, ~Type.of.day*Alcohol)
+# m1 <- emmeans(contrast_winlose, pairwise ~ Type.of.day|Alcohol)
+# m1 <- summary(m1)
 
-
-contrast_winlose <- emmeans(VATP.nb, ~Type.of.day*Alcohol)
-m1 <- emmeans(contrast_winlose, pairwise ~ Type.of.day|Alcohol)
-m1 <- summary(m1)
-
-CI.vectors <- data.table(exp(confint(PR.nb)),exp(confint(POO.nb)),exp(confint(Hate.nb)),
-                         exp(confint(VATP.nb)))
+# CI.vectors <- data.table(exp(confint(PR.nb)),exp(confint(POO.nb)),exp(confint(Hate.nb)),
+#                          exp(confint(VATP.nb)))
 Coef.vectors <- data.table(exp(PR.nb$coefficients), exp(POO.nb$coefficients),
                            exp(Hate.nb$coefficients), exp(VATP.nb$coefficients))
 P.vals <- data.table(summary(PR.nb)$coefficients[,4],summary(POO.nb)$coefficients[,4],
                      summary(Hate.nb)$coefficients[,4],summary(VATP.nb)$coefficients[,4])
 
-
+names(PR.nb$coefficients) <- gsub("Type.of.day|Yes", "", names(PR.nb$coefficients) )
+names(POO.nb$coefficients) <- gsub("Type.of.day|Yes", "", names(POO.nb$coefficients) )
+names(Hate.nb$coefficients) <- gsub("Type.of.day|Yes", "", names(Hate.nb$coefficients) )
+names(VATP.nb$coefficients) <- gsub("Type.of.day|Yes", "", names(VATP.nb$coefficients) )
 
 library(stargazer)
 stargazer(PR.nb,POO.nb,Hate.nb,VATP.nb,type = "latex",
           omit = c("month", "year","Day_of_week", "XMAS","NYE", "Constant"), 
           title = "Exponentiated coefficients and 95% CIs from a series of negative binomial regresssions predicting daily counts of reported DA incidents (other controls not included here: month, year, xmas/nye)",
-          no.space = TRUE,covariate.labels = gsub("Type.of.day|Yes","",names(PR.nb$coefficients)[grepl("Type|Alcohol",names(PR.nb$coefficients) )]),
+          no.space = TRUE,
+          #covariate.labels = gsub("Type.of.day|Yes","",names(PR.nb$coefficients)[grepl("Type|Alcohol",names(PR.nb$coefficients) )]),
           column.labels = c("Property-related", "Public Order Offences", "Hate incidents", "Other violence"),
           coef = list(as.numeric(Coef.vectors$V1-1),
                       as.numeric(Coef.vectors$V2-1),
@@ -469,48 +506,64 @@ stargazer(PR.nb,POO.nb,Hate.nb,VATP.nb,type = "latex",
 
 
 #alternative
-Hate.y <- glm.nb(Hate ~ year + Type.of.day + Day_of_week + month + XMAS + NYE, data = all_days[Alcohol == "Yes",])
-Hate.n <- glm.nb(Hate ~ year + Type.of.day + Day_of_week + month + XMAS + NYE, data = all_days[Alcohol == "No",])
-poo.y <- glm.nb(Poo ~ year + Type.of.day + Day_of_week + month + XMAS + NYE, data = all_days[Alcohol == "Yes",])
-poo.n <- glm.nb(Poo ~ year + Type.of.day + Day_of_week + month + XMAS + NYE, data = all_days[Alcohol == "No",])
-prop.y <- glm.nb(Property ~ year + Type.of.day + Day_of_week + month + XMAS + NYE, data = all_days[Alcohol == "Yes",])
-prop.n <- glm.nb(Property ~ year + Type.of.day + Day_of_week + month + XMAS + NYE, data = all_days[Alcohol == "No",])
-other.y <- glm.nb(Otherv ~ year + Type.of.day + Day_of_week + month + XMAS + NYE, data = all_days[Alcohol == "Yes",])
-other.n <- glm.nb(Otherv ~ year + Type.of.day + Day_of_week + month + XMAS + NYE, data = all_days[Alcohol == "No",])
+# Hate.y <- glm.nb(Hate ~ year + Type.of.day + Day_of_week + month + XMAS + NYE, data = all_days[Alcohol == "Yes",])
+# Hate.n <- glm.nb(Hate ~ year + Type.of.day + Day_of_week + month + XMAS + NYE, data = all_days[Alcohol == "No",])
+# poo.y <- glm.nb(Poo ~ year + Type.of.day + Day_of_week + month + XMAS + NYE, data = all_days[Alcohol == "Yes",])
+# poo.n <- glm.nb(Poo ~ year + Type.of.day + Day_of_week + month + XMAS + NYE, data = all_days[Alcohol == "No",])
+# prop.y <- glm.nb(Property ~ year + Type.of.day + Day_of_week + month + XMAS + NYE, data = all_days[Alcohol == "Yes",])
+# prop.n <- glm.nb(Property ~ year + Type.of.day + Day_of_week + month + XMAS + NYE, data = all_days[Alcohol == "No",])
+# other.y <- glm.nb(Otherv ~ year + Type.of.day + Day_of_week + month + XMAS + NYE, data = all_days[Alcohol == "Yes",])
+# other.n <- glm.nb(Otherv ~ year + Type.of.day + Day_of_week + month + XMAS + NYE, data = all_days[Alcohol == "No",])
 
-CI.vectors <- data.table(exp(confint(prop.y)),exp(confint(prop.n)),exp(confint(poo.y)),
-                         exp(confint(poo.n)),exp(confint(Hate.y)),exp(confint(Hate.n)),
-                         exp(confint(other.y)),exp(confint(other.n)))
-Coef.vectors <- data.table(exp(prop.y$coefficients), exp(prop.n$coefficients),
-                           exp(poo.y$coefficients), exp(poo.n$coefficients),
-                           exp(Hate.y$coefficients), exp(Hate.n$coefficients),
-                           exp(other.y$coefficients), exp(other.n$coefficients))
-P.vals <- data.table(summary(prop.y)$coefficients[,4],summary(prop.n)$coefficients[,4],
-                     summary(poo.y)$coefficients[,4],summary(poo.n)$coefficients[,4],
-                     summary(Hate.y)$coefficients[,4],summary(Hate.n)$coefficients[,4],
-                     summary(other.y)$coefficients[,4],summary(other.n)$coefficients[,4])
+# see <- glm.nb(Otherv ~ year*Alcohol + Type.of.day*Alcohol + Day_of_week*Alcohol + month*Alcohol + XMAS*Alcohol + NYE*Alcohol, data = all_days)
+# see <- data.table(summary(emmeans(see, ~Type.of.day*Alcohol)))
+# ggplot(data = see, aes(Type.of.day, emmean, colour = Alcohol)) +
+#   geom_point() + geom_errorbar(aes(ymin = asymp.LCL, ymax = asymp.UCL)) +
+#   theme(axis.text.x = element_text(angle = 45, hjust = 1)) 
+# 
+# see <- rbind(data.table(summary(emmeans(other.y, ~Type.of.day))),
+#              data.table(summary(emmeans(other.n, ~Type.of.day))))
+# see[, Alcohol := rep(c("Yes", "No"), each = 6)]
+# ggplot(data = see, aes(Type.of.day, emmean, colour = Alcohol)) +
+#   geom_point() + geom_errorbar(aes(ymin = asymp.LCL, ymax = asymp.UCL)) +
+#   theme(axis.text.x = element_text(angle = 45, hjust = 1)) 
 
-stargazer(prop.y,prop.n,poo.y,poo.n,Hate.y,Hate.n,other.y,other.n,
-          type = "latex",
-          omit = c("month", "year","Day_of_week", "XMAS","NYE", "Constant"), 
-          title = "Exponentiated coefficients and 95% CIs from a series of negative binomial regresssions predicting daily counts of reported DA incidents (other controls not included here: month, year, xmas/nye)",
-          no.space = TRUE,covariate.labels = gsub("Type.of.day|Yes","",names(Hate.y$coefficients)[grepl("Type|Alcohol",names(Hate.y$coefficients) )]),
-          coef = list(as.numeric(Coef.vectors$V1-1),
-                      as.numeric(Coef.vectors$V2-1),
-                      as.numeric(Coef.vectors$V3-1),
-                      as.numeric(Coef.vectors$V4-1),
-                      as.numeric(Coef.vectors$V5-1),
-                      as.numeric(Coef.vectors$V6-1),
-                      as.numeric(Coef.vectors$V7-1),
-                      as.numeric(Coef.vectors$V8-1)), 
-          p =list(P.vals$V1,
-                  P.vals$V2,
-                  P.vals$V3,
-                  P.vals$V4,
-                  P.vals$V5,
-                  P.vals$V6,
-                  P.vals$V7,
-                  P.vals$V8))
+
+
+
+# CI.vectors <- data.table(exp(confint(prop.y)),exp(confint(prop.n)),exp(confint(poo.y)),
+#                          exp(confint(poo.n)),exp(confint(Hate.y)),exp(confint(Hate.n)),
+#                          exp(confint(other.y)),exp(confint(other.n)))
+# Coef.vectors <- data.table(exp(prop.y$coefficients), exp(prop.n$coefficients),
+#                            exp(poo.y$coefficients), exp(poo.n$coefficients),
+#                            exp(Hate.y$coefficients), exp(Hate.n$coefficients),
+#                            exp(other.y$coefficients), exp(other.n$coefficients))
+# P.vals <- data.table(summary(prop.y)$coefficients[,4],summary(prop.n)$coefficients[,4],
+#                      summary(poo.y)$coefficients[,4],summary(poo.n)$coefficients[,4],
+#                      summary(Hate.y)$coefficients[,4],summary(Hate.n)$coefficients[,4],
+#                      summary(other.y)$coefficients[,4],summary(other.n)$coefficients[,4])
+# 
+# stargazer(prop.y,prop.n,poo.y,poo.n,Hate.y,Hate.n,other.y,other.n,
+#           type = "latex",
+#           omit = c("month", "year","Day_of_week", "XMAS","NYE", "Constant"), 
+#           title = "Exponentiated coefficients and 95% CIs from a series of negative binomial regresssions predicting daily counts of reported DA incidents (other controls not included here: month, year, xmas/nye)",
+#           no.space = TRUE,covariate.labels = gsub("Type.of.day|Yes","",names(Hate.y$coefficients)[grepl("Type|Alcohol",names(Hate.y$coefficients) )]),
+#           coef = list(as.numeric(Coef.vectors$V1-1),
+#                       as.numeric(Coef.vectors$V2-1),
+#                       as.numeric(Coef.vectors$V3-1),
+#                       as.numeric(Coef.vectors$V4-1),
+#                       as.numeric(Coef.vectors$V5-1),
+#                       as.numeric(Coef.vectors$V6-1),
+#                       as.numeric(Coef.vectors$V7-1),
+#                       as.numeric(Coef.vectors$V8-1)), 
+#           p =list(P.vals$V1,
+#                   P.vals$V2,
+#                   P.vals$V3,
+#                   P.vals$V4,
+#                   P.vals$V5,
+#                   P.vals$V6,
+#                   P.vals$V7,
+#                   P.vals$V8))
 
 
 
@@ -736,6 +789,28 @@ summary(three_alc <- glm.nb(All~ Six_before_win + Three_before_win + Six_before_
                                  Twentyfour_lost + year + Day_of_week + month + Period + XMAS + NYE, data = all.days[Alcohol == "Yes",]))
 
 
+# summary(threehournb <- glm.nb(All~ Six_before_win*Alcohol + Three_before_win*Alcohol + Six_before_lost*Alcohol + Three_before_lost*Alcohol +
+#                               Six_before_draw*Alcohol + Three_before_draw*Alcohol+
+#                               During_draw*Alcohol+ During_win*Alcohol +
+#                               During_lost*Alcohol+Three_draw*Alcohol+ Three_win*Alcohol + Three_lost*Alcohol +
+#                               Six_draw*Alcohol + Six_win*Alcohol +Six_lost*Alcohol +Twelve_draw*Alcohol +
+#                               Twelve_win*Alcohol +Twelve_lost*Alcohol +
+#                               Twentyfour_draw*Alcohol + Twentyfour_win*Alcohol +
+#                               Twentyfour_lost*Alcohol + year*Alcohol + Day_of_week*Alcohol + month*Alcohol +
+#                               Period*Alcohol + XMAS*Alcohol + NYE*Alcohol, data = all.days))
+# 
+# 
+# summary(threehourp <- glm(All~ Six_before_win*Alcohol + Three_before_win*Alcohol + Six_before_lost*Alcohol + Three_before_lost*Alcohol +
+#                                 Six_before_draw*Alcohol + Three_before_draw*Alcohol+
+#                                 During_draw*Alcohol+ During_win*Alcohol +
+#                                 During_lost*Alcohol+Three_draw*Alcohol+ Three_win*Alcohol + Three_lost*Alcohol +
+#                                 Six_draw*Alcohol + Six_win*Alcohol +Six_lost*Alcohol +Twelve_draw*Alcohol +
+#                                 Twelve_win*Alcohol +Twelve_lost*Alcohol +
+#                                 Twentyfour_draw*Alcohol + Twentyfour_win*Alcohol +
+#                                 Twentyfour_lost*Alcohol + year*Alcohol + Day_of_week*Alcohol + month*Alcohol +
+#                                 Period*Alcohol + XMAS*Alcohol + NYE*Alcohol, data = all.days, family = "poisson"))
+# 
+
 summary(three_nonalcp <- glm(All~ Six_before_win + Three_before_win + Six_before_lost + Three_before_lost +
                                  Six_before_draw + Three_before_draw+
                                  During_draw+ During_win +
@@ -754,26 +829,40 @@ summary(three_alcp <- glm(All~ Six_before_win + Three_before_win + Six_before_lo
 
 lrtest(three_alcp, three_alc)
 lrtest(three_nonalcp, three_nonalc)
+#lrtest(threehourp,threehournb)
 
 dispersiontest(three_nonalcp)
 dispersiontest(three_alcp)
-
+#dispersiontest(threehourp)
 #ok, save regression results 
 alc_ci <- confint(three_alc)
 nonalc_ci <- confint(three_nonalc)
 toplot <- data.table("Variable" = rep(names(three_alc$coefficients)[grepl("draw|win|lost|before", names(three_alc$coefficients))], 2),
                      "Coeff" = c(exp(three_alc$coefficients)[names(three_alc$coefficients)[grepl("draw|win|lost|before", names(three_alc$coefficients))]],
                                  exp(three_nonalc$coefficients)[names(three_alc$coefficients)[grepl("draw|win|lost|before", names(three_alc$coefficients))]]))
-toplot[,  Alcohol := rep(c("Alcohol", "No Alcohol"), each =21)]
+toplot[,  Alcohol := rep(c("Yes", "No"), each =21)]
 toplot <- cbind(toplot, rbind(exp(alc_ci[names(three_alc$coefficients)[grepl("draw|win|lost|before", names(three_alc$coefficients))],]),
                               exp(nonalc_ci[names(three_alc$coefficients)[grepl("draw|win|lost|before", names(three_alc$coefficients))],])))
 setnames(toplot, c("2.5 %", "97.5 %"), c("Lower", "Upper"))
 toplot[, Variable := gsub("1", "", Variable)]
+
+#threehour_ci <- confint(threehournb)
+
+# toplot <- data.table("Variable" = names(threehournb$coefficients)[grepl("draw|win|lost|before", names(threehournb$coefficients))],
+#                      "Coeff" = exp(threehournb$coefficients)[names(threehournb$coefficients)[grepl("draw|win|lost|before", names(threehournb$coefficients))]])
+# #toplot[,  Alcohol := rep(c("Alcohol", "No Alcohol"), each =21)]
+# toplot <- cbind(toplot, rbind(exp(threehour_ci[names(threehournb$coefficients)[grepl("draw|win|lost|before", names(threehournb$coefficients))],])))
+# setnames(toplot, c("2.5 %", "97.5 %"), c("Lower", "Upper"))
+# toplot[, Variable := gsub("1", "", Variable)]
+
+
 # toplot[,Variable := factor(Variable, levels = rev(c("Six_before_win", "Three_before", "During_draw", "Three_draw","Six_draw", "Twelve_draw",
 #                                                     "Twentyfour_draw", "During_lost", "Three_lost","Six_lost", "Twelve_lost", "Twentyfour_lost",
 #                                                     "During_win", "Three_win","Six_win", "Twelve_win", "Twentyfour_win")))]
 # toplot[, variable := as.character(Variable)]
 
+#toplot[, Alcohol := ifelse(grepl("Alcohol", Variable),"Yes","No")]
+#toplot[, Variable := gsub("AlcoholYes:|:AlcoholYes", "", Variable)]
 toplot[, Variable := gsub("_before", "before", Variable)]
 
 toplot[, Type :=unlist(strsplit(Variable,split = "_"))[1], by = 1:nrow(toplot)]
@@ -788,7 +877,7 @@ levels(toplot$Type) <- c("Six\nHours\nBefore", "Three\nHours\nBefore", "During\n
 
 toplot[, Result := ifelse(Result == "win", "Win", ifelse(Result == "lost", "Lost", "Draw"))]
 
-toplot[, Alcohol := ifelse(Alcohol == "No Alcohol", "No", "Yes")]
+#toplot[, Alcohol := ifelse(Alcohol == "No Alcohol", "No", "Yes")]
 
 ggplot(toplot, aes(Type,Coeff, group = factor(Alcohol), fill = factor(Alcohol))) +
   geom_hline(aes(yintercept = 1), linetype = 4) +
@@ -825,5 +914,8 @@ ggplot(toplot, aes(Type,Coeff, group = factor(Alcohol), fill = factor(Alcohol)))
 #   labs(x = "", y= "Coefficient")+ 
 #   scale_color_manual(values=c("darkorange", "cornflowerblue"))
 
-ggsave("C:\\Anna\\Crimes\\Football-DA\\Threehours.pdf", height = 10, width = 10)
+ggsave("C:\\Anna\\Crimes\\Football-DA\\Threehoursinteraction.pdf", height = 10, width = 10)
+
+####################
+
 
