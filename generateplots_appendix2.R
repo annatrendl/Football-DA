@@ -6,6 +6,11 @@ library(data.table)
 library(lubridate)
 library(ggplot2)
 library(emmeans)
+library(rms)
+library(MASS)
+library(lmtest)
+library(stargazer)
+library(sandwich)
 setwd("C:/Anna/Crimes/wm_supernew")
 load("Westmids_supernew.RData")
 check <- crimes_cleaned[inc_da == "Yes" | Domestic_abuse != "No", list(no_vict = sum(role == "VICT"),
@@ -79,7 +84,9 @@ all.days_new[is.na(Type.of.day),Type.of.day := "Nonmatch day"]
 all.days_new[(when.committed >= ymd("2010-06-11") & when.committed <= ymd("2010-07-11")) | 
                (when.committed >= ymd("2014-06-12") & when.committed <= ymd("2014-07-13")) |
                (when.committed >= ymd("2012-06-08") & when.committed <= ymd("2012-07-01")) | 
-               (when.committed >= ymd("2016-06-10") & when.committed <= ymd("2016-07-10")), Tournament_on := TRUE]
+               (when.committed >= ymd("2016-06-10") & when.committed <= ymd("2016-07-10")) |
+               (when.committed >= ymd("2018-06-14") & when.committed <= ymd("2018-07-15")),
+             Tournament_on := TRUE]
 all.days_new[is.na(Tournament_on), Tournament_on := FALSE]
 all.days_new[, Type.of.day := ifelse(Type.of.day == "Nonmatch day" & Tournament_on == TRUE,
                                      "Tournament on",Type.of.day)]
@@ -142,118 +149,50 @@ check <- merge(check,crimes_cleaned[crime_number %in% check$crime_number & role 
 
 check[, Locationpublic := !grepl("DWELLING", location_type_general)]
 check[, Newlyreported := how.many.before == 0]
-check[,Alcohol := as.factor(Alcohol_inv)]
+check[, Alcohol := as.factor(Alcohol_inv)]
 check[, Violent := grepl("ASSAULT|MALICIOUS|GBH|WOUND|RAPE|MURDER|MANSLAUGHTER", offence)]
 check[, Serious := ifelse(!(Injury_class %in% c("no injury", "threat")),T,F)]
+check[, year2 := factor(year)]
+check$Day_of_week <- factor(check$Day_of_week, ordered = F)
+check$month <- factor(check$month, ordered = F)
 
 
+# fitnew=lrm(Newlyreported ~year2*Alcohol + Type*Alcohol + Day_of_week*Alcohol +
+#           month*Alcohol + XMAS*Alcohol + NYE*Alcohol, x=T, y=T, data=check[year > 2010,])
+# resnew1<- robcov(fitnew, cluster=check[year > 2010,ids])
+# resnew2<- bootcov(fitnew,cluster=check[year > 2010,ids])
+# 
+# fitloc=lrm(Locationpublic ~year2*Alcohol + Type*Alcohol + Day_of_week*Alcohol +
+#              month*Alcohol + XMAS*Alcohol + NYE*Alcohol, x=T, y=T, data=check[year >= 2010,])
+# resloc1<- robcov(fitloc, cluster=check[year >= 2010,ids])
+# resloc2<- bootcov(fitloc,cluster=check[year >= 2010,ids])
+# 
+# fitser=lrm(Serious ~year2*Alcohol + Type*Alcohol + Day_of_week*Alcohol +
+#              month*Alcohol + XMAS*Alcohol + NYE*Alcohol, x=T, y=T, data=check[year >= 2010,])
+# resser1<- robcov(fitser, cluster=check[year >= 2010,ids])
+# resser2<- bootcov(fitser,cluster=check[year >= 2010,ids])
 
-setnames(all.days_new, "N", "All")
-##################Location
-all.days_new[, Locationpublic := rep(c(T,F), length(unique(all.days_new$when.committed))*2)]
-all.days_new <- merge(all.days_new,check[,.N,.(Alcohol, when.committed,Locationpublic)],
-                      by = c("when.committed", "Locationpublic", "Alcohol"), all.x = T)
-all.days_new[is.na(N),N:=0]
-
-
-summary(m3 <- glm.nb(N ~ year + Type.of.day*Alcohol*Locationpublic + Day_of_week +
-                        month + XMAS + NYE, data = all.days_new))
-m3 <- data.table(summary(emmeans(m3, ~Type.of.day*Alcohol*Locationpublic)))
-
-ggplot(data = m3, aes(Type.of.day, emmean, colour = Alcohol)) +
-  geom_point() + geom_errorbar(aes(ymin = asymp.LCL, ymax = asymp.UCL)) +
-  facet_wrap(~Locationpublic, scales = "free")+
-  labs(title = "DA ~ Type.of.day*Alcohol*Locationpublic")+ 
-  theme(axis.text.x = element_text(angle = 45, hjust = 1))
-ggsave("help_emmeans_locationtypeint.pdf")
-
-summary(locnalc <- glm.nb(N ~ year + Type.of.day*Locationpublic + Day_of_week +
-                           month + XMAS + NYE, data = all.days_new[Alcohol == "No",]))
-summary(localc <- glm.nb(N ~ year + Type.of.day*Locationpublic + Day_of_week +
-                            month + XMAS + NYE, data = all.days_new[Alcohol == "Yes",]))
-all.days_new <- all.days_new[, -c("Locationpublic", "N")]
-##################Newly reported
-all.days_new <- all.days_new[order(when.committed, Alcohol)]
-all.days_new[, Newlyreported := rep(c(T,F), length(unique(all.days_new$when.committed))*2)]
-all.days_new <- merge(all.days_new,check[,.N,.(Alcohol, when.committed,Newlyreported)],
-                      by = c("when.committed", "Newlyreported", "Alcohol"), all.x = T)
-all.days_new[is.na(N),N:=0]
-
-summary(m3 <- glm.nb(N ~ year + Type.of.day*Alcohol*Newlyreported + Day_of_week +
-                       month + XMAS + NYE, data = all.days_new[year != 2010,]))
-m3 <- data.table(summary(emmeans(m3, ~Type.of.day*Alcohol*Newlyreported)))
-
-ggplot(data = m3, aes(Type.of.day, emmean, colour = Alcohol)) +
-  geom_point() + geom_errorbar(aes(ymin = asymp.LCL, ymax = asymp.UCL)) +
-  facet_wrap(~Newlyreported, scales = "free")+
-  labs(title = "DA ~ Type.of.day*Alcohol*Newlyreported")+ 
-  theme(axis.text.x = element_text(angle = 45, hjust = 1))
-ggsave("help_emmeans_newlyrepint.pdf")
+#save.image("ohdeer.RData")
+rm(list=ls())
+load("ohdeer.RData")
 
 
-summary(newlyrepalc <- glm.nb(N ~ year + Type.of.day*Newlyreported + Day_of_week +
-                             month + XMAS + NYE, data = all.days_new[year != 2010& Alcohol == "Yes",]))
-summary(newlyrepnalc <- glm.nb(N ~ year + Type.of.day*Newlyreported + Day_of_week +
-                             month + XMAS + NYE, data = all.days_new[year != 2010 &Alcohol == "No",]))
-all.days_new <- all.days_new[, -c("Newlyreported", "N")]
-
-##################Serious
-all.days_new <- all.days_new[order(when.committed, Alcohol)]
-all.days_new[, Serious := rep(c(T,F), length(unique(all.days_new$when.committed))*2)]
-all.days_new <- merge(all.days_new,check[,.N,.(Alcohol, when.committed,Serious)],
-                      by = c("when.committed", "Serious", "Alcohol"), all.x = T)
-all.days_new[is.na(N),N:=0]
+Pnew <- pnorm(abs(resnew1$coef/sqrt(diag(resnew1$var))),lower.tail=F)*2
+Ploc <- pnorm(abs(resloc1$coef/sqrt(diag(resloc1$var))),lower.tail=F)*2
+Pser <- pnorm(abs(resser1$coef/sqrt(diag(resser1$var))),lower.tail=F)*2
 
 
-summary(m3 <- glm.nb(N ~ year + Type.of.day*Alcohol*Serious + Day_of_week +
-                       month + XMAS + NYE, data = all.days_new[year != 2010,]))
-m3 <- data.table(summary(emmeans(m3, ~Type.of.day*Alcohol*Serious)))
-
-ggplot(data = m3, aes(Type.of.day, emmean, colour = Alcohol)) +
-  geom_point() + geom_errorbar(aes(ymin = asymp.LCL, ymax = asymp.UCL)) +
-  facet_wrap(~Serious, scales = "free")+
-  labs(title = "DA ~ Type.of.day*Alcohol*Serious")+ 
-  theme(axis.text.x = element_text(angle = 45, hjust = 1))
-ggsave("help_emmeans_seriousint.pdf")
+names(resnew1$coefficients) <- gsub("Type=|=Yes * |* ","", names(resnew1$coefficients))
+names(resloc1$coefficients) <-gsub("Type=|=Yes * |* ","", names(resloc1$coefficients))
+names(resser1$coefficients) <- gsub("Type=|=Yes * |* ","", names(resser1$coefficients))
 
 
-summary(seriousalc <- glm.nb(N ~ year + Type.of.day*Serious + Day_of_week +
-                                month + XMAS + NYE, data = all.days_new[Alcohol == "Yes",]))
-summary(seriousnalc <- glm.nb(N ~ year + Type.of.day*Serious + Day_of_week +
-                                 month + XMAS + NYE, data = all.days_new[Alcohol == "No",]))
-all.days_new <- all.days_new[, -c("Serious", "N")]
+stargazer(resnew1, resloc1, resser1,type = "latex",no.space = TRUE,
+          omit = c("month", "year","Day_of_week", "XMAS","NYE", "Constant"))
+          #coef = list(resnew1$coefficients, resloc1$coefficients, resser1$coefficients),
+          #p = list(Pnew, Ploc, Pser))
+          #se = list(sqrt(diag(resnew1$var)), sqrt(diag(resloc1$var)), sqrt(diag(resser1$var))))
 
-#######################################################################################
-
-CI.vectors <- data.table(exp(confint(localc)),exp(confint(locnalc)),
-                         exp(confint(newlyrepalc)),exp(confint(newlyrepnalc)),
-                         exp(confint(seriousalc)),exp(confint(seriousnalc)))
-Coef.vectors <- data.table(exp(localc$coefficients), exp(locnalc$coefficients),
-                           exp(newlyrepalc$coefficients),exp(newlyrepnalc$coefficients),
-                           exp(seriousalc$coefficients),exp(seriousnalc$coefficients))
-P.vals <- data.table(summary(localc)$coefficients[,4],summary(locnalc)$coefficients[,4],
-                     summary(newlyrepalc)$coefficients[,4],summary(newlyrepnalc)$coefficients[,4],
-                     summary(seriousalc)$coefficients[,4],summary(seriousnalc)$coefficients[,4])
-
-names(localc$coefficients) <- gsub("Type.of.day","", names(localc$coefficients))
-names(seriousalc$coefficients) <- gsub("Type.of.day","", names(seriousalc$coefficients))
-names(newlyrepalc$coefficients) <- gsub("Type.of.day","", names(newlyrepalc$coefficients))
-names(locnalc$coefficients) <- gsub("Type.of.day","", names(locnalc$coefficients))
-names(seriousnalc$coefficients) <- gsub("Type.of.day","", names(seriousnalc$coefficients))
-names(newlyrepnalc$coefficients) <- gsub("Type.of.day","", names(newlyrepnalc$coefficients))
-
-stargazer(localc,locnalc,
-          newlyrepalc,newlyrepnalc,
-          seriousalc, seriousnalc,type = "latex",
-          omit = c("month", "year","Day_of_week", "XMAS","NYE", "Constant"), 
-          title = "Exponentiated coefficients and 95% CIs from a series of negative binomial regresssions predicting daily counts of reported DA incidents (other controls not included here: month, year, xmas/nye)",
-          no.space = TRUE,
-          coef = list(as.numeric(Coef.vectors$V1-1),
-                      as.numeric(Coef.vectors$V2-1),
-                      as.numeric(Coef.vectors$V3-1)), 
-          p =list(P.vals$V1,
-                  P.vals$V2,
-                  P.vals$V3))
 
 
 ################################## TIME DELAY BETWEEN INCIDENTS##################################
@@ -272,102 +211,59 @@ check[, Daystilnext_round := round(Daystilnext)]
 check[, Dayssincelast_round := round(Dayssincelast)]
 
 
-
-summary(nbtilnext.m <- glm.nb(Daystilnext_round ~ factor(year) + Type*Alcohol + Day_of_week + month + 
-                              XMAS + NYE, data = check[year >=2010 & first_occurred >=2010 &
+summary(nbtilnext.m <- glm.nb(Daystilnext_round ~ year2*Alcohol + Type*Alcohol + Day_of_week*Alcohol + month*Alcohol + 
+                              XMAS*Alcohol + NYE*Alcohol, data = check[year >=2010 & first_occurred >=2010 &
                               Daystilnext_round < as.numeric(quantile(check$Daystilnext_round,0.975,na.rm = T)),]))
-summary(ptilnext.m <- glm(Daystilnext_round ~ year + Type*Alcohol + Day_of_week + month  + 
-                          XMAS + NYE, data = check[year >=2010 & first_occurred >=2010 &
+summary(ptilnext.m <- glm(Daystilnext_round ~ year2*Alcohol + Type*Alcohol + Day_of_week*Alcohol + month*Alcohol  + 
+                          XMAS*Alcohol + NYE*Alcohol, data = check[year >=2010 & first_occurred >=2010 &
                           Daystilnext_round < as.numeric(quantile(check$Daystilnext_round,0.975,na.rm = T)),],
                           family = "poisson"))
-
-library(lmtest)
-lrtest(ptilnext.m,nbtilnext.m)
-
-m3 <- data.table(summary(emmeans(nbtilnext.m, ~ Type*Alcohol)))
-ggplot(data = m3, aes(Type, emmean, colour = Alcohol)) +
-  geom_point(position=position_dodge(width=0.6)) + 
-  geom_errorbar(aes(ymin = asymp.LCL, ymax = asymp.UCL), position=position_dodge(width=0.6)) +
-  theme(axis.text.x = element_text(angle = 45, hjust = 1))  +
-  labs(title = "Daystilnext ~ Type.of.day*Alcohol")
-ggsave("help_emmeans_daystilnext.pdf")
-
-
-
-summary(nbsincelast.m <- glm.nb(Dayssincelast_round ~ as.factor(year) + Type*Alcohol + Day_of_week + 
-                                month + XMAS + NYE, data = check[year >=2010 & first_occurred >=2010 &
-                                Dayssincelast_round < as.numeric(quantile(check$Dayssincelast_round,0.975,na.rm = T)),]))
-summary(psincelast.m <- glm(Dayssincelast_round ~ as.factor(year) + Type*Alcohol + Day_of_week + 
-                            month + XMAS + NYE, data = check[year >=2010 & first_occurred >=2010 &
-                            Dayssincelast_round < as.numeric(quantile(check$Dayssincelast_round,0.975,na.rm = T)),], family = "poisson"))
-library(lmtest)
-lrtest(psincelast.m,nbsincelast.m)
-
-
-m3 <- data.table(summary(emmeans(nbsincelast.m, ~ Type*Alcohol)))
-ggplot(data = m3, aes(Type, emmean, colour = Alcohol)) +
-  geom_point(position=position_dodge(width=0.6)) + 
-  geom_errorbar(aes(ymin = asymp.LCL, ymax = asymp.UCL), position=position_dodge(width=0.6)) +
-  theme(axis.text.x = element_text(angle = 45, hjust = 1))  +
-  labs(title = "Dayssincelast ~ Type.of.day*Alcohol")
-ggsave("help_emmeans_dayssincelast.pdf")
-
-# library(lme4)
-# multilev <- glmer.nb(Daystilnext_round ~ as.factor(year) + Type*Alcohol + Day_of_week +
-#            month + XMAS + NYE + (1|ids), data = check[year >=2010,], verbose = TRUE)
-
-
-################################## TIME DELAY REPORTING##################################
+summary(nbsincelast.m <- glm.nb(Dayssincelast_round  ~ factor(year)*Alcohol + Type*Alcohol + Day_of_week*Alcohol + month*Alcohol + 
+                                  XMAS*Alcohol + NYE*Alcohol, data = check[year >=2010 & first_occurred >=2010 &
+                                                                             Dayssincelast_round < as.numeric(quantile(check$Dayssincelast_round,0.975,na.rm = T)),]))
+summary(psincelast.m <- glm(Dayssincelast_round  ~ factor(year)*Alcohol + Type*Alcohol + Day_of_week*Alcohol + month*Alcohol + 
+                              XMAS*Alcohol + NYE*Alcohol, data = check[year >=2010 & first_occurred >=2010 &
+                                                                         Dayssincelast_round < as.numeric(quantile(check$Dayssincelast_round,0.975,na.rm = T)),], family = "poisson"))
 
 check <- merge(check, unique(crimes_cleaned[, c("crime_number", "datetime_reported")]),
                by = "crime_number", all.x = T)
 check[, Report_delay :=  round(as.numeric(difftime(datetime_reported, datetime_first_committed,
                                                    units="hours")))]
-summary(reportdelaynb <- glm.nb(Report_delay ~ as.factor(year) + Type*Alcohol +
-   Day_of_week + month + XMAS + NYE, data = check[year >=2010 & 
-   Report_delay < as.numeric(quantile(check$Report_delay,0.975,na.rm = T)) &
-   Report_delay >= 0 & first_occurred >=2010,]))
-summary(reportdelayp <- glm(Report_delay ~ as.factor(year) + Type*Alcohol +
-                                  Day_of_week + month + XMAS + NYE,
+summary(reportdelaynb <- glm.nb(Report_delay ~ factor(year)*Alcohol + Type*Alcohol + Day_of_week*Alcohol + month*Alcohol + 
+                                  XMAS*Alcohol + NYE*Alcohol, data = check[year >=2010 & 
+                                                                             Report_delay < as.numeric(quantile(check$Report_delay,0.975,na.rm = T)) &
+                                                                             Report_delay >= 0 & first_occurred >=2010,]))
+summary(reportdelayp <- glm(Report_delay ~ factor(year)*Alcohol + Type*Alcohol + Day_of_week*Alcohol + month*Alcohol + 
+                              XMAS*Alcohol + NYE*Alcohol,
                             data = check[year >=2010 & 
-                            Report_delay < as.numeric(quantile(check$Report_delay,0.975,na.rm = T)) &
-                            Report_delay >= 0 & first_occurred >=2010,],family = "poisson"))
+                                           Report_delay < as.numeric(quantile(check$Report_delay,0.975,na.rm = T)) &
+                                           Report_delay >= 0 & first_occurred >=2010,],family = "poisson"))
 
 lrtest(reportdelayp,reportdelaynb)
+lrtest(ptilnext.m,nbtilnext.m)
+lrtest(psincelast.m,nbsincelast.m)
 
-m3 <- data.table(summary(emmeans(reportdelaynb, ~ Type*Alcohol)))
-ggplot(data = m3, aes(Type, emmean, colour = Alcohol)) +
-  geom_point(position=position_dodge(width=0.6)) + 
-  geom_errorbar(aes(ymin = asymp.LCL, ymax = asymp.UCL), position=position_dodge(width=0.6)) +
-  theme(axis.text.x = element_text(angle = 45, hjust = 1))  +
-  labs(title = "Hourselapsedtilreport ~ Type.of.day*Alcohol")
-ggsave("help_emmeans_hourstilreport.pdf")
+rep <- coeftest(reportdelaynb, vcov = vcovCL(reportdelaynb, cluster = check[year >=2010 & 
+         Report_delay < as.numeric(quantile(check$Report_delay,0.975,na.rm = T)) &
+         Report_delay >= 0 & first_occurred >=2010,ids]))
 
+tilnext <- coeftest(nbtilnext.m, vcov = vcovCL(nbtilnext.m, cluster = check[year >=2010 & first_occurred >=2010 &
+                                                                   Daystilnext_round < as.numeric(quantile(check$Daystilnext_round,0.975,na.rm = T)),ids]))
 
-
-
-CI.vectors <- data.table(exp(confint(nbtilnext.m)),exp(confint(nbsincelast.m)), exp(confint(reportdelaynb)))
-Coef.vectors <- data.table(exp(nbtilnext.m$coefficients),exp(nbsincelast.m$coefficients),
-                           exp(reportdelaynb$coefficients))
-P.vals <- data.table(c(summary(nbtilnext.m)$coefficients[,4],
-                       summary(nbsincelast.m)$coefficients[,4],
-                       summary(reportdelaynb)$coefficients[,4]))
-
-names(nbtilnext.m$coefficients) <- gsub("Type.of.day","", names(nbtilnext.m$coefficients))
-names(nbsincelast.m$coefficients) <- gsub("Type.of.day","", names(nbsincelast.m$coefficients))
-names(reportdelaynb$coefficients) <- gsub("Type.of.day","", names(reportdelaynb$coefficients))
+sincelast <- coeftest(nbsincelast.m, vcov = vcovCL(nbsincelast.m, cluster = check[year >=2010 & first_occurred >=2010 &
+                                                                       Dayssincelast_round < as.numeric(quantile(check$Dayssincelast_round,0.975,na.rm = T)),ids]))
 
 
-stargazer(nbtilnext.m,nbsincelast.m,reportdelaynb,type = "latex",
-          omit = c("month", "year","Day_of_week", "XMAS","NYE", "Constant"), 
-          title = "Exponentiated coefficients and 95% CIs from a series of negative binomial regresssions predicting daily counts of reported DA incidents (other controls not included here: month, year, xmas/nye)",
-          no.space = TRUE,
-          coef = list(as.numeric(Coef.vectors$V1-1),
-                      as.numeric(Coef.vectors$V2-1),
-                      as.numeric(Coef.vectors$V3-1)), 
-          p =list(P.vals$V1,
-                  P.vals$V2,
-                  P.vals$V3))
+
+
+
+stargazer(sincelast,tilnext,rep,type = "latex",no.space = TRUE,
+          omit = c("month", "year","Day_of_week", "XMAS","NYE", "Constant"),
+          se = list(as.numeric(sincelast[,"Std. Error"]),
+                    as.numeric(tilnext[,"Std. Error"]),
+                    as.numeric(rep[,"Std. Error"])))
+
+
 
 
 
@@ -378,31 +274,15 @@ check[,Previous_alc := shift(Alcohol, type = "lag", fill = NA), .(ids)]
 check <- check[year > 2009 & first_occurred >=2010,]
 
 
-summary(transition <- glm(Alcohol ~ Type*Previous_alc + Day_of_week+ month+ XMAS + NYE+as.factor(year),
-                      data = check, family = "binomial"))
-CI.vectors <- data.table(exp(confint(transition)))
-Coef.vectors <- data.table(exp(transition$coefficients))
-P.vals <- data.table(c(summary(transition)$coefficients[,4]))
+fitalctr=lrm(Alcohol ~Type*Previous_alc + Day_of_week*Previous_alc+ month*Previous_alc+
+               XMAS*Previous_alc + NYE*Previous_alc+year2*Previous_alc, x=T, y=T, data=check)
+ resalctr1<- robcov(fitalctr, cluster=check[year >= 2010,ids])
 
-
-m3 <- data.table(summary(emmeans(transition, ~ Type*Previous_alc)))
-ggplot(data = m3, aes(Type, emmean, colour = Previous_alc)) +
-  geom_point(position=position_dodge(width=0.6)) + 
-  geom_errorbar(aes(ymin = asymp.LCL, ymax = asymp.UCL), position=position_dodge(width=0.6)) +
-  theme(axis.text.x = element_text(angle = 45, hjust = 1))  +
-  labs(title = "Alcohol ~ Type.of.day*Previous_alc")
-ggsave("help_emmeans_alctrans.pdf")
-
-
-stargazer(transition,type = "latex",
-          omit = c("month", "year","Day_of_week", "XMAS","NYE", "Constant"), 
-          title = "Exponentiated coefficients and 95% CIs from a series of negative binomial regresssions predicting daily counts of reported DA incidents (other controls not included here: month, year, xmas/nye)",
-          no.space = TRUE,
-          coef = list(as.numeric(Coef.vectors$V1-1)), 
-          p =list(P.vals$V1))
-
-
-
-
-
-
+ #names(resalctr1$coefficients) <- gsub("Type=|=Yes","", names(resalctr1$coefficients))
+ 
+ 
+ stargazer(resalctr1,type = "latex",no.space = TRUE,
+           omit = c("month", "year","Day_of_week", "XMAS","NYE", "Constant"))
+ 
+ 
+ 
