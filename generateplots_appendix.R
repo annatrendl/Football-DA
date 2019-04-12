@@ -103,6 +103,9 @@ all.days_new <- all.days_new[!(when.committed == ymd("2018-11-06") | (when.commi
 all.days_new[, XMAS := ifelse(month(when.committed) == 12 & mday(when.committed) %in% c(24,25,26),T,F)]
 all.days_new[, NYE := ifelse(month(when.committed) == 1 & mday(when.committed) == 1,T,F)]
 
+summary(glm.nb(N ~ Type.of.day*Alcohol +  Day_of_week*Alcohol + year*Alcohol + month*Alcohol + XMAS*Alcohol + NYE*Alcohol, data = all.days_new))
+
+summary(glm.nb(N ~ Type.of.day*Alcohol +  Day_of_week*Alcohol + year*Alcohol + month*Alcohol + XMAS*Alcohol + NYE*Alcohol, data = all.days_new[year != 2018,]))
 
 
 ####################################################### KIRBY
