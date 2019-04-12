@@ -875,9 +875,14 @@ levels(toplot$Type) <- c("Six\nHours\nBefore", "Three\nHours\nBefore", "During\n
                          "Three\nHours\nAfter", "Six\nHours\nAfter", "Twelve\nHours\nAfter",
                          "Twenty-four\nHours\nAfter")
 
-toplot[, Result := ifelse(Result == "win", "Win", ifelse(Result == "lost", "Lost", "Draw"))]
+toplot[, Result := ifelse(Result == "win", "Win", ifelse(Result == "lost", "Loss", "Draw"))]
 
-#toplot[, Alcohol := ifelse(Alcohol == "No Alcohol", "No", "Yes")]
+toplot[, Alcohol := ifelse(Alcohol == "No", "Not Alcohol-related", "Alcohol-related")]
+toplot[, Alcohol := factor(Alcohol, levels = c("Not Alcohol-related",  "Alcohol-related"))]
+
+toplot[, Coeff := (Coeff-1)*100]
+toplot[, Lower := (Lower-1)*100]
+toplot[, Upper := (Upper-1)*100]
 
 ggplot(toplot, aes(Type,Coeff, group = factor(Alcohol), fill = factor(Alcohol))) +
   geom_hline(aes(yintercept = 1), linetype = 4) +
@@ -886,15 +891,17 @@ ggplot(toplot, aes(Type,Coeff, group = factor(Alcohol), fill = factor(Alcohol)))
   geom_ribbon(aes(ymin = Lower, ymax = Upper), alpha= 0.5) + 
   geom_line(size = 1, aes(colour = Alcohol)) + 
   theme_classic()+
-  labs(x = "", y = "Coefficient", fill = "Alcohol") +theme(legend.position = "bottom")+
+  labs(x = "", y = "Increase in domestic abuse (%)", fill = "Alcohol") +theme(legend.position = "bottom")+
   theme(legend.text = element_text(size=19))+ 
   scale_fill_manual(values=c("cornflowerblue", "darkorange")) +
   scale_colour_manual(values=c("cornflowerblue", "darkorange")) +
   theme(text = element_text(size=20),
         axis.text.x = element_text(size = 18),
-        axis.text.y = element_text(size = 18))+
-  #geom_point(position=position_dodge(width=0.7), size = 1.5, colour = "black")+
-  ylim(c(-0.5,4))
+        axis.text.y = element_text(size = 18))
+
+
+
+
 
 
 # 
@@ -914,7 +921,7 @@ ggplot(toplot, aes(Type,Coeff, group = factor(Alcohol), fill = factor(Alcohol)))
 #   labs(x = "", y= "Coefficient")+ 
 #   scale_color_manual(values=c("darkorange", "cornflowerblue"))
 
-ggsave("C:\\Anna\\Crimes\\Football-DA\\Threehoursinteraction.pdf", height = 10, width = 10)
+ggsave("C:\\Anna\\Crimes\\Football-DA\\Threehours.pdf", height = 10, width = 10)
 
 ####################
 
