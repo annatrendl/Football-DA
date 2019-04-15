@@ -243,6 +243,11 @@ lrtest(reportdelayp,reportdelaynb)
 lrtest(ptilnext.m,nbtilnext.m)
 lrtest(psincelast.m,nbsincelast.m)
 
+dispersiontest(reportdelayp)
+dispersiontest(ptilnext.m)
+dispersiontest(psincelast.m)
+
+
 rep <- coeftest(reportdelaynb, vcov = vcovCL(reportdelaynb, cluster = check[year >=2010 & 
          Report_delay < as.numeric(quantile(check$Report_delay,0.975,na.rm = T)) &
          Report_delay >= 0 & first_occurred >=2010,ids]))
