@@ -328,6 +328,13 @@ Our dataset comprises all crimes and specific types of incidents (such as domest
  To analyse the temporal dynamics of the England win effect (see Figure \ref{fig:threehours}), we divided each day in our dataset into eight three-hour periods, the first one starting at 12am, and used these to identify specific time windows around the time of the match. The exact time of the matches vary considerably (the earliest starting at 1pm, and the latest at 11pm). We first identified the three-hour period of the day into which each match falls. If the start and end time of the match did not fall in the same three-hour period, we chose the three-hour period that covers the larger part of the match (e.g., a 2.5 hour long match starting at 7pm will be assigned to the 6-9pm period and not to the 9pm-12am period).
 
 
+\section*{Data availability statement}
+
+The data that support the findings of this study are available from West Midlands Police
+but restrictions apply to the availability of these data, which were used under license
+for the current study, and so are not publicly available. Data are however available
+from the authors upon reasonable request and with permission of West Midlands Police.
+
 
 
 \section*{Appendix}
@@ -337,7 +344,7 @@ Our dataset comprises all crimes and specific types of incidents (such as domest
 \setcounter{table}{0}
 \setcounter{figure}{0}
 
-\begin{table}[ht]
+\begin{table}[htp]
 \centering
  \caption{Non-domestic violent cases by gender}
   \label{otherviolence_gender}
@@ -394,7 +401,7 @@ Number of days & 3,017 & 3,017 & 3,017 & 3,017 \\
 
 \newpage
 
-\begin{table}
+\begin{table}[htp]
 \centering
  \caption{Replication of Kirby et al. (2014) with an alternative specification}
    \label{kirbyrep1}
@@ -436,7 +443,7 @@ AIC & 714.980 & 704.356 \\
 
 \newpage
 
-\begin{sidewaystable}
+\begin{sidewaystable}[htp]
 \centering
  \caption{Year subgroup regressions, Lancashire and West Midlands data}
    \label{kirbyrep2}
@@ -495,7 +502,7 @@ Number of days & 30 & 32 & 30 & 730 & 732 & 730 & 732 & 618 \\
 
 
 
-\begin{table}
+\begin{table}[htp]
 \centering
  \caption{Robustness of the result: sensitivity to the exclusion of specific years}
   \label{robustness}
@@ -547,7 +554,7 @@ Number of days & 2,708 & 2,651 & 2,652 & 2,651 & 2,652 \\
 %\end{tabular} 
 %\end{table} 
 
-\end{tabular} 
+\end{tabular}
 \begin{tablenotes}
       \item[a] \textit{$^{*}$p$<$0.1; $^{**}$p$<$0.05; $^{***}$p$<$0.01}
       \item[b] \textit{Estimates are from a series of negative binomial regressions (based on tests of overdispersion)  with year, month, day of week, Christmas, New Year's eve controls interacted by alcohol; standard errors in parentheses}
@@ -557,7 +564,7 @@ Number of days & 2,708 & 2,651 & 2,652 & 2,651 & 2,652 \\
 
 \newpage
 
-\begin{table}
+\begin{table}[htp]
 \centering
  \scalebox{0.85}{
   \begin{threeparttable}
@@ -608,7 +615,7 @@ Number of days & 3,017 \\
 
 \newpage
 
-\begin{table}
+\begin{table}[htp]
 \centering
  \caption{Non domestic abuse incidents that are about power}
   \label{otherabuse}
@@ -667,7 +674,7 @@ Number of days & 3,017 & 3,017  \\
 
 
 
-\begin{table}
+\begin{table}[htp]
 \centering
  \caption{Characteristics of domestic abuse cases reported on match days I}
   \label{Characteristics1}
@@ -719,7 +726,7 @@ Number of cases & 251,976 & 279,777 & 279,777 \\
 \end{table}
 \newpage
 
-\begin{table}
+\begin{table}[htp]
 \centering
   \caption{Characteristics of domestic abuse cases reported on match days II}
     \label{Characteristics2}
@@ -772,7 +779,7 @@ Number of cases & 95,091 & 95,091 & 272,793 \\
 \newpage
 
 
-\begin{table}
+\begin{table}[htp]
 \centering
   \caption{Alcohol transition on England match days}
     \label{alctrans}
@@ -823,11 +830,6 @@ Number of cases & 97,292 \\
     \end{tablenotes}
 \end{threeparttable} } 
 \end{table}
-
-
-
-
-
 
 
 
