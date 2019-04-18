@@ -12,6 +12,8 @@
 %\bibliographystyle{naturemag}
 %\usepackage{apacite}
 \usepackage[style=nature]{biblatex}
+\usepackage{lineno}
+\linenumbers
 %\usepackage[backend=biber,style=numeric,sorting=none]{biblatex}
 %\usepackage[backend=biber]{biblatex}
 \definecolor{green}{rgb}{0,1,0}
@@ -26,8 +28,9 @@
 
 \begin{document}
 \title{Reported cases of alcohol-related domestic abuse increase following the victory of the England national football team}
-\author{Anna Trendl}
+%\author{Anna Trendl}
 %title: I am using the word "reported" to highlight the issue of underreporting, and I am also cautious about not claiming causal effects, but emphasize that the increase starts when the match starts
+\date{}
 \maketitle
 
 
@@ -35,12 +38,14 @@
 %A Letter is an important research study of high quality and general interest to human behaviour researchers.  The text is approximately 5,000 words, including the introductory paragraph, but excluding references and figure legends. Letters should have no more than 4 display items (figures and/or tables). As a guideline, Letters contain approximately 30 references (excluding those cited exclusively in Methods). This format begins with a title of, at most, 90 characters (including spaces), followed by an introductory paragraph (not abstract) of approximately 200 words, summarizing the background, rationale, main results (introduced by "Here we show" or some equivalent phrase) and implications of the study. This paragraph should be fully referenced and should be considered part of the main text, so that any subsequent introductory material avoids too much redundancy with the introductory paragraph. Letters are not divided by headings, except for the Methods heading.
 %
 %Letters include received/accepted dates and may be accompanied by supplementary information. Letters are peer reviewed.
-%
-%\NS{Neil crappy abstract: When England wins or loses a football match, we use WMP data to show that there is a 60\% spike in domestic abuse cases.  We only see the patterns for wins and losses not draws, and only see the increase for domestic abuse cases involving alcohol. Indeed the spike is unique to male on female intimate partner domestic abuse, and we don't see it for other types of incident (e.g., antisocial behaviour).}
 
-\section{Introductory paragraph (200 words approx)}
+\section{Abstract}
 
-Using crime data from the third largest police force in England, serving a population of 2.9 million\autocite{populationfigure}, we find that the number of reported alcohol-related domestic abuse cases increases by 61\% following an England victory in a national football tournament (the World Cup and European Championship). The effect is driven by male to female alcohol-related cases, and is absent from male to male, female to male, and female to female cases. A three-hour analysis reveals that the increase starts in the three-hour period of the match, peaks in the three hours following the victory, and gradually declines to its baseline level in the hours following the match. This temporal pattern, along with the random allocation of match days strongly suggests a causal effect of an England victory on the reported number of alcohol-related domestic abuse cases. We find a comparable increase in other, violent, male to female, alcohol-related offences on England win days. The domestic abuse that occurs on these days is not characteristically different from domestic abuse cases occurring on non-match days, apart from the stronger association with alcohol. The alcohol and time specificity go beyond existing reports of the link between football and domestic abuse \autocite{Kirby2014,Brimicombe2012}. 
+%Rewritten abstract to comply with requirements here: https://cbs.umn.edu/sites/cbs.umn.edu/files/public/.../Annotated_Nature_abstract.pdf
+
+%They begin with a fully referenced paragraph, ideally of about 200 words, but certainly no more than 300 words, aimed at readers in other disciplines. This paragraph starts with a 2-3 sentence basic introduction to the field; followed by a one-sentence statement of the main conclusions starting 'Here we show' or equivalent phrase; and finally, 2-3 sentences putting the main findings into general context so it is clear how the results described in the paper have moved the field forwards.
+
+Can sporting events act as triggers of domestic abuse? Previous research has suggested a link between large-scale televised sport tournaments and rates of reported domestic abuse\autocite{Card2011,Kirby2014}. While hypothesized to be a significant factor, the role alcohol plays in this relationship is unknown. Using crime data from the third largest police force in England, serving a population of 2.9 million\autocite{populationfigure}, we show that the number of reported alcohol-related domestic abuse cases increases by 61\% following an England victory in a national football tournament (World Cup, European Championship). The effect is driven by male to female alcohol-related cases, and is absent from male to male, female to male, and female to female cases. A three-hour analysis reveals that the increase starts in the three-hour period of the match, peaks in the three hours following the victory, and gradually declines to its baseline level 12 hours after the match. This temporal pattern, along with the random allocation of match days strongly suggests a causal effect of an England victory on the reported number of alcohol-related domestic abuse cases. We find a comparable increase in other, violent, male to female, alcohol-related offences on England win days.  The win-effect is robust to the exclusion of specific tournament years, and using data from another geographical area within England. The domestic abuse that occurs on these days is not characteristically different from domestic abuse cases occurring on non-match days, apart from the stronger association with alcohol. The alcohol and time specificity go beyond existing reports of the link between football and domestic abuse \autocite{Kirby2014,Brimicombe2012}. 
 
 %199 words now
 
@@ -263,7 +268,7 @@ Next, we explore the temporal dynamics of the increase in alcohol-related domest
  \caption{The temporal dynamics of the football-induced increase in domestic abuse, by alcohol involvement}
 \includegraphics[width=0.75\textwidth]{Threehours.pdf}
 \label{fig:threehours}
-		\floatfoot{Note: Estimates are from two separate negative binomial regressions (based on tests of overdispersion) with year, month, day of week, three-hour period of day, Christmas, New Year's eve controls}
+		\floatfoot{Note: Estimates are from two separate negative binomial regressions (based on tests of overdispersion) with year, month, day of week, three-hour period of day, Christmas, New Year's eve controls. Shaded area is 95\% CIs.}
 \end{figure}
 
 \newpage
