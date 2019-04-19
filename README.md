@@ -1,6 +1,4 @@
 # Football-DA
-code for performing the analysis on the effect of football on DA
-
 Things to check please:
 1) I've rewritten the abstract so that it complies with the guidelines (see link in the tex file)
 2) Page 7 - description of gender group results paragraph
