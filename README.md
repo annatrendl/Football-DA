@@ -1,6 +1,6 @@
 # Submission 1 nat human behav desk reject
 
-# Submission 2 pnas
+# Submission 2 pnas - hasn't submitted yet
 Stuff to do
 1) I am not sure why the formatting does not work on page 3
 2) Open Access Option?
