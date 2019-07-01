@@ -15,3 +15,5 @@ things to do
 3) "There is no single right answer to this question, but authors must explain (in the submission portal and in the manuscript) why they believe their sample size is appropriate."
 
 Thank you
+
+TM - Absolutely superb. Only comments that I don't think are coverd by the to-do list are adding a bit about toxic masculinity to the abstract, and discussing whether to reclassify the first few paras of the results section as methods. But both super minor.
