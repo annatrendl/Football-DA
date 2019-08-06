@@ -1,0 +1,25 @@
+
+Exponentiated coefficients and 95% CIs from a series of negative binomial regresssions predicting daily counts of reported DA incidents (other controls not included here: month, year, xmas/nye)
+==================================================
+                        Dependent variable:       
+                  --------------------------------
+                              da_count            
+                  Original Model Win/Draw Separate
+                       (1)              (2)       
+--------------------------------------------------
+England windraw      0.256***                     
+                     (0.055)                      
+England win                          0.452***     
+                                      (0.064)     
+England draw                           0.032      
+                                      (0.073)     
+England lost         0.382***        0.388***     
+                     (0.094)          (0.085)     
+After England        0.111**          0.113**     
+                     (0.051)          (0.047)     
+--------------------------------------------------
+BIC                  747.763          739.662     
+Observations            92              92        
+Akaike Inf. Crit.    714.980          704.356     
+==================================================
+Note:                  *p<0.1; **p<0.05; ***p<0.01

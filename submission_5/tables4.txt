@@ -1,0 +1,34 @@
+
+=================================================================
+                                          Dependent variable:    
+                                      ---------------------------
+                                                Alcohol          
+-----------------------------------------------------------------
+Type=Tournament_on                             -0.134**          
+                                                (0.062)          
+Type=England_win                               0.443***          
+                                                (0.157)          
+Type=England_draw                               0.368*           
+                                                (0.201)          
+Type=England_lost                               -0.113           
+                                                (0.180)          
+Type=After_England                               0.041           
+                                                (0.114)          
+Previous_alc=Yes                               1.670***          
+                                                (0.120)          
+Type=Tournament_on * Previous_alc=Yes           -0.051           
+                                                (0.100)          
+Type=England_win * Previous_alc=Yes             -0.110           
+                                                (0.277)          
+Type=England_draw * Previous_alc=Yes            -0.365           
+                                                (0.372)          
+Type=England_lost * Previous_alc=Yes             0.179           
+                                                (0.292)          
+Type=After_England * Previous_alc=Yes            0.066           
+                                                (0.180)          
+-----------------------------------------------------------------
+Observations                                    97,292           
+R2                                               0.208           
+chi2                                    14,868.240*** (df = 65)  
+=================================================================
+Note:                                 *p<0.1; **p<0.05; ***p<0.01
