@@ -6,7 +6,9 @@
 
 # Submission 4 Palgrave Communications, pulled
 
-# Submitted 5 
+# Submitted 5 Science advances, desk reject
+
+# Submitted 6 planned to submit to Lancet Public Health
 
 
 
