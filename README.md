@@ -8,7 +8,7 @@
 
 # Submitted 5 Science advances, desk reject
 
-# Submitted 6 planned to submit to Lancet Public Health
+# Submitted 6 submitted to Lancet Public Health
 
 
 
