@@ -1,0 +1,137 @@
+﻿Da: John Carson <em@editorialmanager.com>
+Date: lun 25 nov 2019 alle ore 14:59
+Subject: Your submission to The Lancet Public Health
+To: Anna Trendl <trendlak@gmail.com>
+
+
+CC: j.carson@lancet.com
+
+Manuscript reference number: THELANCETPUBLICHEALTH-D-19-00674
+Title: The link between national football tournaments and alcohol-related domestic abuse - evidence from England
+
+Dear Ms Trendl,
+
+We have now received all of the peer reviewers' reports for your manuscript. Unfortunately, based on the remarks of the reviewers and the editorial team, we do not feel that the manuscript fulfils the requirements of Article (Original Research) for The Lancet Public Health.. Therefore, on this occasion, we have decided not to publish your manuscript.
+
+The comments we received from the reviewers are presented below:
+
+Reviewer #1: This manuscript addresses the relationship between English football matches and the occurrences of alcohol-involved domestic violence and domestic violence with no apparent alcohol-involvement.  Over an eight-year period, they examined a detailed crime dataset that included instances of domestic violence and indications as to alcohol involvement, and linked these occurrences to the playing and the outcome of football matches for the England National Team.  In addition, they were able to address the temporal sequence by examining occurrences of domestic violence before, during, and after the matches.  The results indicated a significant and large increase in alcohol-related domestic violence reports on the day of a win by the English team, with the increases occurring during the match and the three hours following the match.  In addition, there did not appear to be any increase in domestic violence cases that did not involve alcohol, nor on days on which the
+English team had a loss or a draw.  In addition, the manuscript shows that this effect is primarily in male to female domestic violence cases (although this is also the largest number of cases and the coefficients for other types of domestic abuse are in the same direction, something the authors may wish to note with respect to power to detect an effect).  The authors also show that this is not observed for rugby, nor is there an increase in other criminal behaviors, with the important exception of "other violent offences", which has the same effect of alcohol and the English team victory.  There are a handful of other findings, but these are the most important.
+Overall, this paper has many methodological and statistical strengths.   The availability of the extensive data-base with information on alcohol involvement, the time and day of the incident, and the gender and age of the offender and victim is a great resource.  The analyses control for a variety of factors that would seem to have the potential to create spurious relationships (e.g. day of the week) and also controls for the interactions of these with alcohol.  The discussion addresses important limitations and is generally reasonable.
+There are a few gaps that should be addressed. First, the section in the introduction addressing the relationship between alcohol and domestic violence is based on dated and methodologically weak papers.  I would suggest looking at the special issue of Drug and Alcohol Review, 36(1), 2017.  There are several review papers and commentaries indicating the facilitative role of excessive drinking on intimate partner violence.  The commentaries by Leonard and Quigley and by Graham, Wilson, and Taft provide succinct overviews of the contemporary positions regarding alcohol and partner violence.  This would be useful in terms of framing the theoretical rationale in terms of more recent approaches.
+
+There are also several gaps in terms of the methodology.  While the analyses are restricted to events involving one victim and one offender, nothing is stated with respect to the age of the offender and victim.  Is it the case that these events could include parent-child events?  In addition, the statement that "the number of domestic abuse cases is the sum of crimes that have a domestic abuse marker, and all domestic abuse incidents" is difficult to understand for someone not familiar with the British criminal code.  Does domestic abuse marker refer to a specific indicator in the record that this is a case of domestic abuse, and that this is a specific crime or a specific reportable crime?  How are "domestic abuse incidents" noted and defined in the records.  Are these obvious types of incidents, or is there some coding needed?  Overall, I think the manuscript needs to be clearer about the nature of the variables with respect to domestic abuse. 
+
+As noted with respect to the introduction, the discussion could use more contemporary theoretical approaches to the impact of alcohol on violence to frame the discussion. Also, in the discussion, one rather important limitation is missing.  There is no data regarding whether or not the offender or the victim were actually watching the football match, notwithstanding the suggestive temporal data.  This is, of course, a common problem in these broad epidemiologic analyses, but it is useful to remind readers.
+There are also a couple of minor issues.  First, I would point out that coefficient for alcohol in the tables which is large and negative simply reflects the differential baserates of alcohol-involved versus no alcohol-involved domestic abuse cases.  Second, I would include an explicit statement as to what the other coefficients reflect.  The text in the table indicates that they are "exponentiated coefficients," but some additional language as to how to interpret a positive or a negative coefficient, particularly in the interactions, would be very helpful.  Lastly, I would indicate the number of matches involved in these analyses. 
+
+
+
+Reviewer #2: 
+This paper uses data from the West Midlands Police Force in England to examine the changing number of incidents of domestic abuse  between 2010 and 2018, and the relationship to national football matches and use of alcohol.
+It is a worthwhile exercise, but there are many issues on the paper which I list below.  Most importantly the statistical analyses are incorrect. The paper cannot therefore be accepted to publication in its current form.
+Statistical issues 
+I take Table 1 as an example, although the same  mistakes continue throughout the paper. 
+a)      The authors state that the coefficients are exponentiated parameter estimates, but many are negative, and so they must be the original parameter estimates which have not been exponentiated (the exponent of a quantity can never be negative).  Thus the estimate of England Win:Alcohol is 0.610 – if this was exponentiated the relative risk would be exp(0.610)=1.84 or an 84% increase.  The confidence intervals reported in the text of the paper are also incorrect and need to be calculated from  
+(exp(0.610+2*0.135), exp(0.610-2*0.135) ) which is  (1.40, 2.41),
+ or between a 40% and 140% increase.
+This mistake is made for every result reported in the results section of the paper.
+b)      This confusion might have arisen as the negative binomial model is never written down in mathematical form. The standard form of negative binomial regression is a log-linear model, but this in fact is never stated.    The model needs to be explicitly given in I the data analysis section. Was a log link used? 
+c)      The “test of overdispersion” is not explained or given.  I think what the authors mean is that the chose a negative binomial regression over a Poisson regression because overdispersion was detected in the data. More detail is needed.
+d)      The description of the response count variable is also incorrect. The response is not the number of domestic abuse incidents in a given day, but the number domestic abuse incidents per day split by alcohol status.  In other words, there are two counts per day not one. This needs clarification. 
+e)      It is usual to mention the software package used to fit the model but this is also omitted from the paper. 
+f)      It might be sensible to present separate models for non-alcohol related domestic abuse and alcohol related domestic abuse.  This would simplify Table 1 and make this work easier to understand for the lay reader. 
+I also checked Table 3, which reproduces the results from Kirby et al (2014) Table 3.   This was done to provide an understanding of what this submission has done. Kirby et al give the exponentiated coefficients; Table 3 in this submission presumably  gives the unexponentiated coefficients as the numbers are all less than 1 . Taking log to base e of the coefficients in Kirby ry al I get log(1.256)=0.2228 and log(1.382)= 0.323 which does not agree.  The after England result is given in Kirby et al (2014) as 1.107 – log of this number gives 0.102. 
+It is unclear from this work what the authors have done. They may have subtracted 1 from the first two coefficients  in Kirby et al but not the third.  There is   no explanation in the paper to explain what the figures in the submitted paper are. 
+
+Methodological issues
+Administrative data has its issues and there should be some discussion of this.  There are two  or three issues here which need more information
+a)      How was alcohol status determined? Presumably this was recorded by the individual police response team or officer.  The proportion of alcohol related domestic abuse cases seems quite lw over the period, and this needs discussion.
+b)      How was the victim and perpetrator determined?  In some domestic abuse cases, it is often not clear who ws the perpetrator and who was the victim.  The event may for example start with a push from one partner followed by a hit from the other. How was that coded? Police officers report that it is often not clear.
+c)      How much missing data was there on alcohol status? 
+
+
+Other issues
+1. The title of the paper is incorrect – the analysis looks at both alcohol-related and alcohol non-related abuse.
+2. There is no summary of the data -What was the range of the alcohol -related counts by year for example? How much monthly variation was there?
+3. The literature oscillates between a gender neutral approach and other papers concerned solely about male perpetrators. As this paper is taking a gender
+4. Although a recognised term in domestic violence research, the abbreviation IPV is never defined.  All other abbreviations should also be checked. 
+
+
+
+Reviewer #3: Major comments
+Results:
+1. The presentation in Table 1 is unclear. Footnote (b) states that the estimates are exponentiated coefficients, but this cannot be correct because exponentiated values must, by definition, be positive (and the table includes negative values). After comparing the numbers in the table, to the numbers in the text, I think the numbers in the table have been calculated by exponentiating the coefficient, and then subtracting 1. Whilst the coefficients have been transformed, the standard errors are on the original scale, and so it is not straightforward to determine the precision of the estimates. I would recommend reporting the exponentiated coefficients and their 95% confidence intervals. This comment also applies to the remainder of the tables in the paper, including the tables in the supplementary material.
+2.The labelling in Table 1 suggests that the rows from 'Tournament on: Alcohol' to 'After England: Alcohol' are the interactions between the type of day and alcohol involvement (many statistical packages use a colon to indicate an interaction). 
+* If this assumption is correct, then the values in these rows cannot be directly interpreted as the percentage increase in the alcohol-related domestic abuse cases on a tournament day, compared to alcohol-related domestic abuse cases on a non-tournament day. If this assumption is correct, then many of the figures presented in the text are incorrect, including the headline figure of 61% that is presented in the abstract.
+* If this assumption is not correct, and the values in the table are in fact the percentage increases in alcohol-related domestic abuse cases on a tournament day, compared to alcohol-related domestic abuse cases on a non-tournament day, the authors should provide more details about how they calculated these values from the model.
+This comment also applies to Tables 2, 4, 5, S1 and S2. 
+
+Minor comments
+Abstract: 
+1. The abstract presents the results in terms of the daily rate of cases per 100,000 individuals, however these figures have not been reported elsewhere in the paper.
+
+Research in context: 
+1. Added value of this study: The first sentence states "… England's participation in international football tournaments results in an increase …". It might be better to replace "results in" with "is associated with" as we can't be certain that there is a causal mechanism.  
+
+Methods:
+1. The methods section includes some results, e.g. the percentage of domestic abuse cases that are alcohol related.
+2. IPV is not defined.
+3. There are several references to overdispersion in the footnotes to the tables and figure that suggest that the type of model was selected based on tests for overdispersion, but this has not been described in the methods section. 
+4. Some of the analyses in Table 4 are based on Poisson models, and the analyses in Table S2 are based on logistic regression, however these methods have not been described in the methods section.
+5. Please specify which statistical software package you used and its version.
+
+Results:
+1. The RECORD statement (1) provides guidelines on the reporting of studies conducted using routinely collected health data. Whilst this paper uses crime data, rather than health data, many of the recommendations in the RECORD guidelines are still applicable. It would be helpful to begin the results section with a flow diagram illustrating the number of included and excluded records (e.g. records excluded where there was more than one perpetrator or victim). It would also be helpful to include a table of descriptive statistics, including the average number of incidents by alcohol involvement and type of day. 
+2. Some of the abbreviations have not been defined (CI, AIC).
+3. In the tables, it would be better to report confidence intervals, instead of p-values. If p-values are reported, they should be given to two significant figures, instead using asterisks to indicate significance.
+4. The methods for the analysis of the temporal dynamics should be moved to the methods section.
+5. Figure 1 reports the percentage increase in domestic abuse per 3 hour period. What is the control group/time period for the percentage increase? For example, is it the percentage increase in domestic abuse compared to six hours before the match?
+6. It would be useful to provide some more information about the rugby analysis. E.g. how do the numbers of tournament and match days in the dataset for rugby compare to the numbers of tournament and match days in the dataset for football? The more tournament/match days there are, the more power the analysis will have to pick up on an effect. Do all of the rugby matches happen on the weekend or during a certain time of year? Could this affect the results?
+7. The text on non-domestic alcohol-related violent offences references a 55% increase on days when England wins, but this doesn't appear to match the numbers in the table. 
+8. Overall, there are a lot of models, and consequently a lot of p-values have been indirectly reported using the asterisks (multiple-testing). We would expect 1 in 20 p-values to be significant by chance, so care should be taken with the interpretation. For example, in the section on other types of offences, there are four types of offences, each of which can be alcohol or non-alcohol related and and five types of days which leads to 40 p-values. We would expect 2 to be significant by chance alone.
+
+Discussion:
+1. Paragraph 2: The text says that "This effect is exclusively limited to male-perpetrated domestic abuse". I think the authors have reached this conclusion because they found a significant interaction for male to female domestic abuse cases, but not other types of domestic abuse cases. It is important to note that a non-significant result does imply no effect, it only implies no evidence of an effect. It is possible that there is an effect, but that the effect was not identified, because the sample size for other types of abuse cases was too small. 
+2. Paragraph 3 introduces a new analysis, however this has not been described elsewhere. How were newly reported cases defined? 
+
+(1) Benchimol EI, Smeeth L, Guttmann A, Harron K, Moher D, et al. (2015) The REporting of studies Conducted using Observational Routinely-collected health Data (RECORD) Statement. PLOS Medicine 12(10): e1001885. https://doi.org/10.1371/journal.pmed.1001885  
+
+
+
+Reviewer #4: This paper addresses an important question, and namely if viewing a contact sport increases violence perpetrated by men against women in the home and, specifically, if alcohol plays a role in this relationship.
+The authors make use of a large dataset of games between 2010 and 2018. They conclude that their paper shows causal evidence of a link between England victories during international tournaments and men's perpetration of domestic violence acts reported to the police.
+However, the paper's identification strategy is not well defined and is such that the authors may only claim correlation between these events
+First, the authors say themselves that "Based on the pre-match betting odds, all of the England victories were expected in our dataset."
+This means that fans already had expectations of winning before the match started. Therefore, the win per se was not a random shock to the fans. This automatically excludes the possiblity of a causal effect of the win on the violence.
+Moreover, in support of this statement, is the fact that the greatest increase in violence occurs during the match, nt after. Tru, the highest level is reached in the threehour period afterwards, but the increase is during the match.
+This suggests that a different mechanism may, in fact, be at play. Namely, that threats to the expected win during the match, e.g. a draw during the match, or England struggling to recover after an enemy goal, cause men (who had been drining in anticipation of making merry) to become anxious that they will, in fact, lose. It is this unexpected difficulty that may cause men to commit DV acts during the match, rather than once the match is over and the win realised. The residual increase after the match may be due to the excessive amount of drinking.   
+
+Therefore, it is plausible that it is primarily drinking, fuelled by the anticipation of the win, that drives the DV episodes. In addition, the modifier is the threat to the expected win, rather than the realised win. 
+This set of hypotheses is constistent with (a) the hypthesis of loss aversion and (b) the view of violence as an expressive behaviour by men that provides them some form of utility: (potential, unexpected) losses loom larger than (expected) wins, especially when htey threaten to take wins away. To offset these, men commit acts of DV. 
+The authors' statement that they observe instrumental forms of violence (i.e. attempts at controlling women) does not seem consistent with a victory that, in their words heightens their sense of "Englishness". It is unclear why this would lead to beating/assaulting their own women. In fact, possibly the opposite would be expected to arise.
+Finally, the authors mention that increased policing on the streets should increase the number of reported incidents in the streets, rather than domestic incidents. Again, this is a fallacious argument, as illustrated by Draca et al in their paper "panic in the streets of London": using a quasi-experimental design, Draca and colleagues show that an increased polce presence to combat the terror threat in central London leads to a decrease of petty crime in the streets of central London, compared to the areas from which police had been taken away. This is because people changed their behaviour in response to increased policing. This is consistent with the hypothesis that DV crimes would increase compared to cases of violence against women on the streets. Not due to reporting behaviour, but due to the fact that men would be less likely to assault women in the street, if there is an increased presence of police forces there to see and act on such assaults.
+
+I would suggest the authors review their empirical strategy and perspective on the problem. I also suggest they read Card and Dhal QJE 2011, an important contribution in this area.
+
+I wish them well in their continued endeavour studying this important phenomenon.
+
+
+
+Reviewer #5: This paper seeks to establish the link between alcohol and domestic abuse in sports tournaments (soccer and rugby). This is a welcome piece of research, takes forward the existing literature and is well worth reporting.
+I have a number of issues with the data which I think need to be explained in the paper. 
+The first is missing data for first half of 2017. Given that the data are from a police database, how can this be so and what impact (if any) may it have had on the analysis?
+Secondly, due to drift between police-recorded crime and CSEW (as evidenced by ONS), HMIC started inspections in April 2013 of crime data integrity which led to an increase in recorded sexual crimes and domestic offences in many forces (see for example Policing, Vol 12, No 2, pp. 150-164 - open access). What might be the affect of this on the analysis given that pre- and post-April 2013 are different states?
+Thirdly, it is stated that domestic abuse is identified as a flag in the database. How is alcohol-related crime identified, and equally important how are alcohol-related domestic incident identified? Whilst the accuracy of the DA flag will have been the subject of the relevant HMIC review (and needs to be discussed in the paper), how is the accuracy of the alcohol-related identifier evaluated. This is important because in the reviewer's experience noting alcohol in crime databases is not consistent and often has gender bias. Also, is the alcohol related only to the perpetrator or also to the victim? This third point about the consistency in the use of flags has material bearing on the analysis and needs to be evaluated in the paper.
+On a methodological point, why are Christmas and New Year's eve singled out as control days? Is it because they are low or high? New Year's day is usually a spike in reported DA often residual from the Christmas period and would be a confounder to the control. Again, this needs to be evaluated/discussed.
+Missing word 'abuse' on line 1 on page 1. A few grammatical issues to be cleared up - needs a careful read.
+
+
+Although this has not been a positive outcome, I would like to thank you for giving us the chance to consider your manuscript, and I hope this does not discourage you from considering The Lancet Public Health again in the future.
+
+Yours sincerely,
+John
+
+Dr. John Carson 
+SeniorEditor, The Lancet Public Health.
+Email: j.carson@lancet.com
