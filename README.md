@@ -1,56 +1,46 @@
-# Submission 1 Nature Human Behaviour, desk reject
+# Submission history
 
-# Submission 2 PNAS, desk reject
+Submission 1 Nature Human Behaviour, desk reject
 
-# Submission 3 Psych Science, desk reject
+Submission 2 PNAS, desk reject
 
-# Submission 4 Palgrave Communications, pulled
+Submission 3 Psych Science, desk reject
 
-# Submitted 5 Science advances, desk reject
+Submission 4 Palgrave Communications, pulled
 
-# Submitted 6 submitted to Lancet Public Health
+Submitted 5 Science Advances, desk reject
 
-
-
-Possible journal ideas
-
-Next:
-Science Advances (IF=11.511, has Social Sciences section)
-[Examples: https://advances.sciencemag.org/content/5/7/eaau1156
-https://advances.sciencemag.org/content/5/7/eaav2558
-https://advances.sciencemag.org/content/5/7/eaaw5226]
-Editorial board:
-Benjamin Scheibehenne, PhD, Associate Editor
-Todd Hare
-
-After that:
-Lancet Public Health (IF=11.600)
+Submitted 6 Lancet Public Health, reject with reviews
 
 
+# Next target agreed by Neil and Anna
 
-Tim doesn't like---all workplace:
-Journal of Applied Psychology (IF=4.64, AJG=4*,FT50)
-
-
-
-
-PLOS One (IF=2.806)
+Proceedings of the Royal Society B (IF=4.304).
 
 Social Science and Medicine (IF=3.007, AJG=4)
 
+
+# Other Possible Journal Ideas 
+
+American Economic Review: Insights (new journal, likely high impact), can only find one crime-related article (on Becker model)
+
+Criminology (IF=3.8, WoS rank 4th) 
+
+PLOS One (IF=2.806)
+
 Royal Society Open Science (IF=2.504)
 
+JPSP short form (WBS 60)
+
+British Journal of Criminology (IF=2.8, WoS rank 11th)
 
 
-Royal Society Proceedings (IF=4.8)
+# No List
 
-American Economic Review: Insights (new journal, likely high impact)
-
-JPSP short form
-
-Risk Analysis has a special issue
-
-
-No:
 Journal of Gender-Based Violence (not listed on WoS)
+
 Violence Against Women (IF=1.636)
+
+Journal of Applied Psychology (IF=5.067, AJG=4*,FT50, WBS60), no---all workplace
+
+
