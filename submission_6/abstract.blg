@@ -1,0 +1,18 @@
+[0] Config.pm:304> INFO - This is Biber 2.12
+[0] Config.pm:307> INFO - Logfile is 'abstract.blg'
+[129] biber-MSWIN64:315> INFO - === 
+[260] Biber.pm:371> INFO - Reading 'abstract.bcf'
+[327] Biber.pm:889> INFO - Found 22 citekeys in bib section 0
+[339] Biber.pm:4093> INFO - Processing section 0
+[384] Biber.pm:4254> INFO - Looking for bibtex format file 'football_refs.bib' for section 0
+[389] bibtex.pm:1523> INFO - LaTeX decoding ...
+[448] bibtex.pm:1340> INFO - Found BibTeX data source 'football_refs.bib'
+[478] Utils.pm:193> WARN - month field 'jul' in entry 'BBC' is not an integer - this will probably not sort properly.
+[524] Utils.pm:193> WARN - month field 'dec' in entry 'Ipsos2003' is not an integer - this will probably not sort properly.
+[546] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[546] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[546] Biber.pm:3921> INFO - Sorting list 'none/global//global/global' of type 'entry' with template 'none' and locale 'en-US'
+[546] Biber.pm:3927> INFO - No sort tailoring available for locale 'en-US'
+[598] bbl.pm:636> INFO - Writing 'abstract.bbl' with encoding 'UTF-8'
+[607] bbl.pm:739> INFO - Output to abstract.bbl
+[608] Biber.pm:110> INFO - WARNINGS: 2

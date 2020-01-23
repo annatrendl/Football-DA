@@ -1,0 +1,768 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.0 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{none/global//global/global}
+    \entry{Card2011}{article}{}
+      \name{author}{2}{}{%
+        {{hash=a9e88233ec6ce30d2d31e294961e3e76}{%
+           family={Card},
+           familyi={C\bibinitperiod},
+           given={David},
+           giveni={D\bibinitperiod}}}%
+        {{hash=7f2c55e231c3146f9c76581fc7cb830b}{%
+           family={Dahl},
+           familyi={D\bibinitperiod},
+           given={Gordon\bibnamedelima B.},
+           giveni={G\bibinitperiod\bibinitdelim B\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Oxford University Press}%
+      }
+      \strng{namehash}{8108f224a2638c99cd7e45d3646b8923}
+      \strng{fullhash}{8108f224a2638c99cd7e45d3646b8923}
+      \strng{bibnamehash}{8108f224a2638c99cd7e45d3646b8923}
+      \strng{authorbibnamehash}{8108f224a2638c99cd7e45d3646b8923}
+      \strng{authornamehash}{8108f224a2638c99cd7e45d3646b8923}
+      \strng{authorfullhash}{8108f224a2638c99cd7e45d3646b8923}
+      \field{sortinit}{1}
+      \field{sortinithash}{2174f786c6195e7fe2ee1c229b416e29}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{The Quarterly Journal of Economics}
+      \field{number}{1}
+      \field{title}{{Family Violence and Football: The Effect of Unexpected Emotional Cues on Violent Behavior}}
+      \field{volume}{126}
+      \field{year}{2011}
+      \field{pages}{103\bibrangedash 143}
+      \range{pages}{41}
+    \endentry
+    \entry{Kirby2014}{article}{}
+      \name{author}{3}{}{%
+        {{hash=6261843b22089e4c463f5172a46d09b2}{%
+           family={Kirby},
+           familyi={K\bibinitperiod},
+           given={Stuart},
+           giveni={S\bibinitperiod}}}%
+        {{hash=7862f2862bc13f09bdb3d4bdfff5fa7b}{%
+           family={Francis},
+           familyi={F\bibinitperiod},
+           given={Brian},
+           giveni={B\bibinitperiod}}}%
+        {{hash=d935d158c1edad56594b8090349801a4}{%
+           family={O'Flaherty},
+           familyi={O\bibinitperiod},
+           given={Rosalie},
+           giveni={R\bibinitperiod}}}%
+      }
+      \strng{namehash}{e44ac00a2bb26a8dcc9a88b00eca4e6e}
+      \strng{fullhash}{2c7d7ce3c91f29a04455a262abc442d6}
+      \strng{bibnamehash}{2c7d7ce3c91f29a04455a262abc442d6}
+      \strng{authorbibnamehash}{2c7d7ce3c91f29a04455a262abc442d6}
+      \strng{authornamehash}{e44ac00a2bb26a8dcc9a88b00eca4e6e}
+      \strng{authorfullhash}{2c7d7ce3c91f29a04455a262abc442d6}
+      \field{sortinit}{1}
+      \field{sortinithash}{2174f786c6195e7fe2ee1c229b416e29}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Objectives:This study aims to establish whether empirical evidence exists to support the anecdotal view that the F{\'{e}}d{\'{e}}ration Internationale de Football Association world cup football (soccer) tournament can be associated with a rise in reported domestic abuse incidents, when viewed remotely via television.Method:A quantitative analysis, using Poisson and negative binomial regression models looked at monthly and daily domestic abuse incidents reported to a police force in the North West of England across three separate tournaments (2002, 2006, and 2010).Results:The study found two statistically significant trends. First, a match day trend showed the risk of domestic abuse rose by 26 percent when the English national team won or drew, and a 38 percent increase when the national team lost. Second, a tournament trend was apparent, as reported domestic abuse incidents increased in frequency with each new tournament.Conclusion:Although this is a relatively small study, it has significant ramifications due to the...}
+      \field{journaltitle}{Journal of Research in Crime and Delinquency}
+      \field{number}{3}
+      \field{title}{{Can the FIFA World Cup Football (Soccer) Tournament Be Associated with an Increase in Domestic Abuse?}}
+      \field{volume}{51}
+      \field{year}{2014}
+      \field{pages}{259\bibrangedash 276}
+      \range{pages}{18}
+      \keyw{crime,domestic violence,policing,prevention}
+    \endentry
+    \entry{populationfigure}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=7c09c61c48c28e8c07dd16d821ede8eb}{%
+           family={{Office for National Statistics}},
+           familyi={O\bibinitperiod}}}%
+      }
+      \strng{namehash}{7c09c61c48c28e8c07dd16d821ede8eb}
+      \strng{fullhash}{7c09c61c48c28e8c07dd16d821ede8eb}
+      \strng{bibnamehash}{7c09c61c48c28e8c07dd16d821ede8eb}
+      \strng{authorbibnamehash}{7c09c61c48c28e8c07dd16d821ede8eb}
+      \strng{authornamehash}{7c09c61c48c28e8c07dd16d821ede8eb}
+      \strng{authorfullhash}{7c09c61c48c28e8c07dd16d821ede8eb}
+      \field{extraname}{1}
+      \field{sortinit}{2}
+      \field{sortinithash}{cbff857e587bcb4635511624d773949e}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{{Official Labour Market Statistics}}
+      \field{urlday}{21}
+      \field{urlmonth}{3}
+      \field{urlyear}{2019}
+      \field{year}{2017}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://www.nomisweb.co.uk/reports/lmp/la/1967128614/report.aspx{\#}tabrespop
+      \endverb
+      \verb{url}
+      \verb https://www.nomisweb.co.uk/reports/lmp/la/1967128614/report.aspx%7B%5C#%7Dtabrespop
+      \endverb
+    \endentry
+    \entry{Brimicombe2012}{article}{}
+      \name{author}{2}{}{%
+        {{hash=261e4f1337972e237767ab4c4da0427a}{%
+           family={Brimicombe},
+           familyi={B\bibinitperiod},
+           given={Allan},
+           giveni={A\bibinitperiod}}}%
+        {{hash=f4992e924c50e56a64a9eccef994701b}{%
+           family={Cafe},
+           familyi={C\bibinitperiod},
+           given={Rebecca},
+           giveni={R\bibinitperiod}}}%
+      }
+      \strng{namehash}{768f11545986d572a686ac6fa73b39fd}
+      \strng{fullhash}{768f11545986d572a686ac6fa73b39fd}
+      \strng{bibnamehash}{768f11545986d572a686ac6fa73b39fd}
+      \strng{authorbibnamehash}{768f11545986d572a686ac6fa73b39fd}
+      \strng{authornamehash}{768f11545986d572a686ac6fa73b39fd}
+      \strng{authorfullhash}{768f11545986d572a686ac6fa73b39fd}
+      \field{sortinit}{3}
+      \field{sortinithash}{a4b52e5432884761f50fb9571273b93e}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Significance}
+      \field{number}{5}
+      \field{title}{{Beware, Win or Lose: Domestic Violence and the World Cup}}
+      \field{volume}{9}
+      \field{year}{2012}
+      \field{pages}{32\bibrangedash 35}
+      \range{pages}{4}
+      \verb{file}
+      \verb :C$\backslash$:/Users/u1562268/AppData/Local/Mendeley Ltd./Mendeley Desktop/Downloaded/Brimicombe, Cafe - 2012 - Beware, win or lose Domestic violence and the World Cup.pdf:pdf
+      \endverb
+    \endentry
+    \entry{NCDV}{misc}{}
+      \field{sortinit}{4}
+      \field{sortinithash}{11cdaee3b18e01d77f3f428b13c1fc76}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{National Centre for Domestic Violence}
+      \field{title}{{The Not-So-Beautiful Game}}
+      \field{urlday}{20}
+      \field{urlmonth}{3}
+      \field{urlyear}{2019}
+      \field{year}{2018}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://www.ncdv.org.uk/the-not-so-beautiful-game
+      \endverb
+      \verb{url}
+      \verb https://www.ncdv.org.uk/the-not-so-beautiful-game
+      \endverb
+    \endentry
+    \entry{Williams2014}{incollection}{}
+      \name{author}{2}{}{%
+        {{hash=5a5e52b7a5be58cba3e801b1b823a18d}{%
+           family={Williams},
+           familyi={W\bibinitperiod},
+           given={Damien\bibnamedelima John},
+           giveni={D\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+        {{hash=381774430fb78d4632e1eac7c399f5b2}{%
+           family={Neville},
+           familyi={N\bibinitperiod},
+           given={Fergus\bibnamedelima Gilmour},
+           giveni={F\bibinitperiod\bibinitdelim G\bibinitperiod}}}%
+      }
+      \name{editor}{1}{}{%
+        {{hash=d325a8d1e90e3807fed45b0899615a2e}{%
+           family={{Myra F. Taylor; Julie Ann Pooley; Robert S. Taylor}},
+           familyi={M\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {New York}%
+      }
+      \list{publisher}{1}{%
+        {Nova Science Publishers}%
+      }
+      \strng{namehash}{9a409acf3f1a77d337b3310d0f0e2cb4}
+      \strng{fullhash}{9a409acf3f1a77d337b3310d0f0e2cb4}
+      \strng{bibnamehash}{9a409acf3f1a77d337b3310d0f0e2cb4}
+      \strng{authorbibnamehash}{9a409acf3f1a77d337b3310d0f0e2cb4}
+      \strng{authornamehash}{9a409acf3f1a77d337b3310d0f0e2cb4}
+      \strng{authorfullhash}{9a409acf3f1a77d337b3310d0f0e2cb4}
+      \strng{editorbibnamehash}{d325a8d1e90e3807fed45b0899615a2e}
+      \strng{editornamehash}{d325a8d1e90e3807fed45b0899615a2e}
+      \strng{editorfullhash}{d325a8d1e90e3807fed45b0899615a2e}
+      \field{sortinit}{5}
+      \field{sortinithash}{3c19c3776b658b3558e9e2e4840c01e2}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Overcoming domestic violence: Creating a dialogue around vulnerable populations.}
+      \field{title}{{Sport-related domestic violence: exploring the complex relationship between sporting events and domestic violence}}
+      \field{year}{2014}
+      \field{pages}{157\bibrangedash 241}
+      \range{pages}{85}
+      \verb{file}
+      \verb :C$\backslash$:/Users/u1562268/AppData/Local/Mendeley Ltd./Mendeley Desktop/Downloaded/Williams, Neville - 2014 - Overcoming Domestic Violence Creating a Dialogue Round Vulnerable Populations (Social Issues, Justice and Sta.pdf:pdf
+      \endverb
+    \endentry
+    \entry{Parry2014}{article}{}
+      \name{author}{3}{}{%
+        {{hash=fcf34050f7eebdf63fe8a90eaa7df481}{%
+           family={Parry},
+           familyi={P\bibinitperiod},
+           given={Keith\bibnamedelima D.},
+           giveni={K\bibinitperiod\bibinitdelim D\bibinitperiod}}}%
+        {{hash=7c05443923d3236f5f8fd24249a4485a}{%
+           family={Jones},
+           familyi={J\bibinitperiod},
+           given={Ian},
+           giveni={I\bibinitperiod}}}%
+        {{hash=21da5704f61fac8a481164c6a0042996}{%
+           family={Wann},
+           familyi={W\bibinitperiod},
+           given={Daniel\bibnamedelima L.},
+           giveni={D\bibinitperiod\bibinitdelim L\bibinitperiod}}}%
+      }
+      \strng{namehash}{38d210cbbefdd980adf6a04e387eb5ae}
+      \strng{fullhash}{031d9bda8f5c46b57f555f6c845dd6ca}
+      \strng{bibnamehash}{031d9bda8f5c46b57f555f6c845dd6ca}
+      \strng{authorbibnamehash}{031d9bda8f5c46b57f555f6c845dd6ca}
+      \strng{authornamehash}{38d210cbbefdd980adf6a04e387eb5ae}
+      \strng{authorfullhash}{031d9bda8f5c46b57f555f6c845dd6ca}
+      \field{sortinit}{7}
+      \field{sortinithash}{c818dd9105a2852444fc9f5e145c294e}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Despite recent cross-cultural analyses of sport fandom, work in the field is still limited. To partially fill this research void, the current investigation investigated sport fandom in the United Kingdom, and included cross-cultural comparison with existing data. Four research areas were reviewed: a) sport fan behaviors, b) socialization into the sport fan role, c) identification with the social role of sport fan, and d) team identification. A sample of 252 students at a university in the United Kingdom completed a questionnaire packet assessing demographics, fandom, fan behaviors, team identification, and the impact of various socialization agents. Results revealed gender differences in behavior (e.g., males reported greater levels of participation than females) and both team identification and fandom were significant predictors of fan behavior. The importance of the father as a socialization agent was highlighted throughout the sample, and levels of identification were generally high. Cross-cultural analysis indicated that socialization agents for the UK were more varied than other countries, UK fans were more likely to watch sport live, and UK males were more likely to watch and discuss sport daily. In general, it was demonstrated that UK fan behavior was closer to that of Americans and, in particular, Australian fans, rather than fans in European (Greek and Norwegian) samples. (PsycINFO Database Record (c) 2014 APA, all rights reserved) (journal abstract)}
+      \field{journaltitle}{Journal of Sport Behavior}
+      \field{number}{3}
+      \field{title}{{An Examination of Sport Fandom in the United Kingdom: A Comparative Analysis of Fan Behaviors, Socialization Processes, and Team Identification}}
+      \field{volume}{37}
+      \field{year}{2014}
+      \field{pages}{251\bibrangedash 267}
+      \range{pages}{17}
+      \keyw{Australian sport fans,sport fan socialization,sport fandom,sport spectating}
+    \endentry
+    \entry{BBC}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=067e343594c6da6f2cf8b2aba8638e29}{%
+           family={{BBC Sport}},
+           familyi={B\bibinitperiod}}}%
+      }
+      \strng{namehash}{067e343594c6da6f2cf8b2aba8638e29}
+      \strng{fullhash}{067e343594c6da6f2cf8b2aba8638e29}
+      \strng{bibnamehash}{067e343594c6da6f2cf8b2aba8638e29}
+      \strng{authorbibnamehash}{067e343594c6da6f2cf8b2aba8638e29}
+      \strng{authornamehash}{067e343594c6da6f2cf8b2aba8638e29}
+      \strng{authorfullhash}{067e343594c6da6f2cf8b2aba8638e29}
+      \field{sortinit}{8}
+      \field{sortinithash}{07edf88d4ea82509b9c4b4d13f41c452}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{month}{7}
+      \field{title}{{World Cup 2018: Record-breaking online {\&} viewing figures for BBC}}
+      \field{urlday}{20}
+      \field{urlmonth}{3}
+      \field{urlyear}{2019}
+      \field{year}{2018}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://www.bbc.co.uk/sport/football/44850988
+      \endverb
+      \verb{url}
+      \verb https://www.bbc.co.uk/sport/football/44850988
+      \endverb
+    \endentry
+    \entry{Brooks-Hay2018}{article}{}
+      \name{author}{2}{}{%
+        {{hash=569b0f0a91d1b8e6424b157b2df00d1c}{%
+           family={Brooks-Hay},
+           familyi={B\bibinithyphendelim H\bibinitperiod},
+           given={Oona},
+           giveni={O\bibinitperiod}}}%
+        {{hash=cb968f1b0eafb2506f1a281d9ee92a20}{%
+           family={Lombard},
+           familyi={L\bibinitperiod},
+           given={Nancy},
+           giveni={N\bibinitperiod}}}%
+      }
+      \strng{namehash}{6c6f3981cc1c3c0a8c1252ede27fed6e}
+      \strng{fullhash}{6c6f3981cc1c3c0a8c1252ede27fed6e}
+      \strng{bibnamehash}{6c6f3981cc1c3c0a8c1252ede27fed6e}
+      \strng{authorbibnamehash}{6c6f3981cc1c3c0a8c1252ede27fed6e}
+      \strng{authornamehash}{6c6f3981cc1c3c0a8c1252ede27fed6e}
+      \strng{authorfullhash}{6c6f3981cc1c3c0a8c1252ede27fed6e}
+      \field{sortinit}{1}
+      \field{sortinithash}{2174f786c6195e7fe2ee1c229b416e29}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of Gender-Based Violence}
+      \field{number}{1}
+      \field{title}{{'Home game': domestic abuse and football}}
+      \field{volume}{2}
+      \field{year}{2018}
+      \field{pages}{93\bibrangedash 108}
+      \range{pages}{16}
+    \endentry
+    \entry{Swallow}{thesis}{}
+      \name{author}{1}{}{%
+        {{hash=1892da25dab1951d1ee9f624fefd4e9e}{%
+           family={Swallow},
+           familyi={S\bibinitperiod},
+           given={Jodie},
+           giveni={J\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {University of Chester}%
+      }
+      \strng{namehash}{1892da25dab1951d1ee9f624fefd4e9e}
+      \strng{fullhash}{1892da25dab1951d1ee9f624fefd4e9e}
+      \strng{bibnamehash}{1892da25dab1951d1ee9f624fefd4e9e}
+      \strng{authorbibnamehash}{1892da25dab1951d1ee9f624fefd4e9e}
+      \strng{authornamehash}{1892da25dab1951d1ee9f624fefd4e9e}
+      \strng{authorfullhash}{1892da25dab1951d1ee9f624fefd4e9e}
+      \field{sortinit}{1}
+      \field{sortinithash}{2174f786c6195e7fe2ee1c229b416e29}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{{An exploratory study of women's experiences regarding the interplay between domestic violence and abuse and sports events}}
+      \field{type}{phdthesis}
+      \field{year}{2017}
+      \verb{file}
+      \verb :C$\backslash$:/Users/u1562268/AppData/Local/Mendeley Ltd./Mendeley Desktop/Downloaded/Swallow - 2017 - An exploratory study of women's experiences regarding the interplay between domestic violence and abuse and sports even.pdf:pdf
+      \endverb
+      \keyw{Thesis or dissertation,domestic violence,sports events}
+    \endentry
+    \entry{Vincent2014}{article}{}
+      \name{author}{2}{}{%
+        {{hash=6a67c14dc8b1042c6111d76fea46d956}{%
+           family={Vincent},
+           familyi={V\bibinitperiod},
+           given={John},
+           giveni={J\bibinitperiod}}}%
+        {{hash=a7ca59d23516b64d130f48574dd0bc45}{%
+           family={Harris},
+           familyi={H\bibinitperiod},
+           given={John},
+           giveni={J\bibinitperiod}}}%
+      }
+      \strng{namehash}{d7eb9291914752a8a1890cc87acf0bf5}
+      \strng{fullhash}{d7eb9291914752a8a1890cc87acf0bf5}
+      \strng{bibnamehash}{d7eb9291914752a8a1890cc87acf0bf5}
+      \strng{authorbibnamehash}{d7eb9291914752a8a1890cc87acf0bf5}
+      \strng{authornamehash}{d7eb9291914752a8a1890cc87acf0bf5}
+      \strng{authorfullhash}{d7eb9291914752a8a1890cc87acf0bf5}
+      \field{sortinit}{1}
+      \field{sortinithash}{2174f786c6195e7fe2ee1c229b416e29}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{The 2012 UEFA European Football Championship ('Euro 2012') - Europe's quadrennial football bonanza was held in Poland and the Ukraine between June 8th and July 1st. Occurring between Elizabeth II's Diamond jubilee and the London 2012 Olympic Games, the eyes of the media were fixated on the pride and joy of English football, its men's national team. With national consciousness at an all-time high, articles in England's tabloid, 'red-top,' daily national newspapers The Sun and Daily Mirror were tracked for three weeks as they lavished their attentions on the national pastime. Their coverage of the English team reflected a heightened consciousness of English national identity. Drawing on Guibernau's strategies for creating and uniting citizens around a collective national identity, this study examined how England's popular media presented and represented England's national identity to reflect the real and imagined versions of Englishness during this major sporting event.1 By focusing on The Sun and Daily Mirror's narratives about, and images of, the English team during the Euro 2012 tournament, this paper focuses on how English national identity ebbed and flowed during a time of seismic change within the country. Shaped by an inductive textual analysis, this paper shows how the press fluctuated between optimistic notions of the present and future English national identity and traditional 'olde England' in an almost formulaic fashion. {{$\copyright$}} 2013 {{$\copyright$}} 2013 Taylor {\&} Francis.}
+      \field{journaltitle}{Soccer and Society}
+      \field{number}{2}
+      \field{title}{{'They think it's all Dover!' Popular newspaper narratives and images about the English football team and (re)presentations of national identity during Euro 2012}}
+      \field{volume}{15}
+      \field{year}{2014}
+      \field{pages}{222\bibrangedash 240}
+      \range{pages}{19}
+    \endentry
+    \entry{Sabo}{incollection}{}
+      \name{author}{3}{}{%
+        {{hash=0cc9951bc7d029072e4b3c7c9f4c9bda}{%
+           family={Sabo},
+           familyi={S\bibinitperiod},
+           given={Don},
+           giveni={D\bibinitperiod}}}%
+        {{hash=586f58e870f4090b843f29e35599a04d}{%
+           family={Gray},
+           familyi={G\bibinitperiod},
+           given={Philip\bibnamedelima M.},
+           giveni={P\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+        {{hash=296266baa58d883045a9ff3d6490dbde}{%
+           family={Moore},
+           familyi={M\bibinitperiod},
+           given={Linda\bibnamedelima A.},
+           giveni={L\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+      }
+      \name{editor}{1}{}{%
+        {{hash=7bc90aedc187f818a948405db60b4134}{%
+           family={{Jim McKay; Michael A. Messner; Don Sabo}},
+           familyi={J\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Thousand Oaks}%
+      }
+      \list{publisher}{1}{%
+        {SAGE Publications, Inc}%
+      }
+      \strng{namehash}{58f4ad70376bb83f17d80e263ddc6027}
+      \strng{fullhash}{a2634d86488cde5bd7277e207eae26f2}
+      \strng{bibnamehash}{a2634d86488cde5bd7277e207eae26f2}
+      \strng{authorbibnamehash}{a2634d86488cde5bd7277e207eae26f2}
+      \strng{authornamehash}{58f4ad70376bb83f17d80e263ddc6027}
+      \strng{authorfullhash}{a2634d86488cde5bd7277e207eae26f2}
+      \strng{editorbibnamehash}{7bc90aedc187f818a948405db60b4134}
+      \strng{editornamehash}{7bc90aedc187f818a948405db60b4134}
+      \strng{editorfullhash}{7bc90aedc187f818a948405db60b4134}
+      \field{sortinit}{1}
+      \field{sortinithash}{2174f786c6195e7fe2ee1c229b416e29}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Masculinities, Gender Relations, and Sport}
+      \field{title}{{Domestic Violence and Televised Athletic Events:'It's a Man Thing'}}
+      \field{year}{2000}
+      \field{pages}{127\bibrangedash 146}
+      \range{pages}{20}
+    \endentry
+    \entry{Peralta2010}{article}{}
+      \name{author}{3}{}{%
+        {{hash=c1d831b66f73dd00d57ba6168a04ab12}{%
+           family={Peralta},
+           familyi={P\bibinitperiod},
+           given={Robert\bibnamedelima L.},
+           giveni={R\bibinitperiod\bibinitdelim L\bibinitperiod}}}%
+        {{hash=2e35c763bf593cb0d4a43538a9af6b17}{%
+           family={Tuttle},
+           familyi={T\bibinitperiod},
+           given={Lori\bibnamedelima A.},
+           giveni={L\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+        {{hash=4426505e7ea525adf2f88c80ea5fa034}{%
+           family={Steele},
+           familyi={S\bibinitperiod},
+           given={Jennifer\bibnamedelima L.},
+           giveni={J\bibinitperiod\bibinitdelim L\bibinitperiod}}}%
+      }
+      \strng{namehash}{1d9b2ace2494d678251aa17d072558f2}
+      \strng{fullhash}{52810a5a475ca5827e00e8c85b8744fe}
+      \strng{bibnamehash}{52810a5a475ca5827e00e8c85b8744fe}
+      \strng{authorbibnamehash}{52810a5a475ca5827e00e8c85b8744fe}
+      \strng{authornamehash}{1d9b2ace2494d678251aa17d072558f2}
+      \strng{authorfullhash}{52810a5a475ca5827e00e8c85b8744fe}
+      \field{sortinit}{1}
+      \field{sortinithash}{2174f786c6195e7fe2ee1c229b416e29}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{This article examines the relationship between violence, masculinity, and alcohol use among heterosexual, economically disadvantaged, and primarily Black men officially identified as batterers. Violence occurred against intimates and strangers. Alcohol use coupled with violence against intimates and violence against others (e.g., strangers) appeared to be used for masculinity construction. The use of alcohol before and during assaultive behavior combined with the use of violence symbolized dominance and control. This occurred in situations where markers of masculinity were largely absent (e.g., steady employment) in instances of both intimate partner violence and stranger violence.}
+      \field{journaltitle}{Violence Against Women}
+      \field{number}{4}
+      \field{title}{{At the Intersection of Interpersonal Violence, Masculinity, and Alcohol Use: The Experiences of Heterosexual Male Perpetrators of Intimate Partner Violence}}
+      \field{volume}{16}
+      \field{year}{2010}
+      \field{pages}{387\bibrangedash 409}
+      \range{pages}{23}
+      \keyw{alcohol,gender,interpersonal violence,intimate partner violence,masculinity,qualitative research}
+    \endentry
+    \entry{Javaid2015}{article}{}
+      \name{author}{1}{}{%
+        {{hash=ce9dfdb58c9980968611eb140cd092a0}{%
+           family={Javaid},
+           familyi={J\bibinitperiod},
+           given={Aliraza},
+           giveni={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{ce9dfdb58c9980968611eb140cd092a0}
+      \strng{fullhash}{ce9dfdb58c9980968611eb140cd092a0}
+      \strng{bibnamehash}{ce9dfdb58c9980968611eb140cd092a0}
+      \strng{authorbibnamehash}{ce9dfdb58c9980968611eb140cd092a0}
+      \strng{authornamehash}{ce9dfdb58c9980968611eb140cd092a0}
+      \strng{authorfullhash}{ce9dfdb58c9980968611eb140cd092a0}
+      \field{sortinit}{1}
+      \field{sortinithash}{2174f786c6195e7fe2ee1c229b416e29}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{This article sets out to explore the relationship between alcohol and intimate partner violence. This research will explore the role that alcohol contributes to intimate partner violence and how it influences such a phenomenon. The empirical research is based on 12 semi-structured interviews with professionals who deal with or have dealt with victims and/or offenders of intimate partner violence. The professionals range from academics to social workers in the North East region within the United Kingdom. By adopting a qualitative approach, this research found that alcohol was used as an excuse in intimate partner violence cases. The data presented herein only give an insight into the discourses of professionals in relation to this topic rather than the views of the victims and offenders themselves. This research stipulates that alcohol is not causal in relation to intimate partner violence but it does offer the offender a 'shield', which allows them to identify themselves not as a 'violent abuser' but rather as someone whose drinking can lead them to do things they otherwise would not do. Javaid 76 Introduction The aim of this study is to understand the experiences of professionals dealing with alcohol and intimate partner violence; these professionals hypothesize about their heterosexual, rather than lesbian or gay, clients. It is, of course, impossible from a study of 12 professionals to determine the relationship between substance abuse and partner violence. The aim of this study, though, is to carefully and rigorously examine the professionals' experiences of dealing with alcohol and intimate partner violence, as there has been a lack of social research on this area of study, more specifically, in the North East region within the United Kingdom. However, international concern about the issue of intimate partner violence still continues to grow. This includes some consideration of a link between violent behaviour and alcohol---the nature of which has not been clearly defined. The connection between intimate partner violence and alcohol is certainly intricate and mediated by significant economic, etiologic, and social factors. This research gives an in-depth analysis into several aspects regarding intimate partner violence and alcohol. It is identified that this research cannot address all relevant issues, but an attempt has been made to achieve a balanced account of current knowledge and thinking. Due to the small sample size in this study (n=12), the results cannot be generalised; but the purpose of this research is to generate fine-grained, meaningful, in-depth qualitative data to explore specific details that the professionals choose to impart. Feminist theory is used as a foundation in this research to discuss the themes of power and control in support of the research findings. Feminist theory within intimate partner violence stresses power and gender inequality within opposite-sex relationships. It focuses on societal messages that allow men's use of aggression and violence throughout life, and the gender roles that expect how women and men ought to behave in their intimate relationships (Pence {\&} Paymar, 1993). It sees the root causes of intimate partner violence as the outcome of living a society that condones aggressive behaviours committed by males, whilst socialising females to be non-violent. The research findings presented demonstrate that men are the offenders while women are the victims. Therefore, feminist theory is most appropriate to use in this research when critically examining intimate partner violence and alcohol collectively. However, it must be stressed that men can also become victims of intimate partner violence (Walklate, 2004). This research will focus particularly on alcohol and its association with intimate partner violence.}
+      \field{journaltitle}{British Journal of Community Justice}
+      \field{number}{1}
+      \field{title}{{The role of alcohol in intimate partner violence: Causal behaviour or excusing behaviour?}}
+      \field{volume}{13}
+      \field{year}{2015}
+      \field{pages}{75\bibrangedash 92}
+      \range{pages}{18}
+      \keyw{Alcohol,Blame,Excuse,Intimate partner violence}
+    \endentry
+    \entry{Dixon2014}{article}{}
+      \name{author}{1}{}{%
+        {{hash=a3938748e16b422d3e8f6ca3e194bbab}{%
+           family={Dixon},
+           familyi={D\bibinitperiod},
+           given={Kevin},
+           giveni={K\bibinitperiod}}}%
+      }
+      \strng{namehash}{a3938748e16b422d3e8f6ca3e194bbab}
+      \strng{fullhash}{a3938748e16b422d3e8f6ca3e194bbab}
+      \strng{bibnamehash}{a3938748e16b422d3e8f6ca3e194bbab}
+      \strng{authorbibnamehash}{a3938748e16b422d3e8f6ca3e194bbab}
+      \strng{authornamehash}{a3938748e16b422d3e8f6ca3e194bbab}
+      \strng{authorfullhash}{a3938748e16b422d3e8f6ca3e194bbab}
+      \field{sortinit}{2}
+      \field{sortinithash}{cbff857e587bcb4635511624d773949e}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{This paper draws on qualitative interviews with a sample of English football fans to explore their relationship with one enduring site for fandom practice, the pub. In doing so, the work discusses the significance of structuration processes as a means of explaining the transcendent nature of this relationship across time and space. The findings complement existing ethnographic observations to illustrate that a progressive and multifaceted relationship exists between the institution (the pub) and its customers (football fans), based on historical reference to fan culture, emotive connection to the pub as a football space, associated sociability and the perception of cultural stability.}
+      \field{journaltitle}{International Review for the Sociology of Sport}
+      \field{number}{3-4}
+      \field{title}{{The football fan and the pub: An enduring relationship}}
+      \field{volume}{49}
+      \field{year}{2014}
+      \field{pages}{382\bibrangedash 399}
+      \range{pages}{18}
+      \keyw{compulsion of proximity,fandom culture,football,live spectatorship,the pub}
+    \endentry
+    \entry{Gornall2014}{article}{}
+      \name{author}{1}{}{%
+        {{hash=3a4fb21cf48a0c03a43588905e56f7f6}{%
+           family={Gornall},
+           familyi={G\bibinitperiod},
+           given={Jonathan},
+           giveni={J\bibinitperiod}}}%
+      }
+      \strng{namehash}{3a4fb21cf48a0c03a43588905e56f7f6}
+      \strng{fullhash}{3a4fb21cf48a0c03a43588905e56f7f6}
+      \strng{bibnamehash}{3a4fb21cf48a0c03a43588905e56f7f6}
+      \strng{authorbibnamehash}{3a4fb21cf48a0c03a43588905e56f7f6}
+      \strng{authornamehash}{3a4fb21cf48a0c03a43588905e56f7f6}
+      \strng{authorfullhash}{3a4fb21cf48a0c03a43588905e56f7f6}
+      \field{sortinit}{2}
+      \field{sortinithash}{cbff857e587bcb4635511624d773949e}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Whichever country hoists aloft the World Cup trophy on 13 July, the real winner will be the alcohol industry, finds Jonathan Gornall At the end of last year, Home Office minister Norman Baker was adamant. Despite an energetic campaign by the British Beer and Pub Association to persuade him to \textquotedblleft{}back Roy's boys\textquotedblright{} in Brazil, he announced he would not be relaxing licensing laws to allow pubs to stay open longer during the 2014 World Cup. The 2003 Licensing Act gives the secretary of state the power to do so for an occasion of \textquotedblleft{}exceptional international, national or local significance\textquotedblright{}; at the time it had been exercised just twice, for the royal wedding in 2011 and the Queen's diamond jubilee in 2012. The World Cup, said Baker, was not on a par with those one-off events. Furthermore, he feared the public safety consequences: police had had to mount \textquotedblleft{}a substantial policing operation\textquotedblright{} for the 2010 World Cup and the 2012 European Championships.1 But within three months, a determined alcohol industry, fresh from its victory over minimum unit pricing2 and, as usual, aided and abetted in the House of Commons by its friends in the all party parliamentary beer group,3 4 had forced the government into another humiliating U-turn over its alcohol policies. On 3 February 2014, the prime minister announced on Twitter that he had \textquotedblleft{}ordered a rethink.\textquotedblright{} A brief consultation followed,5 and by the end of March the industry was celebrating \textquotedblleft{}really great news, which will put pubs at the heart of a great national event\textquotedblright{}---and one which, it predicted, would see about {\x{00a3}}20m (\x{20ac}25m; {\$}34m) pumped into the pub trade between the start of the World Cup on 12 June and the final on 13 July. In the UK, football and alcohol are inextricably {\ldots}}
+      \field{journaltitle}{BMJ}
+      \field{title}{{World Cup 2014: festival of football or alcohol?}}
+      \field{volume}{348}
+      \field{year}{2014}
+      \field{pages}{g3772}
+      \range{pages}{-1}
+      \verb{file}
+      \verb :C$\backslash$:/Users/u1562268/AppData/Local/Mendeley Ltd./Mendeley Desktop/Downloaded/Gornall - 2014 - World Cup 2014 festival of football or alcohol.pdf:pdf
+      \endverb
+    \endentry
+    \entry{ONS}{report}{}
+      \name{author}{1}{}{%
+        {{hash=7c09c61c48c28e8c07dd16d821ede8eb}{%
+           family={{Office for National Statistics}},
+           familyi={O\bibinitperiod}}}%
+      }
+      \list{institution}{1}{%
+        {Office for National Statistics}%
+      }
+      \strng{namehash}{7c09c61c48c28e8c07dd16d821ede8eb}
+      \strng{fullhash}{7c09c61c48c28e8c07dd16d821ede8eb}
+      \strng{bibnamehash}{7c09c61c48c28e8c07dd16d821ede8eb}
+      \strng{authorbibnamehash}{7c09c61c48c28e8c07dd16d821ede8eb}
+      \strng{authornamehash}{7c09c61c48c28e8c07dd16d821ede8eb}
+      \strng{authorfullhash}{7c09c61c48c28e8c07dd16d821ede8eb}
+      \field{extraname}{2}
+      \field{sortinit}{2}
+      \field{sortinithash}{cbff857e587bcb4635511624d773949e}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{{Domestic abuse in England and Wales: year ending March 2018}}
+      \field{type}{techreport}
+      \field{year}{2018}
+      \field{pages}{24}
+      \range{pages}{1}
+    \endentry
+    \entry{Vincent2010}{article}{}
+      \name{author}{5}{}{%
+        {{hash=6a67c14dc8b1042c6111d76fea46d956}{%
+           family={Vincent},
+           familyi={V\bibinitperiod},
+           given={John},
+           giveni={J\bibinitperiod}}}%
+        {{hash=533f26289da340ddd122bc9a02528f22}{%
+           family={Kian},
+           familyi={K\bibinitperiod},
+           given={Edward\bibnamedelima M.},
+           giveni={E\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+        {{hash=7e4ad07d693d61523e8b1bbd134adace}{%
+           family={Pedersen},
+           familyi={P\bibinitperiod},
+           given={Paul\bibnamedelima M.},
+           giveni={P\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+        {{hash=119c93f73aad23050e267476da53206a}{%
+           family={Kuntz},
+           familyi={K\bibinitperiod},
+           given={Aaron},
+           giveni={A\bibinitperiod}}}%
+        {{hash=8c7bed228f49bedec1dc57a42031cad7}{%
+           family={Hill},
+           familyi={H\bibinitperiod},
+           given={John\bibnamedelima S.},
+           giveni={J\bibinitperiod\bibinitdelim S\bibinitperiod}}}%
+      }
+      \strng{namehash}{8bb9181308a34013392c385a76050a06}
+      \strng{fullhash}{3be0da0524c3fdf848c3a316dbc24e28}
+      \strng{bibnamehash}{3be0da0524c3fdf848c3a316dbc24e28}
+      \strng{authorbibnamehash}{3be0da0524c3fdf848c3a316dbc24e28}
+      \strng{authornamehash}{8bb9181308a34013392c385a76050a06}
+      \strng{authorfullhash}{3be0da0524c3fdf848c3a316dbc24e28}
+      \field{sortinit}{2}
+      \field{sortinithash}{cbff857e587bcb4635511624d773949e}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{The essence of global sports has been competition among nations at the international level. For football, arguably the world's most popular sport, global rivalries are paramount, and every four years since 1930, it has been the World Cup that has provided this excitement. English newspaper narratives about the English men's national football team competing in the 2006 World Cup were examined to gain insight into how English national identity was portrayed. Using a qualitative textual analysis methodology, this study drew on Anderson's (1983) theory of the imagined community, Hobsbawm's (1983) notion of invented traditions, and the Eliasian (1991) concept of habitus codes. Set against the contemporary trends of devolution, globalization, and a post-7/7 discourse the newspapers relied on a reductionist, essentialist construction to elicit an emotional connection with a homogenous form of English national identity. The narratives seemed designed to galvanize support for the English team through references to...}
+      \field{journaltitle}{International Review for the Sociology of Sport}
+      \field{number}{2}
+      \field{title}{{England expects: English newspapers' narratives about the English football team in the 2006 World Cup}}
+      \field{volume}{45}
+      \field{year}{2010}
+      \field{pages}{199\bibrangedash 223}
+      \range{pages}{25}
+      \keyw{media,national identity,textual analysis}
+    \endentry
+    \entry{VanderMeij2012}{article}{}
+      \name{author}{7}{}{%
+        {{hash=e926a7d6ffda8b2ac87ad5a65ac09365}{%
+           family={Meij},
+           familyi={M\bibinitperiod},
+           given={Leander},
+           giveni={L\bibinitperiod},
+           prefix={van\bibnamedelima der},
+           prefixi={v\bibinitperiod\bibinitdelim d\bibinitperiod}}}%
+        {{hash=f789210201af9630a6b3e40c37098893}{%
+           family={Almela},
+           familyi={A\bibinitperiod},
+           given={Mercedes},
+           giveni={M\bibinitperiod}}}%
+        {{hash=2f8415535da4dfe26c80afcda2a5a291}{%
+           family={Hidalgo},
+           familyi={H\bibinitperiod},
+           given={Vanesa},
+           giveni={V\bibinitperiod}}}%
+        {{hash=922070f5a966cb9a75010c787bb0b7a9}{%
+           family={Villada},
+           familyi={V\bibinitperiod},
+           given={Carolina},
+           giveni={C\bibinitperiod}}}%
+        {{hash=4e72fdbca4cd056cc15f57e2e44ad6a6}{%
+           family={IJzerman},
+           familyi={I\bibinitperiod},
+           given={Hans},
+           giveni={H\bibinitperiod}}}%
+        {{hash=44fcaeacea9481ab37426be63faf511c}{%
+           family={Lange},
+           familyi={L\bibinitperiod},
+           given={Paul\bibnamedelimb A.\bibnamedelimi M.},
+           giveni={P\bibinitperiod\bibinitdelim A\bibinitperiod\bibinitdelim M\bibinitperiod},
+           prefix={van},
+           prefixi={v\bibinitperiod}}}%
+        {{hash=20753bc0e9f78fb0befcd9999d79207e}{%
+           family={Salvador},
+           familyi={S\bibinitperiod},
+           given={Alicia},
+           giveni={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{f524715a35a94747a1b5e06229821f87}
+      \strng{fullhash}{86606141cbd2066e19cc4fc0cf67fd92}
+      \strng{bibnamehash}{f524715a35a94747a1b5e06229821f87}
+      \strng{authorbibnamehash}{f524715a35a94747a1b5e06229821f87}
+      \strng{authornamehash}{f524715a35a94747a1b5e06229821f87}
+      \strng{authorfullhash}{86606141cbd2066e19cc4fc0cf67fd92}
+      \field{sortinit}{2}
+      \field{sortinithash}{cbff857e587bcb4635511624d773949e}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{This field study investigated the release of testosterone and cortisol of a vicarious winning experience in Spanish fans watching the finals between Spain and the Netherlands in the 2010 FIFA World Cup Soccer. Spanish fans (n = 50) watched the match with friends or family in a public place or at home and also participated in a control condition. Consistent with hypotheses, results revealed that testosterone and cortisol levels were higher when watching the match than on a control day. However, neither testosterone nor cortisol levels increased after the victory of the Spanish team. Moreover, the increase in testosterone secretion was not related to participants' sex, age or soccer fandom, but the increase in total cortisol secretion during the match was higher among men than among women and among fans that were younger. Also, increases in cortisol secretion were greater to the degree that people were a stronger fan of soccer. Level of fandom further appeared to account for the sex effect, but not for the age effect. Generally, the testosterone data from this study are in line with the challenge hypothesis, as testosterone levels of watchers increased to prepare their organism to defend or enhance their social status. The cortisol data from this study are in line with social self-preservation theory, as higher cortisol secretion among young and greater soccer fans suggests that especially they perceived that a negative outcome of the match would threaten their own social esteem.}
+      \field{journaltitle}{PLoS ONE}
+      \field{number}{4}
+      \field{title}{{Testosterone and Cortisol Release among Spanish Soccer Fans Watching the 2010 World Cup Final}}
+      \field{volume}{7}
+      \field{year}{2012}
+      \field{pages}{e34814}
+      \range{pages}{-1}
+      \verb{file}
+      \verb :C$\backslash$:/Users/u1562268/AppData/Local/Mendeley Ltd./Mendeley Desktop/Downloaded/van der Meij et al. - 2012 - Testosterone and Cortisol Release among Spanish Soccer Fans Watching the 2010 World Cup Final.pdf:pdf
+      \endverb
+    \endentry
+    \entry{Davies2018}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=e38a50f7a15e1b57fd4a79225040cb71}{%
+           family={Davies},
+           familyi={D\bibinitperiod},
+           given={Gareth},
+           giveni={G\bibinitperiod}}}%
+      }
+      \strng{namehash}{e38a50f7a15e1b57fd4a79225040cb71}
+      \strng{fullhash}{e38a50f7a15e1b57fd4a79225040cb71}
+      \strng{bibnamehash}{e38a50f7a15e1b57fd4a79225040cb71}
+      \strng{authorbibnamehash}{e38a50f7a15e1b57fd4a79225040cb71}
+      \strng{authornamehash}{e38a50f7a15e1b57fd4a79225040cb71}
+      \strng{authorfullhash}{e38a50f7a15e1b57fd4a79225040cb71}
+      \field{sortinit}{3}
+      \field{sortinithash}{a4b52e5432884761f50fb9571273b93e}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{{England's unexpected World Cup progression behind record-high alcohol poisoning cases, NHS says}}
+      \field{urlday}{25}
+      \field{urlmonth}{3}
+      \field{urlyear}{2019}
+      \field{year}{2018}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://www.telegraph.co.uk/news/2018/12/30/englands-unexpected-world-cup-progression-behind-record-high/
+      \endverb
+      \verb{url}
+      \verb https://www.telegraph.co.uk/news/2018/12/30/englands-unexpected-world-cup-progression-behind-record-high/
+      \endverb
+    \endentry
+    \entry{Ipsos2003}{misc}{}
+      \field{sortinit}{3}
+      \field{sortinithash}{a4b52e5432884761f50fb9571273b93e}
+      \field{labeltitlesource}{title}
+      \field{month}{12}
+      \field{title}{{Rugby Union 'Britain's Second Most Popular Sport'}}
+      \field{urlday}{12}
+      \field{urlmonth}{4}
+      \field{urlyear}{2019}
+      \field{year}{2003}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://www.ipsos.com/ipsos-mori/en-uk/rugby-union-britains-second-most-popular-sport
+      \endverb
+      \verb{url}
+      \verb https://www.ipsos.com/ipsos-mori/en-uk/rugby-union-britains-second-most-popular-sport
+      \endverb
+    \endentry
+    \entry{Homeoffice}{report}{}
+      \name{author}{1}{}{%
+        {{hash=587ef03e1a39fee2f9606fd2e11e8533}{%
+           family={{Home Office}},
+           familyi={H\bibinitperiod}}}%
+      }
+      \list{institution}{1}{%
+        {Home Office}%
+      }
+      \strng{namehash}{587ef03e1a39fee2f9606fd2e11e8533}
+      \strng{fullhash}{587ef03e1a39fee2f9606fd2e11e8533}
+      \strng{bibnamehash}{587ef03e1a39fee2f9606fd2e11e8533}
+      \strng{authorbibnamehash}{587ef03e1a39fee2f9606fd2e11e8533}
+      \strng{authornamehash}{587ef03e1a39fee2f9606fd2e11e8533}
+      \strng{authorfullhash}{587ef03e1a39fee2f9606fd2e11e8533}
+      \field{sortinit}{3}
+      \field{sortinithash}{a4b52e5432884761f50fb9571273b93e}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{{Police funding for England and Wales 2015 to 2019}}
+      \field{type}{techreport}
+      \field{year}{2018}
+      \field{pages}{11\bibrangedash 12}
+      \range{pages}{2}
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+

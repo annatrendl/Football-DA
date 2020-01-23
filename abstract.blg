@@ -1,0 +1,23 @@
+[0] Config.pm:304> INFO - This is Biber 2.12
+[0] Config.pm:307> INFO - Logfile is 'abstract.blg'
+[40] biber-MSWIN64:315> INFO - === 
+[77] Biber.pm:371> INFO - Reading 'abstract.bcf'
+[197] Biber.pm:889> INFO - Found 22 citekeys in bib section 0
+[217] Biber.pm:4093> INFO - Processing section 0
+[233] Biber.pm:4254> INFO - Looking for bibtex format file 'football_refs.bib' for section 0
+[234] bibtex.pm:1477> INFO - Reading ascii input as UTF-8
+[246] bibtex.pm:1523> INFO - LaTeX decoding ...
+[335] bibtex.pm:1340> INFO - Found BibTeX data source 'football_refs.bib'
+[378] Utils.pm:193> WARN - month field 'jul' in entry 'BBC' is not an integer - this will probably not sort properly.
+[458] Utils.pm:193> WARN - month field 'dec' in entry 'Ipsos2003' is not an integer - this will probably not sort properly.
+[504] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[504] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[505] Biber.pm:3921> INFO - Sorting list 'none/global//global/global' of type 'entry' with template 'none' and locale 'en-US'
+[505] Biber.pm:3927> INFO - No sort tailoring available for locale 'en-US'
+[531] bbl.pm:636> INFO - Writing 'abstract.bbl' with encoding 'ascii'
+[535] Utils.pm:193> WARN - The entry 'Kirby2014' has characters which cannot be encoded in 'ascii'. Recoding problematic characters into macros.
+[542] Utils.pm:193> WARN - The entry 'Vincent2014' has characters which cannot be encoded in 'ascii'. Recoding problematic characters into macros.
+[546] Utils.pm:193> WARN - The entry 'Javaid2015' has characters which cannot be encoded in 'ascii'. Recoding problematic characters into macros.
+[549] Utils.pm:193> WARN - The entry 'Gornall2014' has characters which cannot be encoded in 'ascii'. Recoding problematic characters into macros.
+[553] bbl.pm:739> INFO - Output to abstract.bbl
+[559] Biber.pm:110> INFO - WARNINGS: 6

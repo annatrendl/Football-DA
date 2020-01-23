@@ -1,0 +1,7 @@
+\beamer@sectionintoc {1}{Domestic abuse in England}{2}{0}{1}
+\beamer@sectionintoc {2}{Data}{4}{0}{2}
+\beamer@sectionintoc {3}{Methodology}{5}{0}{3}
+\beamer@sectionintoc {4}{Results}{6}{0}{4}
+\beamer@sectionintoc {5}{Conclusion}{13}{0}{5}
+\contentsline {section}{References}
+\beamer@sectionintoc {7}{Appendix}{15}{0}{6}
