@@ -1,6 +1,31 @@
 \begin{thebibliography}{}
 
 \bibitem [\protect \citeauthoryear {%
+{BBC Sport}%
+}{%
+{BBC Sport}%
+}{%
+{\protect \APACyear {2018}}%
+}]{%
+BBC}
+\APACinsertmetastar {%
+BBC}%
+\begin{APACrefauthors}%
+{BBC Sport}.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2018}{}{}.
+\newblock
+\APACrefbtitle {{World Cup 2018: Record-breaking online {\&} viewing figures
+  for BBC}.} {{World Cup 2018: Record-breaking online {\&} viewing figures for
+  BBC}.}
+\newblock
+\begin{APACrefURL} \url{https://www.bbc.co.uk/sport/football/44850988}
+  \end{APACrefURL}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
 Brimicombe%
 \ \BBA {} Cafe%
 }{%
@@ -50,6 +75,33 @@ Brooks-Hay, O.%
   game': domestic abuse and football}}.{\BBCQ}
 \newblock
 \APACjournalVolNumPages{Journal of Gender-Based Violence}{2}{1}{93--108}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Cameron%
+\ \BBA {} Trivedi%
+}{%
+Cameron%
+\ \BBA {} Trivedi%
+}{%
+{\protect \APACyear {1990}}%
+}]{%
+Cameron1990a}
+\APACinsertmetastar {%
+Cameron1990a}%
+\begin{APACrefauthors}%
+Cameron, A\BPBI C.%
+\BCBT {}\ \BBA {} Trivedi, P\BPBI K.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{1990}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {{Regression-based tests for overdispersion in the
+  Poisson model}} {{Regression-based tests for overdispersion in the Poisson
+  model}}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Journal of Econometrics}{}{}{}.
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
@@ -217,7 +269,7 @@ Homeoffice}%
 {Home Office}%
 }{%
 {\protect \APACyear {2019}}%
-}]{%
+{\protect \APACexlab {{\protect \BCnt {1}}}}}]{%
 HomeOffice2019}
 \APACinsertmetastar {%
 HomeOffice2019}%
@@ -226,7 +278,7 @@ HomeOffice2019}%
 \end{APACrefauthors}%
 \unskip\
 \newblock
-\APACrefYearMonthDay{2019}{}{}.
+\APACrefYearMonthDay{2019{\protect \BCnt {1}}}{}{}.
 \newblock
 \APACrefbtitle {{Crime Recording General Rules}} {{Crime Recording General
   Rules}}\ \APACbVolEdTR{}{\BTR{}}.
@@ -235,6 +287,32 @@ HomeOffice2019}%
 \newblock
 \begin{APACrefURL}
   \url{https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment{\_}data/file/854733/count-general-dec-2019.pdf}
+  \end{APACrefURL}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+{Home Office}%
+}{%
+{Home Office}%
+}{%
+{\protect \APACyear {2019}}%
+{\protect \APACexlab {{\protect \BCnt {2}}}}}]{%
+Office2019}
+\APACinsertmetastar {%
+Office2019}%
+\begin{APACrefauthors}%
+{Home Office}.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2019{\protect \BCnt {2}}}{}{}.
+\newblock
+\APACrefbtitle {{Home Office Counting Rules for Recorded Crime - Crime Flags}}
+  {{Home Office Counting Rules for Recorded Crime - Crime Flags}}\
+  \APACbVolEdTR{}{\BTR{}}.
+\newblock
+\begin{APACrefURL}
+  \url{https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment{\_}data/file/791106/count-flags-apr-2019.pdf}
   \end{APACrefURL}
 \PrintBackRefs{\CurrentBib}
 
@@ -302,23 +380,23 @@ Leonard, K\BPBI E.%
 }{%
 {Office for National Statistics}%
 }{%
-{\protect \APACyear {2017}}%
-}]{%
-populationfigure}
+{\protect \APACyear {2018}}%
+{\protect \APACexlab {{\protect \BCnt {1}}}}}]{%
+ONS}
 \APACinsertmetastar {%
-populationfigure}%
+ONS}%
 \begin{APACrefauthors}%
 {Office for National Statistics}.%
 \end{APACrefauthors}%
 \unskip\
 \newblock
-\APACrefYearMonthDay{2017}{}{}.
+\APACrefYearMonthDay{2018{\protect \BCnt {1}}}{}{}.
 \newblock
-\APACrefbtitle {{Labour Market Profile - West Midlands (Met County)}.} {{Labour
-  Market Profile - West Midlands (Met County)}.}
+\APACrefbtitle {{Domestic abuse in England and Wales: year ending March 2018}.}
+  {{Domestic abuse in England and Wales: year ending March 2018}.}
 \newblock
 \begin{APACrefURL}
-  \url{https://www.nomisweb.co.uk/reports/lmp/la/1967128614/report.aspx{\#}tabrespop}
+  \url{https://www.ons.gov.uk/peoplepopulationandcommunity/crimeandjustice/bulletins/domesticabuseinenglandandwales/yearendingmarch2018/pdf}
   \end{APACrefURL}
 \PrintBackRefs{\CurrentBib}
 
@@ -328,22 +406,22 @@ populationfigure}%
 {Office for National Statistics}%
 }{%
 {\protect \APACyear {2018}}%
-}]{%
-ONS}
+{\protect \APACexlab {{\protect \BCnt {2}}}}}]{%
+populationfigure}
 \APACinsertmetastar {%
-ONS}%
+populationfigure}%
 \begin{APACrefauthors}%
 {Office for National Statistics}.%
 \end{APACrefauthors}%
 \unskip\
 \newblock
-\APACrefYearMonthDay{2018}{}{}.
+\APACrefYearMonthDay{2018{\protect \BCnt {2}}}{}{}.
 \newblock
-\APACrefbtitle {{Domestic abuse in England and Wales: year ending March 2018}.}
-  {{Domestic abuse in England and Wales: year ending March 2018}.}
+\APACrefbtitle {{Labour Market Profile - West Midlands (Met County)}.} {{Labour
+  Market Profile - West Midlands (Met County)}.}
 \newblock
 \begin{APACrefURL}
-  \url{https://www.ons.gov.uk/peoplepopulationandcommunity/crimeandjustice/bulletins/domesticabuseinenglandandwales/yearendingmarch2018/pdf}
+  \url{https://www.nomisweb.co.uk/reports/lmp/la/1967128614/report.aspx?pc=wv111rd}
   \end{APACrefURL}
 \PrintBackRefs{\CurrentBib}
 
@@ -375,6 +453,34 @@ Parry, K\BPBI D.%
   Identification}}.{\BBCQ}
 \newblock
 \APACjournalVolNumPages{Journal of Sport Behavior}{37}{3}{251--267}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Prpic%
+\ \BBA {} Rosamund%
+}{%
+Prpic%
+\ \BBA {} Rosamund%
+}{%
+{\protect \APACyear {2018}}%
+}]{%
+ep}
+\APACinsertmetastar {%
+ep}%
+\begin{APACrefauthors}%
+Prpic, M.%
+\BCBT {}\ \BBA {} Rosamund, S.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2018}{}{}.
+\newblock
+\APACrefbtitle {{Violence against women in the EU: State of play}} {{Violence
+  against women in the EU: State of play}}\ \APACbVolEdTR{}{\BTR{}}.
+\newblock
+\begin{APACrefURL}
+  \url{http://www.europarl.europa.eu/thinktank/en/document.html?reference=EPRS\_BRI(2018)630296}
+  \end{APACrefURL}
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
@@ -581,28 +687,6 @@ Williams, D\BPBI J.%
   around vulnerable populations.}\ (\BPGS\ 157--241).
 \newblock
 \APACaddressPublisher{New York}{Nova Science Publishers}.
-\PrintBackRefs{\CurrentBib}
-
-\bibitem [\protect \citeauthoryear {%
-\APACcitebtitle {{World Cup 2018: Record-breaking online {\&} viewing figures
-  for BBC}}}{%
-\APACcitebtitle {{World Cup 2018: Record-breaking online {\&} viewing figures
-  for BBC}}}{%
-{\protect \APACyear {2018}}%
-}]{%
-BBC}
-\APACinsertmetastar {%
-BBC}%
-\APACrefbtitle {{World Cup 2018: Record-breaking online {\&} viewing figures
-  for BBC}.} {{World Cup 2018: Record-breaking online {\&} viewing figures for
-  BBC}.}
-\newblock
-\APACrefYearMonthDay{2018}{jul}{}.
-\newblock
-\APACaddressPublisher{}{BBC Sport}.
-\newblock
-\begin{APACrefURL} \url{https://www.bbc.co.uk/sport/football/44850988}
-  \end{APACrefURL}
 \PrintBackRefs{\CurrentBib}
 
 \end{thebibliography}

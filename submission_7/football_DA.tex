@@ -22,7 +22,11 @@
 \usepackage{booktabs}
 \usepackage{titling}
 \usepackage{rotating}
+\usepackage{amsmath}
+\usepackage{bm}
 \usepackage{authblk}
+\usepackage{adjustbox}
+\usepackage[section]{placeins}
 \usepackage[toc,page]{appendix}
 
 \captionsetup{
@@ -44,12 +48,12 @@
 
 
 \let\footnote=\endnote
-
+\newcommand{\vect}[1]{\boldsymbol{#1}}
 
 \bibliographystyle{apacite}
 \begin{document}
 
-\title{The link between national football tournaments and alcohol-related domestic abuse - evidence from England}
+\title{The link between national football tournaments and domestic abuse - evidence from England}
 
 \author{Anna Trendl$^{a,*}$ \\ \href{mailto:a.trendl@warwick.ac.uk}{a.trendl@warwick.ac.uk}\\
  \and Neil Stewart$^b$ \\ 
@@ -122,7 +126,7 @@
 
 \newpage
 \RaggedRight
-\section*{Introduction}
+\section{Introduction}
 
 Domestic abuse is increasingly recognised as a major public policy concern in many countries, including the UK \cite{ep}. While anyone can become a victim of domestic abuse, women are disproportionately affected, with more than 25\% of women, and 15\% of men in England and Wales reported to have experienced some form of domestic abuse since the age of 16 \cite{ONS}.
 
@@ -151,21 +155,23 @@ To investigate this question, this study explores whether the daily number of re
 
 
 
-\section*{Methods}
+\section{Datasets}
 
 
-\subsection*{West Midlands Crime Dataset}
+Our dataset comprises all incidents and crimes recorded by the West Midlands Police (WMP) in the period between January 1, 2010 and October 10, 2019 (3570 days). The WMP is the third largest police force in England \cite{Homeoffice}, serving an area with a population over 2.9 million in 2018 \cite{populationfigure}. 
 
-Our dataset comprises all incidents and crimes recorded by the West Midlands Police (WMP) in the period between January, 2010 and October, 2019. The WMP is the third largest police force in England \cite{Homeoffice}, serving an area with a population over 2.9 million in 2018 \cite{populationfigure}. 
-
-The WMP records all reported cases in two databases: incidents and crimes. Most reported cases will be initially recorded as incidents (and then later might be also recorded as a crime after investigation), with a smaller fraction immediately recorded as crimes (if it is clear that it meets the criteria for notifiable offences, \citeNP{HomeOffice2019}). For this reason, some recorded crimes will have matching incident entries, while others will not. As an exception, specific types of reported cases (e.g., rape, domestic abuse, child abuse) that, after investigated, do not qualify as a crime (e.g., due to lack of evidence), still get recorded in the crimes database with the indicator ``non crime'' (e.g., ``domestic violence incident - non crime'').
+The WMP records all reported cases in two databases: incidents and crimes. Most reported cases will be initially recorded as incidents (and then later might be also recorded as a crime after investigation), with a smaller fraction immediately recorded as crimes (if it is clear that it meets the criteria for notifiable offences, \citeNP{HomeOffice2019}). For this reason, some recorded crimes will have matching incident entries, while others will not. As an exception, specific types of reported cases (e.g., rape, domestic abuse, child abuse, racially or religiously aggravated cases) that, after investigated, do not qualify as a crime (e.g., due to lack of evidence), still get recorded in the crimes database with the indicator ``non crime'' (e.g., ``domestic violence incident - non crime'').
 
 
 The incidents dataset contains markers capturing various key aspects of the reported case (e.g., domestic abuse, alcohol, drugs, mental health, etc.; \citeNP{HomeOffice2011}) recorded in the call centre which are then used to assess the severity of case (and support the decision as to whether police attendance is required). In contrast, each case in the crimes dataset had been attended by the police, and therefore contains detailed information about the offence that took place, the gender, age, and ethnicity of the victim and offender, and the location and exact time of the crime.
 
-Given that much more information are recorded about crimes than incidents, we decided to restrict our analysis to entries in the crimes dataset (cases that have been investigated by the police), and use only matching entries from the incidents dataset (if any), which provide additional useful call centre-recorded markers about the nature of each crime. This allows us to identify if a recorded serious crime (e.g., grievous bodily harm) was domestic abuse-related. However, our core results stay the same if we only use information contained in the crimes dataset or include both all crimes and incidents in the analysis.
+Given that much more information are recorded about crimes than incidents, we decided to restrict our analysis to entries in the crimes dataset (cases that have been investigated by the police), and use only matching entries from the incidents dataset (if any), which provide additional useful call centre-recorded markers about the nature of each crime. This allows us to identify if a recorded serious crime (e.g., grievous bodily harm) was domestic abuse-related. However, our core results stay the same if we only use information contained in the crimes dataset or include both all crimes and incidents in the analysis. The role of the victim and the offender is determined by the police.  
 
-We coded each reported case as domestic abuse-related if (1) in the crime dataset the offence description explicitly stated so (either ``domestic violence incident'' or ``coercive/controlling behaviour in a domestic setting'') or (2) one of the linked incident markers (if any) stated ``domestic violence''. This method ensured that we used all information available to us to identify domestic-abuse related cases. To determine whether a case was alcohol-related, we again collated information from various markers and created an alcohol flag if any of these markers contained ``alcohol''.
+We coded each reported case as domestic abuse-related if (1) in the crime dataset the offence description explicitly stated so (either ``domestic violence incident'' or ``coercive/controlling behaviour in a domestic setting'') or (2) one of the linked incident markers (if any) stated ``domestic violence''. This method ensured that we used all information available to us to identify domestic-abuse related cases. 
+
+To determine whether a case was alcohol-related, we again collated information from various markers and created an alcohol flag if any of these markers contained ``alcohol''. The main source of information on alcohol-involvement is the crime dataset, where the recording officer has to choose either ``Yes'' or ``No'' to indicate whether the case was alcohol-related. According to the Home Office Counting Rules for Recorded Crime, alcohol-related crimes are defined as ``any notifiable offence (crime) where it is perceived, by the victim or any other person, that the
+effects of alcohol consumption on the offender or victim was an aggravating factor'' \citeNP{Office2019}. Unfortunately, it is not recorded in our dataset whether who was under the influence of alcohol (victim, offender, or both). In addition, this flag might be an underestimation of the true number of alcohol-related cases, as one could reasonably expect it to be more likely that ``No'' will be selected for an alcohol-related case than the other way around, due to human error.
+
 
 
  There were 427,351 reported cases of domestic abuse in this 10-year period, comprising 17\% of all recorded crimes and incidents in the dataset. Of these cases, 26\% were alcohol-related (in contrast, only 9\% of non domestic abuse cases are alcohol-related). In the period between 2010 and 2018, the daily rate of non-alcohol related domestic incidents falls between 1.42--3.95 cases per 100,000 individuals, whereas the daily rate of alcohol-related cases falls between 0.84--1.67 cases per 100,000 individuals (the overall rate falls between 2.4 and 5.01 per 100,000 individuals). 
@@ -179,16 +185,14 @@ Figure \ref{fig:descriptive} shows the daily average number of alcohol and non-a
 \end{center} 
 \end{figure} 
 
-In the UK, the term ``domestic abuse'' refers to a wide range of behavioural patterns, from physical and sexual violence to psychological, emotional, financial abuse, threatening behaviour, stalking and harassment, either within a family or an intimate relationship \cite{ONS}. Previous research has mostly focused on IPV, the largest subcategory of domestic abuse. While IPV is more common than abuse perpetrated by family members \cite{ONS}, our dataset does not contain information about the exact relationship between the victim and perpetrator, therefore we cannot separate the two types of abuse, and we will refer to them collectively as ``domestic abuse''.
+In the UK, the term ``domestic abuse'' refers to a wide range of behavioural patterns, from physical and sexual violence to psychological, emotional, financial abuse, threatening behaviour, stalking and harassment, either within a family or an intimate relationship \cite{ONS}. Previous research has mostly focused on intimate partner violence (IPV), the largest subcategory of domestic abuse. While IPV is more common than abuse perpetrated by family members \cite{ONS}, our dataset does not contain information about the exact relationship between the victim and perpetrator (family vs current or ex-partner), therefore we cannot separate the two types of abuse, and we will refer to them collectively as ``domestic abuse''.
 
 
 Our dataset contains all cases of domestic abuse that have been reported to the WMP between 2010 and 2019, but the vast majority of domestic abuse incidents in fact never get reported (according to the Crime Survey of England and Wales, only 17\% of domestic abuse victims reported the abuse to the police between April 2017 and March 2018; \citeNP{ONS}). This substantial reporting bias, and its potential correlation with other contextual factors warrants a careful interpretation of the estimates from any quantitative study investigating domestic abuse, and highlights the importance of utilising a mixed methods approach to explore the factors contributing to the prevalence of domestic abuse. 
   
  
- There were three World Cups (2010, 2014, 2018) and two European Championships (2012, 2016) in the period covered by our dataset. All of these tournaments took place in the months of June and July. 
-Table \ref{Tab:matches} shows the matches of the English national football team in these tournaments. Out of 22 matches overall, England won and lost both eight times, while six matches ended in a draw. 
  
-\begin{table}[ht]
+\begin{table}[!htbp]
 \centering
     \caption{Matches played by the English national football team in the World Cup and European Championship tournaments between 2010 and 2019.}
 \begin{tabular}{ccccc}
@@ -222,178 +226,238 @@ Table \ref{Tab:matches} shows the matches of the English national football team 
   \label{Tab:matches}
 \end{table}
 
+ There were three World Cups (2010, 2014, 2018) and two European Championships (2012, 2016) in the period covered by our dataset. All of these tournaments took place in the months of June and July. 
+Table \ref{Tab:matches} shows the matches of the English national football team in these tournaments. Out of 22 matches overall, England won and lost both eight times, while six matches ended in a draw. 
+
+\section{Methods}
+
+\subsection{Count per day analyses} 
+\label{modelsexplained}
 
 
-\subsection*{Data analysis}
+To investigate the link between matches of the England football team and the number of domestic abuse cases perpetrated on these days, we use a regression framework, where each day in our dataset is an observation (of which there are 3570), and the outcome variable is the number of domestic abuse cases perpetrated on that day (alcohol-related or not). We classified each day in this period as one of the following: England won (England win, $N = 8$), lost (England lost, $N = 8$) or drew (England draw, $N = 6$), a day after an England match day (After England, $N = 22$), any other day during the months of the tournament (Tournament on, $N = 106$), or any other day during the rest of the year (Non-match day, $N = 3420$). Our aim is to understand the extent to which this classification variable can explain the number of cases reported to the police.
 
-In the following regressions, each observation represents the overall number of reported domestic abuse cases that have been perpetrated on a given day in the period between 2010 and 2019. Since our outcome variable is a count, we considered using a Poisson or a negative binomial regression model framework. Formally, if $C_i$ is the number of reported cases on days $i = 1...N$, then these models can be formally expressed as
-$$\ln(\lambda_i) = x_i^{T}\beta$$
+To control for potential confounders and account for the temporal variability of the number of domestic abuse cases, we also added a set of control variables, including day of the week, month, year, Christmas (covering the period between 24th and 26th of December) and New Year's Eve (1st of January). These holidays are consistently associated with an increased number of domestic abuse cases reported to the police, thus including these will improve the explanatory power of our regression model.
+
+Since our outcome variable is a count, we considered using a Poisson or a negative binomial regression model framework. Formally, if $C_i$ is the number of reported cases (alcohol or non-alcohol related) on days $i = 1...N$, then these models can be formally expressed as
+%
+\begin{equation}
+ \ln(\lambda_i) =\vect{x_i^{T}}\vect{\beta}
+\end{equation}
+
+
 where 
-$C_i \sim Pois(\lambda_i)$ or $C_i \sim Negative Binomial(\lambda_i\theta)$
+$C_i \sim Pois(\lambda_i)$ or $C_i \sim Negative Binomial(\lambda_i\theta)$, \textbf{x\textsubscript{i}} is a vector of covariates, and $\boldsymbol{\beta}$ is the vector of coefficients.
 
 In the Poisson framework, it is assumed that the mean of the distribution ($\lambda_i$) is equal to the variance. However, for certain types of count data, the observed variance can exceed the mean, causing overdispersion. If overdispersion is present in the data, the Poisson model understate the standard error of the estimates, leading to erroneous conclusions. Given the complex nature of domestic abuse, it is likely that our model will not able to fully account for all the factors influencing the number of reported cases on a given day, leading to unobserved heterogeneity and increasing the likelihood of overdispersion if using a Poisson model. Testing for overdispersion in a Poisson model involves testing the null-hypothesis of equidispersion (the mean being equal to the variance).
 
-If there is evidence for overdispersion, a negative binomial model is a more suitable modelling framework, as it includes an additional parameter $\theta$ to allow the variance to deviate from the mean. In the following analyses, our choice of regression framework in all cases is informed by a test of overdispersion. All analyses were performed in R (version 3.4.0).
+If there is evidence for overdispersion, a negative binomial model is a more suitable modelling framework, as it includes an additional parameter $\theta$ to allow the variance to deviate from the mean. In the following analyses, we present results from negative binomial models, as we found evidence for overdispersion in all cases (after performing a test of overdispersion described in \citeNP{Cameron1990a}). All analyses were performed in R (version 3.4.0).
 
 
+\subsection{Three-hour analysis}
+
+In this analysis, we use the regression framework described in section \ref{modelsexplained} to investigate the temporal dynamics of the number of domestic abuse cases (alcohol-related or not) perpetrated before and after England matches. To this end, we divided each day in our dataset into eight three-hour periods, the first one starting at 12am, and used these to identify specific time windows around the time of the match (six and three hours before the match, during match, and three, six, twelve, and twenty-four hours after the match). The exact time of the matches vary considerably (the earliest starting at 1pm, and the latest at 11pm). We first identified the three-hour period of the day into which each match falls. If the start and end time of the match did not fall in the same three-hour period, we chose the three-hour period that covers the larger part of the match (e.g., a 2.5 hour long match starting at 7pm will be assigned to the 6-9pm period and not to the 9pm-12am period). In these regressions, each time window indicator is a dummy variable, therefore the exponentiated coefficients directly represent the relative change in the number of cases during these periods, compared to any other (overwhelmingly non-match) periods. To control for potential confounders, we controlled for year, month, day of week, three-hour period of the day, Christmas and New Year's Eve.
 
 
+\subsection{Binary outcome variable analysis}
+
+To further understand the characteristics of domestic abuse cases perpetrated on England football days, such as whether these cases are more likely to occur in a public location or end in serious injury, we use a logistic regression framework. Given a binary response variable ($Y_{i}$ can either take the value 0 or 1), we wish to model the probability of an event occurring, i.e., $\pi = P(Y = 1)$. In a logistic regression framework, we can model this probability as a function of predictor variables with the equation
+
+\begin{equation}
+log(\frac{\pi}{1-\pi})= x_i^{T}\beta
+\end{equation}
+
+where \textbf{x\textsubscript{i}} is a vector of covariates, and $\boldsymbol{\beta}$ is the vector of coefficients. 
 
 
+\section{Results}
 
-
-negative binomial regressions, each observation is a day in the period between 2010 and 2018, and our main outcome variable is the number of alcohol and non-alcohol related domestic abuse cases reported to have been perpetrated on that day. To investigate how national football tournaments affect our outcome variables, we classify each day in our dataset as either a day on which England won (England win), lost (England lost) or drew (England draw), a day after an England match day (After England), any other day during the months of the tournament (Tournament on), or any other day during the rest of the year (Non-tournament day). All regressions include year, month, day of the week, Christmas and New Year's Eve controls.
-
-We first explore the effect of football on alcohol-related domestic abuse under various model specifications, followed by a three-hour analysis of the effect. We then investigate if the effect varies by perpetrator-victim gender subgroup, and whether it extends to rugby, the second most popular sport in England. We then investigate if similar effects can be observed for other offence types, apart from domestic abuse. Finally, as a robustness check, we contrast our results with findings from a re-analysis of data from a previous study on domestic abuse and football. 
-
-
-\section*{Results}
-
-We first compare various, increasingly complex model specifications to understand the relationship between football, alcohol and domestic abuse.  As shown in Table \ref{specifications}, adding type of day as an explanatory variable to a model with only alcohol and time controls marginally improves the model fit (see column 2), and the results show a 20\%, 95\% CI [5\%--38\%] increase in the number of reported domestic abuse cases when the England national football team wins. The comparison between column 2 and 3 reveals that this increase stems from a much more pronounced 61\% 95\% CI [24\%--110\%] increase within the subgroup of alcohol-related domestic abuse cases on days when England wins. We find no evidence for comparable increases in the number of reported domestic abuse cases when the England national team loses. Less surprising, and more consistent with previous findings is the lack of an increase on England draw days, probably due to the fact that high-stake matches after the group-stage in the tournament cannot result in a draw. 
-
-\begin{table*}[ht]
-\centering
-\scalebox{0.85}{
+\subsection{Core results} 
+\begin{table*}[!htbp] \centering 
   \begin{threeparttable}
-  \caption{Number of reported domestic abuse incidents by alcohol involvement and type of day} 
-  \label{specifications}
-\begin{tabular}{@{\extracolsep{5pt}}lcccc} 
+  \caption{Number of domestic abuse cases (alcohol and non-alcohol related) by type of day -- football European Championship and World Cup, 2010-2019)} 
+  \label{coremodel} 
+\begin{tabular}{@{\extracolsep{5pt}}lcc} 
 \\[-1.8ex]\hline 
 \hline \\[-1.8ex] 
- & \multicolumn{4}{c}{\textit{Dependent variable:}} \\ 
-\cline{2-5} 
-\\[-1.8ex] & \multicolumn{4}{c}{Number of reported domestic abuse cases per day} \\ 
-\\[-1.8ex] & (1) & (2) & (3) & (4)\\ 
+ & \multicolumn{2}{c}{\textit{Dependent variable:}} \\ 
+\cline{2-3} 
+\\[-1.8ex] & \multicolumn{2}{c}{Number of cases} \\ 
+ & Non-alcohol related & Alcohol-related\\ 
+ & domestic abuse & domestic abuse\\
+\\[-1.8ex] & (1) & (2)\\ 
+%\hline \\[-1.8ex] 
 \hline \\[-1.8ex] 
-Alcohol & $-$0.719$^{***}$ & $-$0.719$^{***}$ & $-$0.719$^{***}$ & $-$0.862$^{***}$ \\ 
-  & (0.007) & (0.007) & (0.008) & (0.031) \\ 
-  Tournament on &  & $-$0.004 & 0.014 & 0.032 \\ 
-  &  & (0.023) & (0.027) & (0.020) \\ 
-  England win &  & 0.205$^{***}$ & $-$0.037 & $-$0.031 \\ 
-  &  & (0.069) & (0.091) & (0.063) \\ 
-  England draw &  & 0.025 & 0.048 & 0.047 \\ 
-  &  & (0.082) & (0.104) & (0.072) \\ 
-  England loss &  & 0.078 & $-$0.013 & 0.050 \\ 
-  &  & (0.068) & (0.089) & (0.061) \\ 
-  After England &  & 0.097$^{**}$ & 0.075 & 0.086$^{**}$ \\ 
-  &  & (0.043) & (0.055) & (0.038) \\ 
-  Tournament on:Alcohol &  &  & $-$0.043 & $-$0.083$^{**}$ \\ 
-  &  &  & (0.040) & (0.035) \\ 
-  England win:Alcohol &  &  & 0.610$^{***}$ & 0.606$^{***}$ \\ 
-  &  &  & (0.135) & (0.101) \\ 
-  England draw:Alcohol &  &  & $-$0.055 & $-$0.034 \\ 
-  &  &  & (0.165) & (0.129) \\ 
-  England loss:Alcohol &  &  & 0.223 & 0.076 \\ 
-  &  &  & (0.135) & (0.101) \\ 
-  After England:Alcohol &  &  & 0.051 & 0.037 \\ 
-  &  &  & (0.084) & (0.066) \\ 
- \hline \\[-1.8ex] 
-Number of days & 3,017 & 3,017 & 3,017 & 3,017 \\ 
-AIC & 45,539.500 & 45,536.770 & 45,530.360 & 41,959.280 \\ 
-%BIC & 45740.656 & 45771.447 & 45798.563 & 42408.524 \\ 
+ Tournament on & 1.024 & 0.984 \\ 
+  & (0.986, 1.064) & (0.935, 1.037) \\ 
+  %& & \\ 
+ England win & 0.950 & 1.469$^{***}$ \\ 
+  & (0.838, 1.077) & (1.259, 1.714) \\ 
+  %& & \\ 
+ England draw & 1.045 & 1.145 \\ 
+  & (0.905, 1.208) & (0.955, 1.375) \\ 
+  %& & \\ 
+ England lost & 1.033 & 1.129 \\ 
+  & (0.915, 1.167) & (0.963, 1.324) \\ 
+  %& & \\ 
+ After England & 1.056 & 1.181$^{***}$ \\ 
+  & (0.979, 1.140) & (1.069, 1.305) \\ 
+  %& & \\ 
+\hline \\[-1.8ex] 
+Observations & 3,570 & 3,570 \\ 
+%Log Likelihood & $-$14,692.790 & $-$12,071.110 \\ 
+%$\theta$ & 51.259$^{***}$  (1.967) & 39.423$^{***}$  (2.112) \\ 
+%Akaike Inf. Crit. & 29,453.580 & 24,210.210 \\ 
 \hline 
 \hline \\[-1.8ex] 
-%\textit{Note:}  & \multicolumn{4}{r}{$^{*}$p$<$0.1; $^{**}$p$<$0.05; $^{***}$p$<$0.01} \\ 
+Notes:
+%\textit{Note:}  & \multicolumn{2}{r}{$^{*}$p$<$0.1; $^{**}$p$<$0.05; $^{***}$p$<$0.01} \\ 
 \end{tabular} 
 \begin{tablenotes}
       \item[a] \textit{$^{*}$p$<$0.1; $^{**}$p$<$0.05; $^{***}$p$<$0.01}
-      \item[b] \textit{Estimates are exponentiated coefficients from a series of negative binomial regressions (based on tests of overdispersion)  with year, month, day of week, Christmas, New Year's eve controls; Model 4 further includes interactions between alcohol and all control variables; standard errors in parentheses}
+      \item[b] \textit{Estimates are exponentiated coefficients from two separate negative binomial regressions with non-match day as benchmark; controls include day of week, month, year, Christmas, and New Year's Eve}
     \end{tablenotes}
-\end{threeparttable} }
+\end{threeparttable} 
 \end{table*}
 
-Further interacting alcohol with the rest of the time-specific control variables results in a substantially improved model fit (see column 4), but does not alter the effect of an England win on alcohol-related domestic abuse (61\%, 95\% CI [32\%--96\%]). The results also reveal a smaller, 9\%, 95\% CI [1\%--17\%] increase in non-alcohol related cases on days following an England match day, potentially the result of a temporal spillover effect from the previous match day. We also see an 8\%, 95\% CI [2\%--14\%] decrease in alcohol-related cases during the tournament, but not on England match days, perhaps stemming from heavy drinking being mostly concentrated around England match (and particularly England win) days, and relatively lower alcohol consumption on other days during the tournament. 
-
-Next, we explore the temporal dynamics of the increase in alcohol-related domestic abuse on England match days in more detail. To analyse the temporal dynamics of the England win effect (see Figure \ref{fig:threehours}), we divided each day in our dataset into eight three-hour periods, the first one starting at 12am, and used these to identify specific time windows around the time of the match. The exact time of the matches vary considerably (the earliest starting at 1pm, and the latest at 11pm). We first identified the three-hour period of the day into which each match falls. If the start and end time of the match did not fall in the same three-hour period, we chose the three-hour period that covers the larger part of the match (e.g., a 2.5 hour long match starting at 7pm will be assigned to the 6-9pm period and not to the 9pm-12am period).
+Table \ref{coremodel} shows the results from two negative binomial regressions investigating the link between football and types of domestic abuse (alcohol or non-alcohol related). For non alcohol-related cases, we find no evidence for an increase (or decrease) on days when the England football team plays, compared to non-match days. In contrast, we see a significant, 47\%, 95\% CI [26\%--71\%], increase in the number of alcohol-related cases on days when the England football team wins, compared to non-match days. We find no evidence for comparable increases in the number of reported domestic abuse cases when the England national team loses. Less surprising, and more consistent with previous findings is lack of evidence for an increase on England draw days, probably due to the fact that high-stake matches after the group-stage in the tournament cannot result in a draw. In addition, we estimate that there is an 18\%, 95\% CI [7\%--30\%], increase in the number of alcohol-related cases reported after an England match day, which could be the result of a temporal spill-over effect from the previous match day. 
 
 
- \begin{figure}[htb]
+
+
+
+ \begin{figure}[!htbp]
 \centering
- \caption{The temporal dynamics of the football-induced increase in domestic abuse, by alcohol involvement}
-\includegraphics[width=0.75\textwidth]{Threehours.pdf}
+ \caption{The temporal dynamics of the number of domestic abuse cases perpetrated on England draw, lose, and win days, by alcohol involvement.}
+\includegraphics[width=0.75\textwidth]{Threehours_newdata.pdf}
 \label{fig:threehours}
-		\floatfoot{Note: Estimates are from two separate negative binomial regressions (based on tests of overdispersion) with year, month, day of week, three-hour period of day, Christmas, New Year's eve controls. Shaded area is 95\% CIs.}
+		\floatfoot{Note: Estimates are from two separate negative binomial regressions with year, month, day of week, three-hour period of day, Christmas, New Year's eve controls. Shaded area is 95\% CIs.}
 \end{figure}
 
+ To further understand the characteristics of this increase, we conducted a three-hour analysis to explore the finer temporal patterns in the number of domestic abuse cases (alcohol-related or not) perpetrated before and after an England match. Figure \ref{fig:threehours} shows a plot of the estimated percentage increase from these negative binomial regressions, revealing a stark increase in alcohol-related domestic abuse on days of an England victory, starting in the three hour period of the match, peaking in the three-hour period afterwards, and gradually declining to its original level in the twenty-four hours following the victory. 
 
-Our previous results revealed important differences in the effect of football on alcohol and non-alcohol cases, therefore we run two separate regressions for alcohol and non-alcohol related domestic abuse cases to analyse the temporal pattern of the increase. Figure \ref{fig:threehours} shows a plot of the estimated percentage increase from these negative binomial regressions, revealing a stark increase in alcohol-related domestic abuse on days of an England victory, starting in the three hour period of the match, peaking in the three-hour period afterwards, and gradually declining to its original level in the twenty-four hours following the victory. Interestingly, we also see a slight increase in non-alcohol related incidents twelve hours after a loss or a victory, probably reflecting the small increase in non-alcohol related domestic abuse after an England match day seen in Table \ref{specifications}.
+\subsection{Other types of crimes and incidents}
 
-
-
-%\\[-1.8ex] & \multicolumn{4}{c}{Reported number of domestic abuse cases} & Property-related  & Public Order  & Hate & Other violent \\ 
-% & \multicolumn{4}{c}{} & Offences & Offences & incidents & Offences \\ 
-%\\[-1.8ex] & Male to Male & Male to Female & Female to Female & Female to Male &  &  &  & \\ 
-%\\[-1.8ex] & (1) & (2) & (3) & (4) & (5) & (6) & (7) & (8)\\ 
+Our crime dataset further allows us to explore whether England games have similar effects on other types of criminal behaviours, apart from domestic abuse. Specifically, we are interested in how an England match day affects the number of reported property-related crimes (where the case is classified as theft or robbery), hate crimes (hate incidents or any other racially or religiously aggravated crime), and other violent crimes (where the case is classified as violence against the person, excluding cases of domestic abuse). Of particular interest is the effect of football on non-domestic violent crimes, since it is possible that alcohol-fuelled violence that follows an England victory is not limited to family and intimate partner relationships. 
 
 
-\begin{sidewaystable}
+Table \ref{othercrimes} shows the results for these three types of criminal behaviours, by alcohol-involvement. Compared to non-match days, hate crimes and incidents with no alcohol-involvement increase by 12\%, 95\% CI [3\%--22\%], during the months of the tournaments. Similarly, compared to non-match days, alcohol-related thefts and robberies (property-related offences) increase by 10\%,95\% CI [1\%--19\%], when the tournament is on, and by 29\%, 95\% CI [0\%--66\%], although these estimates are not very precise (demonstrated by the width of the confidence intervals), due to the relatively small number of alcohol-related theft and robbery cases. In contrast, the effect of an England win on alcohol-related cases clearly extends to other, non-domestic violent offences, resulting in a 47\%, 95\% CI [19\%--83\%], increase compared to non-match days. While it is possible that misclassified domestic abuse cases contribute to this result (e.g, if the victim chooses not to disclose any relationship to the offender), these results suggests that the increase in alcohol-related violence following an England victory is not limited to domestic settings.
+
+
+
+  \begin{sidewaystable}[htp]
 \centering
- \caption{The effect of football by perpetrator-victim subgroups and offence types, and the effect of rugby.}
-   \label{table2}
-    \scalebox{0.8}{
+ \caption{Number of hate-related, property-related, and violent cases (alcohol and non-alcohol related) by type of day)}
+   \label{othercrimes}
+    \scalebox{0.9}{
  \begin{threeparttable}
-\begin{tabular}{@{\extracolsep{5pt}}lccccccccc} 
+\begin{tabular}{@{\extracolsep{1pt}}lcccccc} 
 \\[-1.8ex]\hline 
 \hline \\[-1.8ex] 
- & \multicolumn{9}{c}{\textit{Dependent variable:}} \\ 
-\cline{2-10} 
-\\[-1.8ex] & \multicolumn{5}{c}{Reported number of domestic abuse cases}  & Property-related  & Public Order  & Hate & Other violent \\ 
- & \multicolumn{4}{c}{} & Six Nations & Offences & Offences & incidents & Offences \\ 
-\\[-1.8ex] & Male to Male & Male to Female & Female to Female & Female to Male & (Rugby) & &  &  & \\ 
-\\[-1.8ex] & (1) & (2) & (3) & (4) & (5) & (6) & (7) & (8) & (9)\\ 
+ & \multicolumn{6}{c}{\textit{Dependent variable:}} \\ 
+   & \multicolumn{6}{c}{Number of cases} \\ 
+  & \multicolumn{3}{c}{Non-alcohol related} &\multicolumn{3}{c}{Alcohol-related} \\
+\cline{2-7} 
+\\[-1.8ex] & Hate- & Property- & Other & Hate- & Property & Other \\ & related & related & violent & related & related & violent \\ 
+\\[-1.8ex] & (1) & (2) & (3) & (4) & (5) & (6)\\ 
 \hline \\[-1.8ex] 
- Alcohol & $-$0.825$^{***}$ & $-$0.870$^{***}$ & $-$0.858$^{***}$ & $-$0.808$^{***}$ & $-$0.862$^{***}$ & $-$0.981$^{***}$ & $-$0.922$^{***}$ & $-$0.934$^{***}$ & $-$0.902$^{***}$ \\ 
-  & (0.101) & (0.034) & (0.080) & (0.080) & (0.031) & (0.065) & (0.080) & (0.115) & (0.040) \\ 
-  Tournament on & 0.005 & 0.038$^{*}$ & $-$0.048 & 0.053 & 0.005 & 0.042 & 0.096$^{**}$ & 0.138$^{***}$ & 0.034 \\ 
-  & (0.054) & (0.021) & (0.045) & (0.045) & (0.019) & (0.026) & (0.036) & (0.047) & (0.027) \\ 
-  England win & $-$0.068 & $-$0.022 & $-$0.147 & 0.019 & 0.0001 & 0.052 & 0.234$^{**}$ & 0.073 & 0.094 \\ 
-  & (0.165) & (0.066) & (0.135) & (0.135) & (0.035) & (0.074) & (0.095) & (0.136) & (0.077) \\ 
-  England draw & 0.080 & 0.038 & 0.107 & 0.043 &  & 0.100 & $-$0.065 & $-$0.066 & 0.035 \\ 
-  & (0.194) & (0.076) & (0.169) & (0.169) &  & (0.085) & (0.128) & (0.168) & (0.092) \\ 
-  England lost & $-$0.063 & 0.065 & 0.117 & $-$0.036 & 0.056 & $-$0.042 & 0.075 & 0.011 & 0.089 \\ 
-  & (0.162) & (0.064) & (0.136) & (0.136) & (0.055) & (0.078) & (0.100) & (0.139) & (0.078) \\ 
-  After England & $-$0.036 & 0.093$^{**}$ & 0.025 & 0.152$^{*}$ & $-$0.010 & 0.052 & 0.161$^{**}$ & 0.141 & 0.108$^{**}$ \\ 
-  & (0.103) & (0.040) & (0.082) & (0.082) & (0.031) & (0.047) & (0.062) & (0.084) & (0.048) \\ 
-  Alcohol:Tournament on & $-$0.181$^{*}$ & $-$0.077$^{**}$ & $-$0.215$^{*}$ & $-$0.018 & $-$0.047 & 0.135 & $-$0.197$^{**}$ & $-$0.215$^{*}$ & $-$0.009 \\ 
-  & (0.106) & (0.038) & (0.084) & (0.084) & (0.035) & (0.080) & (0.101) & (0.141) & (0.051) \\ 
-  Alcohol:England win & 0.334 & 0.674$^{***}$ & 0.472 & 0.360 & 0.045 & 0.259 & 0.020 & 0.310 & 0.507$^{***}$ \\ 
-  & (0.285) & (0.108) & (0.231) & (0.231) & (0.059) & (0.219) & (0.256) & (0.359) & (0.132) \\ 
-  Alcohol:England draw & $-$0.282 & 0.031 & $-$0.580 & 0.071 &  & 0.060 & 0.374 & 0.393 & 0.360$^{*}$ \\ 
-  & (0.411) & (0.138) & (0.313) & (0.313) &  & (0.264) & (0.303) & (0.431) & (0.161) \\ 
-  Alcohol:England lost & 0.286 & 0.028 & $-$0.088 & 0.328 & $-$0.073 & 0.144 & 0.456$^{*}$ & $-$0.032 & 0.018 \\ 
-  & (0.279) & (0.111) & (0.231) & (0.231) & (0.091) & (0.226) & (0.228) & (0.393) & (0.138) \\ 
-  Alcohol:After England & 0.209 & 0.052 & $-$0.040 & $-$0.111 & $-$0.021 & 0.094 & 0.127 & 0.446$^{*}$ & 0.053 \\ 
-  & (0.185) & (0.071) & (0.159) & (0.159) & (0.055) & (0.144) & (0.158) & (0.211) & (0.088) \\ 
- \hline \\[-1.8ex] 
-Number of days & 3,017 & 3,017 & 3,017 & 3,017 & 3,017 & 3,017 & 3,017 & 3,017 & 3,017 \\ 
-%Log Likelihood & $-$10,637.300 & $-$19,923.970 & $-$9,234.791 & $-$12,372.460 & $-$109,868.400 & $-$16,843.670 & $-$13,757.560 & $-$11,391.050 & $-$20,108.820 \\ 
-%$\theta$ & 141.533  (111.012) & 59.918$^{***}$  (2.924) & 64.457$^{**}$  (31.740) & 60.289$^{***}$  (14.059) & 0.665$^{***}$  (0.005) & 40.698$^{***}$  (1.891) & 33.673$^{***}$  (2.784) & 24.170$^{***}$  (2.563) & 30.562$^{***}$  (1.167) \\ 
-%Akaike Inf. Crit. & 21,406.600 & 39,979.950 & 18,601.580 & 24,876.910 & 219,864.900 & 33,819.350 & 27,647.120 & 22,914.090 & 40,349.640 \\ 
+Tournament & 1.120$^{***}$ & 1.014 & 1.035 & 1.099 & 1.099$^{**}$ & 1.060 \\ 
+ on & (1.030, 1.216) & (0.986, 1.043) & (0.986, 1.085) & (0.914, 1.316) & (1.011, 1.194) & (0.987, 1.139) \\ 
+  & & & & & & \\ 
+England & 1.002 & 0.961 & 1.085 & 1.556$^{*}$ & 1.291$^{**}$ & 1.473$^{***}$ \\ 
+win & (0.759, 1.311) & (0.879, 1.052) & (0.935, 1.263) & (0.902, 2.558) & (0.998, 1.662) & (1.192, 1.826) \\ 
+  & & & & & & \\ 
+England & 0.993 & 0.953 & 0.970 & 0.848 & 0.934 & 1.251$^{*}$ \\ 
+ draw & (0.709, 1.369) & (0.859, 1.059) & (0.810, 1.167) & (0.400, 1.624) & (0.701, 1.237) & (0.974, 1.613) \\ 
+  & & & & & & \\ 
+England & 0.984 & 0.974 & 1.066 & 0.760 & 1.008 & 0.988 \\ 
+ lost & (0.744, 1.288) & (0.890, 1.066) & (0.917, 1.243) & (0.363, 1.427) & (0.744, 1.353) & (0.785, 1.247) \\ 
+  & & & & & & \\ 
+After & 1.124 & 0.978 & 1.085$^{*}$ & 1.244 & 1.047 & 1.092 \\ 
+ England & (0.953, 1.323) & (0.925, 1.035) & (0.988, 1.193) & (0.872, 1.742) & (0.884, 1.237) & (0.948, 1.258) \\ 
+  & & & & & & \\ 
+\hline \\[-1.8ex] 
+Observations & 3,570 & 3,570 & 3,570 & 3,570 & 3,570 & 3,570 \\ 
+%Log Likelihood & $-$9,086.944 & $-$15,273.310 & $-$14,697.050 & $-$5,347.670 & $-$8,646.912 & $-$11,171.590 \\ 
+%$\theta$ & 23.936$^{***}$  (2.255) & 110.360$^{***}$  (4.838) & 29.145$^{***}$  (0.972) & 9.774$^{***}$  (1.829) & 30.885$^{***}$  (3.014) & 18.765$^{***}$  (0.926) \\ 
+%Akaike Inf. Crit. & 18,241.890 & 30,614.620 & 29,462.100 & 10,763.340 & 17,361.830 & 22,411.180 \\ 
 \hline 
 \hline \\[-1.8ex] 
-\textit{Note:}  & \multicolumn{9}{r}{$^{*}$p$<$0.1; $^{**}$p$<$0.05; $^{***}$p$<$0.01} \\ 
+\textit{Note:}  & \multicolumn{6}{r}{$^{*}$p$<$0.1; $^{**}$p$<$0.05; $^{***}$p$<$0.01} \\ 
 \end{tabular} 
 \begin{tablenotes}
       \item[a] \textit{$^{*}$p$<$0.1; $^{**}$p$<$0.05; $^{***}$p$<$0.01}
-      \item[b] \textit{Estimates are exponentiated coefficients from a series of negative binomial regressions (based on tests of overdispersion) with month, day of week, Christmas, New Year's eve controls interacted with alcohol; there was only one England rugby match that resulted in a draw between 2010 and 2018, therefore we excluded it from the data; standard errors in parentheses}
+      \item[b] \textit{Estimates are exponentiated coefficients from two separate negative binomial regressions with non-match day as benchmark; controls include day of week, month, year, Christmas, and New Year's Eve}
     \end{tablenotes}
 \end{threeparttable} }
 \end{sidewaystable}
 
+\subsection{Other types of sports: rugby}
+Does this effect generalise to other sporting events, or is it specific to football? It has been previously suggested that other popular sports, such as rugby have similar links with domestic abuse \cite{Brooks-Hay2018}. Rugby is the second most popular sport in England after football \cite{Ipsos2003}. Focusing on the Six Nations, a high-profile rugby tournament that takes place every year in the months of February and March with the participation of England, Wales, Scotland, Ireland, France and Italy, we explored whether the reported number of domestic abuse cases increase on days when the England national rugby team plays. 
 
-Given the evidence for the gendered nature of domestic abuse, we find it instructive to test whether the effect varies by perpetrator-victim gender subgroup. The first four columns of Table \ref{table2} show the results from four negative binomial regressions, one for each offender-victim gender groups. These reveal a pronounced increase in the subgroup of Male to Female abuse (which comprises about 80\% of all domestic abuse cases in our data), where the number of reported alcohol-related cases increase by 67\%, 95\% CI [35\%--107\%] on England win days. While we see similar tendencies for alcohol-related cases in other gender subgroups on England win days, these coefficients are about half the size of the male to female effect, and are not statistically different from zero. 
-
-Does this effect generalise to other sporting events, or is it specific to football?
-It has been previously suggested that other popular sports, such as rugby have similar links with domestic abuse \cite{Brooks-Hay2018}. Rugby is the second most popular sport in England after football \cite{Ipsos2003}. Focusing on the Six Nations, a high-profile rugby tournament that takes place every year with the participation of England, Wales, Scotland, Ireland, France and Italy, we explored whether the reported number of domestic abuse cases increase on days when the England national rugby team plays. The results show no comparable effects for rugby matches (see column 5 in Table \ref{table2}), potentially stemming from differences in timing, media coverage, audience numbers, and the involvement of alcohol between the two tournaments. 
+Each tournament year, England plays one match with each of the other five participating countries, and these matches take place almost always during the weekend (Saturday, $N = 37$; Sunday, $N = 11$; Friday, $N = 2$). The most common result for England is to win ($N = 35$), much less frequent are losses ($N = 12$) and draws ($N = 2$).
 
 
-Our unique dataset further allows us to explore whether England games have similar effects on other types of criminal behaviours, apart from domestic abuse. Specifically, we are interested in how an England match day affects the number of reported property-related crimes (including burglary, theft and robbery), public order offences (behaviours that cause offence to the general public), hate crimes (hate incidents and any other racially or religiously aggravated crime), and other violent crimes (excluding cases of domestic abuse). Of particular interest is the effect of football on non-domestic violent crimes, since it is possible that alcohol-fuelled violence that follows an England victory is not limited to family and intimate partner relationships. The last four columns in Table \ref{table2} shows the results from a series of negative binomial regressions for different types of criminal behaviours. These reveal that while there is no evidence that England matches affect the number of reported property-related offences, we see an increase in the number of non-alcohol related public order offence cases on tournament days, when England wins, and on days after an England game. Hate incidents with no alcohol involvement also increase when the tournament is on. But most importantly, the effect of an England match on alcohol-related cases extends to other, non-domestic violent offences, resulting in a 55\%, 95\% [43\%--72\%] increase on days when England wins, and a smaller increase on days following an England match, the exact same pattern we have seen for domestic abuse. Further analysis reveals that the increase in these alcohol-related non-domestic violent crimes also predominantly comes from male to female cases (although male to male and female to male cases also contribute, see Table \ref{otherviolence_gender} in the Supplemental Material). While it is possible that a number of misclassified domestic abuse cases are reflected in this result (e.g, if the victim chooses not to disclose any relationship to the offender), but even if this was the case, taken together, these findings suggest that football and alcohol primarily make men more violent, and direct this violence overwhelmingly towards women.
+Table \ref{rugby} shows no comparable effects for rugby matches on domestic abuse, potentially stemming from differences in timing, media coverage, audience numbers, and the involvement of alcohol between the two tournaments. 
 
-A previous study by \cite{Kirby2014} have found that an England loss results in the most pronounced increase in domestic abuse (38\%), and a win or draw have a slightly smaller effect (26\%). They used daily counts of IPV in Lancashire from the months of the 2002, 2006, 2010 World Cups. Upon re-analysing their data by treating wins and draws as two separate variables (resulting in an improved model fit, see Table \ref{kirbyrep1}), we see a roughly similar effect for wins (45\%, 95\% CI [28\%--64\%]) and losses (39\%, 95\% CI [18\%--64\%]), and no effect when England draws. Our reanalysis replicates the win effect seen in the West Midlands data, though the absence of a loss effect remains a stark difference between the two studies.
+
+\begin{table*}[!htbp] \centering 
+  \begin{threeparttable}
+  \caption{Number of domestic abuse cases (alcohol and non-alcohol related) by type of day) -- rugby Six Nations tournament, 2010-2019)} 
+  \label{rugby} 
+\begin{tabular}{@{\extracolsep{5pt}}lcc} 
+\\[-1.8ex]\hline 
+\hline \\[-1.8ex] 
+ & \multicolumn{2}{c}{\textit{Dependent variable:}} \\ 
+\cline{2-3} 
+\\[-1.8ex] & \multicolumn{2}{c}{Number of cases} \\ 
+ & Non-alcohol related & Alcohol-related\\ 
+ & domestic abuse & domestic abuse\\
+\\[-1.8ex] & (1) & (2)\\ 
+\hline \\[-1.8ex] 
+ Tournament on & 0.980 & 0.969 \\ 
+  & (0.947, 1.014) & (0.923, 1.017) \\ 
+ % & & \\ 
+ England win & 0.967 & 1.058 \\ 
+  & (0.906, 1.033) & (0.973, 1.151) \\ 
+ % & & \\ 
+ England draw & 1.030 & 0.966 \\ 
+  & (0.810, 1.318) & (0.716, 1.308) \\ 
+ % & & \\ 
+ England lost & 1.067 & 0.989 \\ 
+  & (0.963, 1.184) & (0.867, 1.129) \\ 
+ % & & \\ 
+ After England & 0.983 & 1.004 \\ 
+  & (0.929, 1.041) & (0.931, 1.083) \\ 
+ % & & \\ 
+\hline \\[-1.8ex] 
+Observations & 3,570 & 3,570 \\ 
+%Log Likelihood & $-$14,692.860 & $-$12,087.270 \\ 
+%$\theta$ & 51.260$^{***}$  (1.967) & 38.539$^{***}$  (2.040) \\ 
+%Akaike Inf. Crit. & 29,453.730 & 24,242.540 \\ 
+\hline 
+\hline \\[-1.8ex] 
+Notes:
+%\textit{Note:}  & \multicolumn{2}{r}{$^{*}$p$<$0.1; $^{**}$p$<$0.05; $^{***}$p$<$0.01} \\ 
+\end{tabular} 
+\begin{tablenotes}
+      \item[a] \textit{$^{*}$p$<$0.1; $^{**}$p$<$0.05; $^{***}$p$<$0.01}
+      \item[b] \textit{Estimates are exponentiated coefficients from two separate negative binomial regressions with non-match day as benchmark; controls include day of week, month, year, Christmas, and New Year's Eve}
+    \end{tablenotes}
+\end{threeparttable} 
+\end{table*}
+
+\FloatBarrier
+
+
+\subsection{Previous evidence}
+
+
+A previous study by \cite{Kirby2014} found that an England loss results in the most pronounced increase in domestic abuse (38\%), and a win or draw have a slightly smaller effect (26\%). They used daily counts of IPV in Lancashire from the months of the 2002, 2006, 2010 World Cups. Upon re-analysing their data by treating wins and draws as two separate variables (resulting in an improved model fit, see Table \ref{kirbyrep1}), we see a roughly similar effect for wins (45\%, 95\% CI [28\%--64\%]) and losses (39\%, 95\% CI [18\%--64\%]), and no effect when England draws. Separating wins and draws clearly improves the fit of the model, demonstrated by the reduction in the Bayesian and Akaike Information Criteria (BIC and AIC, respectively). However, the estimated effect of an England loss is insensitive to this change. In conclusion, our reanalysis replicates the win effect seen in the West Midlands data, though the absence of a loss effect remains a stark difference between the two studies.
 
 \begin{table*}[!htb]
 \centering
- \caption{Replication of Kirby et al. (2014) with an alternative specification}
+ \caption{Replication of Kirby et al. (2014) with wins and draws as separate variables}
    \label{kirbyrep1}
    \scalebox{0.85}{
  \begin{threeparttable}
@@ -404,156 +468,294 @@ A previous study by \cite{Kirby2014} have found that an England loss results in 
 \cline{2-3} 
 \\[-1.8ex] & \multicolumn{2}{c}{Number of reported IPV cases per day} \\ 
 \\ 
- & Original Model & Win/Draw Separate \\ 
+  & Original Model & Win/Draw Separate \\ 
 \\[-1.8ex] & (1) & (2)\\ 
 \hline \\[-1.8ex] 
- England windraw & 0.256$^{***}$ &  \\ 
-  & (0.055) &  \\ 
-  England win &  & 0.452$^{***}$ \\ 
-  &  & (0.064) \\ 
-  England draw &  & 0.032 \\ 
-  &  & (0.073) \\ 
-  England loss & 0.382$^{***}$ & 0.388$^{***}$ \\ 
-  & (0.094) & (0.085) \\ 
-  After England & 0.111$^{**}$ & 0.113$^{**}$ \\ 
-  & (0.051) & (0.047) \\ 
+ England windraw & 1.256$^{***}$ &  \\ 
+  & (1.128, 1.398) &  \\ 
+  England lost & 1.382$^{***}$ & 1.388$^{***}$ \\ 
+  & (1.151, 1.662) & (1.175, 1.639) \\ 
+  After England & 1.111$^{**}$ & 1.113$^{**}$ \\ 
+  & (1.004, 1.228) & (1.014, 1.221) \\ 
+  England win &  & 1.452$^{***}$ \\ 
+  &  & (1.282, 1.644) \\ 
+  England draw &  & 1.032 \\ 
+  &  & (0.893, 1.191) \\ 
+%  England lost &  & 1.388$^{***}$ \\ 
+%  &  & (1.175, 1.639) \\ 
+%  After England &  & 1.113$^{**}$ \\ 
+%  &  & (1.014, 1.221) \\ 
  \hline \\[-1.8ex] 
-Number of days & 92 & 92 \\ 
+Observations & 92 & 92 \\ 
+BIC & 747.763 & 739.662 \\ 
 AIC & 714.980 & 704.356 \\ 
-%BIC & 747.763 & 739.662 \\ 
-%\hline 
+\hline 
 \hline \\[-1.8ex] 
-%\textit{Note:}  & \multicolumn{2}{r}{$^{*}$p$<$0.1; $^{**}$p$<$0.05; $^{***}$p$<$0.01} \\ 
 \end{tabular} 
 \begin{tablenotes}
       \item[a] \textit{$^{*}$p$<$0.1; $^{**}$p$<$0.05; $^{***}$p$<$0.01}
-      \item[b] \textit{Estimates are exponentiated coefficients from a series of negative binomial regressions (based on tests of overdispersion) with year and day of week controls; standard errors in parentheses; data is only available during the tournament period}
+      \item[b] \textit{Estimates are exponentiated coefficients from a series of negative binomial regressions (based on tests of overdispersion) with year and day of week controls; data is only available during the tournament period}
     \end{tablenotes}
 \end{threeparttable} }
 \end{table*}
 
 
-To explore the underlying reason for this discrepancy and test the robustness of our results, we find it instructive to break our analysis into specific tournament years for the two datasets (see Table \ref{kirbyrep2}). An interesting common pattern in both datasets is the large effect of England's victory over Slovenia in the group stage of the 2010 World Cup, which, after much anticipation, secured their progression to the next stage of the tournament. Equally, the subsequent loss against Germany in the knockout stage resulted in a substantial increase in the number of reported domestic abuse incidents, which is the only tournament year in our dataset where a loss effect appears. This is in line with findings from an earlier examination by \cite{Brimicombe2012}. As a further robustness check, we examine the sensitivity of the result to the exclusion of specific tournament years  (see Table \ref{robustness}), which shows that while the size of the England win effect varies, it is robust to the exclusion of specific years, and is not driven by an unusually large effect in one of the tournament years.
+To explore the underlying reason for this discrepancy and test the robustness of our results, we find it instructive to break our analysis into specific tournament years for the two (Lancashire and West Midlands) datasets (see Table \ref{kirbyrep2}). To be consistent with previous results, we present the regressions for both types of domestic abuse (alcohol and non-alcohol related), however, unfortunately we cannot do the same for the Lancashire dataset, as we have no information on alcohol-involvement. Only year 2010 overlaps in the two datasets, which allows us to at least partly evaluate the robustness of the England win effect.
+
+ An interesting common pattern in both datasets is the large effect of England's victory over Slovenia in the group stage of the 2010 World Cup, which, after much anticipation, secured their progression to the next stage of the tournament. Equally, the subsequent loss against Germany in the knockout stage resulted in a substantial increase in the number of reported domestic abuse incidents, which is the strongest loss effect in our dataset. In addition, the size of the win and loss coefficients are remarkably similar, giving us confidence that these effects are likely to generalise to other areas within England. These patterns are also in line with findings from an earlier examination by \cite{Brimicombe2012}, who found an increase in the number of domestic abuse cases reported to the police across England on both victory and loss days during the 2010 World Cup.  Most importantly, if the same mechanism lies behind our results, then it suggests that the increase observed in other datasets are also likely to stem from alcohol-related cases. 
+   
+  It also clear that World Cup wins have the strongest effect on the number of domestic abuse incidents: a clear, large increase can be observed in 2002, 2006, 2010, and 2018 (England did not have a single victory in the 2014 World Cup). The number of domestic abuse cases also increase after England losses in World Cup tournament years, but this effect is usually about half the size of the win effect (except for 2006).
+  
+  As a further robustness check, we examine the sensitivity of the result to the exclusion of specific tournament years  (see Table \ref{robustness}). This analysis shows that while the size of the England win effect varies by year, it is robust to the exclusion of specific tournament years, and is not driven by an unusually large effect in one of the tournament years.
 
 %\newpage
+
+
 
 \begin{sidewaystable}[htp]
 \centering
  \caption{Year subgroup regressions, Lancashire and West Midlands data}
    \label{kirbyrep2}
-    \scalebox{0.8}{
+    \scalebox{0.65}{
  \begin{threeparttable}
-\begin{tabular}{@{\extracolsep{5pt}}lcccccccc} 
+\begin{tabular}{@{\extracolsep{1pt}}lccccccccccccc} 
 \\[-1.8ex]\hline 
 \hline \\[-1.8ex] 
- & \multicolumn{8}{c}{\textit{Dependent variable:}} \\ 
-\cline{2-9} 
-\\[-1.8ex] & \multicolumn{3}{c}{Number of IPV cases per day in Lancashire} & \multicolumn{5}{c}{Number of domestic abuse cases per day in West Midlands} \\ 
-\\[-1.8ex] & \textit{negative} & \multicolumn{2}{c}{\textit{Poisson}} & \multicolumn{5}{c}{\textit{negative}} \\ 
- & \textit{binomial} & \multicolumn{2}{c}{\textit{}} & \multicolumn{5}{c}{\textit{binomial}} \\ 
- & 2002 & 2006 & 2010 & 2010 & 2012 & 2014 & 2016 & 2018 \\ 
-\\[-1.8ex] & (1) & (2) & (3) & (4) & (5) & (6) & (7) & (8)\\ 
+ & \multicolumn{13}{c}{\textit{Dependent variable:}} \\ 
+\cline{2-14} 
+& \multicolumn{13}{c}{Number of domestic abuse cases} \\ 
+\\[-1.8ex] & \multicolumn{3}{c}{Lancashire} & \multicolumn{10}{c}{West Midlands} \\ 
+\\[-1.8ex] & \multicolumn{1}{c}{All\textsuperscript{c}} & \multicolumn{1}{c}{All} & \multicolumn{1}{c}{All} & \multicolumn{1}{c}{NA\textsuperscript{c}} & \multicolumn{1}{c}{A\textsuperscript{c}} & \multicolumn{1}{c}{NA} & \multicolumn{1}{c}{A} & \multicolumn{1}{c}{NA} & \multicolumn{1}{c}{A} & \multicolumn{1}{c}{NA} & \multicolumn{1}{c}{A} & \multicolumn{1}{c}{NA} & \multicolumn{1}{c}{A} \\ 
+% & \textit{binomial} & \multicolumn{2}{c}{\textit{}} & \multicolumn{10}{c}{\textit{binomial}} \\ 
+ \\[-1.8ex] & 2002 & 2006 & 2010 & 2010 & 2010 & 2012 & 2012 & 2014 & 2014 & 2016 & 2016 & 2018 & 2018  \\ 
+\\[-1.8ex] & (1) & (2) & (3) & (4) & (5) & (6) & (7) & (8) & (9) & (10) & (11) & (12) & (13)\\ 
 \hline \\[-1.8ex] 
- Tournament on &  &  &  & 0.074$^{*}$ & $-$0.066 & $-$0.048 & 0.035 & 0.089$^{*}$ \\ 
-  &  &  &  & (0.041) & (0.085) & (0.044) & (0.041) & (0.044) \\ 
-  England win & 0.596$^{***}$ & 0.297$^{***}$ & 0.916$^{***}$ & 0.050 & $-$0.237 &  & $-$0.008 & 0.061 \\ 
-  & (0.152) & (0.077) & (0.114) & (0.155) & (0.175) &  & (0.151) & (0.077) \\ 
-  England draw & 0.100 & 0.098 & $-$0.137 & $-$0.029 & 0.324 & $-$0.077 & $-$0.021 &  \\ 
-  & (0.150) & (0.156) & (0.095) & (0.112) & (0.204) & (0.173) & (0.108) &  \\ 
-  England loss & 0.200 & 0.373$^{***}$ & 0.568$^{***}$ & 0.174 & $-$0.127 & $-$0.042 & $-$0.155 & 0.066 \\ 
-  & (0.232) & (0.117) & (0.106) & (0.140) & (0.212) & (0.124) & (0.154) & (0.088) \\ 
-  After England & 0.253$^{**}$ & 0.122$^{*}$ & 0.024 & 0.070 & $-$0.008 & 0.007 & 0.038 & 0.140$^{**}$ \\ 
-  & (0.101) & (0.070) & (0.065) & (0.082) & (0.125) & (0.103) & (0.081) & (0.060) \\ 
-%  AlcoholYes &  &  &  & $-$0.853$^{***}$ & $-$0.803$^{***}$ & $-$0.704$^{***}$ & $-$0.725$^{***}$ & $-$0.743$^{***}$ \\ 
-%  &  &  &  & (0.083) & (0.097) & (0.067) & (0.059) & (0.062) \\ 
-  Tournament on:Alcohol &  &  &  & $-$0.093 & 0.076 & 0.063 & $-$0.163$^{**}$ & $-$0.068 \\ 
-  &  &  &  & (0.101) & (0.162) & (0.076) & (0.072) & (0.078) \\ 
-  England win:Alcohol &  &  &  & 2.558$^{***}$ & 0.756$^{*}$ &  & 0.348 & 0.460$^{***}$ \\ 
-  &  &  &  & (0.277) & (0.314) &  & (0.257) & (0.123) \\ 
-  England draw:Alcohol &  &  &  & 0.078 & $-$0.581 & 0.089 & 0.129 &  \\ 
-  &  &  &  & (0.246) & (0.571) & (0.307) & (0.180) &  \\ 
-  England loss:Alcohol &  &  &  & 0.748$^{**}$ & 0.301 & 0.048 & $-$0.289 & 0.160 \\ 
-  &  &  &  & (0.259) & (0.372) & (0.206) & (0.322) & (0.149) \\ 
-  After England:Alcohol &  &  &  & 0.128 & $-$0.072 & 0.068 & $-$0.112 & 0.188$^{*}$ \\ 
-  &  &  &  & (0.183) & (0.254) & (0.171) & (0.144) & (0.102) \\ 
+ Tournament on &  &  &  & 1.047 & 1.038 & 0.881 & 0.936 & 0.976 & 0.999 & 1.041 & 0.855$^{**}$ & 1.081 & 1.014 \\ 
+  &  &  &  & (0.974, 1.127) & (0.936, 1.151) & (0.740, 1.049) & (0.780, 1.125) & (0.901, 1.057) & (0.890, 1.123) & (0.962, 1.128) & (0.757, 0.967) & (0.979, 1.194) & (0.889, 1.155) \\ 
+  England win & 1.596$^{***}$ & 1.297$^{***}$ & 1.916$^{***}$ & 1.171 & 1.845$^{***}$ & 0.673$^{**}$ & 1.106 &  &  & 1.062 & 1.302 & 1.006 & 1.529$^{***}$ \\ 
+  & (1.186, 2.153) & (1.115, 1.505) & (1.528, 2.389) & (0.897, 1.514) & (1.310, 2.595) & (0.456, 0.982) & (0.770, 1.576) &  &  & (0.796, 1.420) & (0.834, 1.995) & (0.844, 1.202) & (1.249, 1.869) \\ 
+ England draw & 1.100 & 1.098 & 0.863 & 0.905 & 1.248$^{*}$ & 1.204 & 1.116 & 0.984 & 0.954 & 1.069 & 1.128 &  &  \\ 
+  & (0.820, 1.477) & (0.802, 1.481) & (0.713, 1.037) & (0.736, 1.107) & (0.966, 1.611) & (0.773, 1.877) & (0.676, 1.805) & (0.723, 1.343) & (0.576, 1.527) & (0.869, 1.318) & (0.835, 1.517) &  &  \\ 
+ England lost & 1.200 & 1.373$^{***}$ & 1.568$^{***}$ & 1.082 & 1.435$^{**}$ & 0.812 & 0.961 & 0.934 & 1.079 & 0.772$^{*}$ & 0.620$^{*}$ & 1.101 & 1.252$^{*}$ \\ 
+  & (0.759, 1.894) & (1.086, 1.721) & (1.270, 1.928) & (0.838, 1.389) & (1.036, 1.992) & (0.508, 1.293) & (0.614, 1.491) & (0.747, 1.170) & (0.792, 1.459) & (0.568, 1.048) & (0.343, 1.058) & (0.904, 1.348) & (0.975, 1.603) \\ 
+ After England & 1.253$^{**}$ & 1.122$^{*}$ & 1.024 & 1.049 & 1.132 & 0.814 & 1.108 & 1.037 & 1.080 & 1.013 & 0.960 & 1.147$^{*}$ & 1.390$^{***}$ \\ 
+  & (1.029, 1.526) & (0.977, 1.286) & (0.900, 1.162) & (0.905, 1.194) & (0.933, 1.331) & (0.535, 1.092) & (0.834, 1.381) & (0.863, 1.249) & (0.832, 1.394) & (0.853, 1.172) & (0.715, 1.206) & (1.001, 1.317) & (1.173, 1.646) \\ 
  \hline \\[-1.8ex] 
-Number of days & 30 & 32 & 30 & 730 & 732 & 730 & 732 & 618 \\ 
-%Log Likelihood & $-$112.494 & $-$101.847 & $-$107.268 & $-$2,315.879 & $-$2,259.612 & $-$2,604.474 & $-$2,614.295 & $-$2,237.868 \\ 
-%$\theta$ & 57.581$^{*}$  (31.978) &  &  & 136.319$^{***}$  (31.759) & 55.994$^{***}$  (9.013) & 68.164$^{***}$  (8.225) & 109.262$^{***}$  (16.375) & 90.905$^{***}$  (12.959) \\ 
-%Akaike Inf. Crit. & 246.989 & 225.694 & 236.536 & 4,731.757 & 4,619.224 & 5,304.947 & 5,328.590 & 4,563.737 \\ 
+Observations & 30 & 32 & 30 & 365 & 365 & 366 & 366 & 365 & 365 & 366 & 366 & 365 & 365 \\ 
+%Log Likelihood & $-$112.494 & $-$101.847 & $-$107.268 & $-$1,344.208 & $-$1,305.710 & $-$1,294.898 & $-$1,189.726 & $-$1,494.583 & $-$1,175.810 & $-$1,503.841 & $-$1,197.151 & $-$1,594.487 & $-$1,200.743 \\ 
+%$\theta$ & 57.581$^{*}$  (31.978) &  &  & 215.538$^{***}$  (65.249) & 76.028$^{***}$  (16.053) & 43.908$^{***}$  (6.783) & 55.674$^{***}$  (12.862) & 75.808$^{***}$  (9.733) & 72.582$^{***}$  (18.248) & 90.546$^{***}$  (12.118) & 69.058$^{***}$  (16.506) & 49.787$^{***}$  (5.114) & 64.954$^{***}$  (15.073) \\ 
+%Akaike Inf. Crit. & 246.989 & 225.694 & 236.536 & 2,738.415 & 2,661.420 & 2,639.797 & 2,429.452 & 3,037.165 & 2,399.621 & 3,057.682 & 2,444.301 & 3,236.974 & 2,449.485 \\ 
 \hline 
 \hline \\[-1.8ex] 
-%\textit{Note:}  & \multicolumn{8}{r}{$^{*}$p$<$0.1; $^{**}$p$<$0.05; $^{***}$p$<$0.01} \\ 
+\textit{Note:}  & \multicolumn{13}{r}{$^{*}$p$<$0.1; $^{**}$p$<$0.05; $^{***}$p$<$0.01} \\ 
 \end{tabular} 
 \begin{tablenotes}
       \item[a] \textit{$^{*}$p$<$0.1; $^{**}$p$<$0.05; $^{***}$p$<$0.01}
-      \item[b] \textit{Estimates are exponentiated coefficients from a series of negative binomial or poisson regressions (based on tests of overdispersion). The first three regressions have day of week control, the rest of the regressions have month, day of week, Christmas, New Year's eve controls interacted with alcohol; standard errors in parentheses}
+      \item[b] \textit{Estimates are exponentiated coefficients from a series of negative binomial, except for Model (2) and (3) which are from Poisson regressions (based on tests of overdispersion). The first three regressions have day of week control, the rest of the regressions have month, day of week, Christmas, New Year's eve controls}
+      \item[c] \textit{All = All cases, NA = Non-alcohol related cases, A = Alcohol-related cases}
     \end{tablenotes}
 \end{threeparttable} }
 \end{sidewaystable}
+
 
 \newpage
 
 
 
-\begin{table}[htp]
+
+\begin{sidewaystable}[htp]
 \centering
  \caption{Robustness of the result: sensitivity to the exclusion of specific years}
   \label{robustness}
  \scalebox{0.8}{
   \begin{threeparttable}
-\begin{tabular}{@{\extracolsep{5pt}}lccccc} 
+\begin{tabular}{@{\extracolsep{5pt}}lcccccccccc} 
 \\[-1.8ex]\hline 
 \hline \\[-1.8ex] 
- & \multicolumn{5}{c}{\textit{Dependent variable:}} \\ 
- \cline{2-6} 
-\\[-1.8ex] 
-  & \multicolumn{5}{c}{Number of domestic abuse cases per day} \\ 
- \\
-%\\[-1.8ex] & \multicolumn{5}{c}{N} \\ 
- & 2018 & 2016 & 2014 & 2012 & 2010 \\ 
-  &  excluded & excluded & excluded & excluded & excluded \\ 
-\\[-1.8ex] & (1) & (2) & (3) & (4) & (5)\\ 
+ & \multicolumn{10}{c}{\textit{Dependent variable:}} \\ 
+\cline{2-11} 
+\\[-1.8ex] & \multicolumn{10}{c}{Number of domestic abuse cases} \\ 
+\\[-1.8ex] & \multicolumn{1}{c}{NA\textsuperscript{c}} & \multicolumn{1}{c}{A\textsuperscript{c}} &  \multicolumn{1}{c}{NA} & \multicolumn{1}{c}{A} &  \multicolumn{1}{c}{NA} & \multicolumn{1}{c}{A} &  \multicolumn{1}{c}{NA} & \multicolumn{1}{c}{A} &  \multicolumn{1}{c}{NA} & \multicolumn{1}{c}{A}  \\
+ \\[-1.8ex] & 2010 & 2010 & 2012 & 2012 & 2014 & 2014 & 2016 & 2016 & 2018 & 2018  \\ 
+\\[-1.8ex] & (1) & (2) & (3) & (4) & (5) & (6) & (7) & (8) & (9) & (10)\\ 
 \hline \\[-1.8ex] 
-%Alcohol & $-$0.862$^{***}$ & $-$0.862$^{***}$ & $-$0.862$^{***}$ & $-$0.863$^{***}$ & $-$0.867$^{***}$ \\ 
-  & (0.033) & (0.033) & (0.032) & (0.031) & (0.033) \\ 
-  Tournament on & 0.018 & 0.015 & 0.027 & 0.030 & $-$0.003 \\ 
-  & (0.022) & (0.025) & (0.025) & (0.022) & (0.025) \\ 
-  England win & $-$0.093 & $-$0.047 & $-$0.029 & 0.019 & $-$0.051 \\ 
-  & (0.097) & (0.068) & (0.062) & (0.066) & (0.067) \\ 
-  England draw & 0.038 & 0.077 & 0.057 & 0.004 & 0.046 \\ 
-  & (0.072) & (0.091) & (0.078) & (0.075) & (0.088) \\ 
-  England loss & 0.030 & 0.066 & 0.053 & 0.054 & 0.013 \\ 
-  & (0.079) & (0.065) & (0.069) & (0.062) & (0.065) \\ 
-  After England & 0.057 & 0.080$^{*}$ & 0.088$^{**}$ & 0.099$^{**}$ & 0.071$^{*}$ \\ 
-  & (0.048) & (0.042) & (0.040) & (0.039) & (0.042) \\ 
-  Alcohol:Tournament on & $-$0.086$^{**}$ & $-$0.037 & $-$0.118$^{***}$ & $-$0.092$^{**}$ & $-$0.048 \\ 
-  & (0.039) & (0.046) & (0.047) & (0.040) & (0.042) \\ 
-  Alcohol:England win & 0.884$^{***}$ & 0.674$^{***}$ & 0.609$^{***}$ & 0.574$^{***}$ & 0.511$^{***}$ \\ 
-  & (0.163) & (0.109) & (0.100) & (0.105) & (0.107) \\ 
-  Alcohol:England draw & $-$0.046 & $-$0.141 & $-$0.048 & 0.055 & $-$0.017 \\ 
-  & (0.130) & (0.179) & (0.141) & (0.131) & (0.151) \\ 
-  Alcohol:England loss & 0.014 & 0.139 & 0.131 & 0.078 & 0.039 \\ 
-  & (0.134) & (0.107) & (0.116) & (0.103) & (0.109) \\ 
-  Alcohol:After England & $-$0.065 & 0.096 & 0.050 & 0.054 & 0.050 \\ 
-  & (0.086) & (0.073) & (0.071) & (0.067) & (0.071) \\ 
+ Tournament on & 1.035 & 0.959 & 1.063$^{*}$ & 1.084$^{**}$ & 0.976 & 1.085$^{**}$ & 0.960 & 1.105$^{***}$ & 0.948 & 1.069$^{*}$ \\ 
+  & (0.946, 1.133) & (0.901, 1.021) & (0.994, 1.136) & (1.014, 1.160) & (0.890, 1.073) & (1.010, 1.166) & (0.877, 1.052) & (1.029, 1.186) & (0.870, 1.034) & (0.997, 1.146) \\ 
+  England win & 0.957 & 1.385$^{***}$ & 1.143 & 1.674$^{***}$ & 0.979 & 1.528$^{***}$ & 0.935 & 1.558$^{***}$ & 0.698$^{*}$ & 1.583$^{***}$ \\ 
+  & (0.727, 1.289) & (1.154, 1.666) & (0.909, 1.457) & (1.344, 2.100) & (0.753, 1.299) & (1.254, 1.873) & (0.709, 1.262) & (1.262, 1.938) & (0.486, 1.040) & (1.192, 2.127) \\ 
+ England draw & 1.037 & 1.126 & 0.990 & 1.347$^{**}$ & 0.921 & 1.383$^{**}$ & 0.793 & 1.391$^{**}$ & 0.950 & 1.304$^{**}$ \\ 
+  & (0.724, 1.545) & (0.873, 1.456) & (0.769, 1.297) & (1.056, 1.734) & (0.662, 1.324) & (1.079, 1.788) & (0.550, 1.190) & (1.051, 1.862) & (0.708, 1.306) & (1.034, 1.656) \\ 
+  England lost & 1.102 & 1.090 & 1.140 & 1.218$^{*}$ & 1.096 & 1.213 & 1.128 & 1.263$^{**}$ & 0.902 & 1.134 \\ 
+  & (0.837, 1.482) & (0.901, 1.322) & (0.922, 1.428) & (0.986, 1.512) & (0.813, 1.520) & (0.964, 1.538) & (0.856, 1.521) & (1.021, 1.574) & (0.655, 1.280) & (0.880, 1.475) \\ 
+  After England & 1.095 & 1.198$^{***}$ & 1.169$^{**}$ & 1.287$^{***}$ & 1.054 & 1.283$^{***}$ & 1.043 & 1.316$^{***}$ & 0.891 & 1.205$^{**}$ \\ 
+  & (0.914, 1.276) & (1.077, 1.319) & (1.030, 1.307) & (1.151, 1.422) & (0.874, 1.234) & (1.147, 1.418) & (0.860, 1.225) & (1.177, 1.455) & (0.693, 1.088) & (1.050, 1.360) \\ 
  \hline \\[-1.8ex] 
-Number of days & 2,708 & 2,651 & 2,652 & 2,651 & 2,652 \\ 
-%Log Likelihood & $-$18,626.890 & $-$18,243.850 & $-$18,269.330 & $-$18,506.890 & $-$18,533.610 \\ 
-%$\theta$ & 60.431$^{***}$  (2.862) & 58.624$^{***}$  (2.761) & 62.319$^{***}$  (3.016) & 67.975$^{***}$  (3.245) & 59.902$^{***}$  (2.752) \\ 
-%Akaike Inf. Crit. & 37,381.780 & 36,615.700 & 36,666.660 & 37,141.780 & 37,195.210 \\ 
+Observations & 3,205 & 3,205 & 3,204 & 3,204 & 3,205 & 3,205 & 3,204 & 3,204 & 3,205 & 3,205 \\ 
+%Log Likelihood & $-$15,738.220 & $-$11,006.630 & $-$15,087.610 & $-$11,568.310 & $-$15,673.620 & $-$11,605.220 & $-$15,608.290 & $-$11,602.150 & $-$15,499.280 & $-$11,605.610 \\ 
+%$\theta$ & 7.385$^{***}$  (0.199) & 28.051$^{***}$  (1.404) & %13.075$^{***}$  (0.373) & 17.870$^{***}$  (0.723) & 7.139$^{***}$  (0.191) & 16.977$^{***}$  (0.674) & 7.284$^{***}$  (0.196) & 16.694$^{***}$  (0.660) & 7.692$^{***}$  (0.208) & 16.664$^{***}$  (0.658) \\ 
+%Akaike Inf. Crit. & 31,526.440 & 22,063.270 & 30,225.220 & 23,186.630 & 31,397.250 & 23,260.450 & 31,266.580 & 23,254.290 & 31,048.560 & 23,261.230 \\ 
 \hline 
-%\hline \\[-1.8ex] 
-%\textit{Note:}  & \multicolumn{6}{r}{$^{*}$p$<$0.1; $^{**}$p$<$0.05; $^{***}$p$<$0.01} \\ 
-%\end{tabular} 
+\hline \\[-1.8ex] 
+\textit{Note:}  & \multicolumn{10}{r}{$^{*}$p$<$0.1; $^{**}$p$<$0.05; $^{***}$p$<$0.01} \\ 
+\end{tabular} 
 %\end{table} 
-
-\end{tabular}
 \begin{tablenotes}
       \item[a] \textit{$^{*}$p$<$0.1; $^{**}$p$<$0.05; $^{***}$p$<$0.01}
-      \item[b] \textit{Estimates are exponentiated coefficients from a series of negative binomial regressions (based on tests of overdispersion)  with year, month, day of week, Christmas, New Year's eve controls interacted by alcohol; standard errors in parentheses}
+      \item[b] \textit{Estimates are exponentiated coefficients from a series of negative binomial regressions (based on tests of overdispersion)  with year, month, day of week, Christmas, New Year's eve controls}
+      \item[c] \textit{NA = Non-alcohol related cases, A = Alcohol-related cases}
     \end{tablenotes}
-\end{threeparttable} } 
+\end{threeparttable}   }
+\end{sidewaystable}
+
+
+
+\begin{sidewaystable}[htp]
+\centering
+ \caption{Characteristics of domestic abuse cases perpetrated on England football days I}
+  \label{logistic}
+ \scalebox{0.8}{
+  \begin{threeparttable}
+\begin{tabular}{@{\extracolsep{5pt}}lcccccc} 
+\\[-1.8ex]\hline 
+\hline \\[-1.8ex] 
+ & \multicolumn{6}{c}{\textit{Dependent variable:}} \\ 
+ \cline{2-7}  
+\cline{2-7} 
+\\[-1.8ex] & \multicolumn{6}{c}{Number of domestic abuse cases} \\ 
+ & \multicolumn{3}{c}{Non-Alcohol related} & \multicolumn{3}{c}{Alcohol-related} \\
+\\[-1.8ex] & Newly Reported & Public Location & Serious Injury & Newly Reported & Public Location & Serious Injury \\ 
+\\[-1.8ex] & (1) & (2) & (3) & (4) & (5) & (6)\\ 
+\hline \\[-1.8ex] 
+ Tournament on & 0.993 & 1.038 & 1.050 & 1.093$^{*}$ & 1.042 & 0.931 \\ 
+  & (0.941, 1.047) & (0.967, 1.114) & (0.983, 1.121) & (0.986, 1.212) & (0.904, 1.201) & (0.831, 1.042) \\ 
+  & & & & & & \\ 
+ England win & 1.058 & 1.165 & 1.092 & 1.268$^{*}$ & 1.079 & 0.793 \\ 
+  & (0.879, 1.273) & (0.943, 1.439) & (0.883, 1.350) & (0.959, 1.676) & (0.753, 1.547) & (0.540, 1.165) \\ 
+  & & & & & & \\ 
+ England draw & 1.139 & 0.903 & 1.156 & 0.890 & 1.045 & 1.064 \\ 
+  & (0.884, 1.466) & (0.686, 1.190) & (0.887, 1.507) & (0.611, 1.296) & (0.660, 1.652) & (0.723, 1.564) \\ 
+  & & & & & & \\ 
+ England lost & 0.981 & 1.380$^{***}$ & 1.206$^{*}$ & 1.055 & 1.076 & 0.923 \\ 
+  & (0.836, 1.150) & (1.136, 1.678) & (0.990, 1.470) & (0.769, 1.447) & (0.742, 1.560) & (0.660, 1.291) \\ 
+  & & & & & & \\ 
+ After England & 1.042 & 1.112 & 0.981 & 0.983 & 0.967 & 1.035 \\ 
+  & (0.945, 1.148) & (0.976, 1.267) & (0.855, 1.126) & (0.811, 1.191) & (0.766, 1.220) & (0.850, 1.260) \\ 
+%  & & & & & & \\ 
+% year2=2011 &  &  &  &  &  &  \\ 
+%  &  & (, ) & (, ) &  & (, ) & (, ) \\ 
+%  & & & & & & \\ 
+\hline \\[-1.8ex] 
+Observations & 260,466 & 282,400 & 282,400 & 76,309 & 89,153 & 89,153 \\ 
+%R$^{2}$ & 0.019 & 0.006 & 0.003 & 0.034 & 0.007 & 0.009 \\ 
+%$\chi^{2}$ & 3,649.794$^{***}$ (df = 32) & 836.225$^{***}$ (df = 33) & 531.969$^{***}$ (df = 33) & 1,911.263$^{***}$ (df = 32) & 301.725$^{***}$ (df = 33) & 495.420$^{***}$ (df = 33) \\ 
+\hline 
+\hline \\[-1.8ex] 
+%\textit{Note:}  & \multicolumn{6}{r}{$^{*}$p$<$0.1; $^{**}$p$<$0.05; $^{***}$p$<$0.01} \\ 
+\end{tabular} 
+%\end{table} 
+\begin{tablenotes}
+      \item[a] \textit{$^{*}$p$<$0.1; $^{**}$p$<$0.05; $^{***}$p$<$0.01}
+      \item[b] \textit{Estimates are log odds from a series of logistic regressions with year, month, day of week, Christmas, New Year's eve controls, where every observation is a reported domestic abuse case; cases that happened in 2010 were excluded from the model 1 and 4; confidence intervals are constructed from standard errors clustered by victim-offender pairs}
+    \end{tablenotes}
+\end{threeparttable}   }
+\end{sidewaystable}
+
+
+\newpage
+
+%\\[-1.8ex] & Days & Days & Hours \\ 
+% & since last & until next & until reported \\
+\begin{sidewaystable}[htp]
+\centering
+ \caption{Characteristics of domestic abuse cases perpetrated on England football days II}
+  \label{days}
+ \scalebox{0.8}{
+  \begin{threeparttable}
+\begin{tabular}{@{\extracolsep{5pt}}lcccccc} 
+\\[-1.8ex]\hline 
+\hline \\[-1.8ex] 
+ & \multicolumn{6}{c}{\textit{Dependent variable:}} \\ 
+ \cline{2-7}  
+\cline{2-7} 
+\\[-1.8ex] & \multicolumn{6}{c}{Number of domestic abuse cases} \\ 
+ & \multicolumn{3}{c}{Non-Alcohol related} & \multicolumn{3}{c}{Alcohol-related} \\
+\\[-1.8ex] & Days & Days & Hours & Days & Days & Hours \\ 
+ & since last & until next & until reported  & since last & until next & until reported \\
+\\[-1.8ex] & (1) & (2) & (3) & (4) & (5) & (6)\\ 
+\hline \\[-1.8ex] 
+ Tournament\_on & $-$0.007 & $-$0.007 & 0.054 & $-$0.0001 & $-$0.008 & 0.021 \\ 
+  & (0.941, 1.047) & (0.945, 1.045) & (0.940, 1.184) & (0.915, 1.093) & (0.911, 1.080) & (0.760, 1.373) \\ 
+  & & & & & & \\ 
+ England\_win & 0.130$^{*}$ & $-$0.130 & $-$0.173 & $-$0.087 & 0.149 & $-$0.054 \\ 
+  & (0.978, 1.327) & (0.741, 1.040) & (0.600, 1.179) & (0.704, 1.192) & (0.949, 1.418) & (0.388, 2.314) \\ 
+  & & & & & & \\ 
+ England\_draw & 0.066 & $-$0.140 & $-$0.169 & $-$0.045 & 0.123 & $-$0.264 \\ 
+  & (0.855, 1.335) & (0.704, 1.073) & (0.557, 1.279) & (0.701, 1.305) & (0.872, 1.466) & (0.332, 1.773) \\ 
+  & & & & & & \\ 
+ England\_lost & 0.006 & 0.056 & $-$0.470$^{***}$ & 0.080 & $-$0.039 & 0.068 \\ 
+  & (0.853, 1.186) & (0.907, 1.233) & (0.443, 0.882) & (0.830, 1.414) & (0.758, 1.220) & (0.329, 3.481) \\ 
+  & & & & & & \\ 
+ After\_England & 0.114$^{**}$ & 0.036 & $-$0.284$^{***}$ & $-$0.027 & 0.031 & $-$0.508$^{**}$ \\ 
+  & (1.014, 1.238) & (0.946, 1.137) & (0.607, 0.934) & (0.827, 1.145) & (0.885, 1.204) & (0.367, 0.986) \\ 
+  & & & & & & \\ 
+\hline \\[-1.8ex] 
+\hline 
+\hline \\[-1.8ex] 
+\textit{Note:}  & \multicolumn{6}{r}{$^{*}$p$<$0.1; $^{**}$p$<$0.05; $^{***}$p$<$0.01} \\ 
+\end{tabular} 
+%\end{table} 
+\begin{tablenotes}
+      \item[a] \textit{$^{*}$p$<$0.1; $^{**}$p$<$0.05; $^{***}$p$<$0.01}
+      \item[b] \textit{Estimates are exponentiated coefficients from a series of negative binomial regressions (based on tests of overdispersion) with month, day of week, Christmas, New Year's eve controls; every observation is a reported domestic abuse case; confidence intervals are constructed from standard errors clustered by victim-offender pairs}
+    \end{tablenotes}
+\end{threeparttable}   }
+\end{sidewaystable}
+
+
+\begin{table}
+\centering
+ \caption{Alcohol-involvement in }
+  \label{days}
+  \begin{threeparttable}
+\begin{tabular}{@{\extracolsep{5pt}}lcc} 
+\\[-1.8ex]\hline 
+\hline \\[-1.8ex] 
+ & \multicolumn{2}{c}{\textit{Dependent variable:}} \\ 
+\cline{2-3} 
+\\[-1.8ex] & \multicolumn{2}{c}{Alcohol-involvement in current case} \\ 
+\\[-1.8ex] & Previous case & Previous case\\
+& not alcohol-related & alcohol-related\\ 
+\\[-1.8ex] & (1) & (2)\\ 
+\hline \\[-1.8ex] 
+ Type=Tournament\_on & 0.907 & 0.846$^{***}$ \\ 
+  & (0.806, 1.022) & (0.745, 0.961) \\ 
+  & & \\ 
+ Type=England\_win & 1.311 & 1.168 \\ 
+  & (0.909, 1.890) & (0.773, 1.765) \\ 
+  & & \\ 
+ Type=England\_draw & 1.554$^{**}$ & 1.339 \\ 
+  & (1.066, 2.265) & (0.723, 2.481) \\ 
+  & & \\ 
+ Type=England\_lost & 1.116 & 1.225 \\ 
+  & (0.802, 1.553) & (0.762, 1.970) \\ 
+  & & \\ 
+ Type=After\_England & 1.070 & 1.119 \\ 
+  & (0.873, 1.311) & (0.852, 1.469) \\ 
+  & & \\ 
+\hline \\[-1.8ex] 
+Observations & 95,813 & 34,156 \\ 
+%R$^{2}$ & 0.063 & 0.010 \\ 
+%$\chi^{2}$ (df = 33) & 3,515.259$^{***}$ & 244.635$^{***}$ \\ 
+\hline 
+\hline \\[-1.8ex] 
+%\textit{Note:}  & \multicolumn{2}{r}{$^{*}$p$<$0.1; $^{**}$p$<$0.05; $^{***}$p$<$0.01} \\ 
+\end{tabular} 
+%\end{table}
+\begin{tablenotes}
+      \item[a] \textit{$^{*}$p$<$0.1; $^{**}$p$<$0.05; $^{***}$p$<$0.01}
+      \item[b] \textit{Estimates are log odds from a series of logistic regressions with year, month, day of week, Christmas, New Year's eve controls, where every observation is a reported and repeated domestic abuse case; confidence intervals are constructed from standard errors clustered by victim-offender pairs}
+    \end{tablenotes}
+\end{threeparttable}
 \end{table}
 
 
@@ -616,7 +818,7 @@ For victims, domestic abuse does not occur once every four years following a foo
 %The code for producing the results can be accessed \href{https://osf.io/kg9yr/?view_only=172a33b467bd4566b2e5dea0e2f59f8c}{here}. 
 
 \clearpage
-\bibliography{footballrefs14012020}
+\bibliography{footballrefs}
 \newpage
 
 %\theendnotes
@@ -627,67 +829,67 @@ For victims, domestic abuse does not occur once every four years following a foo
 
 \section*{Supplemental Material}
 
-\renewcommand{\thetable}{S\arabic{table}}
-\renewcommand{\thefigure}{S\arabic{figure}}
-\setcounter{table}{0}
-\setcounter{figure}{0}
-
-\begin{table}[htp]
-\centering
- \caption{Non-domestic violent cases by gender}
-  \label{otherviolence_gender}
- \scalebox{0.9}{
-   \begin{threeparttable}
-\begin{tabular}{@{\extracolsep{5pt}}lcccc} 
-\\[-1.8ex]\hline 
-\hline \\[-1.8ex] 
- & \multicolumn{4}{c}{\textit{Dependent variable:}} \\ 
-\cline{2-5} 
-\\[-1.8ex] & \multicolumn{4}{c}{Number of other violent abuse cases per day} \\ 
-\\
- & Male & Male & Female & Female \\ 
- & to Male & to Female & to Female & to Male \\ 
-\\[-1.8ex] & (1) & (2) & (3) & (4)\\ 
-\hline \\[-1.8ex] 
-% Alcohol & $-$0.900$^{***}$ & $-$0.891$^{***}$ & $-$0.864$^{***}$ & $-$0.921$^{***}$ \\ 
-%  & (0.048) & (0.033) & (0.080) & (0.066) \\ 
-  Tournament on & 0.037 & 0.050$^{**}$ & 0.041 & 0.051 \\ 
-  & (0.026) & (0.021) & (0.038) & (0.036) \\ 
-  England win & 0.013 & 0.019 & $-$0.031 & 0.174 \\ 
-  & (0.082) & (0.067) & (0.111) & (0.112) \\ 
-  England draw & 0.089 & 0.012 & 0.115 & 0.042 \\ 
-  & (0.094) & (0.078) & (0.139) & (0.132) \\ 
-  England loss & 0.018 & 0.028 & 0.088 & 0.118 \\ 
-  & (0.082) & (0.066) & (0.114) & (0.108) \\ 
-  After England & 0.085 & 0.070 & 0.181$^{**}$ & 0.149$^{**}$ \\ 
-  & (0.050) & (0.042) & (0.071) & (0.067) \\ 
-  Alcohol:Tournament on & $-$0.027 & $-$0.086$^{**}$ & $-$0.077 & $-$0.167$^{**}$ \\ 
-  & (0.055) & (0.038) & (0.087) & (0.073) \\ 
-  Alcohol:England win & 0.391$^{**}$ & 0.613$^{***}$ & 0.441$^{*}$ & $-$0.114 \\ 
-  & (0.158) & (0.109) & (0.251) & (0.199) \\ 
-  Alcohol:England draw & 0.071 & 0.102 & 0.127 & $-$0.337 \\ 
-  & (0.192) & (0.137) & (0.361) & (0.254) \\ 
-  Alcohol:England loss & 0.296$^{*}$ & 0.057 & $-$0.023 & 0.027 \\ 
-  & (0.153) & (0.112) & (0.237) & (0.207) \\ 
-  Alcohol:After England & 0.208$^{*}$ & 0.053 & $-$0.119 & $-$0.158 \\ 
-  & (0.100) & (0.072) & (0.163) & (0.136) \\ 
- \hline \\[-1.8ex] 
-Number of days & 3,017 & 3,017 & 3,017 & 3,017 \\ 
-%Log Likelihood & $-$17,204.240 & $-$21,360.820 & $-$13,708.300 & $-$14,378.320 \\ 
-%$\theta$ & 44.231$^{***}$  (2.800) & 43.449$^{***}$  (1.546) & 24.998$^{***}$  (1.919) & 35.978$^{***}$  (3.376) \\ 
-%Akaike Inf. Crit. & 34,540.480 & 42,853.640 & 27,548.590 & 28,888.630 \\ 
-\hline 
-\hline \\[-1.8ex] 
-%\textit{Note:}  & \multicolumn{4}{r}{$^{*}$p$<$0.1; $^{**}$p$<$0.05; $^{***}$p$<$0.01} \\ 
-\end{tabular} 
-\begin{tablenotes}
-     \item[a] \textit{$^{*}$p$<$0.1; $^{**}$p$<$0.05; $^{***}$p$<$0.01}
-      \item[b] \textit{Estimates are exponentiated coefficients from a series of negative binomial regressions (based on tests of overdispersion)  with year, month, day of week, Christmas, New Year's eve controls interacted with alcohol; standard errors in parentheses}
-    \end{tablenotes}
-\end{threeparttable} }
-\end{table}
-
-\newpage
+%\renewcommand{\thetable}{S\arabic{table}}
+%\renewcommand{\thefigure}{S\arabic{figure}}
+%\setcounter{table}{0}
+%\setcounter{figure}{0}
+%
+%\begin{table}[htp]
+%\centering
+% \caption{Non-domestic violent cases by gender}
+%  \label{otherviolence_gender}
+% \scalebox{0.9}{
+%   \begin{threeparttable}
+%\begin{tabular}{@{\extracolsep{5pt}}lcccc} 
+%\\[-1.8ex]\hline 
+%\hline \\[-1.8ex] 
+% & \multicolumn{4}{c}{\textit{Dependent variable:}} \\ 
+%\cline{2-5} 
+%\\[-1.8ex] & \multicolumn{4}{c}{Number of other violent abuse cases per day} \\ 
+%\\
+% & Male & Male & Female & Female \\ 
+% & to Male & to Female & to Female & to Male \\ 
+%\\[-1.8ex] & (1) & (2) & (3) & (4)\\ 
+%\hline \\[-1.8ex] 
+%% Alcohol & $-$0.900$^{***}$ & $-$0.891$^{***}$ & $-$0.864$^{***}$ & $-$0.921$^{***}$ \\ 
+%%  & (0.048) & (0.033) & (0.080) & (0.066) \\ 
+%  Tournament on & 0.037 & 0.050$^{**}$ & 0.041 & 0.051 \\ 
+%  & (0.026) & (0.021) & (0.038) & (0.036) \\ 
+%  England win & 0.013 & 0.019 & $-$0.031 & 0.174 \\ 
+%  & (0.082) & (0.067) & (0.111) & (0.112) \\ 
+%  England draw & 0.089 & 0.012 & 0.115 & 0.042 \\ 
+%  & (0.094) & (0.078) & (0.139) & (0.132) \\ 
+%  England loss & 0.018 & 0.028 & 0.088 & 0.118 \\ 
+%  & (0.082) & (0.066) & (0.114) & (0.108) \\ 
+%  After England & 0.085 & 0.070 & 0.181$^{**}$ & 0.149$^{**}$ \\ 
+%  & (0.050) & (0.042) & (0.071) & (0.067) \\ 
+%  Alcohol:Tournament on & $-$0.027 & $-$0.086$^{**}$ & $-$0.077 & $-$0.167$^{**}$ \\ 
+%  & (0.055) & (0.038) & (0.087) & (0.073) \\ 
+%  Alcohol:England win & 0.391$^{**}$ & 0.613$^{***}$ & 0.441$^{*}$ & $-$0.114 \\ 
+%  & (0.158) & (0.109) & (0.251) & (0.199) \\ 
+%  Alcohol:England draw & 0.071 & 0.102 & 0.127 & $-$0.337 \\ 
+%  & (0.192) & (0.137) & (0.361) & (0.254) \\ 
+%  Alcohol:England loss & 0.296$^{*}$ & 0.057 & $-$0.023 & 0.027 \\ 
+%  & (0.153) & (0.112) & (0.237) & (0.207) \\ 
+%  Alcohol:After England & 0.208$^{*}$ & 0.053 & $-$0.119 & $-$0.158 \\ 
+%  & (0.100) & (0.072) & (0.163) & (0.136) \\ 
+% \hline \\[-1.8ex] 
+%Number of days & 3,017 & 3,017 & 3,017 & 3,017 \\ 
+%%Log Likelihood & $-$17,204.240 & $-$21,360.820 & $-$13,708.300 & $-$14,378.320 \\ 
+%%$\theta$ & 44.231$^{***}$  (2.800) & 43.449$^{***}$  (1.546) & 24.998$^{***}$  (1.919) & 35.978$^{***}$  (3.376) \\ 
+%%Akaike Inf. Crit. & 34,540.480 & 42,853.640 & 27,548.590 & 28,888.630 \\ 
+%\hline 
+%\hline \\[-1.8ex] 
+%%\textit{Note:}  & \multicolumn{4}{r}{$^{*}$p$<$0.1; $^{**}$p$<$0.05; $^{***}$p$<$0.01} \\ 
+%\end{tabular} 
+%\begin{tablenotes}
+%     \item[a] \textit{$^{*}$p$<$0.1; $^{**}$p$<$0.05; $^{***}$p$<$0.01}
+%      \item[b] \textit{Estimates are exponentiated coefficients from a series of negative binomial regressions (based on tests of overdispersion)  with year, month, day of week, Christmas, New Year's eve controls interacted with alcohol; standard errors in parentheses}
+%    \end{tablenotes}
+%\end{threeparttable} }
+%\end{table}
+%
+%\newpage
 
 
 
@@ -803,57 +1005,63 @@ Number of days & 3,017 & 3,017 & 3,017 & 3,017 \\
 
 
 
-\begin{table}[htp]
-\centering
- \caption{Characteristics of domestic abuse cases reported on match days}
-  \label{Characteristics1}
-  \scalebox{0.9}{
-  \begin{threeparttable}
-\begin{tabular}{@{\extracolsep{5pt}}lccc} 
-\\[-1.8ex]\hline 
-\hline \\[-1.8ex] 
- & \multicolumn{3}{c}{\textit{Dependent variable:}} \\ 
-\cline{2-4} 
-\\[-1.8ex] & Newly & Public &  \\ 
-& Reported & Location &  \\ 
-& Yes=1, & Yes=1, &  \\ 
-& No=0 & No=0 & \\ 
-\\[-1.8ex] & (1) & (2) & \\ 
-\hline \\[-1.8ex] 
-% Alcohol=Yes & $-$0.030 & 0.001 & 0.427$^{***}$ \\ 
-%  & (0.059) & (0.081) & (0.058) \\ 
-  Tournament on & $-$0.037 & 0.021 & \\ 
-  & (0.030) & (0.037) &  \\ 
-  England win & 0.011 & 0.167 & \\ 
-  & (0.089) & (0.110) &  \\ 
-  England draw & 0.082 & 0.014 &  \\ 
-  & (0.121) & (0.138) &  \\ 
-  England loss & $-$0.099 & 0.337$^{***}$ &  \\ 
-  & (0.086) & (0.099) &  \\ 
-  After England & 0.035 & 0.070 & \\ 
-  & (0.056) & (0.068) &  \\ 
-  Alcohol:Tournament on & 0.087 & 0.063 &  \\ 
-  & (0.060) & (0.080) &  \\ 
-  Alcohol:England win & 0.093 & 0.104 &  \\ 
-  & (0.156) & (0.196) &  \\ 
-  Alcohol:England draw & $-$0.151 & $-$0.016 &  \\ 
-  & (0.233) & (0.306) &  \\ 
-  Alcohol:England loss & 0.221 & 0.044 & \\ 
-  & (0.171) & (0.198) &  \\ 
-  Alcohol:After England & $-$0.036 & 0.042 &  \\ 
-  & (0.108) & (0.143) &  \\ 
- \hline \\[-1.8ex] 
-Number of cases & 251,976 & 279,777 & \\ 
-\hline \\[-1.8ex] 
-%\textit{Note:}  & \multicolumn{3}{r}{$^{*}$p$<$0.1; $^{**}$p$<$0.05; $^{***}$p$<$0.01} \\ 
-\end{tabular} 
-\begin{tablenotes}
-      \item[a] \textit{$^{*}$p$<$0.1; $^{**}$p$<$0.05; $^{***}$p$<$0.01}
-      \item[b] \textit{Estimates are log odds from a series of logistic regressions with year, month, day of week, Christmas, New Year's eve controls interacted by alcohol, where every observation is a reported domestic abuse case; cases that happened in 2010 were excluded from the first regression; standard errors clustered by victim-offender pairs are in parentheses}
-    \end{tablenotes}
-\end{threeparttable} } 
-\end{table}
-\newpage
+%\begin{table}[htp]
+%\centering
+% \caption{Characteristics of domestic abuse cases reported on match days}
+%  \label{Characteristics1}
+%  \scalebox{0.9}{
+%  \begin{threeparttable}
+%\begin{tabular}{@{\extracolsep{5pt}}lccc} 
+%\\[-1.8ex]\hline 
+%\hline \\[-1.8ex] 
+% & \multicolumn{3}{c}{\textit{Dependent variable:}} \\ 
+%\cline{2-4} 
+%\\[-1.8ex] & Newly & Public &  \\ 
+%& Reported & Location &  \\ 
+%& Yes=1, & Yes=1, &  \\ 
+%& No=0 & No=0 & \\ 
+%\\[-1.8ex] & (1) & (2) & \\ 
+%\hline \\[-1.8ex] 
+%% Alcohol=Yes & $-$0.030 & 0.001 & 0.427$^{***}$ \\ 
+%%  & (0.059) & (0.081) & (0.058) \\ 
+%  Tournament on & $-$0.037 & 0.021 & \\ 
+%  & (0.030) & (0.037) &  \\ 
+%  England win & 0.011 & 0.167 & \\ 
+%  & (0.089) & (0.110) &  \\ 
+%  England draw & 0.082 & 0.014 &  \\ 
+%  & (0.121) & (0.138) &  \\ 
+%  England loss & $-$0.099 & 0.337$^{***}$ &  \\ 
+%  & (0.086) & (0.099) &  \\ 
+%  After England & 0.035 & 0.070 & \\ 
+%  & (0.056) & (0.068) &  \\ 
+%  Alcohol:Tournament on & 0.087 & 0.063 &  \\ 
+%  & (0.060) & (0.080) &  \\ 
+%  Alcohol:England win & 0.093 & 0.104 &  \\ 
+%  & (0.156) & (0.196) &  \\ 
+%  Alcohol:England draw & $-$0.151 & $-$0.016 &  \\ 
+%  & (0.233) & (0.306) &  \\ 
+%  Alcohol:England loss & 0.221 & 0.044 & \\ 
+%  & (0.171) & (0.198) &  \\ 
+%  Alcohol:After England & $-$0.036 & 0.042 &  \\ 
+%  & (0.108) & (0.143) &  \\ 
+% \hline \\[-1.8ex] 
+%Number of cases & 251,976 & 279,777 & \\ 
+%\hline \\[-1.8ex] 
+%%\textit{Note:}  & \multicolumn{3}{r}{$^{*}$p$<$0.1; $^{**}$p$<$0.05; $^{***}$p$<$0.01} \\ 
+%\end{tabular} 
+%\begin{tablenotes}
+%      \item[a] \textit{$^{*}$p$<$0.1; $^{**}$p$<$0.05; $^{***}$p$<$0.01}
+%      \item[b] \textit{Estimates are log odds from a series of logistic regressions with year, month, day of week, Christmas, New Year's eve controls interacted by alcohol, where every observation is a reported domestic abuse case; cases that happened in 2010 were excluded from the first regression; standard errors clustered by victim-offender pairs are in parentheses}
+%    \end{tablenotes}
+%\end{threeparttable} } 
+%\end{table}
+%\newpage
+
+
+
+
+
+
 
 %\begin{table}[htp]
 %\centering
@@ -908,7 +1116,7 @@ Number of cases & 251,976 & 279,777 & \\
 %\newpage
 %
 %
-%\begin{table}[htp]
+%\textsc{\begin{table}[htp]
 %\centering
 %  \caption{Alcohol transition on England match days}
 %    \label{alctrans}
@@ -958,7 +1166,7 @@ Number of cases & 251,976 & 279,777 & \\
 %      \item[b] \textit{Estimates are log odds from a logistic regression with year, month, day of week, Christmas, New Year's eve controls interacted by alcohol involvement of the previous case, where every observation is a reported domestic abuse case; standard errors clustered by victim-offender pairs are in parentheses}
 %    \end{tablenotes}
 %\end{threeparttable} } 
-%\end{table}
+%\end{table}}
 
 
 

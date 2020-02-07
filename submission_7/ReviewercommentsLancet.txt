@@ -1,0 +1,65 @@
+Reviewer #1: 
+- gender analysis, inference from te null + power given the sample size - gender analysis removed
+- literature about link between alcohol and domestic abuse - replaced para with suggested literature
+- confusion about whether domestic abuse includes parent to child abuse - made clear that it involves both IPV and family
+- confusion about how domestic abuse cases were identified - clarified variable selection
+- no data on whether they watched the football - no action
+- alc coefficient in table reflects base rate - no action
+- gap between how coefficients were described and presented - fixed hopefully
+- number of matches table required - added
+
+Reviewer #2:
+- confusion about how coefficients were presented - fixed hopefully
+- model needs to be explicitly stated - model stated
+- test of overdispersion not explained - overdispersion explained
+- clarify that there are two counts for each day - clarified
+- state software package - stated
+- separate models for alcohol and non-alcohol - done
+- issue with kirby coefficients - one of them does not match, don't think the issue is on my side, emailed them - no reply, i think they made a mistake
+- coefficients confusion - he's also a proper idiot - but fixed hopefully
+- how was alcohol flag determined? - added sentence
+- how was victim and perpetrator determined - added sentence
+- missing data on alcohol - no missing data added sentence
+- title of paper is incorrect - he's a dick me thinks - changed title
+- summary of data - added plot
+- something about the gender perspective but sentence is not finished - no action
+- IPV abbreviation - clarified
+
+Reviewer #3: 
+- present 95% cis instead - done
+- interaction in non-linear model can't be interpreted as % increase compared to baseline - point taken, removed interaction
+- abstract headline figure not in main text 
+- careful with "results in" suggests causality
+- descriptive stats in the methods - removed
+- ipv not defined and other abbreciations (CI, AIC)
+- overdispersion not explained -added para
+- logistic regression not explained
+- statistical software - done
+- flow diagram illsutrating the number of excluded and included records - hopefully explained
+- summary stats - added plot
+- confidence intervals instead of p values -done
+- temporal dynamics should be moved to methods -done
+- what is the benchmark in the three hour analysis - added sentence explaining that these are dummies
+- more info about the rugby analysis - how many matches, the more tournament/match days there are, 
+the more power the analysis will have to pick up on an effect. Do all of the rugby matches happen on
+the weekend or during a certain time of year? Could this affect the results? - clarified
+- mismatch between reported size of increase in violent cases vs regression table
+- lot of models we would expect 2 out of 40 p-values to be signif by chance alone
+- inference from the null - power issues with other types of offences
+- logistic models explanation
+
+Reviewer #4:
+- seems to believe that because the victories were not unexpected, this cannot be a causal effect
+- says that the fact that the increase starts in the three hour period of the match supports this
+- his/her narrative is that the increase is mainly during the match due to stressing over what's going to happen and
+that the increase afterwards is residual "due to drinking"- in his view, it is not the win, but the threat to the expected win that drives this
+- he argues against the claim that increased sense of englishness causes dv - i dont think i said that
+- says that we'd expect fewer cases outside if policing has increased - we found no effect either way so not sure why this is important
+
+Reviewer #5: 
+-missing data for 2017 - data quality issues
+-HMIC investigation led to an increase in recorded domestic abuse crimes in 2013 (Policing, Vol 12, No 2, pp. 150-164 ) - needs to be discussed how does this affect the data? April 2013
+- how alcohol identified- reliability of the variable?
+- something about the alcohol having gender bias but not really clear
+- is it related to victimm or perpetrator
+- why christmas and new years eve singled out
