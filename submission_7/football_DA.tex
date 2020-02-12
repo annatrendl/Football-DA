@@ -286,7 +286,7 @@ $C_i \sim Pois(\lambda_i)$ or $C_i \sim Negative Binomial(\lambda_i,\theta)$, $\
 
 In the Poisson framework, it is assumed that the mean of the distribution ($\lambda_i$) is equal to the variance. 
 However, for certain types of count data, the observed variance can exceed the mean, causing overdispersion. 
-If overdispersion is present in the data, the Poisson model understate the standard error of the estimates, leading to erroneous conclusions. 
+If overdispersion is present in the data, the Poisson model understates the standard error of the estimates, leading to erroneous conclusions. 
 Given the complex nature of domestic abuse, it is likely that our model will not able to fully account for all the factors influencing the number of reported cases on a given day, leading to unobserved heterogeneity and increasing the likelihood of overdispersion. 
 Testing for overdispersion in a Poisson model involves testing the null-hypothesis of equidispersion (the mean being equal to the variance).
 If there is evidence for overdispersion, a negative binomial model is a more suitable modelling framework, as it includes an additional parameter $\theta$ to allow the variance to deviate from the mean. 
