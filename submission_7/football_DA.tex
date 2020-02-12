@@ -261,7 +261,8 @@ To control for potential confounders and account for the temporal variability of
 We included a dummy for Christmas cases (covering the period between 24th and 26th of December) and New Year's Eve cases (in the early morning of 1st of January). 
 These holidays are consistently associated with an increased number of domestic abuse cases reported to the police, therefore including these will result in a more precise estimate of the association between football and domestic abuse.
 
-Given that our outcome variable is a count, we considered using a Poisson or a negative binomial regression model framework. Formally, if $C_i$ is the number of reported cases (alcohol or non-alcohol related) on days $i = 1...N$, then these models can be formally expressed as
+Given that our outcome variable is a count, we considered using a Poisson or a negative binomial regression model framework. 
+Formally, if $C_i$ is the number of reported cases (alcohol or non-alcohol related) on days $i = 1...N$, then these models can be formally expressed as
 %
 \begin{equation}
  \ln(\lambda_i) =\vect{x_i^{T}}\vect{\beta}
@@ -269,10 +270,13 @@ Given that our outcome variable is a count, we considered using a Poisson or a n
 
 
 where 
-$C_i \sim Pois(\lambda_i)$ or $C_i \sim Negative Binomial(\lambda_i,\theta)$, \textbf{x\textsubscript{i}} is a vector of covariates, and $\boldsymbol{\beta}$ is the vector of coefficients.
+$C_i \sim Pois(\lambda_i)$ or $C_i \sim Negative Binomial(\lambda_i,\theta)$, $\vect{x_i}$, is a vector of covariates, and $\boldsymbol{\beta}$ is the vector of coefficients.
 
-In the Poisson framework, it is assumed that the mean of the distribution ($\lambda_i$) is equal to the variance. However, for certain types of count data, the observed variance can exceed the mean, causing overdispersion. If overdispersion is present in the data, the Poisson model understate the standard error of the estimates, leading to erroneous conclusions. Given the complex nature of domestic abuse, it is likely that our model will not able to fully account for all the factors influencing the number of reported cases on a given day, leading to unobserved heterogeneity and increasing the likelihood of overdispersion if using a Poisson model. Testing for overdispersion in a Poisson model involves testing the null-hypothesis of equidispersion (the mean being equal to the variance).
-
+In the Poisson framework, it is assumed that the mean of the distribution ($\lambda_i$) is equal to the variance. 
+However, for certain types of count data, the observed variance can exceed the mean, causing overdispersion. 
+If overdispersion is present in the data, the Poisson model understate the standard error of the estimates, leading to erroneous conclusions. 
+Given the complex nature of domestic abuse, it is likely that our model will not able to fully account for all the factors influencing the number of reported cases on a given day, leading to unobserved heterogeneity and increasing the likelihood of overdispersion. 
+Testing for overdispersion in a Poisson model involves testing the null-hypothesis of equidispersion (the mean being equal to the variance).
 If there is evidence for overdispersion, a negative binomial model is a more suitable modelling framework, as it includes an additional parameter $\theta$ to allow the variance to deviate from the mean. 
 
 
