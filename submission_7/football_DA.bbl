@@ -317,6 +317,31 @@ Office2019}%
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
+{Ipsos MORI}%
+}{%
+{Ipsos MORI}%
+}{%
+{\protect \APACyear {2003}}%
+}]{%
+Ipsos2003}
+\APACinsertmetastar {%
+Ipsos2003}%
+\begin{APACrefauthors}%
+{Ipsos MORI}.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2003}{December}{22}.
+\newblock
+\APACrefbtitle {{ Rugby Union 'Britain's Second Most Popular Sport'}.} {{ Rugby
+  Union 'Britain's Second Most Popular Sport'}.}
+\newblock
+\begin{APACrefURL}
+  \url{https://www.ipsos.com/ipsos-mori/en-uk/rugby-union-britains-second-most-popular-sport}
+  \end{APACrefURL}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
 Kirby%
 , Francis%
 \BCBL {}\ \BBA {} O'Flaherty%
@@ -480,24 +505,6 @@ Prpic, M.%
 \newblock
 \begin{APACrefURL}
   \url{http://www.europarl.europa.eu/thinktank/en/document.html?reference=EPRS\_BRI(2018)630296}
-  \end{APACrefURL}
-\PrintBackRefs{\CurrentBib}
-
-\bibitem [\protect \citeauthoryear {%
-\APACcitebtitle {{Rugby Union 'Britain's Second Most Popular Sport'}}}{%
-\APACcitebtitle {{Rugby Union 'Britain's Second Most Popular Sport'}}}{%
-{\protect \APACyear {2003}}%
-}]{%
-Ipsos2003}
-\APACinsertmetastar {%
-Ipsos2003}%
-\APACrefbtitle {{Rugby Union 'Britain's Second Most Popular Sport'}.} {{Rugby
-  Union 'Britain's Second Most Popular Sport'}.}
-\newblock
-\APACrefYearMonthDay{2003}{dec}{}.
-\newblock
-\begin{APACrefURL}
-  \url{https://www.ipsos.com/ipsos-mori/en-uk/rugby-union-britains-second-most-popular-sport}
   \end{APACrefURL}
 \PrintBackRefs{\CurrentBib}
 

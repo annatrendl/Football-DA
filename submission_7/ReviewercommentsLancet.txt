@@ -16,11 +16,11 @@ Reviewer #2:
 - state software package - stated
 - separate models for alcohol and non-alcohol - done
 - issue with kirby coefficients - one of them does not match, don't think the issue is on my side, emailed them - no reply, i think they made a mistake
-- coefficients confusion - he's also a proper idiot - but fixed hopefully
+- coefficients confusion  - but fixed hopefully
 - how was alcohol flag determined? - added sentence
 - how was victim and perpetrator determined - added sentence
 - missing data on alcohol - no missing data added sentence
-- title of paper is incorrect - he's a dick me thinks - changed title
+- title of paper is incorrect  - changed title
 - summary of data - added plot
 - something about the gender perspective but sentence is not finished - no action
 - IPV abbreviation - clarified
