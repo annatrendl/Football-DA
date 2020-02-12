@@ -25,6 +25,7 @@ Seems to me they misunderstood the analysis in a few ways. Is it worth looking a
 Didn't get that everything is recorded/identified by the police, perhaps half a sentence to make this hit-you-between-the-eyes explicit (though I thought we already had somethign like that) 
 
 NS: Exponentiated coefficient concern. Wanted model equations. Make R code available on github. Missing data on alcohol status? Summary Table 1 for all DV and IV with mean, SD, 5, 25, 50, 75, 95 %iles. 
+https://www.stewart.warwick.ac.uk/publications/papers/Gathergood_Sakaguchi_Stewart_Weber_2019.pdf Table A1.
 
 
 
