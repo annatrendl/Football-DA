@@ -171,9 +171,17 @@ We also test the robustness of the effect using various model specifications, ti
 \section{West Midlands Crime Dataset}
 
 
-Our dataset comprises all incidents and crimes recorded by the West Midlands Police (WMP) in the period between January 1, 2010 and October 10, 2019 (3570 days). The WMP is the third largest police force in England \cite{Homeoffice}, serving an area with a population over 2.9 million in 2018 \cite{populationfigure}. 
+Our dataset comprises all incidents and crimes recorded by the West Midlands Police (WMP) in the period between January 1, 2010 and October 10, 2019 (3570 days). The WMP is the second largest police force in England \cite{Homeoffice}, serving an area with a population over 2.9 million in 2018 \cite{populationfigure}. 
 
-The WMP records all reported cases in two databases: incidents and crimes. Most reported cases will be initially recorded as an incident (and then later might be also recorded as a crime after investigation), with a smaller fraction immediately recorded as crime (if it is clear that it meets the criteria for notifiable offences, \citeNP{HomeOffice2019}). For this reason, some recorded crimes will have matching incident entries, while others will not. As an exception, specific types of reported cases (e.g., rape, domestic abuse, child abuse, racially or religiously aggravated cases) that do not qualify as a crime after being investigated (e.g., due to lack of evidence), still get recorded in the crimes database with the indicator ``non crime'' (e.g., ``domestic violence incident - non crime'').
+The WMP records all reported cases in two databases: incidents and crimes. The incidents database records all reports from officers and the public to call centres and police stations. The crimes database includes all cases which, after initial investigation are found to meet the defenition of a notifiable offence \citeNP{HomeOffice2019}, or fall into one of the special categories of "non-crime". These special categories include rape, domestic abuse, child abuse, racially or religiously aggravated cases, and are recorded (e.g. as ``domestic violence incident - non crime'') in the crimes database, even if the investigation finds that they do not qualify as a notifiable offence (e.g. due to lack of evidence).
+ 
+We focus our analyses on the crimes database, as these have been investigated by police. These records therefore contain more data and are more robust and reliable than incident logs. Officers record the age, gender and ethnicity for both victim and offender, as well as the location and exact time of the crime. 
+ 
+ 
+ 
+ 
+ 
+Most reported cases will be initially recorded as an incident (and then later might be also recorded as a crime after investigation), with a smaller fraction immediately recorded as crime (if it is clear that it meets the criteria for notifiable offences, \citeNP{HomeOffice2019} \citeNP{HomeOffice2019}). For this reason, some recorded crimes will have matching incident entries, while others will not. As an exception, specific types of reported cases (e.g., rape, domestic abuse, child abuse, racially or religiously aggravated cases) that do not qualify as a crime after being investigated (e.g., due to lack of evidence), still get recorded in the crimes database with the indicator ``non crime'' (e.g., ``domestic violence incident - non crime'').
 
 
 The incidents dataset contains a list of markers capturing various key aspects of the reported case, which are recorded in the call centre when the case is being reported. Most of these markers are common across police forces in England (e.g., domestic abuse, alcohol, drugs, mental health, etc.; \citeNP{HomeOffice2011}). 
