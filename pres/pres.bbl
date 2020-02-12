@@ -1,0 +1,113 @@
+\begin{thebibliography}{}
+
+\bibitem [\protect \citeauthoryear {%
+Kirby%
+, Francis%
+\BCBL {}\ \BBA {} O'Flaherty%
+}{%
+Kirby%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2014}}%
+}]{%
+Kirby2014}
+\APACinsertmetastar {%
+Kirby2014}%
+\begin{APACrefauthors}%
+Kirby, S.%
+, Francis, B.%
+\BCBL {}\ \BBA {} O'Flaherty, R.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2014}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {{Can the FIFA World Cup Football (Soccer) Tournament Be
+  Associated with an Increase in Domestic Abuse?}} {{Can the FIFA World Cup
+  Football (Soccer) Tournament Be Associated with an Increase in Domestic
+  Abuse?}}{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Journal of Research in Crime and
+  Delinquency}{51}{3}{259--276}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+{Office for National Statistics}%
+}{%
+{Office for National Statistics}%
+}{%
+{\protect \APACyear {2018}}%
+}]{%
+ONS}
+\APACinsertmetastar {%
+ONS}%
+\begin{APACrefauthors}%
+{Office for National Statistics}.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2018}{}{}.
+\newblock
+\APACrefbtitle {{Domestic abuse in England and Wales: year ending March 2018}.}
+  {{Domestic abuse in England and Wales: year ending March 2018}.}
+\newblock
+\begin{APACrefURL}
+  \url{https://www.ons.gov.uk/peoplepopulationandcommunity/crimeandjustice/bulletins/domesticabuseinenglandandwales/yearendingmarch2018/pdf}
+  \end{APACrefURL}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Oliver%
+, Alexander%
+, Roe%
+\BCBL {}\ \BBA {} Miriam%
+}{%
+Oliver%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2019}}%
+}]{%
+costs}
+\APACinsertmetastar {%
+costs}%
+\begin{APACrefauthors}%
+Oliver, R.%
+, Alexander, B.%
+, Roe, S.%
+\BCBL {}\ \BBA {} Miriam, W.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2019}{}{}.
+\newblock
+\APACrefbtitle {{The economic and social costs of domestic abuse}.} {{The
+  economic and social costs of domestic abuse}.}
+\newblock
+\APACaddressPublisher{}{Home Office}.
+\newblock
+\begin{APACrefURL}
+  \url{https://www.gov.uk/government/publications/the-economic-and-social-costs-of-domestic-abuse}
+  \end{APACrefURL}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+{The Crown Prosecution Service}%
+}{%
+{The Crown Prosecution Service}%
+}{%
+{\protect \APACyear {2017}}%
+}]{%
+cps}
+\APACinsertmetastar {%
+cps}%
+\begin{APACrefauthors}%
+{The Crown Prosecution Service}.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2017}{}{}.
+\newblock
+\APACrefbtitle {{Domestic abuse}.} {{Domestic abuse}.}
+\newblock
+\begin{APACrefURL} \url{https://www.cps.gov.uk/domestic-abuse} \end{APACrefURL}
+\PrintBackRefs{\CurrentBib}
+
+\end{thebibliography}
