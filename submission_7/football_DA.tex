@@ -32,7 +32,7 @@
 
 \newcommand{\AT}[1]{\textcolor{red}{AT: #1}}
 \newcommand{\NS}[1]{\textcolor{green}{NS: #1}}
-\newcommand{\TM}[1]{\textcolor{springgreen3}{TM: #1}}
+\newcommand{\TM}[1]{\textcolor{blue}{TM: #1}}
 
 
 
@@ -183,7 +183,7 @@ When identifying whether alcohol was involved, we primarily rely upon the specif
  
  
  
- \TM{ I think get rid of all of this:
+ \TM{ I think get rid of all of this:}
  
 Most reported cases will be initially recorded as an incident (and then later might be also recorded as a crime after investigation), with a smaller fraction immediately recorded as crime (if it is clear that it meets the criteria for notifiable offences, \citeNP{HomeOffice2019} \citeNP{HomeOffice2019}). For this reason, some recorded crimes will have matching incident entries, while others will not. As an exception, specific types of reported cases (e.g., rape, domestic abuse, child abuse, racially or religiously aggravated cases) that do not qualify as a crime after being investigated (e.g., due to lack of evidence), still get recorded in the crimes database with the indicator ``non crime'' (e.g., ``domestic violence incident - non crime'').
 
@@ -201,7 +201,9 @@ However, our main results do not change if we only use information contained in 
 We coded each reported case as domestic abuse-related if (1) in the crime dataset the offence description explicitly stated so (either ``domestic violence incident'' or ``coercive/controlling behaviour in a domestic setting'') or (2) one of the linked incident markers (if any) stated ``domestic violence''. This method ensured that we used all information available to us to identify domestic-abuse related cases. 
 
 To determine whether a case was alcohol-related, we again collated information from markers found in the incidents and crimes dataset and created an alcohol flag if any of these markers contained the word ``alcohol''. The main source of information on alcohol-involvement is the crime dataset, where the recording officer has to choose either ``Yes'' or ``No'' to indicate whether the case was alcohol-related. According to the Home Office Counting Rules for Recorded Crime, alcohol-related crimes are defined as ``any notifiable offence (crime) where it is perceived, by the victim or any other person, that the
-effects of alcohol consumption on the offender or victim was an aggravating factor'' \cite{Office2019}. Unfortunately, it is not specified who was under the influence of alcohol (victim, offender, or both). In addition, it is possible that this flag is an underestimation of the true number of alcohol-related cases, as one could reasonably expect it to be more likely that ``No'' will be selected for an alcohol-related case than the other way around, due to human error. }
+effects of alcohol consumption on the offender or victim was an aggravating factor'' \cite{Office2019}. Unfortunately, it is not specified who was under the influence of alcohol (victim, offender, or both). In addition, it is possible that this flag is an underestimation of the true number of alcohol-related cases, as one could reasonably expect it to be more likely that ``No'' will be selected for an alcohol-related case than the other way around, due to human error. 
+
+\TM{ends here}
 
  Overall there were 427,351 reported cases of domestic abuse in this 10-year period, comprising 17\% of all recorded crimes and incidents. Of these cases, 26\% were alcohol-related (in contrast, only 9\% of non domestic abuse cases are alcohol-related). In the period between 2010 and 2018, the daily rate of non-alcohol related domestic incidents falls between 1.42--3.95 cases per 100,000 individuals, whereas the daily rate of alcohol-related cases falls between 0.84--1.67 cases per 100,000 individuals (the overall rate falls between 2.4 and 5.01 per 100,000 individuals). 
 
@@ -384,6 +386,49 @@ Notes:
 \end{figure}
 
  To further understand the characteristics of this increase, we exploited the detailed time information in our dataset, which allowed us to conduct a three-hour analysis to explore the finer temporal patterns of domestic abuse cases (alcohol-related or not) perpetrated before and after an England match. Figure \ref{fig:threehours} shows a plot of the estimated percentage increase from these negative binomial regressions, revealing a stark increase in alcohol-related domestic abuse on days of an England victory, starting in the three hour period of the match, peaking in the three-hour period afterwards, and gradually declining to its original level in the twenty-four hours following the victory. While a similar pattern can be observed on days when England lost, the increase in the number of alcohol-related cases is substantially smaller and not statistically different from zero.
+
+
+\subsection{gender}
+ \begin{sidewaystable}[htp]
+%\begin{table}[!htbp] \centering 
+  \caption{} 
+  \label{} 
+\begin{tabular}{@{\extracolsep{5pt}}lcccc} 
+\\[-1.8ex]\hline 
+\hline \\[-1.8ex] 
+ & \multicolumn{4}{c}{\textit{Dependent variable:}} \\ 
+\cline{2-5} 
+\\[-1.8ex] & MF & FM & MF & FM \\ 
+\\[-1.8ex] & (1) & (2) & (3) & (4)\\ 
+\hline \\[-1.8ex] 
+ Type.of.dayTournament on & 1.027 & 1.042 & 1.093 & 0.982 \\ 
+  & (0.984, 1.071) & (0.958, 1.132) & (0.925, 1.043) & (0.959, 1.244) \\ 
+  & & & & \\ 
+ Type.of.dayEngland win & 0.929 & 1.043 & 1.382$^{***}$ & 1.415 \\ 
+  & (0.808, 1.068) & (0.798, 1.346) & (1.183, 1.689) & (0.923, 2.001) \\ 
+  & & & & \\ 
+ Type.of.dayEngland draw & 0.963 & 1.177 & 1.162$^{**}$ & 1.263 \\ 
+  & (0.819, 1.133) & (0.847, 1.603) & (1.031, 1.544) & (0.710, 1.808) \\ 
+  & & & & \\ 
+ Type.of.dayEngland lost & 1.041 & 0.987 & 1.441 & 1.037$^{**}$ \\ 
+  & (0.912, 1.191) & (0.755, 1.274) & (0.860, 1.249) & (0.994, 2.033) \\ 
+  & & & & \\ 
+ Type.of.dayAfter England & 1.044 & 1.058 & 1.282$^{***}$ & 1.173$^{**}$ \\ 
+  & (0.960, 1.135) & (0.897, 1.242) & (1.046, 1.315) & (0.999, 1.626) \\ 
+  & & & & \\ 
+\hline \\[-1.8ex] 
+Observations & 3,570 & 3,570 & 3,570 & 3,570 \\ 
+Log Likelihood & $-$13,745.870 & $-$8,771.909 & $-$10,810.720 & $-$6,895.397 \\ 
+$\theta$ & 47.186$^{***}$  (2.010) & 40.159$^{***}$  (5.651) & 40.498$^{***}$  (2.984) & 28.337$^{***}$  (6.809) \\ 
+Akaike Inf. Crit. & 27,559.750 & 17,611.820 & 21,689.440 & 13,858.790 \\ 
+\hline 
+\hline \\[-1.8ex] 
+\textit{Note:}  & \multicolumn{4}{r}{$^{*}$p$<$0.1; $^{**}$p$<$0.05; $^{***}$p$<$0.01} \\ 
+\end{tabular} 
+%\end{table} 
+\end{sidewaystable}
+
+
 
 \subsection{Other types of crimes and incidents}
 
