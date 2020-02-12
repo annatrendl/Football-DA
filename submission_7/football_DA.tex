@@ -269,7 +269,7 @@ Given that our outcome variable is a count, we considered using a Poisson or a n
 
 
 where 
-$C_i \sim Pois(\lambda_i)$ or $C_i \sim Negative Binomial(\lambda_i\theta)$, \textbf{x\textsubscript{i}} is a vector of covariates, and $\boldsymbol{\beta}$ is the vector of coefficients.
+$C_i \sim Pois(\lambda_i)$ or $C_i \sim Negative Binomial(\lambda_i,\theta)$, \textbf{x\textsubscript{i}} is a vector of covariates, and $\boldsymbol{\beta}$ is the vector of coefficients.
 
 In the Poisson framework, it is assumed that the mean of the distribution ($\lambda_i$) is equal to the variance. However, for certain types of count data, the observed variance can exceed the mean, causing overdispersion. If overdispersion is present in the data, the Poisson model understate the standard error of the estimates, leading to erroneous conclusions. Given the complex nature of domestic abuse, it is likely that our model will not able to fully account for all the factors influencing the number of reported cases on a given day, leading to unobserved heterogeneity and increasing the likelihood of overdispersion if using a Poisson model. Testing for overdispersion in a Poisson model involves testing the null-hypothesis of equidispersion (the mean being equal to the variance).
 
