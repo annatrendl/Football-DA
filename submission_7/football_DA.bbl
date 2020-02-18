@@ -105,6 +105,33 @@ Cameron, A\BPBI C.%
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
+Card%
+\ \BBA {} Dahl%
+}{%
+Card%
+\ \BBA {} Dahl%
+}{%
+{\protect \APACyear {2011}}%
+}]{%
+Card2011}
+\APACinsertmetastar {%
+Card2011}%
+\begin{APACrefauthors}%
+Card, D.%
+\BCBT {}\ \BBA {} Dahl, G\BPBI B.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2011}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {{Family Violence and Football: The Effect of Unexpected
+  Emotional Cues on Violent Behavior}} {{Family Violence and Football: The
+  Effect of Unexpected Emotional Cues on Violent Behavior}}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{The Quarterly Journal of Economics}{126}{1}{103--143}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
 Davies%
 }{%
 Davies%
