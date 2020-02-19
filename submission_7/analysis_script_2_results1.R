@@ -74,11 +74,19 @@ dispersiontest(mnalcp)
 estalc <- exp(cbind(Estimate = coef(malc), confint(malc)))
 estnoalc <- exp(cbind(Estimate = coef(mnalc), confint(mnalc)))
 
+
+p_malc<-drop1(malc, test = "LRT")
+p_mnalc<-drop1(mnalc, test = "LRT")
+
+estalc <- cbind(estalc,p_malc$`Pr(>Chi)`)
+estnoalc <- cbind(estnoalc,p_mnalc$`Pr(>Chi)`)
+
+
 stargazer(mnalc,malc, omit = c(names(estalc[,1])[!grepl("_",names(estalc[,1]))], "Constant"),
           column.labels=c('Number of non-alcohol related domestic abuse cases','Number of alcohol-related domestic abuse cases'),
           coef = list(estnoalc[,1][grepl("_",names(estnoalc[,1]))], estalc[,1][grepl("_",names(estalc[,1]))]), 
-          p = list(coef(summary(mnalc))[,4][grepl("_",names(coef(summary(mnalc))[,4]))], 
-                   coef(summary(malc))[,4][grepl("_",names(coef(summary(malc))[,4]))]), 
+          p = list(estnoalc[,4][grepl("_",names(estnoalc[,1]))],
+                   estalc[,4][grepl("_",names(estalc[,1]))]), 
           ci.custom = list(estnoalc[,2:3][grepl("_",names(estnoalc[,1])),],
                            estalc[,2:3][grepl("_",names(estalc[,1])),]), type = "latex",
           star.cutoffs = c(0.05, 0.01, 0.001))
