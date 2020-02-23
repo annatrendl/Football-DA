@@ -101,7 +101,7 @@ Cameron, A\BPBI C.%
   Poisson model}} {{Regression-based tests for overdispersion in the Poisson
   model}}.{\BBCQ}
 \newblock
-\APACjournalVolNumPages{Journal of Econometrics}{}{}{}.
+\APACjournalVolNumPages{Journal of Econometrics}{47}{3}{347--364}.
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
@@ -146,7 +146,7 @@ Davies, G.%
 \end{APACrefauthors}%
 \unskip\
 \newblock
-\APACrefYearMonthDay{2018}{dec}{}.
+\APACrefYearMonthDay{2018}{December}{30}.
 \newblock
 {\BBOQ}\APACrefatitle {{England's unexpected World Cup progression behind
   record-high alcohol poisoning cases, NHS says}} {{England's unexpected World
@@ -253,10 +253,8 @@ HomeOffice2011}%
 \newblock
 \APACrefYearMonthDay{2011}{}{}.
 \newblock
-\APACrefbtitle {{The National Standard for Incident Recording}} {{The National
-  Standard for Incident Recording}}\ \APACbVolEdTR{}{\BTR{}}.
-\newblock
-\APACaddressInstitution{}{Home Office}.
+\APACrefbtitle {{The National Standard for Incident Recording}.} {{The National
+  Standard for Incident Recording}.}
 \newblock
 \begin{APACrefURL}
   \url{https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment{\_}data/file/116658/count-nsir11.pdf}
@@ -280,10 +278,8 @@ Homeoffice}%
 \newblock
 \APACrefYearMonthDay{2018}{}{}.
 \newblock
-\APACrefbtitle {{Police funding for England and Wales 2015 to 2019}} {{Police
-  funding for England and Wales 2015 to 2019}}\ \APACbVolEdTR{}{\BTR{}}.
-\newblock
-\APACaddressInstitution{}{Home Office}.
+\APACrefbtitle {{Police funding for England and Wales 2015 to 2019}.} {{Police
+  funding for England and Wales 2015 to 2019}.}
 \newblock
 \begin{APACrefURL}
   \url{https://www.gov.uk/government/statistics/police-funding-for-england-and-wales-2015-to-2019}
@@ -307,10 +303,8 @@ HomeOffice2019}%
 \newblock
 \APACrefYearMonthDay{2019{\protect \BCnt {1}}}{}{}.
 \newblock
-\APACrefbtitle {{Crime Recording General Rules}} {{Crime Recording General
-  Rules}}\ \APACbVolEdTR{}{\BTR{}}.
-\newblock
-\APACaddressInstitution{}{Home Office}.
+\APACrefbtitle {{Crime Recording General Rules}.} {{Crime Recording General
+  Rules}.}
 \newblock
 \begin{APACrefURL}
   \url{https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment{\_}data/file/854733/count-general-dec-2019.pdf}
@@ -334,9 +328,8 @@ Office2019}%
 \newblock
 \APACrefYearMonthDay{2019{\protect \BCnt {2}}}{}{}.
 \newblock
-\APACrefbtitle {{Home Office Counting Rules for Recorded Crime - Crime Flags}}
-  {{Home Office Counting Rules for Recorded Crime - Crime Flags}}\
-  \APACbVolEdTR{}{\BTR{}}.
+\APACrefbtitle {{Home Office Counting Rules for Recorded Crime - Crime Flags}.}
+  {{Home Office Counting Rules for Recorded Crime - Crime Flags}.}
 \newblock
 \begin{APACrefURL}
   \url{https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment{\_}data/file/791106/count-flags-apr-2019.pdf}
@@ -509,10 +502,10 @@ Parry, K\BPBI D.%
 
 \bibitem [\protect \citeauthoryear {%
 Prpic%
-\ \BBA {} Rosamund%
+\ \BBA {} Shreeves%
 }{%
 Prpic%
-\ \BBA {} Rosamund%
+\ \BBA {} Shreeves%
 }{%
 {\protect \APACyear {2018}}%
 }]{%
@@ -521,17 +514,17 @@ ep}
 ep}%
 \begin{APACrefauthors}%
 Prpic, M.%
-\BCBT {}\ \BBA {} Rosamund, S.%
+\BCBT {}\ \BBA {} Shreeves, R.%
 \end{APACrefauthors}%
 \unskip\
 \newblock
 \APACrefYearMonthDay{2018}{}{}.
 \newblock
-\APACrefbtitle {{Violence against women in the EU: State of play}} {{Violence
-  against women in the EU: State of play}}\ \APACbVolEdTR{}{\BTR{}}.
+\APACrefbtitle {{Violence against women in the EU: State of play}.} {{Violence
+  against women in the EU: State of play}.}
 \newblock
 \begin{APACrefURL}
-  \url{http://www.europarl.europa.eu/thinktank/en/document.html?reference=EPRS\_BRI(2018)630296}
+  \url{https://www.europarl.europa.eu/RegData/etudes/BRIE/2018/630296/EPRS_BRI(2018)630296_EN.pdf}
   \end{APACrefURL}
 \PrintBackRefs{\CurrentBib}
 

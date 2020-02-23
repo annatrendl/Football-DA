@@ -11,8 +11,11 @@ library(AER)
 library(stargazer)
 library(emmeans)
 library(tidyverse)
+library(readxl)
 setwd("C:/Anna/Crimes/wm_supersupernew")
 load("C:/Anna/Crimes/wm_supersupernew/all_data.RData")
+
+
 
 #create type of day dummies
 all.days<- merge(data.table(expand.grid(when.committed = seq(ymd("2010-01-01"), ymd("2019-10-10"), by = "days"),
@@ -54,6 +57,29 @@ colnames(all.days) <- gsub(" ", "_", colnames(all.days))
 
 #add year to years
 colnames(all.days) <- gsub("20", "year20", colnames(all.days))
+
+
+#descriptives
+
+popest <- function(year) {
+  data <- data.table(read_excel("popestimates.xlsx", sheet = paste0("Mid-", year," Persons")), year = year)
+  sum(data[grepl("Sandwell|Birmingham|Coventry|Walsall|Wolverhampton|Dudley|Solihull", unlist(data[,3])),4])
+}
+
+population <- data.table(year = as.factor(2010:2018))
+population[, pop := as.numeric(popest(year)), by = 1:nrow(population)]
+
+
+population <- merge(population, dcast(all.days_original[, sum(N), .(year, Alcohol)], year ~ Alcohol), by = "year")
+
+population[, Alc_Rate := ((Yes/no.day)/pop)*100000]
+population[, Noalc_Rate := ((No/no.day)/pop)*100000]
+
+
+population[Alcohol == "Yes", round(min(Rate),2)]
+
+
+
 
 ############################ CORE RESULTS #########################################
 
