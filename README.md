@@ -12,7 +12,7 @@ Submitted 5 Science Advances, desk reject
 
 Submitted 6 Lancet Public Health, reject with reviews
 
-Submitted 7 Social Science and Medicine (IF=3.007, AJG=4)
+Submitted 7 Social Science and Medicine (IF=3.007, AJG=4): revise and resubmit
 
 
 
