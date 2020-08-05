@@ -1,7 +1,7 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7000 64-bit) (preloaded format=pdflatex 2019.4.11)  25 JUL 2020 12:08
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7000 64-bit) (preloaded format=pdflatex 2019.4.11)  5 AUG 2020 21:49
 entering extended mode
-**./football_DA.tex
-(football_DA.tex
+**./football_DAjesuschrist.tex
+(football_DAjesuschrist.tex
 LaTeX2e <2017-04-15>
 Babel <3.10> and hyphenation patterns for 77 language(s) loaded.
 ("C:\Users\Anna\AppData\Local\Programs\MiKTeX 2.9\tex/latex/base\article.cls"
@@ -840,8 +840,8 @@ Package: parskip 2001/04/09 non-zero parskip adjustments
 ("C:\Users\Anna\AppData\Local\Programs\MiKTeX 2.9\tex/latex/titlesec\ttlkeys.de
 f"
 File: ttlkeys.def 2016/03/15
-) (football_DA.aux)
-\openout1 = `football_DA.aux'.
+) (football_DAjesuschrist.aux)
+\openout1 = `football_DAjesuschrist.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 66.
 LaTeX Font Info:    ... okay on input line 66.
@@ -919,9 +919,9 @@ Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 LaTeX Info: Redefining \ref on input line 66.
 LaTeX Info: Redefining \pageref on input line 66.
 LaTeX Info: Redefining \nameref on input line 66.
- (football_DA.out) (football_DA.out)
+ (football_DAjesuschrist.out) (football_DAjesuschrist.out)
 \@outlinefile=\write4
-\openout4 = `football_DA.out'.
+\openout4 = `football_DAjesuschrist.out'.
 
 \c@maskedRefs=\count137
 
@@ -966,15 +966,15 @@ G,.JBIG2,.JB2 ,.eps]
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10.95> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 102.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <10.95> not available
-(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 112.
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 113.
 
 [2
 
 ]
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <17.28> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 120.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 121.
 
-Overfull \hbox (6.2199pt too wide) in paragraph at lines 125--126
+Overfull \hbox (6.2199pt too wide) in paragraph at lines 126--127
 []\OT1/ptm/m/n/12 The link be-tween sport-ing events and do-mes-tic abuse has b
 een the fo-cus of a num-ber of smaller 
  []
@@ -983,134 +983,139 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.133 
-       [1]pdfTeX warning (ext4): destination with the same identifier (name{pag
-e.2}) has been already used, duplicate ignored
+l.134 
+       [1]
+
+LaTeX Warning: Citation `Ostrowsky2014a' undefined on input line 135.
+
+pdfTeX warning (ext4): destination with the same identifier (name{page.2}) has 
+been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.142 
-       [2] [3] [4]
-<descriptives.pdf, id=156, pagebox=cropbox, 671.50874pt x 404.51125pt>
+l.141 D
+       espite the evident links between alcohol and domestic abuse, the role...
+[2] [3] [4]
+<descriptives.pdf, id=183, pagebox=cropbox, 671.50874pt x 404.51125pt>
 File: descriptives.pdf Graphic file (type pdf)
 <use descriptives.pdf>
-Package pdftex.def Info: descriptives.pdf  used on input line 166. on input lin
-e 166.
+Package pdftex.def Info: descriptives.pdf  used on input line 168. on input lin
+e 168.
 Package pdftex.def Info: Requested size: 402.90836pt x 242.70862pt on input lin
-e 166.
- [5 <./descriptives.pdf>]
+e 168.
+ [5]
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 183.
- [6] [7]
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 185.
+ [6 <./descriptives.pdf>] [7]
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <14.4> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 221.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 223.
  [8]
-Overfull \hbox (2.03247pt too wide) in paragraph at lines 242--248
+Overfull \hbox (2.03247pt too wide) in paragraph at lines 244--250
 \OT1/ptm/m/n/12 vari-ance. How-ever, for cer-tain types of count data, the ob-s
 erved vari-ance can ex-ceed the mean, 
  []
 
 [9]
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <8> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 265.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 267.
  [10]
-Underfull \hbox (badness 10000) in paragraph at lines 323--324
+Underfull \hbox (badness 10000) in paragraph at lines 325--326
 []\OT1/ptm/m/it/12 Estimates are ex-po-nen-ti-ated co-ef-fi-cients from neg-a-t
 ive
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 323--324
+Underfull \hbox (badness 10000) in paragraph at lines 325--326
 \OT1/ptm/m/it/12 bi-no-mial re-gres-sions with non-match day as bench-mark;
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 323--324
+Underfull \hbox (badness 10000) in paragraph at lines 325--326
 \OT1/ptm/m/it/12 con-trols in-clude day of week, month, year, Christ-mas, and
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 323--324
+Underfull \hbox (badness 10000) in paragraph at lines 325--326
 \OT1/ptm/m/it/12 New Year's Eve; 95% con-fi-dence in-ter-vals are in square
  []
 
-<Threehours_newdata.pdf, id=210, pagebox=cropbox, 722.7pt x 722.7pt>
+<Threehours_newdata.pdf, id=238, pagebox=cropbox, 722.7pt x 722.7pt>
 File: Threehours_newdata.pdf Graphic file (type pdf)
 <use Threehours_newdata.pdf>
-Package pdftex.def Info: Threehours_newdata.pdf  used on input line 337. on inp
-ut line 337.
+Package pdftex.def Info: Threehours_newdata.pdf  used on input line 339. on inp
+ut line 339.
 Package pdftex.def Info: Requested size: 339.72592pt x 339.72418pt on input lin
-e 337.
+e 339.
 [11] [12] [13 <./Threehours_newdata.pdf>]
-Overfull \hbox (2.64362pt too wide) in paragraph at lines 353--354
+Overfull \hbox (2.64362pt too wide) in paragraph at lines 356--357
 \OT1/ptm/m/n/12 in-ter-ested in how an Eng-land match day af-fects the num-ber 
 of re-ported property-related crimes 
  []
 
 [14]
-Underfull \hbox (badness 10000) in paragraph at lines 401--401
+Underfull \hbox (badness 10000) in paragraph at lines 404--404
 []\OT1/ptm/m/it/12 Estimates are ex-po-nen-ti-ated co-ef-fi-cients from a se-ri
 es of neg-a-tive bi-no-mial re-gres-sions with non-match day as
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 401--401
+Underfull \hbox (badness 10000) in paragraph at lines 404--404
 \OT1/ptm/m/it/12 bench-mark; con-trols in-clude day of week, month, year, Chris
 t-mas, and New Year's Eve; 95% con-fi-dence in-ter-vals are
  []
 
 
-Overfull \hbox (0.89177pt too wide) in paragraph at lines 404--405
+Overfull \hbox (0.89177pt too wide) in paragraph at lines 408--409
 []\OT1/ptm/m/n/12 Table []3[] shows the re-sults for these three types of crim-
 i-nal be-haviours, by alcohol-involvement. 
  []
 
 [15] [16]
-Underfull \hbox (badness 10000) in paragraph at lines 460--461
+Underfull \hbox (badness 10000) in paragraph at lines 464--465
 []\OT1/ptm/m/it/12 Estimates are ex-po-nen-ti-ated co-ef-fi-cients from neg-a-t
 ive
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 460--461
+Underfull \hbox (badness 10000) in paragraph at lines 464--465
 \OT1/ptm/m/it/12 bi-no-mial re-gres-sions with non-match day as bench-mark;
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 460--461
+Underfull \hbox (badness 10000) in paragraph at lines 464--465
 \OT1/ptm/m/it/12 con-trols in-clude day of week, month, year, Christ-mas, and
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 460--461
+Underfull \hbox (badness 10000) in paragraph at lines 464--465
 \OT1/ptm/m/it/12 New Year's Eve; 95% con-fi-dence in-ter-vals are in square
  []
 
 [17]
-Underfull \hbox (badness 10000) in paragraph at lines 515--515
+Underfull \hbox (badness 10000) in paragraph at lines 519--519
 []\OT1/ptm/m/it/12 Estimates are ex-po-nen-ti-ated co-ef-fi-cients from neg-a-t
 ive bi-no-mial re-gres-sions
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 515--515
+Underfull \hbox (badness 10000) in paragraph at lines 519--519
 \OT1/ptm/m/it/12 (based on tests of overdis-per-sion) with year and day of week
  con-trols and no
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 515--515
+Underfull \hbox (badness 10000) in paragraph at lines 519--519
 \OT1/ptm/m/it/12 Eng-land match days dur-ing the tour-na-ment as bench-mark; da
 ta is only avail-able
  []
 
 
-Overfull \hbox (7.81522pt too wide) in paragraph at lines 520--521
+Overfull \hbox (7.81522pt too wide) in paragraph at lines 524--525
 \OT1/ptm/m/n/12 (Lan-cashire and West Mid-lands; see Ta-ble []6[]). To be con-s
 is-tent with pre-vi-ous re-sults, we present 
  []
 
 [18]
-Underfull \hbox (badness 10000) in paragraph at lines 574--574
+Underfull \hbox (badness 10000) in paragraph at lines 578--578
 []\OT1/ptm/m/it/12 Estimates are ex-po-nen-ti-ated co-ef-fi-cients from a se-ri
 es of neg-a-tive bi-no-mial re-gres-sions, ex-cept for Model (2) and (3) which 
 are from Pois-son re-gres-sions (based on tests of overdis-per-sion). Each re-g
@@ -1118,7 +1123,7 @@ res-sion is re-stricted to a spe-cific
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 574--574
+Underfull \hbox (badness 10000) in paragraph at lines 578--578
 \OT1/ptm/m/it/12 tour-na-ment year. Re-gres-sions 1-3 have day of week con-trol
  with non Eng-land tour-na-ment days as bench-mark, re-gres-sions 4-13 have mon
 th, day of week, Christ-mas, New Year's eve con-trols, with non-match days as b
@@ -1126,26 +1131,27 @@ ench-mark; 95%
  []
 
 
-Overfull \hbox (38.92001pt too wide) in paragraph at lines 574--575
+Overfull \hbox (38.92001pt too wide) in paragraph at lines 578--579
  [][] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 621--621
+Underfull \hbox (badness 10000) in paragraph at lines 625--625
 []\OT1/ptm/m/it/12 Estimates are ex-po-nen-ti-ated co-ef-fi-cients from a se-ri
 es of neg-a-tive bi-no-mial re-gres-sions (based on tests of overdis-per-sion) 
 with year, month, day of week, Christ-mas, New Year's eve con-trols;
  []
 
 
-Overfull \hbox (47.18779pt too wide) in paragraph at lines 621--622
+Overfull \hbox (47.18779pt too wide) in paragraph at lines 625--626
  [][] 
  []
 
 [19] [20] [21] [22] [23] [24
 
-] [25] [26] (football_DA.bbl
-LaTeX Font Info:    Try loading font information for OT1+pcr on input line 24.
+] [25] [26] (football_DAjesuschrist.bbl
+LaTeX Font Info:    Try loading font information for OT1+pcr on input line 162.
+
 
 ("C:\Users\Anna\AppData\Local\Programs\MiKTeX 2.9\tex/latex/psnfss\ot1pcr.fd"
 File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
@@ -1153,124 +1159,132 @@ File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
 [27
 
 ]
-Underfull \hbox (badness 1377) in paragraph at lines 434--447
+Underfull \hbox (badness 1377) in paragraph at lines 546--559
 []\OT1/ptm/m/n/12 Office for Na-tional Statis-tics.  (2018a).  \OT1/ptm/m/it/12
  Do-mes-tic abuse in Eng-land and Wales: 
  []
 
-[28]) [29]
-Underfull \hbox (badness 10000) in paragraph at lines 742--743
+[28] [29]) [30]
+Underfull \hbox (badness 10000) in paragraph at lines 749--750
 []\OT1/ptm/m/it/12 Estimates are ex-po-nen-ti-ated co-ef-fi-cients from a se-ri
 es of neg-a-tive bi-no-mial re-gres-sions (ex-cept for mod-els 7 and 8, which a
 re Pois-son mod-els) with
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 742--743
+Underfull \hbox (badness 10000) in paragraph at lines 749--750
 \OT1/ptm/m/it/12 non-match day as bench-mark; con-trols in-clude day of week, m
 onth, year, Christ-mas, and New Year's Eve; 95% con-fi-dence in-ter-vals are in
  square
  []
 
 
-Overfull \hbox (26.12407pt too wide) in paragraph at lines 705--745
+Overfull \hbox (26.12407pt too wide) in paragraph at lines 712--752
  [] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 796--796
+Underfull \hbox (badness 10000) in paragraph at lines 803--803
 []\OT1/ptm/m/it/12 Estimates are log odds from a se-ries of lo-gis-tic re-gres-
 sions with year, month, day of week, Christ-mas, New Year's eve con-trols,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 796--796
+Underfull \hbox (badness 10000) in paragraph at lines 803--803
 \OT1/ptm/m/it/12 where ev-ery ob-ser-va-tion is a re-ported do-mes-tic abuse ca
 se; cases that hap-pened in 2010 were ex-cluded from mod-els 1 and 4; 95%
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 844--844
+Underfull \hbox (badness 10000) in paragraph at lines 851--851
 []\OT1/ptm/m/it/12 Estimates are ex-po-nen-ti-ated co-ef-fi-cients from a se-ri
 es of neg-a-tive bi-no-mial re-gres-sions (based on tests of overdis-per-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 844--844
+Underfull \hbox (badness 10000) in paragraph at lines 851--851
 \OT1/ptm/m/it/12 sion) with month, day of week, Christ-mas, New Year's eve con-
 trols; ev-ery ob-ser-va-tion is a re-ported do-mes-tic abuse case;
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 844--844
+Underfull \hbox (badness 10000) in paragraph at lines 851--851
 \OT1/ptm/m/it/12 95% con-fi-dence in-ter-vals are in square brack-ets, con-stru
 cted from stan-dard er-rors clus-tered by victim-offender pairs;
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 890--891
+Underfull \hbox (badness 10000) in paragraph at lines 897--898
 []\OT1/ptm/m/it/12 Estimates are log odds from a se-ries of lo-gis-tic re-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 890--891
+Underfull \hbox (badness 10000) in paragraph at lines 897--898
 \OT1/ptm/m/it/12 gres-sions with year, month, day of week, Christ-mas,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 890--891
+Underfull \hbox (badness 10000) in paragraph at lines 897--898
 \OT1/ptm/m/it/12 New Year's eve con-trols, where ev-ery ob-ser-va-tion is a
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 890--891
+Underfull \hbox (badness 10000) in paragraph at lines 897--898
 \OT1/ptm/m/it/12 re-ported and re-peated do-mes-tic abuse case; 95% con-fi-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 890--891
+Underfull \hbox (badness 10000) in paragraph at lines 897--898
 \OT1/ptm/m/it/12 dence in-ter-vals are in square brack-ets, con-structed from
  []
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 896.
-[30
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 903.
+[31
 
-] [31] [32] [33] [34]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 896.
- (football_DA.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 896.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 896.
-Package rerunfilecheck Info: File `football_DA.out' has not changed.
+] [32] [33] [34] [35]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 903.
+ (football_DAjesuschrist.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 903.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 903.
+Package rerunfilecheck Info: File `football_DAjesuschrist.out' has not changed.
+
 (rerunfilecheck)             Checksum: 6C701F8FB0D31E2F4952E9ECE7CFC461;922.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 896.
+
+
+LaTeX Warning: There were undefined references.
+
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 903.
  ) 
 Here is how much of TeX's memory you used:
- 10720 strings out of 493301
- 161963 string characters out of 3129579
- 288968 words of memory out of 3000000
- 13953 multiletter control sequences out of 15000+200000
+ 10760 strings out of 493301
+ 162751 string characters out of 3129579
+ 290349 words of memory out of 3000000
+ 13984 multiletter control sequences out of 15000+200000
  36880 words of font info for 81 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 37i,15n,61p,1696b,453s stack positions out of 5000i,500n,10000p,200000b,50000s
-{C:/Users/Anna/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/base/8r.enc}
-<C:/Users/Anna/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm
-/cmmi10.pfb><C:/Users/Anna/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public
-/amsfonts/cm/cmmi12.pfb><C:/Users/Anna/AppData/Local/Programs/MiKTeX 2.9/fonts/
-type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/Anna/AppData/Local/Programs/MiKTeX
- 2.9/fonts/type1/public/amsfonts/cm/cmmib10.pfb><C:/Users/Anna/AppData/Local/Pr
-ograms/MiKTeX 2.9/fonts/type1/public/amsfonts/cmextra/cmmib8.pfb><C:/Users/Anna
-/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:
-/Users/Anna/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cm
-sy10.pfb><C:/Users/Anna/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/am
-sfonts/cm/cmsy8.pfb><C:/Users/Anna/AppData/Local/Programs/MiKTeX 2.9/fonts/type
-1/urw/courier/ucrr8a.pfb><C:/Users/Anna/AppData/Local/Programs/MiKTeX 2.9/fonts
-/type1/urw/times/utmb8a.pfb><C:/Users/Anna/AppData/Local/Programs/MiKTeX 2.9/fo
-nts/type1/urw/times/utmbi8a.pfb><C:/Users/Anna/AppData/Local/Programs/MiKTeX 2.
-9/fonts/type1/urw/times/utmr8a.pfb><C:/Users/Anna/AppData/Local/Programs/MiKTeX
- 2.9/fonts/type1/urw/times/utmri8a.pfb>
-Output written on football_DA.pdf (36 pages, 262920 bytes).
+ 37i,15n,61p,1707b,462s stack positions out of 5000i,500n,10000p,200000b,50000s
+pdfTeX warning (dest): name{cite.Ostrowsky2014a} has been referenced but does
+ not exist, replaced by a fixed one
+
+{C:/Users/Anna/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/base/8r.enc}<C
+:/Users/Anna/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/c
+mmi10.pfb><C:/Users/Anna/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/a
+msfonts/cm/cmmi12.pfb><C:/Users/Anna/AppData/Local/Programs/MiKTeX 2.9/fonts/ty
+pe1/public/amsfonts/cm/cmmi8.pfb><C:/Users/Anna/AppData/Local/Programs/MiKTeX 2
+.9/fonts/type1/public/amsfonts/cm/cmmib10.pfb><C:/Users/Anna/AppData/Local/Prog
+rams/MiKTeX 2.9/fonts/type1/public/amsfonts/cmextra/cmmib8.pfb><C:/Users/Anna/A
+ppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/U
+sers/Anna/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy
+10.pfb><C:/Users/Anna/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsf
+onts/cm/cmsy8.pfb><C:/Users/Anna/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/
+urw/courier/ucrr8a.pfb><C:/Users/Anna/AppData/Local/Programs/MiKTeX 2.9/fonts/t
+ype1/urw/times/utmb8a.pfb><C:/Users/Anna/AppData/Local/Programs/MiKTeX 2.9/font
+s/type1/urw/times/utmbi8a.pfb><C:/Users/Anna/AppData/Local/Programs/MiKTeX 2.9/
+fonts/type1/urw/times/utmr8a.pfb><C:/Users/Anna/AppData/Local/Programs/MiKTeX 2
+.9/fonts/type1/urw/times/utmri8a.pfb>
+Output written on football_DAjesuschrist.pdf (37 pages, 271298 bytes).
 PDF statistics:
- 470 PDF objects out of 1000 (max. 8388607)
- 98 named destinations out of 1000 (max. 500000)
+ 507 PDF objects out of 1000 (max. 8388607)
+ 107 named destinations out of 1000 (max. 500000)
  115 words of extra memory for PDF output out of 10000 (max. 10000000)
 

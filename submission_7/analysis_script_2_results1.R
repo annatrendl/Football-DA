@@ -72,6 +72,9 @@ population[, pop := as.numeric(popest(year)), by = 1:nrow(population)]
 
 population <- merge(population, dcast(all.days_original[, sum(N), .(year, Alcohol)], year ~ Alcohol), by = "year")
 
+
+population <- merge(population, all.days_original[Alcohol == "Yes", list(no.day = .N), .(year)], all.x = T)
+
 population[, Alc_Rate := ((Yes/no.day)/pop)*100000]
 population[, Noalc_Rate := ((No/no.day)/pop)*100000]
 
