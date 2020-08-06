@@ -329,6 +329,54 @@ Notes:
 
 
 
+\begin{table*}[!htbp] \centering 
+  \begin{threeparttable}
+  \caption{The effect of England football days on domestic abuse by alcohol-involvement, 2010-2019} 
+  \label{coremodel} 
+\begin{tabular}{@{\extracolsep{5pt}}lcc} 
+\\[-1.8ex]\hline 
+\hline \\[-1.8ex] 
+ & \multicolumn{2}{c}{\textit{Dependent variable:}} \\ 
+\cline{2-3} 
+\\[-1.8ex] & \multicolumn{2}{c}{Number of domestic abuse cases} \\ 
+ & Non-alcohol-related & Alcohol-related\\ 
+\\[-1.8ex] & (1) & (2)\\ 
+\hline \\[-1.8ex] 
+ Tournament on & 1.024 & 0.984 \\ 
+  & [0.986, 1.064] & [0.935, 1.037] \\ 
+  & (0.218) & (0.552) \\ 
+  & & \\ 
+ England win & 0.950 & 1.469 \\ 
+  & [0.838, 1.077] & [1.259, 1.714] \\ 
+  & (0.423) & (0.00001) \\ 
+  & & \\ 
+ England draw & 1.045 & 1.145 \\ 
+  & [0.905, 1.208] & [0.955, 1.375] \\ 
+  & (0.551) & (0.146) \\ 
+  & & \\ 
+ England lost & 1.033 & 1.129 \\ 
+  & [0.915, 1.167] & [0.963, 1.324] \\ 
+  & (0.603) & (0.136) \\ 
+  & & \\ 
+ After England & 1.056 & 1.181 \\ 
+  & [0.979, 1.140] & [1.069, 1.305] \\ 
+  & (0.159) & (0.002) \\ 
+  & & \\ 
+\hline \\[-1.8ex] 
+Observations & 3,570 & 3,570 \\ 
+%Log Likelihood & $-$14,692.790 & $-$12,071.110 \\ 
+%$\theta$ & 51.259$^{***}$  (1.967) & 39.423$^{***}$  (2.112) \\ 
+%Akaike Inf. Crit. & 29,453.580 & 24,210.210 \\ 
+\hline 
+\hline \\[-1.8ex] 
+%\textit{Note:}  & \multicolumn{2}{r}{$^{*}$p$<$0.05; $^{**}$p$<$0.01; $^{***}$p$<$0.001} \\ 
+\end{tabular}  
+\begin{tablenotes}
+      \item[a] \textit{Estimates are exponentiated coefficients from negative binomial regressions with non-match day as benchmark; controls include day of week, month, year, Christmas, and New Year's Eve; 95\% confidence intervals are in square brackets}
+       \item[b] \textit{$^{*}$p$<$0.05; $^{**}$p$<$0.01; $^{***}$p$<$0.001}
+    \end{tablenotes}
+\end{threeparttable} 
+\end{table*}
 
 
 
@@ -386,6 +434,62 @@ Our rich crime dataset further allows us to explore whether England games have s
   & & & & & & \\ 
  After England & 1.124 & 0.978 & 1.085 & 1.244 & 1.047 & 1.092 \\ 
   & [0.953, 1.323] & [0.925, 1.035] & [0.988, 1.193] & [0.872, 1.742] & [0.884, 1.237] & [0.948, 1.258] \\
+
+ % & & & & & & \\ 
+\hline \\[-1.8ex] 
+Observations & 3,570 & 3,570 & 3,570 & 3,570 & 3,570 & 3,570 \\ 
+%Log Likelihood & $-$9,086.944 & $-$15,273.310 & $-$14,697.050 & $-$5,347.670 & $-$8,646.912 & $-$11,171.590 \\ 
+%$\theta$ & 23.936$^{***}$  (2.255) & 110.360$^{***}$  (4.838) & 29.145$^{***}$  (0.972) & 9.774$^{***}$  (1.829) & 30.885$^{***}$  (3.014) & 18.765$^{***}$  (0.926) \\ 
+%Akaike Inf. Crit. & 18,241.890 & 30,614.620 & 29,462.100 & 10,763.340 & 17,361.830 & 22,411.180 \\ 
+\hline 
+\hline \\[-1.8ex] 
+\textit{Note:}  & \multicolumn{6}{r}{$^{*}$p$<$0.1; $^{**}$p$<$0.05; $^{***}$p$<$0.01} \\ 
+\end{tabular} 
+\begin{tablenotes}
+      \item[a] \textit{$^{*}$p$<$0.05; $^{**}$p$<$0.01; $^{***}$p$<$0.001}
+      \item[b] \textit{Estimates are exponentiated coefficients from a series of negative binomial regressions with non-match day as benchmark; controls include day of week, month, year, Christmas, and New Year's Eve; 95\% confidence intervals are in square brackets}
+    \end{tablenotes}
+\end{threeparttable} }
+\end{sidewaystable}
+
+
+
+\begin{sidewaystable}[htp]
+\centering
+ \caption{The effect of England football days on hate-related, property-related, and other violent offences by alcohol-involvement}
+   \label{othercrimes}
+    \scalebox{0.9}{
+ \begin{threeparttable}
+\begin{tabular}{@{\extracolsep{1pt}}lcccccc} 
+\\[-1.8ex]\hline 
+\hline \\[-1.8ex] 
+ & \multicolumn{6}{c}{\textit{Dependent variable:}} \\ 
+   & \multicolumn{6}{c}{Number of cases} \\ 
+  & \multicolumn{3}{c}{Non-alcohol related} &\multicolumn{3}{c}{Alcohol-related} \\
+\cline{2-7} 
+\\[-1.8ex] & Hate- & Property- & Other & Hate- & Property & Other \\ & related & related & violent & related & related & violent \\ 
+\\[-1.8ex] & (1) & (2) & (3) & (4) & (5) & (6)\\ 
+\hline \\[-1.8ex] 
+ Tournament on & 1.120 & 1.014 & 1.035 & 1.099 & 1.099 & 1.060 \\ 
+  & [1.030, 1.216] & [0.986, 1.043] & [0.986, 1.085] & [0.914, 1.316] & [1.011, 1.194] & [0.987, 1.139] \\ 
+  & (0.008) & (0.323) & (0.165) & (0.309) & (0.027) & (0.110) \\ 
+  & & & & & & \\ 
+ England win & 1.002 & 0.961 & 1.085 & 1.556 & 1.291 & 1.473 \\ 
+  & [0.759, 1.311] & [0.879, 1.052] & [0.935, 1.263] & [0.902, 2.558] & [0.998, 1.662] & [1.192, 1.826] \\ 
+  & (0.987) & (0.391) & (0.288) & (0.092) & (0.049) & (0.0004) \\ 
+  & & & & & & \\ 
+ England draw & 0.993 & 0.953 & 0.970 & 0.848 & 0.934 & 1.251 \\ 
+  & [0.709, 1.369] & [0.859, 1.059] & [0.810, 1.167] & [0.400, 1.624] & [0.701, 1.237] & [0.974, 1.613] \\ 
+  & (0.967) & (0.373) & (0.747) & (0.642) & (0.636) & (0.082) \\ 
+  & & & & & & \\ 
+ England lost & 0.984 & 0.974 & 1.066 & 0.760 & 1.008 & 0.988 \\ 
+  & [0.744, 1.288] & [0.890, 1.066] & [0.917, 1.243] & [0.363, 1.427] & [0.744, 1.353] & [0.785, 1.247] \\ 
+  & (0.908) & (0.562) & (0.411) & (0.426) & (0.956) & (0.922) \\ 
+  & & & & & & \\ 
+ After England & 1.124 & 0.978 & 1.085 & 1.244 & 1.047 & 1.092 \\ 
+  & [0.953, 1.323] & [0.925, 1.035] & [0.988, 1.193] & [0.872, 1.742] & [0.884, 1.237] & [0.948, 1.258] \\ 
+  & (0.162) & (0.446) & (0.091) & (0.216) & (0.594) & (0.222) \\ 
+
 
  % & & & & & & \\ 
 \hline \\[-1.8ex] 
@@ -466,6 +570,62 @@ Notes:
 \end{threeparttable} 
 \end{table*}
 
+
+
+\begin{table*}[!htbp] \centering 
+  \begin{threeparttable}
+  \caption{The effect of England rugby days (Six Nations) on domestic abuse by alcohol-involvement} 
+  \label{rugby} 
+\begin{tabular}{@{\extracolsep{5pt}}lcc} 
+\\[-1.8ex]\hline 
+\hline \\[-1.8ex] 
+ & \multicolumn{2}{c}{\textit{Dependent variable:}} \\ 
+\cline{2-3} 
+\\[-1.8ex] & \multicolumn{2}{c}{Number of cases} \\ 
+ & Non-alcohol related & Alcohol-related\\ 
+ & domestic abuse & domestic abuse\\
+\\[-1.8ex] & (1) & (2)\\ 
+\hline \\[-1.8ex] 
+Tournament on & 0.980 & 0.969 \\ 
+  & [0.947, 1.014] & [0.923, 1.017] \\ 
+  & (0.249) & (0.202) \\ 
+  & & \\ 
+ England win & 0.967 & 1.058 \\ 
+  & [0.906, 1.033] & [0.973, 1.151] \\ 
+  & (0.319) & (0.185) \\ 
+  & & \\ 
+ England draw & 1.030 & 0.966 \\ 
+  & [0.810, 1.318] & [0.716, 1.308] \\ 
+  & (0.811) & (0.822) \\ 
+  & & \\ 
+ England lost & 1.067 & 0.989 \\ 
+  & [0.963, 1.184] & [0.867, 1.129] \\ 
+  & (0.215) & (0.871) \\ 
+  & & \\ 
+ After England & 0.983 & 1.004 \\ 
+  & [0.929, 1.041] & [0.931, 1.083] \\ 
+  & (0.565) & (0.917) \\ 
+
+
+ % & & \\ 
+\hline \\[-1.8ex] 
+Observations & 3,570 & 3,570 \\ 
+%Log Likelihood & $-$14,692.860 & $-$12,087.270 \\ 
+%$\theta$ & 51.260$^{***}$  (1.967) & 38.539$^{***}$  (2.040) \\ 
+%Akaike Inf. Crit. & 29,453.730 & 24,242.540 \\ 
+\hline 
+\hline \\[-1.8ex] 
+Notes:
+%\textit{Note:}  & \multicolumn{2}{r}{$^{*}$p$<$0.1; $^{**}$p$<$0.05; $^{***}$p$<$0.01} \\ 
+\end{tabular} 
+\begin{tablenotes}
+      \item[a] \textit{$^{*}$p$<$0.05; $^{**}$p$<$0.01; $^{***}$p$<$0.001}
+      \item[b] \textit{Estimates are exponentiated coefficients from negative binomial regressions with non-match day as benchmark; controls include day of week, month, year, Christmas, and New Year's Eve; 95\% confidence intervals are in square brackets}
+    \end{tablenotes}
+\end{threeparttable} 
+\end{table*}
+
+
 \FloatBarrier
 
 
@@ -505,6 +665,59 @@ A previous study by \citeA{Kirby2014} found that an England loss results in the 
   & [1.004, 1.228] & [1.014, 1.221] \\ 
 %  Constant & 41.905 & 41.561 \\ 
 %  & (37.378, 46.946) & (37.349, 46.200) \\ 
+ \hline \\[-1.8ex] 
+Observations & 92 & 92 \\ 
+BIC & 747.763 & 739.662 \\ 
+AIC & 714.980 & 704.356 \\ 
+\hline 
+\hline \\[-1.8ex] 
+\end{tabular} 
+\begin{tablenotes}
+      \item[a] \textit{$^{*}$p$<$0.05; $^{**}$p$<$0.01; $^{***}$p$<$0.001}
+      \item[b] \textit{Estimates are exponentiated coefficients from negative binomial regressions (based on tests of overdispersion) with year and day of week controls and no England match days during the tournament as benchmark; data is only available during the tournament period; 95\% confidence intervals are in square brackets}
+    \end{tablenotes}
+\end{threeparttable} }
+\end{table*}
+
+
+\begin{table*}[!htbp]
+\centering
+ \caption{Re-analysis of Kirby et al. (2014) with wins and draws as separate variables}
+   \label{kirbyrep1}
+   \scalebox{0.85}{
+ \begin{threeparttable}
+\begin{tabular}{@{\extracolsep{5pt}}lcc} 
+\\[-1.8ex]\hline 
+\hline \\[-1.8ex] 
+ & \multicolumn{2}{c}{\textit{Dependent variable:}} \\ 
+\cline{2-3} 
+\\[-1.8ex] & \multicolumn{2}{c}{Number of reported Intimate Partner Violence cases per day} \\ 
+\\ 
+  & Original Model & Win/Draw Separate \\ 
+\\[-1.8ex] & (1) & (2)\\ 
+\hline \\[-1.8ex] 
+England windraw & 1.256 &  \\ 
+  & [1.128, 1.398] &  \\ 
+  & (0.00004) &  \\ 
+  England lost & 1.382 &  \\ 
+  & [1.151, 1.662] &  \\ 
+  & (0.001) &  \\ 
+  After England & 1.111 &  \\ 
+  & [1.004, 1.228] &  \\ 
+  & (0.042) &  \\ 
+  England win &  & 1.452 \\ 
+  &  & [1.282, 1.644] \\ 
+  &  & (0.000) \\ 
+  England draw &  & 1.032 \\ 
+  &  & [0.893, 1.191] \\ 
+  &  & (0.671) \\ 
+  England lost &  & 1.388 \\ 
+  &  & [1.175, 1.639] \\ 
+  &  & (0.0002) \\ 
+  After England &  & 1.113 \\ 
+  &  & [1.014, 1.221] \\ 
+  &  & (0.024) \\ 
+
  \hline \\[-1.8ex] 
 Observations & 92 & 92 \\ 
 BIC & 747.763 & 739.662 \\ 
@@ -580,6 +793,60 @@ Observations & 30 & 32 & 30 & 365 & 365 & 366 & 366 & 365 & 365 & 366 & 366 & 36
 
 
 
+\begin{sidewaystable}[!htbp]
+\centering
+ \caption{The effect of England football days on domestic abuse by alcohol-involvement and tournament, Lancashire and West Midlands data}
+   \label{kirbyrep2}
+    \scalebox{0.65}{
+ \begin{threeparttable}
+\begin{tabular}{@{\extracolsep{1pt}}lccccccccccccc} 
+\\[-1.8ex]\hline 
+\hline \\[-1.8ex] 
+ & \multicolumn{13}{c}{\textit{Dependent variable:}} \\ 
+\cline{2-14} 
+& \multicolumn{13}{c}{Number of domestic abuse cases} \\ 
+\\[-1.8ex] & \multicolumn{3}{c}{Lancashire} & \multicolumn{10}{c}{West Midlands} \\ 
+\\[-1.8ex] & \multicolumn{1}{c}{All\textsuperscript{c}} & \multicolumn{1}{c}{All} & \multicolumn{1}{c}{All} & \multicolumn{1}{c}{NA\textsuperscript{c}} & \multicolumn{1}{c}{A\textsuperscript{c}} & \multicolumn{1}{c}{NA} & \multicolumn{1}{c}{A} & \multicolumn{1}{c}{NA} & \multicolumn{1}{c}{A} & \multicolumn{1}{c}{NA} & \multicolumn{1}{c}{A} & \multicolumn{1}{c}{NA} & \multicolumn{1}{c}{A} \\ 
+% & \textit{binomial} & \multicolumn{2}{c}{\textit{}} & \multicolumn{10}{c}{\textit{binomial}} \\ 
+ \\[-1.8ex] & 2002 & 2006 & 2010 & 2010 & 2010 & 2012 & 2012 & 2014 & 2014 & 2016 & 2016 & 2018 & 2018  \\ 
+\\[-1.8ex] & (1) & (2) & (3) & (4) & (5) & (6) & (7) & (8) & (9) & (10) & (11) & (12) & (13)\\ 
+\hline \\[-1.8ex] 
+Tournament on &  &  &  & 1.047 & 1.038 & 0.881 & 0.936 & 0.976 & 0.999 & 1.041 & 0.855 & 1.081 & 1.014 \\ 
+  &  &  &  & [0.974, 1.127] & [0.936, 1.151] & [0.740, 1.049] & [0.780, 1.125] & [0.901, 1.057] & [0.890, 1.123] & [0.962, 1.128] & [0.757, 0.967] & [0.979, 1.194] & [0.889, 1.155] \\ 
+  &  &  &  & (0.216) & (0.481) & (0.176) & (0.491) & (0.547) & (0.992) & (0.321) & (0.013) & (0.126) & (0.839) \\ 
+  England win & 1.596 & 1.297 & 1.916 & 1.171 & 1.845 & 0.673 & 1.106 &  &  & 1.062 & 1.302 & 1.006 & 1.529 \\ 
+  & [1.186, 2.153] & [1.115, 1.505] & [1.528, 2.389] & [0.897, 1.514] & [1.310, 2.595] & [0.456, 0.982] & [0.770, 1.576] &  &  & [0.796, 1.420] & [0.834, 1.995] & [0.844, 1.202] & [1.249, 1.869] \\ 
+  & (0.003) & (0.001) & (0.000) & (0.238) & (0.0005) & (0.045) & (0.582) &  &  & (0.685) & (0.235) & (0.951) & (0.00004) \\ 
+  England draw & 1.100 & 1.098 & 0.863 & 0.905 & 1.248 & 1.204 & 1.116 & 0.984 & 0.954 & 1.069 & 1.128 &  &  \\ 
+  & [0.820, 1.477] & [0.802, 1.481] & [0.713, 1.037] & [0.736, 1.107] & [0.966, 1.611] & [0.773, 1.877] & [0.676, 1.805] & [0.723, 1.343] & [0.576, 1.527] & [0.869, 1.318] & [0.835, 1.517] &  &  \\ 
+  & (0.525) & (0.550) & (0.121) & (0.337) & (0.090) & (0.414) & (0.661) & (0.918) & (0.851) & (0.528) & (0.432) &  &  \\ 
+  England lost & 1.200 & 1.373 & 1.568 & 1.082 & 1.435 & 0.812 & 0.961 & 0.934 & 1.079 & 0.772 & 0.620 & 1.101 & 1.252 \\ 
+  & [0.759, 1.894] & [1.086, 1.721] & [1.270, 1.928] & [0.838, 1.389] & [1.036, 1.992] & [0.508, 1.293] & [0.614, 1.491] & [0.747, 1.170] & [0.792, 1.459] & [0.568, 1.048] & [0.343, 1.058] & [0.904, 1.348] & [0.975, 1.603] \\ 
+  & (0.434) & (0.007) & (0.00003) & (0.540) & (0.031) & (0.384) & (0.861) & (0.550) & (0.626) & (0.097) & (0.095) & (0.343) & (0.075) \\ 
+  After England & 1.253 & 1.122 & 1.024 & 1.049 & 1.132 & 0.814 & 1.108 & 1.037 & 1.080 & 1.013 & 0.960 & 1.147 & 1.390 \\ 
+  & [1.029, 1.526] & [0.977, 1.286] & [0.900, 1.162] & [0.905, 1.194] & [0.933, 1.331] & [0.535, 1.092] & [0.834, 1.381] & [0.863, 1.249] & [0.832, 1.394] & [0.853, 1.172] & [0.715, 1.206] & [1.001, 1.317] & [1.173, 1.646] \\ 
+  & (0.026) & (0.100) & (0.718) & (0.515) & (0.223) & (0.147) & (0.464) & (0.697) & (0.561) & (0.878) & (0.746) & (0.051) & (0.0002) \\
+
+
+ \hline \\[-1.8ex] 
+Observations & 30 & 32 & 30 & 365 & 365 & 366 & 366 & 365 & 365 & 366 & 366 & 365 & 365 \\ 
+%Log Likelihood & $-$112.494 & $-$101.847 & $-$107.268 & $-$1,344.208 & $-$1,305.710 & $-$1,294.898 & $-$1,189.726 & $-$1,494.583 & $-$1,175.810 & $-$1,503.841 & $-$1,197.151 & $-$1,594.487 & $-$1,200.743 \\ 
+%$\theta$ & 57.581$^{*}$  (31.978) &  &  & 215.538$^{***}$  (65.249) & 76.028$^{***}$  (16.053) & 43.908$^{***}$  (6.783) & 55.674$^{***}$  (12.862) & 75.808$^{***}$  (9.733) & 72.582$^{***}$  (18.248) & 90.546$^{***}$  (12.118) & 69.058$^{***}$  (16.506) & 49.787$^{***}$  (5.114) & 64.954$^{***}$  (15.073) \\ 
+%Akaike Inf. Crit. & 246.989 & 225.694 & 236.536 & 2,738.415 & 2,661.420 & 2,639.797 & 2,429.452 & 3,037.165 & 2,399.621 & 3,057.682 & 2,444.301 & 3,236.974 & 2,449.485 \\ 
+\hline 
+\hline \\[-1.8ex] 
+%\textit{Note:}  & \multicolumn{13}{r}{$^{*}$p$<$0.1; $^{**}$p$<$0.05; $^{***}$p$<$0.01} \\ 
+\end{tabular} 
+\begin{tablenotes}
+      \item[a] \textit{$^{*}$p$<$0.05; $^{**}$p$<$0.01; $^{***}$p$<$0.001}
+      \item[b] \textit{Estimates are exponentiated coefficients from a series of negative binomial regressions, except for Model (2) and (3) which are from Poisson regressions (based on tests of overdispersion). Each regression is restricted to a specific tournament year. Regressions 1-3 have day of week control with non England tournament days as benchmark, regressions 4-13 have month, day of week, Christmas, New Year's eve controls, with non-match days as benchmark; 95\% confidence intervals are in square brackets}
+      \item[c] \textit{All = All cases, NA = Non-alcohol related cases, A = Alcohol-related cases}
+    \end{tablenotes}
+\end{threeparttable} }
+\end{sidewaystable}
+
+
+
 
 \begin{sidewaystable}[!htbp]
 \centering
@@ -608,6 +875,59 @@ Tournament on & 1.010 & 0.970 & 1.040$^{*}$ & 0.990 & 1.025 & 0.972 & 1.023 & 1.
   After England & 1.046 & 1.203$^{**}$ & 1.094$^{*}$ & 1.185$^{**}$ & 1.051 & 1.189$^{**}$ & 1.059 & 1.225$^{***}$ & 1.012 & 1.093 \\ 
   & [0.961, 1.138] & [1.077, 1.343] & [1.013, 1.182] & [1.064, 1.319] & [0.968, 1.142] & [1.069, 1.322] & [0.974, 1.154] & [1.098, 1.366] & [0.921, 1.113] & [0.968, 1.235] \\ 
  \hline \\[-1.8ex] 
+Observations & 3,205 & 3,205 & 3,204 & 3,204 & 3,205 & 3,205 & 3,204 & 3,204 & 3,205 & 3,205 \\ 
+%Log Likelihood & $-$15,738.220 & $-$11,006.630 & $-$15,087.610 & $-$11,568.310 & $-$15,673.620 & $-$11,605.220 & $-$15,608.290 & $-$11,602.150 & $-$15,499.280 & $-$11,605.610 \\ 
+%$\theta$ & 7.385$^{***}$  (0.199) & 28.051$^{***}$  (1.404) & %13.075$^{***}$  (0.373) & 17.870$^{***}$  (0.723) & 7.139$^{***}$  (0.191) & 16.977$^{***}$  (0.674) & 7.284$^{***}$  (0.196) & 16.694$^{***}$  (0.660) & 7.692$^{***}$  (0.208) & 16.664$^{***}$  (0.658) \\ 
+%Akaike Inf. Crit. & 31,526.440 & 22,063.270 & 30,225.220 & 23,186.630 & 31,397.250 & 23,260.450 & 31,266.580 & 23,254.290 & 31,048.560 & 23,261.230 \\ 
+\hline 
+\hline \\[-1.8ex] 
+%\textit{Note:}  & \multicolumn{10}{r}{$^{*}$p$<$0.1; $^{**}$p$<$0.05; $^{***}$p$<$0.01} \\ 
+\end{tabular} 
+%\end{table} 
+\begin{tablenotes}
+      \item[a] \textit{$^{*}$p$<$0.05; $^{**}$p$<$0.01; $^{***}$p$<$0.001}
+      \item[b] \textit{Estimates are exponentiated coefficients from a series of negative binomial regressions (based on tests of overdispersion)  with year, month, day of week, Christmas, New Year's eve controls; 95\% confidence intervals are in square brackets}
+      \item[c] \textit{NA = Non-alcohol related cases, A = Alcohol-related cases}
+    \end{tablenotes}
+\end{threeparttable}   }
+\end{sidewaystable}
+
+
+
+
+\begin{sidewaystable}[!htbp]
+\centering
+ \caption{Robustness of the result: sensitivity to the exclusion of specific years}
+  \label{robustness}
+ \scalebox{0.8}{
+  \begin{threeparttable}
+\begin{tabular}{@{\extracolsep{5pt}}lcccccccccc} 
+\\[-1.8ex]\hline 
+\hline \\[-1.8ex] 
+ & \multicolumn{10}{c}{\textit{Dependent variable:}} \\ 
+\cline{2-11} 
+\\[-1.8ex] & \multicolumn{10}{c}{Number of domestic abuse cases} \\ 
+\\[-1.8ex] & \multicolumn{1}{c}{NA\textsuperscript{c}} & \multicolumn{1}{c}{A\textsuperscript{c}} &  \multicolumn{1}{c}{NA} & \multicolumn{1}{c}{A} &  \multicolumn{1}{c}{NA} & \multicolumn{1}{c}{A} &  \multicolumn{1}{c}{NA} & \multicolumn{1}{c}{A} &  \multicolumn{1}{c}{NA} & \multicolumn{1}{c}{A}  \\
+ \\[-1.8ex] & 2010 & 2010 & 2012 & 2012 & 2014 & 2014 & 2016 & 2016 & 2018 & 2018  \\ 
+\\[-1.8ex] & (1) & (2) & (3) & (4) & (5) & (6) & (7) & (8) & (9) & (10)\\ 
+\hline \\[-1.8ex] 
+Tournament on & 1.035 & 0.959 & 1.063 & 1.084 & 0.976 & 1.085 & 0.960 & 1.105 & 0.948 & 1.069 \\ 
+  & [0.946, 1.133] & [0.901, 1.021] & [0.994, 1.136] & [1.014, 1.160] & [0.890, 1.073] & [1.010, 1.166] & [0.877, 1.052] & [1.029, 1.186] & [0.870, 1.034] & [0.997, 1.146] \\ 
+  & (0.461) & (0.193) & (0.076) & (0.018) & (0.619) & (0.027) & (0.382) & (0.007) & (0.227) & (0.061) \\ 
+  England win & 0.957 & 1.385 & 1.143 & 1.674 & 0.979 & 1.528 & 0.935 & 1.558 & 0.698 & 1.583 \\ 
+  & [0.727, 1.289] & [1.154, 1.666] & [0.909, 1.457] & [1.344, 2.100] & [0.753, 1.299] & [1.254, 1.873] & [0.709, 1.262] & [1.262, 1.938] & [0.486, 1.040] & [1.192, 2.127] \\ 
+  & (0.766) & (0.001) & (0.267) & (0.00001) & (0.879) & (0.00004) & (0.649) & (0.00005) & (0.063) & (0.002) \\ 
+  England draw & 1.037 & 1.126 & 0.990 & 1.347 & 0.921 & 1.383 & 0.793 & 1.391 & 0.950 & 1.304 \\ 
+  & [0.724, 1.545] & [0.873, 1.456] & [0.769, 1.297] & [1.056, 1.734] & [0.662, 1.324] & [1.079, 1.788] & [0.550, 1.190] & [1.051, 1.862] & [0.708, 1.306] & [1.034, 1.656] \\ 
+  & (0.850) & (0.365) & (0.942) & (0.019) & (0.642) & (0.013) & (0.238) & (0.025) & (0.742) & (0.028) \\ 
+  England lost & 1.102 & 1.090 & 1.140 & 1.218 & 1.096 & 1.213 & 1.128 & 1.263 & 0.902 & 1.134 \\ 
+  & [0.837, 1.482] & [0.901, 1.322] & [0.922, 1.428] & [0.986, 1.512] & [0.813, 1.520] & [0.964, 1.538] & [0.856, 1.521] & [1.021, 1.574] & [0.655, 1.280] & [0.880, 1.475] \\ 
+  & (0.507) & (0.376) & (0.240) & (0.072) & (0.565) & (0.106) & (0.410) & (0.035) & (0.547) & (0.341) \\ 
+  After England & 1.095 & 1.198 & 1.169 & 1.287 & 1.054 & 1.283 & 1.043 & 1.316 & 0.891 & 1.205 \\ 
+  & [0.914, 1.276] & [1.077, 1.319] & [1.030, 1.307] & [1.151, 1.422] & [0.874, 1.234] & [1.147, 1.418] & [0.860, 1.225] & [1.177, 1.455] & [0.693, 1.088] & [1.050, 1.360] \\ 
+  & (0.326) & (0.004) & (0.028) & (0.0003) & (0.567) & (0.0004) & (0.654) & (0.0002) & (0.252) & (0.019) \\ 
+ \hline \\[-1.8ex] 
+
 Observations & 3,205 & 3,205 & 3,204 & 3,204 & 3,205 & 3,205 & 3,204 & 3,204 & 3,205 & 3,205 \\ 
 %Log Likelihood & $-$15,738.220 & $-$11,006.630 & $-$15,087.610 & $-$11,568.310 & $-$15,673.620 & $-$11,605.220 & $-$15,608.290 & $-$11,602.150 & $-$15,499.280 & $-$11,605.610 \\ 
 %$\theta$ & 7.385$^{***}$  (0.199) & 28.051$^{***}$  (1.404) & %13.075$^{***}$  (0.373) & 17.870$^{***}$  (0.723) & 7.139$^{***}$  (0.191) & 16.977$^{***}$  (0.674) & 7.284$^{***}$  (0.196) & 16.694$^{***}$  (0.660) & 7.692$^{***}$  (0.208) & 16.664$^{***}$  (0.658) \\ 
@@ -734,6 +1054,59 @@ For victims, domestic abuse does not occur once every four years following a foo
  After England & 1.044 & 1.058 & 1.005 & 0.969 & 1.173$^{**}$ & 1.282 & 1.117 & 1.011 \\ 
   & [0.960, 1.135] & [0.897, 1.242] & [0.828, 1.210] & [0.783, 1.186] & [1.046, 1.315] & [0.999, 1.626] & [0.817, 1.489] & [0.666, 1.470] \\
 
+  & & & & & & & & \\ 
+\hline \\[-1.8ex] 
+Observations & 3,570 & 3,570 & 3,570 & 3,570 & 3,570 & 3,570 & 3,570 & 3,570 \\ 
+%Log Likelihood & $-$13,745.870 & $-$8,771.909 & $-$7,712.245 & $-$7,252.401 & $-$10,810.720 & $-$6,895.397 & $-$5,807.926 & $-$4,622.806 \\ 
+%$\theta$ & 47.186$^{***}$  (2.010) & 40.159$^{***}$  (5.651) & 72.089$^{**}$  (24.259) & 92.343$^{*}$  (44.780) & 40.498$^{***}$  (2.984) & 28.337$^{***}$  (6.809) &  &  \\ 
+%Akaike Inf. Crit. & 27,559.750 & 17,611.820 & 15,492.490 & 14,572.800 & 21,689.440 & 13,858.790 & 11,683.850 & 9,313.612 \\ 
+\hline 
+\hline \\[-1.8ex] 
+\textit{Note:}  & \multicolumn{8}{r}{$^{*}$p$<$0.05; $^{**}$p$<$0.01; $^{***}$p$<$0.001} \\ 
+\end{tabular} 
+\begin{tablenotes}
+      \item[a] \textit{$^{*}$p$<$0.05; $^{**}$p$<$0.01; $^{***}$p$<$0.001}
+      \item[b] \textit{Estimates are exponentiated coefficients from a series of negative binomial regressions (except for models 7 and 8, which are Poisson models) with non-match day as benchmark; controls include day of week, month, year, Christmas, and New Year's Eve; 95\% confidence intervals are in square brackets}
+    \end{tablenotes}
+\end{threeparttable} 
+\end{sidewaystable}
+
+
+
+\begin{sidewaystable}[htp]
+\centering
+ \caption{The effect of England football days on domestic abuse by victim-offender gender group and alcohol-involvement, 2010-2019}
+   \label{gender}
+ \begin{threeparttable}
+\begin{tabular}{@{\extracolsep{1pt}}lcccccccc} 
+\\[-1.8ex]\hline 
+\hline \\[-1.8ex] 
+ & \multicolumn{8}{c}{\textit{Dependent variable:}} \\ 
+   & \multicolumn{8}{c}{Number of cases} \\ 
+  & \multicolumn{4}{c}{Non-alcohol related} &\multicolumn{4}{c}{Alcohol-related} \\ 
+\cline{2-9} 
+\\[-1.8ex] & MF & FM & MM & FF & MF & FM & MM & FF \\ 
+\\[-1.8ex] & (1) & (2) & (3) & (4) & (5) & (6) & (7) & (8)\\ 
+\hline \\[-1.8ex] 
+ Tournament on & 1.027 & 1.042 & 1.005 & 0.919 & 0.982 & 1.093 & 0.981 & 0.858 \\ 
+  & [0.984, 1.071] & [0.958, 1.132] & [0.910, 1.107] & [0.824, 1.024] & [0.925, 1.043] & [0.959, 1.244] & [0.835, 1.146] & [0.692, 1.056] \\ 
+  & (0.221) & (0.340) & (0.926) & (0.129) & (0.561) & (0.179) & (0.808) & (0.157) \\ 
+  & & & & & & & & \\ 
+ England win & 0.929 & 1.043 & 0.949 & 0.787 & 1.415 & 1.382 & 0.883 & 1.084 \\ 
+  & [0.808, 1.068] & [0.798, 1.346] & [0.686, 1.279] & [0.538, 1.109] & [1.183, 1.689] & [0.923, 2.001] & [0.483, 1.466] & [0.539, 1.926] \\ 
+  & (0.302) & (0.755) & (0.740) & (0.194) & (0.0002) & (0.102) & (0.659) & (0.802) \\ 
+  & & & & & & & & \\ 
+ England draw & 0.963 & 1.177 & 1.210 & 1.024 & 1.263 & 1.162 & 0.789 & 0.996 \\ 
+  & [0.819, 1.133] & [0.847, 1.603] & [0.836, 1.696] & [0.651, 1.529] & [1.031, 1.544] & [0.710, 1.808] & [0.392, 1.399] & [0.450, 1.886] \\ 
+  & (0.651) & (0.317) & (0.291) & (0.913) & (0.024) & (0.528) & (0.460) & (0.992) \\ 
+  & & & & & & & & \\ 
+ England lost & 1.041 & 0.987 & 0.916 & 0.903 & 1.037 & 1.441 & 1.329 & 1.428 \\ 
+  & [0.912, 1.191] & [0.755, 1.274] & [0.664, 1.233] & [0.635, 1.245] & [0.860, 1.249] & [0.994, 2.033] & [0.842, 1.984] & [0.813, 2.311] \\ 
+  & (0.552) & (0.923) & (0.578) & (0.554) & (0.701) & (0.046) & (0.191) & (0.179) \\ 
+  & & & & & & & & \\ 
+ After England & 1.044 & 1.058 & 1.005 & 0.969 & 1.173 & 1.282 & 1.117 & 1.011 \\ 
+  & [0.960, 1.135] & [0.897, 1.242] & [0.828, 1.210] & [0.783, 1.186] & [1.046, 1.315] & [0.999, 1.626] & [0.817, 1.489] & [0.666, 1.470] \\ 
+  & (0.315) & (0.500) & (0.959) & (0.764) & (0.007) & (0.046) & (0.470) & (0.957) \\ 
   & & & & & & & & \\ 
 \hline \\[-1.8ex] 
 Observations & 3,570 & 3,570 & 3,570 & 3,570 & 3,570 & 3,570 & 3,570 & 3,570 \\ 

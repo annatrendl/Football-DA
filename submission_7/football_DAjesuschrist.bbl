@@ -1,6 +1,31 @@
 \begin{thebibliography}{}
 
 \bibitem [\protect \citeauthoryear {%
+{BBC Sport}%
+}{%
+{BBC Sport}%
+}{%
+{\protect \APACyear {2018}}%
+}]{%
+BBC}
+\APACinsertmetastar {%
+BBC}%
+\begin{APACrefauthors}%
+{BBC Sport}.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2018}{}{}.
+\newblock
+\APACrefbtitle {{World Cup 2018: Record-breaking online {\&} viewing figures
+  for BBC}.} {{World Cup 2018: Record-breaking online {\&} viewing figures for
+  BBC}.}
+\newblock
+\begin{APACrefURL} \url{https://www.bbc.co.uk/sport/football/44850988}
+  \end{APACrefURL}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
 Brimicombe%
 \ \BBA {} Cafe%
 }{%
@@ -149,7 +174,7 @@ Davies, G.%
 \end{APACrefauthors}%
 \unskip\
 \newblock
-\APACrefYearMonthDay{2018}{dec}{}.
+\APACrefYearMonthDay{2018}{December}{30}.
 \newblock
 {\BBOQ}\APACrefatitle {{England's unexpected World Cup progression behind
   record-high alcohol poisoning cases, NHS says}} {{England's unexpected World
@@ -383,10 +408,8 @@ HomeOffice2011}%
 \newblock
 \APACrefYearMonthDay{2011}{}{}.
 \newblock
-\APACrefbtitle {{The National Standard for Incident Recording}} {{The National
-  Standard for Incident Recording}}\ \APACbVolEdTR{}{\BTR{}}.
-\newblock
-\APACaddressInstitution{}{Home Office}.
+\APACrefbtitle {{The National Standard for Incident Recording}.} {{The National
+  Standard for Incident Recording}.}
 \newblock
 \begin{APACrefURL}
   \url{https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment{\_}data/file/116658/count-nsir11.pdf}
@@ -437,10 +460,8 @@ HomeOffice2019}%
 \newblock
 \APACrefYearMonthDay{2019{\protect \BCnt {1}}}{}{}.
 \newblock
-\APACrefbtitle {{Crime Recording General Rules}} {{Crime Recording General
-  Rules}}\ \APACbVolEdTR{}{\BTR{}}.
-\newblock
-\APACaddressInstitution{}{Home Office}.
+\APACrefbtitle {{Crime Recording General Rules}.} {{Crime Recording General
+  Rules}.}
 \newblock
 \begin{APACrefURL}
   \url{https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment{\_}data/file/854733/count-general-dec-2019.pdf}
@@ -464,12 +485,36 @@ Office2019}%
 \newblock
 \APACrefYearMonthDay{2019{\protect \BCnt {2}}}{}{}.
 \newblock
-\APACrefbtitle {{Home Office Counting Rules for Recorded Crime - Crime Flags}}
-  {{Home Office Counting Rules for Recorded Crime - Crime Flags}}\
-  \APACbVolEdTR{}{\BTR{}}.
+\APACrefbtitle {{Home Office Counting Rules for Recorded Crime - Crime Flags}.}
+  {{Home Office Counting Rules for Recorded Crime - Crime Flags}.}
 \newblock
 \begin{APACrefURL}
   \url{https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment{\_}data/file/791106/count-flags-apr-2019.pdf}
+  \end{APACrefURL}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+{Ipsos MORI}%
+}{%
+{Ipsos MORI}%
+}{%
+{\protect \APACyear {2003}}%
+}]{%
+Ipsos2003}
+\APACinsertmetastar {%
+Ipsos2003}%
+\begin{APACrefauthors}%
+{Ipsos MORI}.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2003}{December}{22}.
+\newblock
+\APACrefbtitle {{ Rugby Union 'Britain's Second Most Popular Sport'}.} {{ Rugby
+  Union 'Britain's Second Most Popular Sport'}.}
+\newblock
+\begin{APACrefURL}
+  \url{https://www.ipsos.com/ipsos-mori/en-uk/rugby-union-britains-second-most-popular-sport}
   \end{APACrefURL}
 \PrintBackRefs{\CurrentBib}
 
@@ -580,6 +625,30 @@ populationfigure}%
 \begin{APACrefURL}
   \url{https://www.nomisweb.co.uk/reports/lmp/la/1967128614/report.aspx?pc=wv111rd}
   \end{APACrefURL}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Ostrowsky%
+}{%
+Ostrowsky%
+}{%
+{\protect \APACyear {2014}}%
+}]{%
+Ostrowsky2014a}
+\APACinsertmetastar {%
+Ostrowsky2014a}%
+\begin{APACrefauthors}%
+Ostrowsky, M\BPBI K.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2014}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {{The social psychology of alcohol use and violent
+  behavior among sports spectators}} {{The social psychology of alcohol use and
+  violent behavior among sports spectators}}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Aggression and Violent Behavior}{19}{4}{303--310}.
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
@@ -698,24 +767,6 @@ Purves, R\BPBI I.%
 \newblock
 \APACjournalVolNumPages{International Journal of Environmental Research and
   Public Health}{14}{7}{704}.
-\PrintBackRefs{\CurrentBib}
-
-\bibitem [\protect \citeauthoryear {%
-\APACcitebtitle {{Rugby Union 'Britain's Second Most Popular Sport'}}}{%
-\APACcitebtitle {{Rugby Union 'Britain's Second Most Popular Sport'}}}{%
-{\protect \APACyear {2003}}%
-}]{%
-Ipsos2003}
-\APACinsertmetastar {%
-Ipsos2003}%
-\APACrefbtitle {{Rugby Union 'Britain's Second Most Popular Sport'}.} {{Rugby
-  Union 'Britain's Second Most Popular Sport'}.}
-\newblock
-\APACrefYearMonthDay{2003}{dec}{}.
-\newblock
-\begin{APACrefURL}
-  \url{https://www.ipsos.com/ipsos-mori/en-uk/rugby-union-britains-second-most-popular-sport}
-  \end{APACrefURL}
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
@@ -904,28 +955,6 @@ Williams, D\BPBI J.%
   around vulnerable populations.}\ (\BPGS\ 157--241).
 \newblock
 \APACaddressPublisher{New York}{Nova Science Publishers}.
-\PrintBackRefs{\CurrentBib}
-
-\bibitem [\protect \citeauthoryear {%
-\APACcitebtitle {{World Cup 2018: Record-breaking online {\&} viewing figures
-  for BBC}}}{%
-\APACcitebtitle {{World Cup 2018: Record-breaking online {\&} viewing figures
-  for BBC}}}{%
-{\protect \APACyear {2018}}%
-}]{%
-BBC}
-\APACinsertmetastar {%
-BBC}%
-\APACrefbtitle {{World Cup 2018: Record-breaking online {\&} viewing figures
-  for BBC}.} {{World Cup 2018: Record-breaking online {\&} viewing figures for
-  BBC}.}
-\newblock
-\APACrefYearMonthDay{2018}{jul}{}.
-\newblock
-\APACaddressPublisher{}{BBC Sport}.
-\newblock
-\begin{APACrefURL} \url{https://www.bbc.co.uk/sport/football/44850988}
-  \end{APACrefURL}
 \PrintBackRefs{\CurrentBib}
 
 \end{thebibliography}
