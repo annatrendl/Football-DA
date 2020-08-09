@@ -628,6 +628,32 @@ populationfigure}%
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
+{Office for National Statistics}%
+}{%
+{Office for National Statistics}%
+}{%
+{\protect \APACyear {2019}}%
+}]{%
+ONS2019}
+\APACinsertmetastar {%
+ONS2019}%
+\begin{APACrefauthors}%
+{Office for National Statistics}.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2019}{}{}.
+\newblock
+\APACrefbtitle {{Domestic abuse victim characteristics, England and Wales: year
+  ending March 2019}.} {{Domestic abuse victim characteristics, England and
+  Wales: year ending March 2019}.}
+\newblock
+\begin{APACrefURL}
+  \url{https://www.ons.gov.uk/peoplepopulationandcommunity/crimeandjustice/articles/domesticabusevictimcharacteristicsenglandandwales/yearendingmarch2019/pdf}
+  \end{APACrefURL}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
 Ostrowsky%
 }{%
 Ostrowsky%
