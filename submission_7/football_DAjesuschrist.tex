@@ -121,7 +121,7 @@ Domestic abuse is increasingly recognised as a serious public health concern wor
 \section{Introduction}
 
 
-Domestic abuse is increasingly recognised as a major public policy concern in many countries, including the UK \cite{ep}. While anyone can become a victim of domestic abuse, women are disproportionately affected, with an estimated 7.5\% of women and 3.8\% of men in England and Wales reported to have experienced some form of domestic abuse in the year ending March, 2019 \cite{ONS2019}.
+Domestic abuse is considered to be a major public policy concern in many countries, including the UK \cite{ep}. While anyone can become a victim of domestic abuse, women are disproportionately affected: an estimated 7.5\% of women and 3.8\% of men in England and Wales reported to have experienced some form of domestic abuse in the year ending March, 2019 \cite{ONS2019}.
 
 
 The link between sporting events and domestic abuse has been the focus of a number of smaller studies \cite{Williams2014}, but large-scale quantitative investigations of this relationship are relatively scarce. In the context of the USA, the most extensive study in the topic found that an unexpected loss of the local National Football League (NFL) team resulted in a 10\% increase in the rate of reported male to female intimate partner violence (IPV; \citeNP{Card2011}.
@@ -139,7 +139,9 @@ Previous studies found a strong, but complex link between alcohol and domestic a
 
 
 
-Despite the evident links between alcohol and domestic abuse, the role alcohol plays in the link between football and domestic abuse has not yet been explored in a large-scale quantitative study. Given the strong association between drinking culture and football in England \cite{Dixon2014}, a relationship continuously reinforced by the marketing practices of the alcohol industry \cite{Gornall2014}, we conjecture that alcohol acts as an aggravating factor in the link between football and domestic abuse in England. Specifically, we hypothesize that England football events result in a disproportionate increase in the number of alcohol-related domestic abuse cases (in comparison with non-alcohol related cases). Exploring the effect of football on domestic violence cases by alcohol-involvement will deepen our understanding of the pathway through which football increases propensity for violence in domestic settings.
+Despite the evident links between alcohol and domestic abuse, the role alcohol plays in the link between football and domestic abuse has not yet been explored in a large-scale quantitative study. Given the strong association between drinking culture and football in England \cite{Dixon2014}, a relationship continuously reinforced by the marketing practices of the alcohol industry \cite{Gornall2014}, we conjecture that alcohol acts as an aggravating factor in the link between football and domestic abuse in England. 
+
+Specifically, we hypothesize that when the England national football team plays, the number of reported alcohol-related domestic abuse cases increases. Based on previous research focusing on the link between the football World Cup and domestic abuse in England (e.g., \citeNP{Brimicombe2012, Kirby2014}), we expect the effect to be stronger on England loss and win days. Exploring the link between football, alcohol, and domestic abuse will deepen our understanding of the pathway through which football (and more specifically the outcome of the match) increases propensity for violence in domestic settings.
 
 In our analysis, we focus on the two largest national football tournaments England participates in, the the FIFA World Cup and UEFA European Football Championship. We exploit the fact that that national teams are randomly allocated (by the random draw of balls from an urn --- the canonical definition of random) to slots in these football tournaments, and the dates of these slots are assigned \emph{before} the allocation of the teams. This allows us to make causal claims about the effect of England matches on alcohol and non-alcohol related domestic abuse. In contrast, \citeA{Card2011} had to rely upon the stochastic nature of game outcomes (after controlling for bookmakers' expectations) to make a causal inference between unexpected losses NFL football and domestic abuse. 
 
@@ -147,7 +149,9 @@ To test our hypothesis, we investigate whether the daily number of reported alco
 
 
 
-\section{West Midlands Crime Dataset}
+\section{Datasets}
+
+\subsection{West Midlands Crime Dataset}
 
 
 Our dataset comprises all incidents and crimes recorded by the West Midlands Police (WMP) in the period between January 1, 2010 and October 10, 2019 (3570 days). The WMP is the third largest police force in England \cite{Homeoffice}, serving an area with a population over 2.9 million in 2018 \cite{populationfigure}. 
@@ -172,21 +176,21 @@ Figure \ref{fig:descriptive} shows the daily average number of alcohol and non-a
 \end{center} 
 \end{figure} 
 
-In the UK, the term ``domestic abuse'' refers to a wide range of behavioural patterns, from physical and sexual violence to psychological, emotional, financial abuse, threatening behaviour, stalking and harassment, either within a family or an intimate relationship \cite{ONS}. Previous research has mostly focused on intimate partner violence (IPV), the largest subcategory of domestic abuse. While IPV is more common than abuse perpetrated by family members \cite{ONS}, our dataset does not contain information about the exact relationship between the victim and perpetrator (family vs current or ex-partner), therefore we cannot separate the two types of abuse, and we will refer to them collectively as ``domestic abuse''.
+In the UK, the term ``domestic abuse'' refers to a wide range of behavioural patterns, from physical and sexual violence to psychological, emotional, financial abuse, threatening behaviour, stalking and harassment, either within a family or an intimate relationship \cite{ONS}. Previous research has mostly focused on intimate partner violence (IPV), the largest subcategory of domestic abuse. While IPV is more common than abuse perpetrated by family members \cite{ONS}, our dataset does not contain information about the exact relationship between the victim and perpetrator (family versus current or ex-partner), therefore we cannot separate the two types of abuse, and we will refer to them collectively as ``domestic abuse''.
 
-In our analyses, we explore various characteristics of domestic abuse and other criminal behaviours perpetrated on England football days. Specifically, we examine how England match days affect the number of property-related crimes (where the offence class is either theft or robbery), hate crimes (where the offence description includes the words ``hate'', ``racial'' or ``racially''), and other violent crimes, where the offence class is classified as violence against the person, after excluding cases of domestic abuse. 
+In our analyses, we explore various characteristics of domestic abuse and other criminal behaviours (not classified as domestic abuse) perpetrated on England football days. Specifically, we focus on property-related crimes (where the offence class is either theft or robbery), hate crimes (where the offence description includes the words ``hate'', ``racial'' or ``racially''), and other violent crimes, where the offence class is classified as violence against the person, after excluding cases of domestic abuse. 
 
-We are also interested in understanding how our results vary by specific characteristics of domestic abuse cases. To this end, we classify domestic abuse cases by whether they are newly reported (with no earlier record for the same victim-offender pair in our dataset), publicly perpetrated (cases where the location is not a residential dwelling), or result in an injury (where the injury class is either minor or serious injury). In addition, we will examine how reporting behaviour (measured by the number of hours elapsed between time of perpetration and reporting), and in the case of repeat incidents (multiple cases with the same victim-offender pair), days elapsed between subsequent cases (days since last case, days until next case) are affected by England football matches.
+We also explore specific characteristics of domestic abuse cases. To this end, we classify domestic abuse cases by whether they are newly reported (with no earlier record for the same victim-offender pair in our dataset), publicly perpetrated (cases where the location is not a residential dwelling), or result in an injury (where the injury class is either minor or serious injury). In addition, we will examine how reporting behaviour (measured by the number of hours elapsed between time of perpetration and reporting), and in the case of repeat incidents (multiple cases with the same victim-offender pair), days elapsed between subsequent cases (days since last case, days until next case) are affected by England football matches.
 
 
 
 Our dataset contains all cases of domestic abuse that have been reported to the WMP between 2010 and 2019, but the vast majority of domestic abuse incidents in fact never get reported (according to the Crime Survey of England and Wales, only 17\% of domestic abuse victims reported the abuse to the police between April 2017 and March 2018; \citeNP{ONS}). This substantial reporting bias, and its potential correlation with other contextual factors warrants a careful interpretation of the estimates from any quantitative study investigating domestic abuse, and highlights the importance of utilising a mixed methods approach to explore the factors contributing to the prevalence of domestic abuse. 
   
+ \subsection{Sports data}
  
- 
-\begin{table}(!htbp]
+\begin{table}
 \centering
-    \caption{Matches of the English national football team in the World Cup and European Championship tournaments between 2010 and 2019, by outcome.}
+    \caption{Matches of the England national football team in the World Cup and European Championship football tournaments between 2010 and 2019, by outcome.}
 \begin{tabular}{ccccc}
   \hline
 \textbf{Date} & \textbf{Other Team} & \textbf{Tournament} & \textbf{Year} & \textbf{Outcome} \\ 
@@ -221,7 +225,7 @@ Our dataset contains all cases of domestic abuse that have been reported to the 
  There were three World Cups (2010, 2014, 2018) and two European Championships (2012, 2016) in the period covered by our dataset. All of these tournaments took place in the months of June and July. 
 Table \ref{Tab:matches} shows the matches of the English national football team in these tournaments. Out of 22 matches overall, England won and lost both eight times, while six matches ended in a draw. 
 
-To explore whether the association between sport matches and domestic abuse replicates in the case of other popular sports, we examined the link between rugby, the second most popular sport in England \cite{Ipsos2003}, and domestic abuse. Focusing on the Six Nations, a high-profile rugby tournament that takes place every year in the months of February and March with the participation of England, Wales, Scotland, Ireland, France and Italy, we explored whether the reported number of domestic abuse cases increase on days when the England national rugby team plays. Each tournament year, England plays one match with each of the other five participating countries, and these matches take place almost always during the weekend (Saturday, $N = 37$; Sunday, $N = 11$; Friday, $N = 2$). The most common result for England is to win ($N = 35$), much less frequent are losses ($N = 12$), and draws ($N = 2$).
+While the main focus of this study is the effect of football on domestic abuse, to investigate whether the association between football and domestic abuse can be observed for other sports, we also focus on rugby, the second most popular sport in England \cite{Ipsos2003}. Specifically, we obtained historical results data from the Six Nations tournament, a high-profile international rugby tournament that takes place every year in the months of February and March with the participation of England, Wales, Scotland, Ireland, France and Italy. Each tournament year, England plays one match with each of the other five participating countries, and these matches take place almost always during the weekend (Saturday, $N = 37$; Sunday, $N = 11$; Friday, $N = 2$). The most common result for England is to win ($N = 35$), much less frequent are losses ($N = 12$), and draws ($N = 2$).
 
 \section{Methods}
 
@@ -280,10 +284,10 @@ where \textbf{x\textsubscript{i}} is a vector of covariates, and $\boldsymbol{\b
 
 \section{Results}
 
-In the following count per day analyses, the results are almost exclusively derived from negative binomial models (unless noted otherwise), as we found evidence for overdispersion in almost all cases (after testing for overdispersion using the method described in \citeNP{Cameron1990a}). All analyses were performed in R (version 3.6.2).
+In the following count per day analyses (sections \ref{firstsection}--\ref{lastsection}), the results are almost exclusively derived from negative binomial models (unless noted otherwise), as we found evidence for overdispersion in almost all cases (after testing for overdispersion using the method described in \citeNP{Cameron1990a}). All analyses were performed in R (version 3.6.2).
 
 
-\subsection{Core results} 
+\subsection{Core results} \label{firstsection}
 
 Table \ref{coremodel} shows the results from two negative binomial regressions investigating the link between football, alcohol and domestic abuse. The first column shows the results for the subset of non-alcohol-related cases, while the second column shows the estimates for alcohol-related cases. For non-alcohol-related cases, we find no evidence for an increase (or decrease) on days when the England football team plays, compared to non-match days. In contrast, we see a significant, 47\%, 95\% CI [26\%--71\%], increase in the number of alcohol-related cases on days when the England football team wins, compared to non-match days. We find no evidence for comparable increases in the number of reported domestic abuse cases when the England national team loses or draws. In addition, we estimate that there is an 18\%, 95\% CI [7\%--30\%], increase in the number of alcohol-related cases reported after an England match day. 
 
@@ -397,14 +401,14 @@ Observations & 3,570 & 3,570 \\
  
 To explore whether this increase could be the consequence of an England victory, we exploited the detailed time information in our dataset, which allowed us to conduct a three-hour analysis to explore the more granular temporal patterns of domestic abuse cases (alcohol-related or not) perpetrated before and after an England match.  Figure \ref{fig:threehours} shows a plot of the estimated percentage increase from two negative binomial regressions, revealing a stark increase in alcohol-related domestic abuse on days of an England victory, starting in the three hour period of the match, peaking in the three-hour period afterwards, and gradually declining to its original level in the twenty-four hours following the victory. While a similar pattern can be observed on days when England lost, the increase in the number of alcohol-related cases is substantially smaller and not statistically different from zero. Given that the end time of any given match can vary greatly in the three-hour period (e.g., some of the matches end in the middle of the three-hour interval, therefore any increase in the number of cases in the 1.5 hours following these matches will be captured by the During Match coefficient), it is hard to disentangle the effect by the exact time period, but Figure \ref{fig:threehours} suggests that the increase is the strongest in the hours following the victory. 
  
- Next, we repeated the count per day analyses by offender-victim gender subgroup. Table \ref{gender} in the Appendix shows the results by alcohol-involvement and offender-victim gender group (male to female, female to male, male to male, female to female), on a sample of domestic abuse cases with one victim and offender, where gender information is available (about 86\% of all domestic abuse cases in our dataset). We find a 41\%, 95\% CI [18\%--69\%], increase in the group of alcohol-related male to female cases on England win days, and we also see a smaller, 17\%, 95\% CI [5\%--31\%] increase on days following and England match.
+ Next, we repeated the count per day analyses by offender-victim gender subgroup. Table \ref{gender} in the Appendix shows the results by alcohol-involvement and offender-victim gender group (male to female, female to male, male to male, female to female), on a sample of domestic abuse cases with one victim and offender, where gender information is available (about 86\% of all domestic abuse cases in our dataset). We find a 41\%, 95\% CI [18\%--69\%], increase in the group of alcohol-related male to female cases on England win days, and in the same group we also see some evidence for a smaller, 17\%, 95\% CI [5\%--31\%] increase on days following and England match.
 
 
 
 \subsection{Other types of crimes and incidents}
 
 
-Our rich crime dataset further allows us to explore whether England games have similar effects on other types of criminal behaviours, apart from domestic abuse. Specifically, we examine the effect on England football days on the number of reported property and hate-related crimes as well as other violent crimes (excluding domestic abuse cases). Table \ref{othercrimes} shows the results for these three types of criminal behaviours, by alcohol-involvement. The results reveal a 47\%, 95\% CI [19\%--83\%] increase in the number of other alcohol-related violent crimes on England win days.
+Our rich crime dataset further allows us to explore whether England games have similar effects on other types of criminal behaviours, apart from domestic abuse. Specifically, we examine the effect on England football days on the number of reported property- and hate-related crimes, as well as other violent crimes, after excluding domestic abuse cases. Table \ref{othercrimes} shows the results for these three types of criminal behaviours, by alcohol-involvement. The results reveal a 47\%, 95\% CI [19\%--83\%] increase in the number of non-domestic, alcohol-related violent crimes on England win days.
 
 
 %  \begin{sidewaystable}[htp]
@@ -468,7 +472,7 @@ Our rich crime dataset further allows us to explore whether England games have s
 \hline \\[-1.8ex] 
  & \multicolumn{6}{c}{\textit{Dependent variable:}} \\ 
    & \multicolumn{6}{c}{Number of cases} \\ 
-  & \multicolumn{3}{c}{Non-alcohol related} &\multicolumn{3}{c}{Alcohol-related} \\
+  & \multicolumn{3}{c}{Non-alcohol-related} &\multicolumn{3}{c}{Alcohol-related} \\
 \cline{2-7} 
 \\[-1.8ex] & Hate- & Property- & Other & Hate- & Property & Other \\ & related & related & violent & related & related & violent \\ 
 \\[-1.8ex] & (1) & (2) & (3) & (4) & (5) & (6)\\ 
@@ -526,7 +530,7 @@ Observations & 3,570 & 3,570 & 3,570 & 3,570 & 3,570 & 3,570 \\
 %Each tournament year, England plays one match with each of the other five participating countries, and these matches take place almost always during the weekend (Saturday, $N = 37$; Sunday, $N = 11$; Friday, $N = 2$). The most common result for England is to win ($N = 35$), much less frequent are losses ($N = 12$), and draws ($N = 2$).
 
 
-Next, we explore how matches of the England national rugby union team in the Six Nations tournament affect the reported number of alcohol and non-alcohol related domestic abuse cases. Table \ref{rugby} shows no comparable effects on domestic abuse, alcohol-related or not. 
+Next, we explore how matches of the England national rugby union team in the Six Nations tournament affect the reported number of alcohol and non-alcohol-related domestic abuse cases. Table \ref{rugby} shows no comparable effects on domestic abuse, alcohol-related or not. 
 
 %potentially stemming from differences in timing, media coverage, audience numbers, and the involvement of alcohol between the two tournaments.
 
@@ -590,7 +594,7 @@ Next, we explore how matches of the England national rugby union team in the Six
  & \multicolumn{2}{c}{\textit{Dependent variable:}} \\ 
 \cline{2-3} 
 \\[-1.8ex] & \multicolumn{2}{c}{Number of cases} \\ 
- & Non-alcohol related & Alcohol-related\\ 
+ & Non-alcohol-related & Alcohol-related\\ 
  & domestic abuse & domestic abuse\\
 \\[-1.8ex] & (1) & (2)\\ 
 \hline \\[-1.8ex] 
@@ -707,15 +711,15 @@ England windraw & 1.256$^{*}$ &  \\
   England win &  & 1.452$^{*}$ \\ 
   &  & [1.282, 1.644] \\ 
   &  & (0.000) \\ 
+    England draw &  & 1.032 \\ 
+  &  & [0.893, 1.191] \\ 
+  &  & (0.671) \\
   England lost & 1.382$^{*}$ & 1.388$^{*}$ \\ 
   & [1.151, 1.662] & [1.175, 1.639] \\ 
   & (0.001) & (0.0002) \\ 
   After England & 1.111 & 1.113 \\ 
   & [1.004, 1.228] & [1.014, 1.221] \\ 
-  & (0.042) & (0.024) \\ 
-  England draw &  & 1.032 \\ 
-  &  & [0.893, 1.191] \\ 
-  &  & (0.671) \\ 
+  & (0.042) & (0.024) \\  
 %  England lost &  & 1.388 \\ 
 %  &  & [1.175, 1.639] \\ 
 %  &  & (0.0002) \\ 
@@ -745,9 +749,9 @@ To further probe the robustness of the results, we find it instructive to break 
 
 %To explore the underlying reason for this discrepancy and test the robustness of our results, we find it instructive to break our analysis into specific tournament years using both datasets (Lancashire and West Midlands; see Table \ref{kirbyrep2}). To be consistent with previous results, we present the regressions for both types of domestic abuse (alcohol and non-alcohol-related), however, unfortunately we cannot do the same for the Lancashire dataset, as it contains no information on alcohol-involvement. Only year 2010 overlaps in the two datasets, which allows us to (at least partly) evaluate the robustness of our results.
 
-An interesting common pattern in both datasets is the large effect of England's victory over Slovenia in the group stage of the 2010 World Cup, which, after much anticipation, secured their progression to the next stage of the tournament: for the same day, we estimate a 91\%, 95\% CI [53\%--139\%] increase in the number of domestic abuse cases reported in Lancashire, and a 84\%, 95\% CI [31\%--160\%], increase in the number of alcohol-related domestic abuse cases reported in the West Midlands. 
+An apparent common pattern in both datasets is the large effect of England's victory over Slovenia in the group stage of the 2010 World Cup, which, after much anticipation, secured their progression to the next stage of the tournament: on the same day, we estimate a 91\%, 95\% CI [53\%--139\%] increase in the number of domestic abuse cases reported in Lancashire, and a 84\%, 95\% CI [31\%--160\%], increase in the number of alcohol-related domestic abuse cases reported in the West Midlands. 
 
-Equally, the subsequent loss against Germany in the knockout stage in the same resulted in a substantial increase in the number of reported domestic abuse incidents: for the same day, we estimate a 57\%, 95\% CI [27\%--93\%] increase in the number of domestic abuse cases reported in Lancashire, and a smaller, 43\%, 95\% CI [4\%--100\%], increase in the number of alcohol-related domestic abuse cases reported in the West Midlands.
+Equally, the subsequent loss against Germany in the knockout stage in the same resulted in a substantial increase in the number of reported domestic abuse incidents: on the same day, we estimate a 57\%, 95\% CI [27\%--93\%] increase in the number of domestic abuse cases reported in Lancashire, and a smaller, 43\%, 95\% CI [4\%--100\%], increase in the number of alcohol-related domestic abuse cases reported in the West Midlands.
 
 
 
@@ -856,7 +860,7 @@ Observations & 30 & 32 & 30 & 365 & 365 & 366 & 366 & 365 & 365 & 366 & 366 & 36
 %      \item[a] \textit{$^{*}$p$<$0.05; $^{**}$p$<$0.01; $^{***}$p$<$0.001}
       \item[a] \textit{Estimates are exponentiated coefficients from a series of negative binomial regressions, except for Model (2) and (3) which are from Poisson regressions (based on tests of overdispersion). Each regression is restricted to a specific tournament year. Regressions 1-3 have day of week control with non England tournament days as benchmark, regressions 4-13 have month, day of week, Christmas, New Year's eve controls, with non-match days as benchmark; 95\% confidence intervals are in square brackets, p-values are in parentheses}
       \item[b] \textit{Coefficients denoted with $*$ are significant at Bonferroni-corrected alpha levels}
-      \item[c] \textit{All = All cases, NA = Non-alcohol related cases, A = Alcohol-related cases}
+      \item[c] \textit{All = All cases, NA = Non-alcohol-related cases, A = Alcohol-related cases}
     \end{tablenotes}
 \end{threeparttable} }
 \end{sidewaystable}
@@ -957,7 +961,7 @@ Observations & 3,205 & 3,205 & 3,204 & 3,204 & 3,205 & 3,205 & 3,204 & 3,204 & 3
 %      \item[a] \textit{$^{*}$p$<$0.05; $^{**}$p$<$0.01; $^{***}$p$<$0.001}
       \item[a] \textit{Estimates are exponentiated coefficients from a series of negative binomial regressions (based on tests of overdispersion)  with year, month, day of week, Christmas, New Year's eve controls; 95\% confidence intervals are in square brackets, p-values are in parentheses}
             \item[b] \textit{Coefficients denoted with $*$ are significant at Bonferroni-corrected alpha levels}
-      \item[c] \textit{NA = Non-alcohol related cases, A = Alcohol-related cases}
+      \item[c] \textit{NA = Non-alcohol-related cases, A = Alcohol-related cases}
     \end{tablenotes}
 \end{threeparttable}   }
 \end{sidewaystable}
@@ -966,24 +970,26 @@ Observations & 3,205 & 3,205 & 3,204 & 3,204 & 3,205 & 3,205 & 3,204 & 3,204 & 3
   As a further robustness check, we examine the sensitivity of the result to the exclusion of specific tournament years  (see Table \ref{robustness}). This analysis shows that while the size of the England win effect varies by year, it is robust to the exclusion of specific tournament years, and is not driven by an unusually large effect in one of the tournament years.
 
 
-\subsection{Characteristics of domestic abuse cases on England football days}
+\subsection{Characteristics of domestic abuse cases on England football days} \label{lastsection}
 
-Our dataset allows us to further explore various characteristics of alcohol and non-alcohol-related domestic abuse perpetrated on England match days. For these analyses, we restricted our dataset to domestic abuse cases with one offender and one victim (about 87\% of overall cases). First, using a series of logistic regressions, we investigate whether these cases are more likely to be newly reported, publicly perpetrated, or result in an injury. We find no evidence that domestic abuse cases perpetrated on England match days are more likely to be newly reported (see Table \ref{Characteristics1} in the Appendix) compared to domestic abuse cases occurring on non-match days. Interestingly, our results indicate that, compared to non-match days, reported non-alcohol-related cases are more likely to be perpetrated in public on England loss days. 
+Our dataset allows us to further explore various characteristics of alcohol and non-alcohol-related domestic abuse perpetrated on England match days. For these analyses, we restricted our dataset to domestic abuse cases with one offender and one victim (about 87\% of overall cases). First, using a series of logistic regressions, we investigate whether these cases are more likely to be newly reported, publicly perpetrated, or result in an injury. We find no evidence that domestic abuse cases perpetrated on England match days are more likely to be newly reported (see Table \ref{Characteristics1} in the Appendix) compared to domestic abuse cases occurring on non-match days. Our results indicate that, compared to non-match days, reported non-alcohol-related cases are more likely to be perpetrated in public on England loss days. 
 
-Next, we analyse whether reporting behaviour and the time pattern of repeat cases are affected by England football matches. We investigate these questions with three negative binomial regressions, where the outcome variables are the the number of hours elapsed between time of perpetration and reporting, number of days elapsed since the last reported repeat case, and the number of days until the next repeat case, respectively.
+
+
+%We investigate these questions with three negative binomial regressions, where the outcome variables are the the number of hours elapsed between time of perpetration and reporting, number of days elapsed since the last reported repeat case, and the number of days until the next repeat case, respectively.
 
 %Domestic abuse is rarely a one-off incident, and reported repeat cases allow us to explore the characteristics of domestic abuse that occurs on match days in more detail. We are interested in whether the number of days elapsed between two consecutive cases is affected by England football matches. For example, it is possible that England match days bring reported cases of domestic abuse forward, which would have otherwise happened at a later point in time. 
 
 %We investigate this question with two negative binomial regressions, where the outcome variables are the number of days elapsed since the last reported case, and the number of days until the next case, respectively. In addition, using all reported cases (repeated or not), we explore whether the number of hours elapsed before reporting the case is affected by England match days.
 
 
-The results shown in Table \ref{days} provide no evidence that England matches affect the temporal pattern of repeat incidents (alcohol-related or not). However, we find some evidence that non-alcohol-related cases perpetrated on England loss days, or after England match days are reported sooner.
+Next, using a series of negative binomial regressions, we analyse whether reporting behaviour and the time pattern of repeat cases (more specifically the number of days elapsed between two consecutive cases) are affected by England football matches. The results shown in Table \ref{days} provide no evidence that England matches affect the reporting behaviour or the temporal pattern of repeat incidents (alcohol-related or not).
 
 %However, we find some evidence that non-alcohol-related cases perpetrated on England loss days are reported sooner, which is perhaps due to the fact that these incidents are also more likely to be perpetrated in a public location, and result in injury (see Table \ref{Characteristics1}).
 
 
 
-Finally, using the sample of repeated cases and a logistic regression framework, we explore whether previously non-alcohol related cases are more likely to reoccur as alcohol-related abuse on England match days. The results shown in Table \ref{alctrans} provide no evidence for such effect. 
+Finally, using the sample of repeated cases and a logistic regression framework, we explore whether previously non-alcohol-related cases are more likely to reoccur as alcohol-related abuse on England match days. The results shown in Table \ref{alctrans} provide no evidence for such effect. 
 
 In conclusion, these results indicate that domestic abuse that follows an England victory is not characteristically different from domestic abuse perpetrated on other days during the year.
 
@@ -1172,7 +1178,7 @@ Offence class & Number of domestic abuse & Percentage of domestic abuse \\
 \hline \\[-1.8ex] 
  & \multicolumn{8}{c}{\textit{Dependent variable:}} \\ 
    & \multicolumn{8}{c}{Number of cases} \\ 
-  & \multicolumn{4}{c}{Non-alcohol related} &\multicolumn{4}{c}{Alcohol-related} \\ 
+  & \multicolumn{4}{c}{Non-alcohol-related} &\multicolumn{4}{c}{Alcohol-related} \\ 
 \cline{2-9} 
 \\[-1.8ex] & MF & FM & MM & FF & MF & FM & MM & FF \\ 
 \\[-1.8ex] & (1) & (2) & (3) & (4) & (5) & (6) & (7) & (8)\\ 
@@ -1282,7 +1288,7 @@ Observations & 3,570 & 3,570 & 3,570 & 3,570 & 3,570 & 3,570 & 3,570 & 3,570 \\
  \cline{2-7}  
 \cline{2-7} 
 \\[-1.8ex] & \multicolumn{6}{c}{Number of domestic abuse cases} \\ 
- & \multicolumn{3}{c}{Non-Alcohol related} & \multicolumn{3}{c}{Alcohol-related} \\
+ & \multicolumn{3}{c}{Non-alcohol-related} & \multicolumn{3}{c}{Alcohol-related} \\
 \\[-1.8ex] & Newly Reported & Public Location & Injury & Newly Reported & Public Location & Injury \\ 
 \\[-1.8ex] & (1) & (2) & (3) & (4) & (5) & (6)\\ 
 \hline \\[-1.8ex] 
@@ -1391,7 +1397,7 @@ Observations & 259,075 & 280,856 & 280,856 & 75,921 & 88,690 & 88,690 \\
  \cline{2-7}  
 \cline{2-7} 
 \\[-1.8ex] & \multicolumn{6}{c}{Number of domestic abuse cases} \\ 
- & \multicolumn{3}{c}{Non-Alcohol related} & \multicolumn{3}{c}{Alcohol-related} \\
+ & \multicolumn{3}{c}{Non-alcohol-related} & \multicolumn{3}{c}{Alcohol-related} \\
 \\[-1.8ex] & Days & Days & Hours & Days & Days & Hours \\ 
  & since last & until next & until reported  & since last & until next & until reported \\
 \\[-1.8ex] & (1) & (2) & (3) & (4) & (5) & (6)\\ 
