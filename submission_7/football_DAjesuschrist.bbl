@@ -101,7 +101,7 @@ Cameron, A\BPBI C.%
   Poisson model}} {{Regression-based tests for overdispersion in the Poisson
   model}}.{\BBCQ}
 \newblock
-\APACjournalVolNumPages{Journal of Econometrics}{}{}{}.
+\APACjournalVolNumPages{Journal of Econometrics}{47}{3}{347--364}.
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
@@ -388,7 +388,7 @@ Graham, K.%
   intimate partner violence}} {{The broader context of preventing
   alcohol-related intimate partner violence}}.{\BBCQ}
 \newblock
-\APACjournalVolNumPages{Drug and Alcohol Review}{}{}{}.
+\APACjournalVolNumPages{Drug and Alcohol Review}{36}{1}{10--12}.
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
@@ -433,10 +433,8 @@ Homeoffice}%
 \newblock
 \APACrefYearMonthDay{2018}{}{}.
 \newblock
-\APACrefbtitle {{Police funding for England and Wales 2015 to 2019}} {{Police
-  funding for England and Wales 2015 to 2019}}\ \APACbVolEdTR{}{\BTR{}}.
-\newblock
-\APACaddressInstitution{}{Home Office}.
+\APACrefbtitle {{Police funding for England and Wales 2015 to 2019}.} {{Police
+  funding for England and Wales 2015 to 2019}.}
 \newblock
 \begin{APACrefURL}
   \url{https://www.gov.uk/government/statistics/police-funding-for-england-and-wales-2015-to-2019}
@@ -574,7 +572,7 @@ Leonard, K\BPBI E.%
   intimate partner violence: Future research needs to identify who to treat and
   how to treat them}}.{\BBCQ}
 \newblock
-\APACjournalVolNumPages{Drug and Alcohol Review}{}{}{}.
+\APACjournalVolNumPages{Drug and Alcohol Review}{36}{1}{10--12}.
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
@@ -855,36 +853,6 @@ Swallow, J.%
 \begin{APACrefURL}
   \url{https://chesterrep.openrepository.com/handle/10034/620835}
   \end{APACrefURL}
-\PrintBackRefs{\CurrentBib}
-
-\bibitem [\protect \citeauthoryear {%
-van~der Meij%
-\ \protect \BOthers {.}}{%
-van~der Meij%
-\ \protect \BOthers {.}}{%
-{\protect \APACyear {2012}}%
-}]{%
-VanderMeij2012}
-\APACinsertmetastar {%
-VanderMeij2012}%
-\begin{APACrefauthors}%
-van~der Meij, L.%
-, Almela, M.%
-, Hidalgo, V.%
-, Villada, C.%
-, IJzerman, H.%
-, van Lange, P\BPBI A\BPBI M.%
-\BCBL {}\ \BBA {} Salvador, A.%
-\end{APACrefauthors}%
-\unskip\
-\newblock
-\APACrefYearMonthDay{2012}{}{}.
-\newblock
-{\BBOQ}\APACrefatitle {{Testosterone and Cortisol Release among Spanish Soccer
-  Fans Watching the 2010 World Cup Final}} {{Testosterone and Cortisol Release
-  among Spanish Soccer Fans Watching the 2010 World Cup Final}}.{\BBCQ}
-\newblock
-\APACjournalVolNumPages{PLoS ONE}{7}{4}{e34814}.
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
