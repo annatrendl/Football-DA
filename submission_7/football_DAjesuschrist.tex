@@ -4,6 +4,7 @@
 \usepackage[margin=1in]{geometry}
 \usepackage[utf8]{inputenc}
 \usepackage[capposition=top]{floatrow}
+\usepackage[tablesfirst,nolists]{endfloat}
 %\usepackage[tablesfirst,nolists]{endfloat}
 \usepackage{times}
 \usepackage[flushleft]{threeparttable}
@@ -22,6 +23,7 @@
 \usepackage{booktabs}
 \usepackage{titling}
 \usepackage{rotating}
+\DeclareDelayedFloatFlavor{sidewaystable}{table}
 \usepackage{amsmath}
 \usepackage{bm}
 \usepackage{authblk}
@@ -133,7 +135,7 @@ In England, previous studies have focused on the link between football (soccer) 
 
 Why would national football tournaments, such as the World Cup or the European Championship precipitate domestic abuse? England's participation in these tournaments are times of heightened patriotic emotions and a strengthened sense of ``Englishness'', fuelled by media narratives that often use war references, and an ``us vs. them'' rhetoric to generate and represent an English national identity \cite{Vincent2014}. Previous qualitative research has suggested that televised contact sports can serve as vehicle for the male sports fan to redefine, and express his masculinity in a way that allows dominance, control, and can ultimately manifest in the perpetration of domestic abuse \cite{Sabo,Swallow}, given susceptibility to such behaviours. We speculate that this observation is especially pertinent in the context of England's participation in national football tournaments, owing to the popularity of the sport in the country, the associated media attention, and the resulting heightened sense of national consciousness. 
 
-In England, televised coverages of national football tournaments are often sponsored by major alcohol brands. An analysis of the 2016 UEFA EURO broadcasts in the UK found that viewers encountered 122 references to alcohol per broadcast on average (0.65 per minute; \citeNP{Purves2017}). The strong association between sports spectatorship and alcohol consumption has been documented across various sports, including football (soccer; \citeNP{Durbeej2017a};\citeNP{Elgan2018}, \citeNP{Pearson2011}), American football \cite{Glassman2011}, and baseball \cite{Erickson2011}. In the context of English football culture, research has mostly focused on the role of alcohol in crowd violence (football hooliganism; e.g., \citeNP{Pearson2011};\citeNP{Cleland2016};\citeNP{Ostrowsky2014a}). 
+In England, televised coverages of national football tournaments are often sponsored by major alcohol brands. An analysis of the 2016 UEFA EURO broadcasts in the UK found that viewers encountered 122 references to alcohol per broadcast on average (0.65 per minute; \citeNP{Purves2017}). The strong association between sports spectatorship and alcohol consumption has been documented across various sports, including football (soccer; \citeNP{Durbeej2017a};\citeNP{Elgan2018}, \citeNP{Pearson2011}), American football \cite{Glassman2011}, and baseball \cite{Erickson2011}. In the context of English football culture, research mostly focused on the role of alcohol in crowd violence (football hooliganism; e.g., \citeNP{Pearson2011};\citeNP{Cleland2016};\citeNP{Ostrowsky2014a}). 
 
 Previous studies found a strong, but complex link between alcohol and domestic abuse, suggesting that alcohol can either be seen as a contributing cause, an aggravating factor, or a trigger of violent behaviour in domestic (and other) settings \cite{Leonard2017}. The ecological model of intimate partner violence (IPV; the most common form of domestic abuse) sees IPV as a product of societal, community, relationship, and individual influences. From a community perspective, \citeA{Graham2017} argue that social contexts where excessive drinking is encouraged (e.g., through the promotion of alcohol during sporting events) are often permissive of violent behaviour and sexism, which can increase the likelihood of alcohol-related domestic abuse. However, strong inhibitory factors (e.g., social norms, and more specifically the condemnation of peers) can offset the disinhibitory effect of alcohol consumption, and reduce the likelihood of subsequent perpetration.  
 
@@ -188,42 +190,8 @@ Our dataset contains all cases of domestic abuse that have been reported to the 
   
  \subsection{Sports data}
  
-\begin{table}
-\centering
-    \caption{Matches of the England national football team in the World Cup and European Championship football tournaments between 2010 and 2019, by outcome.}
-\begin{tabular}{ccccc}
-  \hline
-\textbf{Date} & \textbf{Other Team} & \textbf{Tournament} & \textbf{Year} & \textbf{Outcome} \\ 
-  \hline
-2010-06-12 & USA & World Cup & 2010 & England draw \\ 
-  2010-06-18 & Algeria & World Cup & 2010 & England draw \\ 
-  2010-06-23 & Slovenia & World Cup & 2010 & England win \\ 
-  2010-06-27 & Germany & World Cup & 2010 & England lost \\ 
-  2012-06-11 & France & European Championship & 2012 & England draw \\ 
-  2012-06-15 & Sweden & European Championship & 2012 & England win \\ 
-  2012-06-19 & Ukraine & European Championship & 2012 & England win \\ 
-  2012-06-24 & Italy & European Championship & 2012 & England lost \\ 
-  2014-06-14 & Italy & World Cup & 2014 & England lost \\ 
-  2014-06-19 & Uruguay & World Cup & 2014 & England lost \\ 
-  2014-06-24 & Costa Rica & World Cup & 2014 & England draw \\ 
-  2016-06-11 & Russia & European Championship & 2016 & England draw \\ 
-  2016-06-16 & Wales & European Championship & 2016 & England win \\ 
-  2016-06-20 & Slovakia & European Championship & 2016 & England draw \\ 
-  2016-06-27 & Iceland & European Championship & 2016 & England lost \\ 
-  2018-06-18 & Tunisia & World Cup & 2018 & England win \\ 
-  2018-06-24 & Panama & World Cup & 2018 & England win \\ 
-  2018-06-28 & Belgium & World Cup & 2018 & England lost \\ 
-  2018-07-03 & Colombia & World Cup & 2018 & England win \\ 
-  2018-07-07 & Sweden & World Cup & 2018 & England win \\ 
-  2018-07-11 & Croatia & World Cup & 2018 & England lost \\ 
-  2018-07-14 & Belgium & World Cup & 2018 & England lost \\ 
-   \hline
-\end{tabular}
-  \label{Tab:matches}
-\end{table}
 
- There were three World Cups (2010, 2014, 2018) and two European Championships (2012, 2016) in the period covered by our dataset. All of these tournaments took place in the months of June and July. 
-Table \ref{Tab:matches} shows the matches of the English national football team in these tournaments. Out of 22 matches overall, England won and lost both eight times, while six matches ended in a draw. 
+ There were three World Cups (2010, 2014, 2018) and two European Championships (2012, 2016) in the period covered by our dataset. All of these tournaments took place in the months of June and July. Table \ref{Tab:matches} in the Appendix shows the matches of the English national football team in these tournaments. Out of 22 matches overall, England won and lost both eight times, while six matches ended in a draw. 
 
 While the main focus of this study is the effect of football on domestic abuse, to investigate whether the association between football and domestic abuse can be observed for other sports, we also focus on rugby, the second most popular sport in England \cite{Ipsos2003}. Specifically, we obtained historical results data from the Six Nations tournament, a high-profile international rugby tournament that takes place every year in the months of February and March with the participation of England, Wales, Scotland, Ireland, France and Italy. Each tournament year, England plays one match with each of the other five participating countries, and these matches take place almost always during the weekend (Saturday, $N = 37$; Sunday, $N = 11$; Friday, $N = 2$). The most common result for England is to win ($N = 35$), much less frequent are losses ($N = 12$), and draws ($N = 2$).
 
@@ -915,59 +883,10 @@ Observations & 30 & 32 & 30 & 365 & 365 & 366 & 366 & 365 & 365 & 366 & 366 & 36
 
 
 
-\begin{sidewaystable}[!htbp]
-\centering
- \caption{Robustness of the result: sensitivity to the exclusion of specific years}
-  \label{robustness}
- \scalebox{0.8}{
-  \begin{threeparttable}
-\begin{tabular}{@{\extracolsep{5pt}}lcccccccccc} 
-\\[-1.8ex]\hline 
-\hline \\[-1.8ex] 
- & \multicolumn{10}{c}{\textit{Dependent variable:}} \\ 
-\cline{2-11} 
-\\[-1.8ex] & \multicolumn{10}{c}{Number of domestic abuse cases} \\ 
-\\[-1.8ex] & \multicolumn{1}{c}{NA\textsuperscript{c}} & \multicolumn{1}{c}{A\textsuperscript{c}} &  \multicolumn{1}{c}{NA} & \multicolumn{1}{c}{A} &  \multicolumn{1}{c}{NA} & \multicolumn{1}{c}{A} &  \multicolumn{1}{c}{NA} & \multicolumn{1}{c}{A} &  \multicolumn{1}{c}{NA} & \multicolumn{1}{c}{A}  \\
- \\[-1.8ex] & 2010 & 2010 & 2012 & 2012 & 2014 & 2014 & 2016 & 2016 & 2018 & 2018  \\ 
-\\[-1.8ex] & (1) & (2) & (3) & (4) & (5) & (6) & (7) & (8) & (9) & (10)\\ 
-\hline \\[-1.8ex] 
-Tournament on & 1.035 & 0.959 & 1.063 & 1.084 & 0.976 & 1.085 & 0.960 & 1.105 & 0.948 & 1.069 \\ 
-  & [0.946, 1.133] & [0.901, 1.021] & [0.994, 1.136] & [1.014, 1.160] & [0.890, 1.073] & [1.010, 1.166] & [0.877, 1.052] & [1.029, 1.186] & [0.870, 1.034] & [0.997, 1.146] \\ 
-  & (0.461) & (0.193) & (0.076) & (0.018) & (0.619) & (0.027) & (0.382) & (0.007) & (0.227) & (0.061) \\ 
-  England win & 0.957 & 1.385$^{*}$ & 1.143 & 1.674$^{*}$ & 0.979 & 1.528$^{*}$ & 0.935 & 1.558$^{*}$ & 0.698 & 1.583$^{*}$ \\ 
-  & [0.727, 1.289] & [1.154, 1.666] & [0.909, 1.457] & [1.344, 2.100] & [0.753, 1.299] & [1.254, 1.873] & [0.709, 1.262] & [1.262, 1.938] & [0.486, 1.040] & [1.192, 2.127] \\ 
-  & (0.766) & (0.001) & (0.267) & (0.00001) & (0.879) & (0.00004) & (0.649) & (0.00005) & (0.063) & (0.002) \\ 
-  England draw & 1.037 & 1.126 & 0.990 & 1.347 & 0.921 & 1.383 & 0.793 & 1.391 & 0.950 & 1.304 \\ 
-  & [0.724, 1.545] & [0.873, 1.456] & [0.769, 1.297] & [1.056, 1.734] & [0.662, 1.324] & [1.079, 1.788] & [0.550, 1.190] & [1.051, 1.862] & [0.708, 1.306] & [1.034, 1.656] \\ 
-  & (0.850) & (0.365) & (0.942) & (0.019) & (0.642) & (0.013) & (0.238) & (0.025) & (0.742) & (0.028) \\ 
-  England lost & 1.102 & 1.090 & 1.140 & 1.218 & 1.096 & 1.213 & 1.128 & 1.263 & 0.902 & 1.134 \\ 
-  & [0.837, 1.482] & [0.901, 1.322] & [0.922, 1.428] & [0.986, 1.512] & [0.813, 1.520] & [0.964, 1.538] & [0.856, 1.521] & [1.021, 1.574] & [0.655, 1.280] & [0.880, 1.475] \\ 
-  & (0.507) & (0.376) & (0.240) & (0.072) & (0.565) & (0.106) & (0.410) & (0.035) & (0.547) & (0.341) \\ 
-  After England & 1.095 & 1.198 & 1.169 & 1.287$^{*}$ & 1.054 & 1.283 & 1.043 & 1.316$^{*}$ & 0.891 & 1.205 \\ 
-  & [0.914, 1.276] & [1.077, 1.319] & [1.030, 1.307] & [1.151, 1.422] & [0.874, 1.234] & [1.147, 1.418] & [0.860, 1.225] & [1.177, 1.455] & [0.693, 1.088] & [1.050, 1.360] \\ 
-  & (0.326) & (0.004) & (0.028) & (0.0003) & (0.567) & (0.0004) & (0.654) & (0.0002) & (0.252) & (0.019) \\ 
- \hline \\[-1.8ex] 
-
-Observations & 3,205 & 3,205 & 3,204 & 3,204 & 3,205 & 3,205 & 3,204 & 3,204 & 3,205 & 3,205 \\ 
-%Log Likelihood & $-$15,738.220 & $-$11,006.630 & $-$15,087.610 & $-$11,568.310 & $-$15,673.620 & $-$11,605.220 & $-$15,608.290 & $-$11,602.150 & $-$15,499.280 & $-$11,605.610 \\ 
-%$\theta$ & 7.385$^{***}$  (0.199) & 28.051$^{***}$  (1.404) & %13.075$^{***}$  (0.373) & 17.870$^{***}$  (0.723) & 7.139$^{***}$  (0.191) & 16.977$^{***}$  (0.674) & 7.284$^{***}$  (0.196) & 16.694$^{***}$  (0.660) & 7.692$^{***}$  (0.208) & 16.664$^{***}$  (0.658) \\ 
-%Akaike Inf. Crit. & 31,526.440 & 22,063.270 & 30,225.220 & 23,186.630 & 31,397.250 & 23,260.450 & 31,266.580 & 23,254.290 & 31,048.560 & 23,261.230 \\ 
-\hline 
-\hline \\[-1.8ex] 
-%\textit{Note:}  & \multicolumn{10}{r}{$^{*}$p$<$0.1; $^{**}$p$<$0.05; $^{***}$p$<$0.01} \\ 
-\end{tabular} 
-%\end{table} 
-\begin{tablenotes}
-%      \item[a] \textit{$^{*}$p$<$0.05; $^{**}$p$<$0.01; $^{***}$p$<$0.001}
-      \item[a] \textit{Estimates are exponentiated coefficients from a series of negative binomial regressions (based on tests of overdispersion)  with year, month, day of week, Christmas, New Year's eve controls; 95\% confidence intervals are in square brackets, p-values are in parentheses}
-            \item[b] \textit{Coefficients denoted with $*$ are significant at Bonferroni-corrected alpha levels}
-      \item[c] \textit{NA = Non-alcohol-related cases, A = Alcohol-related cases}
-    \end{tablenotes}
-\end{threeparttable}   }
-\end{sidewaystable}
 
 
-  As a further robustness check, we examine the sensitivity of the result to the exclusion of specific tournament years  (see Table \ref{robustness}). This analysis shows that while the size of the England win effect varies by year, it is robust to the exclusion of specific tournament years, and is not driven by an unusually large effect in one of the tournament years.
+
+  As a further robustness check, we examine the sensitivity of the result to the exclusion of specific tournament years  (see Table \ref{robustness} in the Appendix). This analysis shows that while the size of the England win effect varies by year, it is robust to the exclusion of specific tournament years, and is not driven by an unusually large effect in one of the tournament years.
 
 
 \subsection{Characteristics of domestic abuse cases on England football days} \label{lastsection}
@@ -997,7 +916,7 @@ In conclusion, these results indicate that domestic abuse that follows an Englan
 
 \section*{Discussion}
 
-Our key finding is that an England victory in a national football tournament is followed by a 47\% increase in the reported number of alcohol-related domestic abuse cases. This estimate is about half the size of the estimated increase in the number of alcohol-related cases during Christmas (100\%, 95\% CI [84\%--118\%]), and translates into a 0.53, 95\% CI (0.3 -- 0.8], increase in the daily rate of alcohol-related cases per 100,000 individuals, against a base rate of 1.12 alcohol-related cases per 100,000. The effect is entirely limited to alcohol-related abuse, even though alcohol-related domestic abuse cases comprise only 26\% of all domestic abuse cases in our dataset. We also found evidence for a 18\% increase in the number of alcohol-related cases on days following an England match day, which could be the result of a temporal spill-over effect.
+Our key finding is that an England victory in a national football tournament is followed by a 47\% increase in the reported number of alcohol-related domestic abuse cases. This estimate is about half the size of the estimated increase in the number of alcohol-related cases during Christmas (100\%, 95\% CI [84\%--118\%]), and translates into a 0.53, 95\% CI [0.3 -- 0.8], increase in the daily rate of alcohol-related cases per 100,000 individuals, against a base rate of 1.12 alcohol-related cases per 100,000. The effect is entirely limited to alcohol-related abuse, even though alcohol-related domestic abuse cases comprise only 26\% of all domestic abuse cases in our dataset. We also found evidence for a 18\% increase in the number of alcohol-related cases on days following an England match day, which could be the result of a temporal spill-over effect.
 
 
 We also found evidence for a remarkably similar, 47\% increase in the number of alcohol-related other (non domestic-abuse related) violent cases. While it is possible that misclassified domestic abuse cases contribute to this result (e.g, if the victim chooses not to disclose any relationship to the offender), these results suggests that the increase in alcohol-related violence following an England victory is not limited to domestic settings. 
@@ -1077,8 +996,10 @@ For victims, domestic abuse does not occur once every four years following a foo
 
 %\theendnotes
 
-\clearpage
-
+\clearpage % ensure all floats are processed
+\makeatletter
+\efloat@restorefloats
+\makeatother
 
 
 \section*{Appendix}
@@ -1087,6 +1008,41 @@ For victims, domestic abuse does not occur once every four years following a foo
 \renewcommand{\thefigure}{S\arabic{figure}}
 \setcounter{table}{0}
 \setcounter{figure}{0}
+
+
+\begin{table}
+\centering
+    \caption{Matches of the England national football team in the World Cup and European Championship football tournaments between 2010 and 2019, by outcome.}
+\begin{tabular}{ccccc}
+  \hline
+\textbf{Date} & \textbf{Other Team} & \textbf{Tournament} & \textbf{Year} & \textbf{Outcome} \\ 
+  \hline
+2010-06-12 & USA & World Cup & 2010 & England draw \\ 
+  2010-06-18 & Algeria & World Cup & 2010 & England draw \\ 
+  2010-06-23 & Slovenia & World Cup & 2010 & England win \\ 
+  2010-06-27 & Germany & World Cup & 2010 & England lost \\ 
+  2012-06-11 & France & European Championship & 2012 & England draw \\ 
+  2012-06-15 & Sweden & European Championship & 2012 & England win \\ 
+  2012-06-19 & Ukraine & European Championship & 2012 & England win \\ 
+  2012-06-24 & Italy & European Championship & 2012 & England lost \\ 
+  2014-06-14 & Italy & World Cup & 2014 & England lost \\ 
+  2014-06-19 & Uruguay & World Cup & 2014 & England lost \\ 
+  2014-06-24 & Costa Rica & World Cup & 2014 & England draw \\ 
+  2016-06-11 & Russia & European Championship & 2016 & England draw \\ 
+  2016-06-16 & Wales & European Championship & 2016 & England win \\ 
+  2016-06-20 & Slovakia & European Championship & 2016 & England draw \\ 
+  2016-06-27 & Iceland & European Championship & 2016 & England lost \\ 
+  2018-06-18 & Tunisia & World Cup & 2018 & England win \\ 
+  2018-06-24 & Panama & World Cup & 2018 & England win \\ 
+  2018-06-28 & Belgium & World Cup & 2018 & England lost \\ 
+  2018-07-03 & Colombia & World Cup & 2018 & England win \\ 
+  2018-07-07 & Sweden & World Cup & 2018 & England win \\ 
+  2018-07-11 & Croatia & World Cup & 2018 & England lost \\ 
+  2018-07-14 & Belgium & World Cup & 2018 & England lost \\ 
+   \hline
+\end{tabular}
+  \label{Tab:matches}
+\end{table}
 
 
 
@@ -1221,6 +1177,59 @@ Observations & 3,570 & 3,570 & 3,570 & 3,570 & 3,570 & 3,570 & 3,570 & 3,570 \\
              \item[b] \textit{Coefficients denoted with $*$ are significant at Bonferroni-corrected alpha levels}
     \end{tablenotes}
 \end{threeparttable} 
+\end{sidewaystable}
+
+
+
+\begin{sidewaystable}[!htbp]
+\centering
+ \caption{Robustness of the result: sensitivity to the exclusion of specific years}
+  \label{robustness}
+ \scalebox{0.8}{
+  \begin{threeparttable}
+\begin{tabular}{@{\extracolsep{5pt}}lcccccccccc} 
+\\[-1.8ex]\hline 
+\hline \\[-1.8ex] 
+ & \multicolumn{10}{c}{\textit{Dependent variable:}} \\ 
+\cline{2-11} 
+\\[-1.8ex] & \multicolumn{10}{c}{Number of domestic abuse cases} \\ 
+\\[-1.8ex] & \multicolumn{1}{c}{NA\textsuperscript{c}} & \multicolumn{1}{c}{A\textsuperscript{c}} &  \multicolumn{1}{c}{NA} & \multicolumn{1}{c}{A} &  \multicolumn{1}{c}{NA} & \multicolumn{1}{c}{A} &  \multicolumn{1}{c}{NA} & \multicolumn{1}{c}{A} &  \multicolumn{1}{c}{NA} & \multicolumn{1}{c}{A}  \\
+ \\[-1.8ex] & 2010 & 2010 & 2012 & 2012 & 2014 & 2014 & 2016 & 2016 & 2018 & 2018  \\ 
+\\[-1.8ex] & (1) & (2) & (3) & (4) & (5) & (6) & (7) & (8) & (9) & (10)\\ 
+\hline \\[-1.8ex] 
+Tournament on & 1.035 & 0.959 & 1.063 & 1.084 & 0.976 & 1.085 & 0.960 & 1.105 & 0.948 & 1.069 \\ 
+  & [0.946, 1.133] & [0.901, 1.021] & [0.994, 1.136] & [1.014, 1.160] & [0.890, 1.073] & [1.010, 1.166] & [0.877, 1.052] & [1.029, 1.186] & [0.870, 1.034] & [0.997, 1.146] \\ 
+  & (0.461) & (0.193) & (0.076) & (0.018) & (0.619) & (0.027) & (0.382) & (0.007) & (0.227) & (0.061) \\ 
+  England win & 0.957 & 1.385$^{*}$ & 1.143 & 1.674$^{*}$ & 0.979 & 1.528$^{*}$ & 0.935 & 1.558$^{*}$ & 0.698 & 1.583$^{*}$ \\ 
+  & [0.727, 1.289] & [1.154, 1.666] & [0.909, 1.457] & [1.344, 2.100] & [0.753, 1.299] & [1.254, 1.873] & [0.709, 1.262] & [1.262, 1.938] & [0.486, 1.040] & [1.192, 2.127] \\ 
+  & (0.766) & (0.001) & (0.267) & (0.00001) & (0.879) & (0.00004) & (0.649) & (0.00005) & (0.063) & (0.002) \\ 
+  England draw & 1.037 & 1.126 & 0.990 & 1.347 & 0.921 & 1.383 & 0.793 & 1.391 & 0.950 & 1.304 \\ 
+  & [0.724, 1.545] & [0.873, 1.456] & [0.769, 1.297] & [1.056, 1.734] & [0.662, 1.324] & [1.079, 1.788] & [0.550, 1.190] & [1.051, 1.862] & [0.708, 1.306] & [1.034, 1.656] \\ 
+  & (0.850) & (0.365) & (0.942) & (0.019) & (0.642) & (0.013) & (0.238) & (0.025) & (0.742) & (0.028) \\ 
+  England lost & 1.102 & 1.090 & 1.140 & 1.218 & 1.096 & 1.213 & 1.128 & 1.263 & 0.902 & 1.134 \\ 
+  & [0.837, 1.482] & [0.901, 1.322] & [0.922, 1.428] & [0.986, 1.512] & [0.813, 1.520] & [0.964, 1.538] & [0.856, 1.521] & [1.021, 1.574] & [0.655, 1.280] & [0.880, 1.475] \\ 
+  & (0.507) & (0.376) & (0.240) & (0.072) & (0.565) & (0.106) & (0.410) & (0.035) & (0.547) & (0.341) \\ 
+  After England & 1.095 & 1.198 & 1.169 & 1.287$^{*}$ & 1.054 & 1.283 & 1.043 & 1.316$^{*}$ & 0.891 & 1.205 \\ 
+  & [0.914, 1.276] & [1.077, 1.319] & [1.030, 1.307] & [1.151, 1.422] & [0.874, 1.234] & [1.147, 1.418] & [0.860, 1.225] & [1.177, 1.455] & [0.693, 1.088] & [1.050, 1.360] \\ 
+  & (0.326) & (0.004) & (0.028) & (0.0003) & (0.567) & (0.0004) & (0.654) & (0.0002) & (0.252) & (0.019) \\ 
+ \hline \\[-1.8ex] 
+
+Observations & 3,205 & 3,205 & 3,204 & 3,204 & 3,205 & 3,205 & 3,204 & 3,204 & 3,205 & 3,205 \\ 
+%Log Likelihood & $-$15,738.220 & $-$11,006.630 & $-$15,087.610 & $-$11,568.310 & $-$15,673.620 & $-$11,605.220 & $-$15,608.290 & $-$11,602.150 & $-$15,499.280 & $-$11,605.610 \\ 
+%$\theta$ & 7.385$^{***}$  (0.199) & 28.051$^{***}$  (1.404) & %13.075$^{***}$  (0.373) & 17.870$^{***}$  (0.723) & 7.139$^{***}$  (0.191) & 16.977$^{***}$  (0.674) & 7.284$^{***}$  (0.196) & 16.694$^{***}$  (0.660) & 7.692$^{***}$  (0.208) & 16.664$^{***}$  (0.658) \\ 
+%Akaike Inf. Crit. & 31,526.440 & 22,063.270 & 30,225.220 & 23,186.630 & 31,397.250 & 23,260.450 & 31,266.580 & 23,254.290 & 31,048.560 & 23,261.230 \\ 
+\hline 
+\hline \\[-1.8ex] 
+%\textit{Note:}  & \multicolumn{10}{r}{$^{*}$p$<$0.1; $^{**}$p$<$0.05; $^{***}$p$<$0.01} \\ 
+\end{tabular} 
+%\end{table} 
+\begin{tablenotes}
+%      \item[a] \textit{$^{*}$p$<$0.05; $^{**}$p$<$0.01; $^{***}$p$<$0.001}
+      \item[a] \textit{Estimates are exponentiated coefficients from a series of negative binomial regressions (based on tests of overdispersion)  with year, month, day of week, Christmas, New Year's eve controls; 95\% confidence intervals are in square brackets, p-values are in parentheses}
+            \item[b] \textit{Coefficients denoted with $*$ are significant at Bonferroni-corrected alpha levels}
+      \item[c] \textit{NA = Non-alcohol-related cases, A = Alcohol-related cases}
+    \end{tablenotes}
+\end{threeparttable}   }
 \end{sidewaystable}
 
 %\begin{sidewaystable}[htp]
@@ -1541,6 +1550,19 @@ Observations & 94,737 & 33,759 \\
     \end{tablenotes}
 \end{threeparttable}
 \end{table}
+
+
+
+
+
+
+
+
+\setcounter{figure}{0} % Start again
+\renewcommand\thefigure{\arabic{figure}}
+
+\setcounter{table}{0} % Start again
+\renewcommand\thetable{\arabic{table}}
 
 
 \end{document}

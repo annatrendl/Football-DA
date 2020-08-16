@@ -1,0 +1,15 @@
+\begin{figure}
+\begin{center}
+\includegraphics[scale = 0.6]{descriptives.pdf}
+\caption{The daily average number of alcohol and non-alcohol related domestic abuse cases reported to the police, by day of the week. The error bars show bootstrapped 95\% confidence intervals, stratified by month. \label{fig:descriptive}}
+\end{center}
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}[!htbp]
+\centering
+ \caption{The temporal dynamics of the number of domestic abuse cases perpetrated on England draw, lose, and win days, by alcohol involvement.}
+\includegraphics[width=0.75\textwidth]{Threehours_newdata.pdf}
+\label{fig:threehours}
+\floatfoot{Note: Estimates are from two separate negative binomial regressions with year, month, day of week, three-hour period of day, Christmas, New Year's eve controls. Shaded area is 95\% CIs.}
+\end{figure}
