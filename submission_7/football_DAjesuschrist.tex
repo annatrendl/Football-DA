@@ -229,6 +229,8 @@ Given the complex nature of domestic abuse, it is likely that our model will not
 Testing for overdispersion in a Poisson model involves testing the null-hypothesis of equidispersion (the mean being equal to the variance).
 If there is evidence for overdispersion, a negative binomial model is a more suitable modelling framework, as it includes an additional parameter $\theta$ to allow the variance to deviate from the mean. 
 
+Daily count data can exhibit temporal autocorrelation, which occurs when values of the error term are correlated across time periods, which can lead to biased estimates of the standard errors \cite{Greene2002}. To investigate the extent to which temporal autocorrelation affects our results, we will compare our core estimates to those obtained when using Newey-West autocorrelation-robust standard errors.
+
 
 \subsection{Count per three-hour interval analysis}
 
@@ -356,7 +358,7 @@ Observations & 3,570 & 3,570 \\
 \end{threeparttable} 
 \end{table*}
 
-
+To explore the impact of temporal autocorrelation, we also estimated the models shown in Table \ref{coremodel} using Newey-West standard errors (see Table \ref{coremodelnw} in the Appendix). The CIs presented in the two tables are very similar, suggesting that temporal autocorrelation did not have a significant impact on our original estimates.  
 
 
  \begin{figure}[!htbp]
@@ -991,7 +993,7 @@ For victims, domestic abuse does not occur once every four years following a foo
 %The code for producing the results can be accessed \href{https://osf.io/kg9yr/?view_only=172a33b467bd4566b2e5dea0e2f59f8c}{here}. 
 
 \clearpage
-\bibliography{footballrefsrev}
+\bibliography{footballrefs}
 \newpage
 
 %\theendnotes
@@ -1008,6 +1010,11 @@ For victims, domestic abuse does not occur once every four years following a foo
 \renewcommand{\thefigure}{S\arabic{figure}}
 \setcounter{table}{0}
 \setcounter{figure}{0}
+
+
+
+
+
 
 
 \begin{table}
@@ -1124,6 +1131,55 @@ Offence class & Number of domestic abuse & Percentage of domestic abuse \\
 %    \end{tablenotes}
 %\end{threeparttable} 
 %\end{sidewaystable}
+
+
+
+\begin{table*}[!htbp] \centering 
+  \begin{threeparttable}
+  \caption{The effect of England football days on domestic abuse by alcohol-involvement, 2010-2019 -- Newey-West autocorrelation robust standard errors} 
+  \label{coremodelnw} 
+\begin{tabular}{@{\extracolsep{5pt}}lcc} 
+\\[-1.8ex]\hline 
+\hline \\[-1.8ex] 
+  & \multicolumn{2}{c}{\textit{Dependent variable:}} \\ 
+\cline{2-3} 
+\\[-1.8ex] & \multicolumn{2}{c}{Number of domestic abuse cases} \\ 
+ & Non-alcohol-related & Alcohol-related\\ 
+\\[-1.8ex] & (1) & (2)\\ 
+\hline \\[-1.8ex] 
+ Tournament on & 1.024 & 0.984 \\ 
+  & [0.981, 1.070] & [0.936, 1.035] \\ 
+  & (0.276) & (0.540) \\ 
+  & & \\ 
+ England win & 0.950 & 1.469$^{*}$ \\ 
+  & [0.830, 1.087] & [1.249, 1.727] \\ 
+  & (0.453) & (0.00001) \\ 
+  & & \\ 
+ England draw & 1.045 & 1.145 \\ 
+  & [0.960, 1.137] & [1.034, 1.268] \\ 
+  & (0.307) & (0.010) \\ 
+  & & \\ 
+ England lost & 1.033 & 1.129 \\ 
+  & [0.935, 1.141] & [0.945, 1.349] \\ 
+  & (0.526) & (0.182) \\ 
+  & & \\ 
+  After England & 1.056 & 1.181$^{*}$ \\ 
+  & [0.992, 1.124] & [1.074, 1.299] \\ 
+  & (0.087) & (0.001) \\ 
+  & & \\ 
+\hline \\[-1.8ex] 
+Observations & 3,570 & 3,570 \\ 
+\hline 
+\hline \\[-1.8ex] 
+%\hline \\[-1.8ex] 
+
+\end{tabular}  
+\begin{tablenotes}
+      \item[a] \textit{Estimates are exponentiated coefficients from negative binomial regressions with non-match day as benchmark; controls include day of week, month, year, Christmas, and New Year's Eve; 95\% confidence intervals are in square brackets based on Newey-West robust errors, p-values are in parentheses}
+       \item[b] \textit{Coefficients denoted with $*$ are significant at Bonferroni-corrected alpha levels}
+    \end{tablenotes}
+\end{threeparttable} 
+\end{table*}
 
 
 

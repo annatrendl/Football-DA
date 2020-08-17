@@ -392,6 +392,29 @@ Graham, K.%
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
+Greene%
+}{%
+Greene%
+}{%
+{\protect \APACyear {2002}}%
+}]{%
+Greene2002}
+\APACinsertmetastar {%
+Greene2002}%
+\begin{APACrefauthors}%
+Greene, W\BPBI H.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYear{2002}.
+\newblock
+\APACrefbtitle {{Econometric Analysis}} {{Econometric Analysis}}\
+  (\PrintOrdinal{5}\ \BEd).
+\newblock
+\APACaddressPublisher{Upper Saddle River, New Jersey}{Prentice Hall}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
 {Home Office}%
 }{%
 {Home Office}%
